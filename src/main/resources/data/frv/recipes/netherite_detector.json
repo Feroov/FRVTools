@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  C",
+    " /R",
+    "///"
+  ],
+  "key": {
+    "/": {
+    "item": "minecraft:iron_ingot"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "C": {
+      "item": "minecraft:netherite_block"
+    }
+  },
+  "result": {
+    "item": "frv:netherite_detector",
+    "count": 1
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "frv:item/emerald_detector_prime"
+  }
+}

@@ -1,0 +1,18 @@
+modLoader="javafml" #mandatory
+
+loaderVersion="[39,)"
+license="All rights reserved"
+[[mods]]
+modId="frv"
+version="${file.jarVersion}" #mandatory
+displayName="FRV Tools"
+logoFile="frvlogo.png" #optional
+credits=""
+authors="FRV"
+description='''
+FRV Tools adds an enormous amount of tools to the game!
+'''
+# This version range declares a minimum of the current minecraft version up to but not including the next major version
+    versionRange="[1.18.1,1.19)"
+    ordering="NONE"
+    side="BOTH"

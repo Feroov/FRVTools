@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  Z",
+    "ZCR",
+    "///"
+  ],
+  "key": {
+    "/": {
+    "item": "minecraft:iron_block"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "C": {
+      "item": "frv:iron_detector"
+    },
+
+    "z": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "result": {
+    "item": "frv:iron_detector_prime",
+    "count": 1
+  }
+}

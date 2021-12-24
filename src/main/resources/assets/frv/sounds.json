@@ -1,0 +1,35 @@
+{
+  "croaker_ambient": {"category": "passive", "sounds": [{
+    "name": "frv:croaker_ambient"}, {
+    "name": "frv:croaker_ambient2"}, {
+    "name": "frv:croaker_ambient3"}], "subtitle": "frv.croaker_ambient"
+  },
+
+  "croaker_hurt": {"category": "passive", "sounds": [{
+        "name": "frv:croaker_hurt"}, {
+        "name": "frv:croaker_hurt2"}, {
+        "name": "frv:croaker_hurt3"}], "subtitle": "frv.croaker_hurt"
+  },
+
+  "croaker_death": {"category": "passive", "sounds": [{
+    "name": "frv:croaker_death"}, {
+    "name": "frv:croaker_death2"}, {
+    "name": "frv:croaker_death3"}], "subtitle": "frv.croaker_death"
+  },
+
+  "croaker_yes": {"category": "passive", "sounds": [{
+    "name": "frv:croaker_yes"}, {
+    "name": "frv:croaker_yes2"}, {
+    "name": "frv:croaker_yes3"}], "subtitle": "frv.croaker_yes"
+  },
+
+  "croaker_no": {"category": "passive", "sounds": [{
+    "name": "frv:croaker_no"}, {
+    "name": "frv:croaker_no2"}, {
+    "name": "frv:croaker_no3"}, {
+    "name": "frv:croaker_no4"}], "subtitle": "frv.croaker_no"
+  },
+
+  "detector_sound": {"category": "misc", "sounds": [{"name": "frv:detector_sound"}], "subtitle": "frv.detector_sound"
+  }
+}

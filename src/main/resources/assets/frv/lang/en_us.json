@@ -1,0 +1,61 @@
+{
+  "itemGroup.frvtoolsModTab": "FRV Tools",
+  "itemGroup.frvtoolsMisc": "FRV Tools - Special",
+  "itemGroup.frvtoolsEgg": "FRV Tools - Mobs",
+
+  "item.frv.admin_sword": "\u00A74\u00A7lAdmin Sword",
+
+  "item.frv.quartz_sword": "Quartz Sword",
+  "item.frv.quartz_pickaxe": "Quartz Pickaxe",
+  "item.frv.quartz_axe": "Quartz Axe",
+  "item.frv.quartz_shovel": "Quartz Shovel",
+  "item.frv.quartz_hoe": "Quartz Hoe",
+  "item.frv.amethyst_sword": "Amethyst Sword",
+  "item.frv.amethyst_pickaxe": "Amethyst Pickaxe",
+  "item.frv.amethyst_axe": "Amethyst Axe",
+  "item.frv.amethyst_shovel": "Amethyst Shovel",
+  "item.frv.amethyst_hoe": "Amethyst Hoe",
+
+  "item.frv.quartz_helmet": "Quartz Helmet",
+  "item.frv.quartz_chestplate": "Quartz Chestplate",
+  "item.frv.quartz_leggings": "Quartz Leggings",
+  "item.frv.quartz_boots": "Quartz Boots",
+  "item.frv.amethyst_helmet": "Amethyst Helmet",
+  "item.frv.amethyst_chestplate": "Amethyst Chestplate",
+  "item.frv.amethyst_leggings": "Amethyst Leggings",
+  "item.frv.amethyst_boots": "Amethyst Boots",
+
+
+
+
+  "item.frv.croaker_spawn_egg": "Croaker Spawn Egg",
+  "entity.frv.croaker": "Croaker",
+
+
+  "item.frv.coal_detector": "\u00A78Coal Detector\u00A78",
+  "item.frv.coal_detector_prime": "\u00A78Coal Detector Prime\u00A78",
+  "item.frv.coal_detector.no_valuables": "\u00A74\nNo Coal detected!\n\u00A74",
+  "item.frv.iron_detector": "\u00A77Iron Detector\u00A77",
+  "item.frv.iron_detector_prime": "\u00A77Iron Detector Prime\u00A77",
+  "item.frv.iron_detector.no_valuables": "\u00A74\nNo Iron detected!\n\u00A74",
+  "item.frv.gold_detector": "\u00A76Gold Detector\u00A76",
+  "item.frv.gold_detector_prime": "\u00A76Gold Detector Prime\u00A76",
+  "item.frv.gold_detector.no_valuables": "\u00A74\nNo Gold detected!\n\u00A74",
+  "item.frv.redstone_detector": "\u00A7cRedstone Detector\u00A7c",
+  "item.frv.redstone_detector_prime": "\u00A7cRedstone Detector Prime\u00A7c",
+  "item.frv.redstone_detector.no_valuables": "\u00A74\nNo Redstone detected\n\u00A74",
+  "item.frv.emerald_detector": "\u00A7aEmerald Detector\u00A7a",
+  "item.frv.emerald_detector_prime": "\u00A7aEmerald Detector Prime\u00A7a",
+  "item.frv.emerald_detector.no_valuables": "\u00A74\nNo Emerald detected!\n\u00A74",
+  "item.frv.diamond_detector": "\u00A7bDiamond Detector\u00A7b",
+  "item.frv.diamond_detector_prime": "\u00A7bDiamond Detector Prime\u00A7b",
+  "item.frv.diamond_detector.no_valuables": "\u00A74\nNo Diamond detected!\n\u00A74",
+  "item.frv.netherite_detector": "\u00A78Ancient Debris Detector\u00A78",
+  "item.frv.netherite_detector_prime": "\u00A78Ancient Debris Detector Prime\u00A78",
+  "item.frv.netherite_detector.no_valuables": "\u00A74\nNo Ancient Debris detected!\n\u00A74",
+  "item.frv.all_detector": "All Ores Detector",
+  "item.frv.all_detector_prime": "All Ores Detector Prime",
+  "item.frv.all_detector.no_valuables": "\u00A74\nNo Ores detected!\n\u00A74"
+
+
+}

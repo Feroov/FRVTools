@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  N",
+    "ERI",
+    "GDC"
+  ],
+  "key": {
+    "I": {
+    "item": "frv:iron_detector"
+    },
+    "R": {
+      "item": "frv:redstone_detector"
+    },
+    "E": {
+      "item": "frv:emerald_detector"
+    },
+    "G": {
+      "item": "frv:gold_detector"
+    },
+    "D": {
+      "item": "frv:diamond_detector"
+    },
+    "C": {
+      "item": "frv:coal_detector"
+    },
+    "N": {
+      "item": "frv:netherite_detector"
+    }
+  },
+  "result": {
+    "item": "frv:all_ores_detector",
+    "count": 1
+  }
+}
