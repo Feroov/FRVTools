@@ -110,4 +110,5 @@ publishing {
             url "file://${project.projectDir}/mcmodsrepo"
         }
     }
+
 }

@@ -49,6 +49,32 @@ public class ModVillagerTrades
                             new ModVillagerTrades.EnchantBookForEmeralds(1)
                     }));
 
+    public static final Int2ObjectMap<ModVillagerTrades.ItemListing[]> HUNTER_TRADES = toIntMap(ImmutableMap.of(
+            1, new ModVillagerTrades.ItemListing[]
+                    {
+                            new ModVillagerTrades.EmeraldForItems(Items.COAL, 12, 10, 5),
+                            new ModVillagerTrades.ItemsForEmeralds(Items.APPLE, 1, 20, 5, 1),
+                            new ModVillagerTrades.ItemsForEmeralds(Items.IRON_INGOT, 1, 8, 5, 1),
+                            new ModVillagerTrades.ItemsForEmeralds(Items.OAK_LOG, 1, 15, 5,1),
+                            new ModVillagerTrades.ItemsForEmeralds(Items.AMETHYST_SHARD, 13, 1, 5, 1),
+                            new ModVillagerTrades.ItemsForEmeralds(Items.ARROW, 1, 23, 5,3),
+                            new ModVillagerTrades.ItemsForEmeralds(Items.NETHERITE_SCRAP, 20, 1, 5, 1),
+                            new ModVillagerTrades.ItemsForDiamond(Items.SPIDER_EYE, 1, 12, 5, 1),
+                            new ModVillagerTrades.ItemsForEmeralds(Items.STRING, 1, 16, 5,2),
+                            new ModVillagerTrades.ItemsForEmeralds(Items.GOLD_BLOCK, 1, 1, 5, 1),
+                            new ModVillagerTrades.ItemsForEmeralds(Items.COOKED_BEEF, 1, 3, 5, 1),
+                            new ModVillagerTrades.ItemsForEmeralds(Items.GOLDEN_CARROT, 1, 2, 5, 1),
+                            new ModVillagerTrades.ItemsForDiamond(Items.PHANTOM_MEMBRANE, 1, 2, 5, 1),
+                            new ModVillagerTrades.ItemsForEmeralds(Items.FERMENTED_SPIDER_EYE, 1, 4, 5, 1),
+                            new ModVillagerTrades.ItemsForDiamond(Items.COOKED_CHICKEN, 1, 4, 5, 1),
+                            new ModVillagerTrades.ItemsForEmeralds(Items.COOKED_COD, 1, 7, 5, 1),
+                            new ModVillagerTrades.ItemsForDiamond(Items.COOKED_RABBIT, 1, 3, 5, 1),
+                            new ModVillagerTrades.ItemsForEmeralds(Items.GLASS, 1, 13, 5, 1),
+                            new ModVillagerTrades.EnchantBookForEmeralds(1),
+                            new ModVillagerTrades.EnchantBookForEmeralds(1),
+                            new ModVillagerTrades.EnchantBookForEmeralds(1)
+                    }));
+
     private static Int2ObjectMap<ModVillagerTrades.ItemListing[]> toIntMap(ImmutableMap<Integer, ModVillagerTrades.ItemListing[]> p_35631_) 
     {
         return new Int2ObjectOpenHashMap<>(p_35631_);

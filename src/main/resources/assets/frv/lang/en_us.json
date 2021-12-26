@@ -30,16 +30,18 @@
 
   "item.frv.croaker_spawn_egg": "Croaker Spawn Egg",
   "entity.frv.croaker": "Croaker",
+  "item.frv.hunter_spawn_egg": "Hunter Spawn Egg",
+  "entity.frv.hunter": "Hunter",
 
 
   "item.frv.coal_detector": "\u00A78Coal Detector\u00A78",
   "item.frv.coal_detector_prime": "\u00A78Coal Detector Prime\u00A78",
   "item.frv.coal_detector.no_valuables": "\u00A74\nNo Coal detected!\n\u00A74",
-  "item.frv.iron_detector": "\u00A77Iron Detector\u00A77",
-  "item.frv.iron_detector_prime": "\u00A77Iron Detector Prime\u00A77",
+  "item.frv.iron_detector": "Iron Detector",
+  "item.frv.iron_detector_prime": "Iron Detector Prime",
   "item.frv.iron_detector.no_valuables": "\u00A74\nNo Iron detected!\n\u00A74",
-  "item.frv.gold_detector": "\u00A76Gold Detector\u00A76",
-  "item.frv.gold_detector_prime": "\u00A76Gold Detector Prime\u00A76",
+  "item.frv.gold_detector": "\u00A7eGold Detector\u00A7e",
+  "item.frv.gold_detector_prime": "\u00A7eGold Detector Prime\u00A7e",
   "item.frv.gold_detector.no_valuables": "\u00A74\nNo Gold detected!\n\u00A74",
   "item.frv.redstone_detector": "\u00A7cRedstone Detector\u00A7c",
   "item.frv.redstone_detector_prime": "\u00A7cRedstone Detector Prime\u00A7c",

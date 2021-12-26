@@ -1,9 +1,9 @@
 package com.feroov.frv.entities.passive;
 
-import com.feroov.frv.entities.ai.goal.FollowPlayerGoal;
-import com.feroov.frv.entities.trades.CroakerAbstractVillagerEntity;
+import com.feroov.frv.entities.ai.goal.AttackRevengeTargetGoal;
+import com.feroov.frv.entities.trades.HunterAbstractVillagerEntity;
 import com.feroov.frv.entities.trades.ModVillagerTrades;
-import com.feroov.frv.entities.variants.CroakerVariant;
+import com.feroov.frv.entities.variants.HunterVariant;
 import com.feroov.frv.sound.ModSoundEvents;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
@@ -21,7 +21,10 @@ import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
-import net.minecraft.world.entity.monster.*;
+import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
+import net.minecraft.world.entity.animal.*;
+import net.minecraft.world.entity.monster.Creeper;
+import net.minecraft.world.entity.npc.Npc;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -37,21 +40,29 @@ import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
+
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import java.util.*;
+
+import java.util.EnumSet;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.UUID;
 
 
-public class Croaker extends CroakerAbstractVillagerEntity implements IAnimatable
+public class Hunter extends HunterAbstractVillagerEntity implements IAnimatable, Npc
 {
     @Nullable
     private Player customer;
     @Nullable
     private BlockPos wanderTarget;
     private Set<UUID> tradedCustomers = new HashSet<>();
-    public static final EntityDataAccessor<Boolean> STUNNED = SynchedEntityData.defineId(Croaker.class, EntityDataSerializers.BOOLEAN);
-    public static final EntityDataAccessor<Integer> STATE = SynchedEntityData.defineId(Croaker.class, EntityDataSerializers.INT);
-    private static final EntityDataAccessor<Integer> DATA_ID_TYPE_VARIANT = SynchedEntityData.defineId(Croaker.class, EntityDataSerializers.INT);
+
+    public static final EntityDataAccessor<Boolean> STUNNED = SynchedEntityData.defineId(Hunter.class, EntityDataSerializers.BOOLEAN);
+    public static final EntityDataAccessor<Integer> STATE = SynchedEntityData.defineId(Hunter.class, EntityDataSerializers.INT);
+    public static final EntityDataAccessor<Integer> ATTACK = SynchedEntityData.defineId(Hunter.class, EntityDataSerializers.INT);
+    private static final EntityDataAccessor<Integer> DATA_ID_TYPE_VARIANT = SynchedEntityData.defineId(Hunter.class, EntityDataSerializers.INT);
+
     /******************************** Animation methods *****************************/
     private final AnimationFactory factory = new AnimationFactory(this);
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event)
@@ -61,14 +72,30 @@ public class Croaker extends CroakerAbstractVillagerEntity implements IAnimatabl
             event.getController().setAnimation(new AnimationBuilder().addAnimation("idle", true));
             return PlayState.CONTINUE;
         }
-        event.getController().setAnimation(new AnimationBuilder().addAnimation("walk", true));
+        if (event.isMoving())
+        {
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("walk", true));
+        }
         return PlayState.CONTINUE;
     }
+
+    private <E extends IAnimatable> PlayState attack(AnimationEvent<E> event)
+    {
+        if(isAggressive())
+        {
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("attack", true));
+            return PlayState.CONTINUE;
+        }
+        return PlayState.STOP;
+    }
+
     @Override
     public void registerControllers(AnimationData data)
     {
-        data.addAnimationController(new AnimationController<Croaker>
+        data.addAnimationController(new AnimationController<Hunter>
                 (this, "controller", 0, this::predicate));
+        data.addAnimationController(new AnimationController<Hunter>
+                (this, "attackController", 0, this::attack));
     }
 
     @Override
@@ -77,14 +104,20 @@ public class Croaker extends CroakerAbstractVillagerEntity implements IAnimatabl
         return this.factory;
     }
 
+    public void setAttackingState(int time)
+    {
+        this.entityData.set(ATTACK, time);
+    }
     /*********************************************************************************/
 
-    /******************************** Constructor *****************************/
-    public Croaker(EntityType<? extends CroakerAbstractVillagerEntity> p_i48549_1_, Level p_i48549_2_)
+
+    /******************************** Constructor *************************************/
+    public Hunter(EntityType<? extends HunterAbstractVillagerEntity> p_i48549_1_, Level p_i48549_2_)
     {
         super(p_i48549_1_, p_i48549_2_);
     }
     /*********************************************************************************/
+
 
     /******************************** Variant methods *****************************/
     @Override
@@ -101,12 +134,12 @@ public class Croaker extends CroakerAbstractVillagerEntity implements IAnimatabl
         this.entityData.set(DATA_ID_TYPE_VARIANT, p_21815_.getInt("Variant"));
     }
 
-    public CroakerVariant getVariant()
+    public HunterVariant getVariant()
     {
-        return CroakerVariant.byId(this.getTypeVariant() & 255);
+        return HunterVariant.byId(this.getTypeVariant() & 255);
     }
 
-    private void setVariant(CroakerVariant variant)
+    private void setVariant(HunterVariant variant)
     {
         this.entityData.set(DATA_ID_TYPE_VARIANT, variant.getId() & 255);
     }
@@ -120,7 +153,7 @@ public class Croaker extends CroakerAbstractVillagerEntity implements IAnimatabl
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor p_146746_, DifficultyInstance p_146747_,
                                         MobSpawnType p_146748_, @Nullable SpawnGroupData p_146749_, @Nullable CompoundTag p_146750_)
     {
-        CroakerVariant variant = Util.getRandom(CroakerVariant.values(), this.random);
+        HunterVariant variant = Util.getRandom(HunterVariant.values(), this.random);
         setVariant(variant);
         return super.finalizeSpawn(p_146746_, p_146747_, p_146748_, p_146749_, p_146750_);
     }
@@ -133,6 +166,7 @@ public class Croaker extends CroakerAbstractVillagerEntity implements IAnimatabl
         this.entityData.define(STATE, 0);
         this.entityData.define(STUNNED, false);
         this.entityData.define(DATA_ID_TYPE_VARIANT, 0);
+        this.entityData.define(ATTACK, 0);
     }
 
     public static AttributeSupplier.Builder createAttributes()
@@ -140,27 +174,8 @@ public class Croaker extends CroakerAbstractVillagerEntity implements IAnimatabl
         return Mob.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 25.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.62D)
-                .add(Attributes.FOLLOW_RANGE, 25.0D);
-    }
-
-
-    @Override
-    protected void registerGoals()
-    {
-        super.registerGoals();
-        this.goalSelector.addGoal(0, new FloatGoal(this));
-        this.goalSelector.addGoal(1, new FollowPlayerGoal(this));
-        this.goalSelector.addGoal(2, new PanicGoal(this, 0.5D));
-        this.goalSelector.addGoal(3, new OpenDoorGoal(this,true));
-        this.goalSelector.addGoal(4, new LookAtPlayerGoal(this, Mob.class, 8.0F));
-        this.goalSelector.addGoal(5, new TradeWithPlayerGoal(this));
-        this.goalSelector.addGoal(5, new LookAtTradingPlayerGoal(this));
-        this.goalSelector.addGoal(6, new WaterAvoidingRandomStrollGoal(this, 0.4D));
-        this.goalSelector.addGoal(7, new MoveTowardsRestrictionGoal(this, 0.4D));
-        this.goalSelector.addGoal(8, new InteractGoal(this, Player.class, 4.0F, 1.0F));
-        this.goalSelector.addGoal(9, new RandomLookAroundGoal(this));
-        this.goalSelector.addGoal(10, new AvoidEntityGoal<>(this, Zombie.class, 8.0F, 0.5D, 0.5D));
-        this.goalSelector.addGoal(11, new AvoidEntityGoal<>(this, Creeper.class, 12.0F, 0.5D, 0.5D));
+                .add(Attributes.FOLLOW_RANGE, 10.0D)
+                .add(Attributes.ATTACK_DAMAGE, 5.0D);
     }
 
     @Override
@@ -175,6 +190,10 @@ public class Croaker extends CroakerAbstractVillagerEntity implements IAnimatabl
         }
     }
 
+    public boolean canAttackBack() {
+        return true;
+    }
+
     public boolean isPreviousCustomer(Player player)
     {
         return this.tradedCustomers.contains(player.getUUID());
@@ -183,15 +202,40 @@ public class Croaker extends CroakerAbstractVillagerEntity implements IAnimatabl
     {
         return this.entityData.get(STUNNED);
     }
+
+    @Override
+    protected void registerGoals()
+    {
+        super.registerGoals();
+        this.goalSelector.addGoal(0, new FloatGoal(this));
+        this.goalSelector.addGoal(1, new OpenDoorGoal(this,true));
+        this.goalSelector.addGoal(2, new LookAtPlayerGoal(this, Mob.class, 8.0F));
+        this.goalSelector.addGoal(2, new Hunter.TradeWithPlayerGoal(this));
+        this.goalSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Rabbit.class, true));
+        this.goalSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Cow.class, true));
+        this.goalSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Sheep.class, true));
+        this.goalSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Chicken.class, true));
+        this.goalSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Pig.class, true));
+        this.goalSelector.addGoal(2, new AttackRevengeTargetGoal(this));
+        this.targetSelector.addGoal(1, new HunterAttackGoal(this, 0.67D, false, 1));
+        this.goalSelector.addGoal(3, new Hunter.LookAtTradingPlayerGoal(this));
+        this.goalSelector.addGoal(4, new WaterAvoidingRandomStrollGoal(this, 0.4D));
+        this.goalSelector.addGoal(5, new MoveTowardsRestrictionGoal(this, 0.4D));
+        this.goalSelector.addGoal(6, new InteractGoal(this, Player.class, 4.0F, 1.0F));
+        this.goalSelector.addGoal(7, new RandomLookAroundGoal(this));
+        this.goalSelector.addGoal(8, new AvoidEntityGoal<>(this, Creeper.class, 12.0F, 0.5D, 0.5D));
+    }
+
+
     /*************************** Trade with player goal ****************************/
     public class TradeWithPlayerGoal extends Goal
     {
-        private final Croaker mob;
+        private final Hunter mob;
 
-        public TradeWithPlayerGoal(Croaker p_25958_)
+        public TradeWithPlayerGoal(Hunter p_25958_)
         {
             this.mob = p_25958_;
-            this.setFlags(EnumSet.of(Goal.Flag.JUMP, Goal.Flag.MOVE));
+            this.setFlags(EnumSet.of(Flag.JUMP, Flag.MOVE));
         }
 
         public boolean canUse()
@@ -241,12 +285,14 @@ public class Croaker extends CroakerAbstractVillagerEntity implements IAnimatabl
         }
     }
     /******************************************************************************/
+
+
     /*************************** Look at player goal ****************************/
     public class LookAtTradingPlayerGoal extends LookAtPlayerGoal
     {
-        private final Croaker villager;
+        private final Hunter villager;
 
-        public LookAtTradingPlayerGoal(Croaker p_25538_)
+        public LookAtTradingPlayerGoal(Hunter p_25538_)
         {
             super(p_25538_, Player.class, 8.0F);
             this.villager = p_25538_;
@@ -266,6 +312,8 @@ public class Croaker extends CroakerAbstractVillagerEntity implements IAnimatabl
         }
     }
     /******************************************************************************/
+
+
     @Override
     protected void rewardTradeXp(MerchantOffer p_213713_1_)
     {
@@ -315,7 +363,7 @@ public class Croaker extends CroakerAbstractVillagerEntity implements IAnimatabl
     @Override
     protected void updateTrades()
     {
-        ModVillagerTrades.ItemListing[] avillagertrades$itrade = ModVillagerTrades.CROAKER_TRADES.get(1);
+        ModVillagerTrades.ItemListing[] avillagertrades$itrade = ModVillagerTrades.HUNTER_TRADES.get(1);
         if (avillagertrades$itrade != null)
         {
             MerchantOffers merchantoffers = this.getOffers();
@@ -332,7 +380,108 @@ public class Croaker extends CroakerAbstractVillagerEntity implements IAnimatabl
     /*************************************************************************/
 
 
+    /*************************** Attack Goal *********************************/
+    static class HunterAttackGoal extends MeleeAttackGoal
+    {
+        private final Hunter entity;
+        private final double speedModifier;
+        private int statecheck;
+        private int ticksUntilNextAttack;
+        private int ticksUntilNextPathRecalculation;
+        private double pathedTargetX;
+        private double pathedTargetY;
+        private double pathedTargetZ;
 
+        public HunterAttackGoal(Hunter zombieIn, double speedIn, boolean longMemoryIn, int state)
+        {
+            super(zombieIn, speedIn, longMemoryIn);
+            this.entity = zombieIn;
+            this.statecheck = state;
+            this.speedModifier = speedIn;
+        }
+
+        public void start()
+        {
+            super.start();
+        }
+
+        public boolean canUse()
+        {
+            return super.canUse();
+        }
+
+        public void stop()
+        {
+            super.stop();
+            this.entity.setAggressive(false);
+            this.entity.setAttackingState(0);
+        }
+
+        public void tick()
+        {
+            LivingEntity livingentity = this.entity.getTarget();
+            if (livingentity != null)
+            {
+                this.mob.getLookControl().setLookAt(livingentity, 30.0F, 30.0F);
+                double d0 = this.mob.distanceToSqr(livingentity.getX(), livingentity.getY(), livingentity.getZ());
+                this.ticksUntilNextPathRecalculation = Math.max(this.ticksUntilNextPathRecalculation - 1, 0);
+                if ((this.mob.getSensing().hasLineOfSight(livingentity))
+                        && this.ticksUntilNextPathRecalculation <= 0
+                        && (this.pathedTargetX == 0.0D && this.pathedTargetY == 0.0D && this.pathedTargetZ == 0.0D
+                        || livingentity.distanceToSqr(this.pathedTargetX, this.pathedTargetY,
+                        this.pathedTargetZ) >= 1.0D
+                        || this.mob.getRandom().nextFloat() < 0.05F)) {
+                    this.pathedTargetX = livingentity.getX();
+                    this.pathedTargetY = livingentity.getY();
+                    this.pathedTargetZ = livingentity.getZ();
+                    this.ticksUntilNextPathRecalculation = 4 + this.mob.getRandom().nextInt(7);
+                    if (d0 > 1024.0D)
+                    {
+                        this.ticksUntilNextPathRecalculation += 10;
+                    }
+                    else if (d0 > 256.0D)
+                    {
+                        this.ticksUntilNextPathRecalculation += 5;
+                    }
+
+                    if (!this.mob.getNavigation().moveTo(livingentity, this.speedModifier))
+                    {
+                        this.ticksUntilNextPathRecalculation += 15;
+                    }
+                }
+                this.ticksUntilNextAttack = Math.max(this.ticksUntilNextAttack - 0, 0);
+                this.checkAndPerformAttack(livingentity, d0);
+            }
+        }
+
+        @Override
+        protected void checkAndPerformAttack(LivingEntity livingentity, double squaredDistance)
+        {
+            double d0 = this.getAttackReachSqr(livingentity);
+            if (squaredDistance <= d0 && this.getTicksUntilNextAttack() <= 0)
+            {
+                this.resetAttackCooldown();
+                this.entity.setAttackingState(statecheck);
+                this.mob.doHurtTarget(livingentity);
+            }
+        }
+
+        @Override
+        protected int getAttackInterval()
+        {
+            return 50;
+        }
+
+        @Override
+        protected double getAttackReachSqr(LivingEntity attackTarget)
+        {
+            return this.mob.getBbWidth() * 1.0F * this.mob.getBbWidth() * 1.0F + attackTarget.getBbWidth();
+        }
+    }
+    /*************************************************************************/
+
+
+    /****************************** Sounds **********************************/
     @Override
     protected SoundEvent getAmbientSound()
     {
@@ -353,19 +502,23 @@ public class Croaker extends CroakerAbstractVillagerEntity implements IAnimatabl
         this.playSound(ModSoundEvents.CROAKER_DEATH.get(), 1.0F, 1.0F);
         return null;
     }
+    /*************************************************************************/
+
 
     @Override
     protected float getStandingEyeHeight(Pose poseIn, EntityDimensions sizeIn)
     {
-        return 1.5F;
+        return 1.8F;
     }
 
     @Override
-    protected void tickDeath() {
+    protected void tickDeath()
+    {
         ++this.deathTime;
-        if (this.deathTime == 50 && !this.level.isClientSide()) {
+        if (this.deathTime == 50 && !this.level.isClientSide())
+        {
             this.level.broadcastEntityEvent(this, (byte)60);
-            this.remove(Entity.RemovalReason.KILLED);
+            this.remove(RemovalReason.KILLED);
         }
 
     }

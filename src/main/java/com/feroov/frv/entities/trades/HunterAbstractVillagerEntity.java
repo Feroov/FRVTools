@@ -9,7 +9,6 @@ import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.SimpleContainer;
@@ -30,10 +29,10 @@ import net.minecraft.world.phys.Vec3;
 import javax.annotation.Nullable;
 import java.util.Set;
 
-public class ModAbstractVillagerEntity extends AgeableMob implements InventoryCarrier, Npc, Merchant
+public class HunterAbstractVillagerEntity extends AgeableMob implements InventoryCarrier, Npc, Merchant
 {
     private static final EntityDataAccessor<Integer> DATA_UNHAPPY_COUNTER =
-            SynchedEntityData.defineId(ModAbstractVillagerEntity.class, EntityDataSerializers.INT);
+            SynchedEntityData.defineId(HunterAbstractVillagerEntity.class, EntityDataSerializers.INT);
     public static final int VILLAGER_SLOT_OFFSET = 300;
     private static final int VILLAGER_INVENTORY_SIZE = 8;
     @Nullable
@@ -42,7 +41,7 @@ public class ModAbstractVillagerEntity extends AgeableMob implements InventoryCa
     protected MerchantOffers offers;
     private final SimpleContainer inventory = new SimpleContainer(8);
 
-    public ModAbstractVillagerEntity(EntityType<? extends ModAbstractVillagerEntity> p_35267_, Level p_35268_) {
+    public HunterAbstractVillagerEntity(EntityType<? extends HunterAbstractVillagerEntity> p_35267_, Level p_35268_) {
         super(p_35267_, p_35268_);
         this.setPathfindingMalus(BlockPathTypes.DANGER_FIRE, 16.0F);
         this.setPathfindingMalus(BlockPathTypes.DAMAGE_FIRE, -1.0F);
@@ -51,7 +50,7 @@ public class ModAbstractVillagerEntity extends AgeableMob implements InventoryCa
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor p_35282_, DifficultyInstance p_35283_,
                                         MobSpawnType p_35284_, @Nullable SpawnGroupData p_35285_, @Nullable CompoundTag p_35286_) {
         if (p_35285_ == null) {
-            p_35285_ = new AgeableMob.AgeableMobGroupData(false);
+            p_35285_ = new AgeableMobGroupData(false);
         }
 
         return super.finalizeSpawn(p_35282_, p_35283_, p_35284_, p_35285_, p_35286_);
