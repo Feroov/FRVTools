@@ -30,6 +30,80 @@
     "name": "frv:croaker_no4"}], "subtitle": "frv.croaker_no"
   },
 
+
+  "female_hunter_ambient": {"category": "passive", "sounds": [{
+    "name": "frv:female_hunter_ambient"}, {
+    "name": "frv:female_hunter_ambient2"}, {
+    "name": "frv:female_hunter_ambient3"}, {
+    "name": "frv:female_hunter_ambient4"}], "subtitle": "frv.female_hunter_ambient"
+  },
+
+  "female_hunter_hurt": {"category": "passive", "sounds": [{
+    "name": "frv:female_hunter_hurt"}, {
+    "name": "frv:female_hunter_hurt2"}, {
+    "name": "frv:female_hunter_hurt3"}, {
+    "name": "frv:female_hunter_hurt4"}], "subtitle": "frv.female_hunter_hurt"
+  },
+
+  "female_hunter_death": {"category": "passive", "sounds": [{
+    "name": "frv:female_hunter_death"}, {
+    "name": "frv:female_hunter_death2"}, {
+    "name": "frv:female_hunter_death3"},{
+    "name": "frv:female_hunter_death4"}], "subtitle": "frv.female_hunter_death"
+  },
+
+  "female_hunter_yes": {"category": "passive", "sounds": [{
+    "name": "frv:female_hunter_yes"}, {
+    "name": "frv:female_hunter_yes2"}, {
+    "name": "frv:female_hunter_yes3"},{
+    "name": "frv:female_hunter_yes4"}], "subtitle": "frv.female_hunter_yes"
+  },
+
+  "female_hunter_no": {"category": "passive", "sounds": [{
+    "name": "frv:female_hunter_no"}, {
+    "name": "frv:female_hunter_no2"}, {
+    "name": "frv:female_hunter_no3"}, {
+    "name": "frv:female_hunter_no4"}], "subtitle": "frv.female_hunter_no"
+  },
+
+  "hunter_ambient": {"category": "passive", "sounds": [{
+    "name": "frv:hunter_ambient"}, {
+    "name": "frv:hunter_ambient2"}, {
+    "name": "frv:hunter_ambient3"}, {
+    "name": "frv:hunter_ambient4"}], "subtitle": "frv.hunter_ambient"
+  },
+
+  "hunter_hurt": {"category": "passive", "sounds": [{
+    "name": "frv:hunter_hurt"}, {
+    "name": "frv:hunter_hurt2"}, {
+    "name": "frv:hunter_hurt3"}, {
+    "name": "frv:hunter_hurt4"}], "subtitle": "frv.hunter_hurt"
+  },
+
+  "hunter_death": {"category": "passive", "sounds": [{
+    "name": "frv:hunter_death"}, {
+    "name": "frv:hunter_death2"}, {
+    "name": "frv:hunter_death3"},{
+    "name": "frv:hunter_death4"}], "subtitle": "frv.hunter_death"
+  },
+
+  "hunter_yes": {"category": "passive", "sounds": [{
+    "name": "frv:hunter_yes"}, {
+    "name": "frv:hunter_yes2"}, {
+    "name": "frv:hunter_yes3"},{
+    "name": "frv:hunter_yes4"}], "subtitle": "frv.hunter_yes"
+  },
+
+  "hunter_no": {"category": "passive", "sounds": [{
+    "name": "frv:hunter_no"}, {
+    "name": "frv:hunter_no2"}, {
+    "name": "frv:hunter_no3"}, {
+    "name": "frv:hunter_no4"}], "subtitle": "frv.hunter_no"
+  },
+  
+  
+
+
   "detector_sound": {"category": "misc", "sounds": [{"name": "frv:detector_sound"}], "subtitle": "frv.detector_sound"
   }
 }

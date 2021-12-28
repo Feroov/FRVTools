@@ -20,7 +20,9 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.ai.control.JumpControl;
 import net.minecraft.world.entity.ai.goal.*;
+import net.minecraft.world.entity.animal.Rabbit;
 import net.minecraft.world.entity.monster.*;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -150,14 +152,13 @@ public class Croaker extends CroakerAbstractVillagerEntity implements IAnimatabl
         super.registerGoals();
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(1, new FollowPlayerGoal(this));
-        this.goalSelector.addGoal(2, new PanicGoal(this, 0.5D));
+        this.goalSelector.addGoal(2, new PanicGoal(this, 0.8D));
         this.goalSelector.addGoal(3, new OpenDoorGoal(this,true));
         this.goalSelector.addGoal(4, new LookAtPlayerGoal(this, Mob.class, 8.0F));
         this.goalSelector.addGoal(5, new TradeWithPlayerGoal(this));
         this.goalSelector.addGoal(5, new LookAtTradingPlayerGoal(this));
         this.goalSelector.addGoal(6, new WaterAvoidingRandomStrollGoal(this, 0.4D));
         this.goalSelector.addGoal(7, new MoveTowardsRestrictionGoal(this, 0.4D));
-        this.goalSelector.addGoal(8, new InteractGoal(this, Player.class, 4.0F, 1.0F));
         this.goalSelector.addGoal(9, new RandomLookAroundGoal(this));
         this.goalSelector.addGoal(10, new AvoidEntityGoal<>(this, Zombie.class, 8.0F, 0.5D, 0.5D));
         this.goalSelector.addGoal(11, new AvoidEntityGoal<>(this, Creeper.class, 12.0F, 0.5D, 0.5D));
@@ -330,7 +331,6 @@ public class Croaker extends CroakerAbstractVillagerEntity implements IAnimatabl
         }
     }
     /*************************************************************************/
-
 
 
     @Override

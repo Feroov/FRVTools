@@ -1,6 +1,7 @@
 package com.feroov.frv.entities.passive;
 
-import com.feroov.frv.entities.ai.goal.AttackRevengeTargetGoal;
+import com.feroov.frv.entities.ai.goal.HunterFindWaterPanicGoal;
+import com.feroov.frv.entities.ai.goal.HunterRevengeGoal;
 import com.feroov.frv.entities.trades.HunterAbstractVillagerEntity;
 import com.feroov.frv.entities.trades.ModVillagerTrades;
 import com.feroov.frv.entities.variants.HunterVariant;
@@ -24,6 +25,7 @@ import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.animal.*;
 import net.minecraft.world.entity.monster.Creeper;
+import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.entity.npc.Npc;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -67,20 +69,27 @@ public class Hunter extends HunterAbstractVillagerEntity implements IAnimatable,
     private final AnimationFactory factory = new AnimationFactory(this);
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event)
     {
-        if (!event.isMoving())
-        {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("idle", true));
-            return PlayState.CONTINUE;
-        }
         if (event.isMoving())
         {
             event.getController().setAnimation(new AnimationBuilder().addAnimation("walk", true));
+            return PlayState.CONTINUE;
         }
+        if ((this.dead || this.getHealth() < 0.01 || this.isDeadOrDying()))
+        {
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("death", false));
+            return PlayState.CONTINUE;
+        }
+        event.getController().setAnimation(new AnimationBuilder().addAnimation("idle", true));
         return PlayState.CONTINUE;
     }
 
     private <E extends IAnimatable> PlayState attack(AnimationEvent<E> event)
     {
+        if ((this.dead || this.getHealth() < 0.01 || this.isDeadOrDying()))
+        {
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("death", false));
+            return PlayState.CONTINUE;
+        }
         if(isAggressive())
         {
             event.getController().setAnimation(new AnimationBuilder().addAnimation("attack", true));
@@ -175,7 +184,7 @@ public class Hunter extends HunterAbstractVillagerEntity implements IAnimatable,
                 .add(Attributes.MAX_HEALTH, 25.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.62D)
                 .add(Attributes.FOLLOW_RANGE, 10.0D)
-                .add(Attributes.ATTACK_DAMAGE, 5.0D);
+                .add(Attributes.ATTACK_DAMAGE, 8.0D);
     }
 
     @Override
@@ -208,22 +217,25 @@ public class Hunter extends HunterAbstractVillagerEntity implements IAnimatable,
     {
         super.registerGoals();
         this.goalSelector.addGoal(0, new FloatGoal(this));
-        this.goalSelector.addGoal(1, new OpenDoorGoal(this,true));
-        this.goalSelector.addGoal(2, new LookAtPlayerGoal(this, Mob.class, 8.0F));
-        this.goalSelector.addGoal(2, new Hunter.TradeWithPlayerGoal(this));
-        this.goalSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Rabbit.class, true));
-        this.goalSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Cow.class, true));
-        this.goalSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Sheep.class, true));
-        this.goalSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Chicken.class, true));
-        this.goalSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Pig.class, true));
-        this.goalSelector.addGoal(2, new AttackRevengeTargetGoal(this));
-        this.targetSelector.addGoal(1, new HunterAttackGoal(this, 0.67D, false, 1));
-        this.goalSelector.addGoal(3, new Hunter.LookAtTradingPlayerGoal(this));
-        this.goalSelector.addGoal(4, new WaterAvoidingRandomStrollGoal(this, 0.4D));
-        this.goalSelector.addGoal(5, new MoveTowardsRestrictionGoal(this, 0.4D));
-        this.goalSelector.addGoal(6, new InteractGoal(this, Player.class, 4.0F, 1.0F));
-        this.goalSelector.addGoal(7, new RandomLookAroundGoal(this));
-        this.goalSelector.addGoal(8, new AvoidEntityGoal<>(this, Creeper.class, 12.0F, 0.5D, 0.5D));
+        this.goalSelector.addGoal(1, new HunterFindWaterPanicGoal(this, 0.5F));
+        this.goalSelector.addGoal(2, new OpenDoorGoal(this,true));
+        this.goalSelector.addGoal(3, new Hunter.TradeWithPlayerGoal(this));
+        this.goalSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, Cow.class, true));
+        this.goalSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, Sheep.class, true));
+        this.goalSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, Chicken.class, true));
+        this.goalSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, Pig.class, true));
+        this.goalSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, Cod.class, true));
+        this.goalSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, Rabbit.class, true));
+        this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, Mob.class, 5, false, false, (p_28879_) -> {return p_28879_ instanceof Enemy && !(p_28879_ instanceof Creeper);}));
+        this.goalSelector.addGoal(5, new HunterRevengeGoal(this));
+        this.targetSelector.addGoal(5, new HunterAttackGoal(this, 0.67D, true, 5));
+        this.goalSelector.addGoal(6, new Hunter.LookAtTradingPlayerGoal(this));
+        this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Mob.class, 8.0F));
+        this.goalSelector.addGoal(7, new WaterAvoidingRandomStrollGoal(this, 0.4D));
+        this.goalSelector.addGoal(8, new MoveTowardsRestrictionGoal(this, 0.4D));
+        this.goalSelector.addGoal(9, new InteractGoal(this, Player.class, 4.0F, 1.0F));
+        this.goalSelector.addGoal(10, new RandomLookAroundGoal(this));
+        this.goalSelector.addGoal(11, new AvoidEntityGoal<>(this, Creeper.class, 12.0F, 0.5D, 0.5D));
     }
 
 
@@ -367,7 +379,7 @@ public class Hunter extends HunterAbstractVillagerEntity implements IAnimatable,
         if (avillagertrades$itrade != null)
         {
             MerchantOffers merchantoffers = this.getOffers();
-            this.addOffersFromItemListings(merchantoffers, avillagertrades$itrade, 9);
+            this.addOffersFromItemListings(merchantoffers, avillagertrades$itrade, 4);
             int i = this.random.nextInt(avillagertrades$itrade.length);
             ModVillagerTrades.ItemListing villagertrades$itrade = avillagertrades$itrade[i];
             MerchantOffer merchantoffer = villagertrades$itrade.getOffer(this, this.random);
@@ -485,21 +497,21 @@ public class Hunter extends HunterAbstractVillagerEntity implements IAnimatable,
     @Override
     protected SoundEvent getAmbientSound()
     {
-        this.playSound(ModSoundEvents.CROAKER_AMBIENT.get(), 1.0F, 1.0F);
+        this.playSound(ModSoundEvents.HUNTER_AMBIENT.get(), 1.0F, 1.0F);
         return null;
     }
 
     @Override
     protected SoundEvent getHurtSound(@Nonnull DamageSource damageSourceIn)
     {
-        this.playSound(ModSoundEvents.CROAKER_HURT.get(), 1.0F, 1.0F);
+        this.playSound(ModSoundEvents.HUNTER_HURT.get(), 1.0F, 1.0F);
         return null;
     }
 
     @Override
     protected SoundEvent getDeathSound()
     {
-        this.playSound(ModSoundEvents.CROAKER_DEATH.get(), 1.0F, 1.0F);
+        this.playSound(ModSoundEvents.HUNTER_DEATH.get(), 1.0F, 1.0F);
         return null;
     }
     /*************************************************************************/
@@ -508,14 +520,14 @@ public class Hunter extends HunterAbstractVillagerEntity implements IAnimatable,
     @Override
     protected float getStandingEyeHeight(Pose poseIn, EntityDimensions sizeIn)
     {
-        return 1.8F;
+        return 1.65F;
     }
 
     @Override
     protected void tickDeath()
     {
         ++this.deathTime;
-        if (this.deathTime == 50 && !this.level.isClientSide())
+        if (this.deathTime == 60 && !this.level.isClientSide())
         {
             this.level.broadcastEntityEvent(this, (byte)60);
             this.remove(RemovalReason.KILLED);

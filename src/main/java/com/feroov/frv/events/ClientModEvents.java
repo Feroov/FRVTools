@@ -2,6 +2,7 @@ package com.feroov.frv.events;
 
 import com.feroov.frv.Frv;
 import com.feroov.frv.entities.render.CroakerRenderer;
+import com.feroov.frv.entities.render.FemaleHunterRenderer;
 import com.feroov.frv.entities.render.HunterRenderer;
 import com.feroov.frv.init.ModEntityTypes;
 import net.minecraftforge.api.distmarker.Dist;
@@ -28,5 +29,6 @@ public class ClientModEvents
         /** Passive **/
         event.registerEntityRenderer(ModEntityTypes.CROAKER.get(), CroakerRenderer::new);
         event.registerEntityRenderer(ModEntityTypes.HUNTER.get(), HunterRenderer::new);
+        event.registerEntityRenderer(ModEntityTypes.FEMALE_HUNTER.get(), FemaleHunterRenderer::new);
     }
 }

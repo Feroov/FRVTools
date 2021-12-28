@@ -2,6 +2,7 @@ package com.feroov.frv.events;
 
 import com.feroov.frv.Frv;
 import com.feroov.frv.entities.passive.Croaker;
+import com.feroov.frv.entities.passive.FemaleHunter;
 import com.feroov.frv.entities.passive.Hunter;
 import com.feroov.frv.init.ModEntityTypes;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
@@ -18,5 +19,6 @@ public class ModEvents
         /** Passive **/
         event.put(ModEntityTypes.CROAKER.get(), Croaker.createAttributes().build());
         event.put(ModEntityTypes.HUNTER.get(), Hunter.createAttributes().build());
+        event.put(ModEntityTypes.FEMALE_HUNTER.get(), FemaleHunter.createAttributes().build());
     }
 }

@@ -24,10 +24,17 @@ public class HunterRenderer extends GeoEntityRenderer<Hunter>
             Util.make(Maps.newEnumMap(HunterVariant.class), (p_114874_) ->
             {
                 p_114874_.put(HunterVariant.MAIN, new ResourceLocation("frv:textures/entity/hunter/hunter.png"));
+                p_114874_.put(HunterVariant.HUNTER2, new ResourceLocation("frv:textures/entity/hunter/hunter2.png"));
+                p_114874_.put(HunterVariant.HUNTER3, new ResourceLocation("frv:textures/entity/hunter/hunter3.png"));
+                p_114874_.put(HunterVariant.HUNTER4, new ResourceLocation("frv:textures/entity/hunter/hunter4.png"));
+                p_114874_.put(HunterVariant.HUNTER5, new ResourceLocation("frv:textures/entity/hunter/hunter5.png"));
+                p_114874_.put(HunterVariant.HUNTER6, new ResourceLocation("frv:textures/entity/hunter/hunter6.png"));
             });
 
-    public HunterRenderer(EntityRendererProvider.Context renderManager) {
+    public HunterRenderer(EntityRendererProvider.Context renderManager)
+    {
         super(renderManager, new HunterModel());
+        this.shadowRadius = 0.55F;
     }
     @Override
     public RenderType getRenderType(Hunter animatable, float partialTicks, PoseStack stack,
@@ -42,6 +49,12 @@ public class HunterRenderer extends GeoEntityRenderer<Hunter>
                             int packedOverlayIn, float red, float green, float blue, float partialTicks)
     {
         stackIn.scale(0.95F,0.95F,0.95F);
+    }
+
+    @Override
+    protected float getDeathMaxRotation(Hunter entityLivingBaseIn)
+    {
+        return 0;
     }
 
     @Override

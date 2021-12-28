@@ -68,17 +68,23 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
     // Put repositories for dependencies here
-
+    maven {
+        // location of the maven that hosts JEI files
+        name = "Progwml6 maven"
+        url = "https://dvs1.progwml6.com/files/maven/"
+    }
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.18.1-39.0.8'
+    minecraft 'net.minecraftforge:forge:1.18.1-39.0.9'
 
     repositories{
         maven { url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/' }
     }
     dependencies{
         implementation fg.deobf('software.bernie.geckolib:geckolib-1.18-forge:3.0.3')
+        compileOnly fg.deobf("mezz.jei:jei-1.18.1:9.1.1.48:api")
+        runtimeOnly fg.deobf("mezz.jei:jei-1.18.1:9.1.1.48")
     }
 
 }

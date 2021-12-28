@@ -32,6 +32,8 @@
   "entity.frv.croaker": "Croaker",
   "item.frv.hunter_spawn_egg": "Hunter Spawn Egg",
   "entity.frv.hunter": "Hunter",
+  "item.frv.female_hunter_spawn_egg": "Female Hunter Spawn Egg",
+  "entity.frv.female_hunter": "Female Hunter",
 
 
   "item.frv.coal_detector": "\u00A78Coal Detector\u00A78",

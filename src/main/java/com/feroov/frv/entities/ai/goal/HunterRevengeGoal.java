@@ -9,11 +9,11 @@ import net.minecraft.world.entity.player.Player;
 
 import java.util.EnumSet;
 
-public class AttackRevengeTargetGoal extends Goal
+public class HunterRevengeGoal extends Goal
 {
         private Hunter entity;
 
-        public AttackRevengeTargetGoal(Hunter entity)
+        public HunterRevengeGoal(Hunter entity)
         {
             this.entity = entity;
             this.setFlags(EnumSet.of(Goal.Flag.MOVE, Goal.Flag.LOOK));
@@ -42,7 +42,7 @@ public class AttackRevengeTargetGoal extends Goal
                 }
                 else
                 {
-                    revengeTarget.hurt(DamageSource.mobAttack(this.entity), 5.0F);
+                    revengeTarget.hurt(DamageSource.mobAttack(this.entity), 10.0F);
                     this.entity.swing(InteractionHand.MAIN_HAND);
                     this.entity.setLastHurtByMob(null);
                 }

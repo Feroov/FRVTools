@@ -5,7 +5,7 @@ import java.util.Comparator;
 
 public enum HunterVariant
 {
-    MAIN(0);
+    MAIN(0),HUNTER2(1),HUNTER3(2),HUNTER4(3),HUNTER5(4),HUNTER6(5),;
 
     private static final HunterVariant[] BY_ID = Arrays.stream(values()).sorted(Comparator.
             comparingInt(HunterVariant::getId)).toArray(HunterVariant[]::new);

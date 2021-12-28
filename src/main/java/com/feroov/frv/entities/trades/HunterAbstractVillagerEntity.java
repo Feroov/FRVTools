@@ -134,15 +134,15 @@ public class HunterAbstractVillagerEntity extends AgeableMob implements Inventor
     }
 
     public SoundEvent getNotifyTradeSound() {
-        return ModSoundEvents.CROAKER_YES.get();
+        return ModSoundEvents.HUNTER_YES.get();
     }
 
     protected SoundEvent getTradeUpdatedSound(boolean p_35323_) {
-        return p_35323_ ? ModSoundEvents.CROAKER_YES.get() : ModSoundEvents.CROAKER_NO.get();
+        return p_35323_ ? ModSoundEvents.HUNTER_YES.get() : ModSoundEvents.HUNTER_NO.get();
     }
 
     public void playCelebrateSound() {
-        this.playSound(ModSoundEvents.CROAKER_YES.get(), this.getSoundVolume(), this.getVoicePitch());
+        this.playSound(ModSoundEvents.HUNTER_YES.get(), this.getSoundVolume(), this.getVoicePitch());
     }
 
     public void addAdditionalSaveData(CompoundTag p_35301_) {
