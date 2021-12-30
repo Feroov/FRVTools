@@ -50,6 +50,7 @@ public class Croaker extends CroakerAbstractVillagerEntity implements IAnimatabl
     private Player customer;
     @Nullable
     private BlockPos wanderTarget;
+    private int despawnDelay;
     private Set<UUID> tradedCustomers = new HashSet<>();
     public static final EntityDataAccessor<Boolean> STUNNED = SynchedEntityData.defineId(Croaker.class, EntityDataSerializers.BOOLEAN);
     public static final EntityDataAccessor<Integer> STATE = SynchedEntityData.defineId(Croaker.class, EntityDataSerializers.INT);
@@ -144,7 +145,10 @@ public class Croaker extends CroakerAbstractVillagerEntity implements IAnimatabl
                 .add(Attributes.MOVEMENT_SPEED, 0.62D)
                 .add(Attributes.FOLLOW_RANGE, 25.0D);
     }
-
+    public void setDespawnDelay(int despawnDelay)
+    {
+        this.despawnDelay = despawnDelay;
+    }
 
     @Override
     protected void registerGoals()
@@ -375,4 +379,6 @@ public class Croaker extends CroakerAbstractVillagerEntity implements IAnimatabl
     {
         return false;
     }
+
+
 }

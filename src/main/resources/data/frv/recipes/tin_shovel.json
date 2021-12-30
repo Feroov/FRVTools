@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    " / ",
+    " / "
+  ],
+  "key": {
+    "#": {
+      "item": "frv:tin_ingot"
+    },
+    "/": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "frv:tin_shovel",
+    "count": 1
+  }
+}

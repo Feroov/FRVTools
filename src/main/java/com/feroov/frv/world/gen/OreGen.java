@@ -25,12 +25,24 @@ public class OreGen
 {
     public static final List<PlacedFeature> OVERWORLD_ORES = new ArrayList<>();
 
-    /**
-    public static final ConfiguredFeature<?, ?> TEST_CF = Feature.ORE.configured(new OreConfiguration
-            (new TagMatchTest(BlockTags.BASE_STONE_OVERWORLD), Blocks.SHROOMLIGHT.defaultBlockState(), 10,0.5f ));
-    public static final PlacedFeature TEST_PF = TEST_CF.placed(CountPlacement.of(60), InSquarePlacement.spread(),
-            HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(10), VerticalAnchor.belowTop(80)), BiomeFilter.biome());**/
-
+    /*
+    .defaultBlockState(), 10,0.5f));    // Size of vein
+    CountPlacement.of(60) // Attempts per chunk
+    HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(80) Min height for ore to spawn (worldMinHeight + height)  (min height -64)
+    VerticalAnchor.belowTop(175)) Max height for it to spawn (worldMaxHeight - height) (max height 319)
+     */
+    /****************************************************** Tin Ore ******************************************************************************/
+    // Normal
+    public static final ConfiguredFeature<?, ?> TIN_CF = Feature.ORE.configured(new OreConfiguration
+            (new TagMatchTest(BlockTags.BASE_STONE_OVERWORLD), ModBlocks.TIN_ORE.get().defaultBlockState(), 7,0.0f));
+    public static final PlacedFeature TIN_PF = TIN_CF.placed(CountPlacement.of(9), InSquarePlacement.spread(),
+            HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(80), VerticalAnchor.belowTop(255)), BiomeFilter.biome());
+    // Deepslate
+    public static final ConfiguredFeature<?, ?> TIN_DEEP_CF = Feature.ORE.configured(new OreConfiguration
+            (new TagMatchTest(BlockTags.BASE_STONE_OVERWORLD), ModBlocks.DEEPSLATE_TIN_ORE.get().defaultBlockState(), 10,0.0f));
+    public static final PlacedFeature TIN_DEEP_PF = TIN_DEEP_CF.placed(CountPlacement.of(5), InSquarePlacement.spread(),
+            HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(14), VerticalAnchor.belowTop(330)), BiomeFilter.biome());
+    /****************************************************** Tin Ore ******************************************************************************/
 
 
     @Mod.EventBusSubscriber(modid = Frv.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
@@ -50,13 +62,15 @@ public class OreGen
     {
         Registry<PlacedFeature> registry = BuiltinRegistries.PLACED_FEATURE;
 
-        //OVERWORLD_ORES.add(Registry.register(registry, new ResourceLocation(Frv.MOD_ID, "glowstone_ore"), OreGen.TEST_PF));
+        OVERWORLD_ORES.add(Registry.register(registry, new ResourceLocation(Frv.MOD_ID, "tin_ore"), OreGen.TIN_PF));
+        OVERWORLD_ORES.add(Registry.register(registry, new ResourceLocation(Frv.MOD_ID, "deepslate_tin_ore"), OreGen.TIN_DEEP_PF));
     }
 
     public static void registerConfigured()
     {
         Registry<ConfiguredFeature<?, ?>> registry = BuiltinRegistries.CONFIGURED_FEATURE;
 
-        //Registry.register(registry, new ResourceLocation(Frv.MOD_ID, "glowstone_ore"), OreGen.TEST_CF);
+        Registry.register(registry, new ResourceLocation(Frv.MOD_ID, "tin_ore"), OreGen.TIN_CF);
+        Registry.register(registry, new ResourceLocation(Frv.MOD_ID, "deepslate_tin_ore"), OreGen.TIN_DEEP_CF);
     }
 }

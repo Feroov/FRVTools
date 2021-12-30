@@ -2,6 +2,7 @@
   "itemGroup.frvtoolsModTab": "FRV Tools",
   "itemGroup.frvtoolsMisc": "FRV Tools - Special",
   "itemGroup.frvtoolsEgg": "FRV Tools - Mobs",
+  "itemGroup.frvtoolsBlocksItems": "FRV Tools - Blocks & Items",
 
   "item.frv.admin_sword": "\u00A74\u00A7lAdmin Sword",
 
@@ -15,6 +16,16 @@
   "item.frv.amethyst_axe": "Amethyst Axe",
   "item.frv.amethyst_shovel": "Amethyst Shovel",
   "item.frv.amethyst_hoe": "Amethyst Hoe",
+  "item.frv.copper_sword": "Copper Sword",
+  "item.frv.copper_pickaxe": "Copper Pickaxe",
+  "item.frv.copper_axe": "Copper Axe",
+  "item.frv.copper_shovel": "Copper Shovel",
+  "item.frv.copper_hoe": "Copper Hoe",
+  "item.frv.tin_sword": "Tin Sword",
+  "item.frv.tin_pickaxe": "Tin Pickaxe",
+  "item.frv.tin_axe": "Tin Axe",
+  "item.frv.tin_shovel": "Tin Shovel",
+  "item.frv.tin_hoe": "Tin Hoe",
 
   "item.frv.quartz_helmet": "Quartz Helmet",
   "item.frv.quartz_chestplate": "Quartz Chestplate",
@@ -24,7 +35,14 @@
   "item.frv.amethyst_chestplate": "Amethyst Chestplate",
   "item.frv.amethyst_leggings": "Amethyst Leggings",
   "item.frv.amethyst_boots": "Amethyst Boots",
-
+  "item.frv.copper_helmet": "Copper Helmet",
+  "item.frv.copper_chestplate": "Copper Chestplate",
+  "item.frv.copper_leggings": "Copper Leggings",
+  "item.frv.copper_boots": "Copper Boots",
+  "item.frv.tin_helmet": "Tin Helmet",
+  "item.frv.tin_chestplate": "Tin Chestplate",
+  "item.frv.tin_leggings": "Tin Leggings",
+  "item.frv.tin_boots": "Tin Boots",
 
 
 
@@ -59,7 +77,11 @@
   "item.frv.netherite_detector.no_valuables": "\u00A74\nNo Ancient Debris detected!\n\u00A74",
   "item.frv.all_detector": "All Ores Detector",
   "item.frv.all_detector_prime": "All Ores Detector Prime",
-  "item.frv.all_detector.no_valuables": "\u00A74\nNo Ores detected!\n\u00A74"
+  "item.frv.all_detector.no_valuables": "\u00A74\nNo Ores detected!\n\u00A74",
 
 
+
+  "item.frv.tin_ingot": "Tin Ingot",
+  "block.frv.tin_ore": "Tin Ore",
+  "block.frv.deepslate_tin_ore": "Deepslate Tin Ore"
 }

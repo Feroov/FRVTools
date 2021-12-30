@@ -33,7 +33,7 @@ public class ModVillagerTrades
                             new ModVillagerTrades.ItemsForEmeralds(Items.OAK_LOG, 1, 15, 5,1),
                             new ModVillagerTrades.ItemsForEmeralds(Items.AMETHYST_SHARD, 13, 1, 5, 1),
                             new ModVillagerTrades.ItemsForEmeralds(Items.ARROW, 1, 23, 5,3),
-                            new ModVillagerTrades.ItemsForEmeralds(Items.NETHERITE_SCRAP, 20, 1, 5, 1),
+                            new ModVillagerTrades.ItemsForEmeralds(Items.IRON_INGOT, 20, 45, 2, 1),
                             new ModVillagerTrades.ItemsForDiamond(Items.SPIDER_EYE, 1, 12, 5, 1),
                             new ModVillagerTrades.ItemsForEmeralds(Items.STRING, 1, 16, 5,2),
                             new ModVillagerTrades.ItemsForEmeralds(Items.GOLD_BLOCK, 1, 1, 5, 1),

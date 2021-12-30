@@ -7,6 +7,12 @@ import net.minecraftforge.common.Tags;
 
 public class ModTiers
 {
+    public static final ForgeTier COPPER = new ForgeTier(1,160,4.9f,1.0f,10,
+            Tags.Blocks.NEEDS_GOLD_TOOL, () -> Ingredient.of(Items.QUARTZ));
+
+    public static final ForgeTier TIN = new ForgeTier(2,210,5.5f,1.5f,10,
+            Tags.Blocks.NEEDS_GOLD_TOOL, () -> Ingredient.of(ModItems.TIN_INGOT.get()));
+
     public static final ForgeTier QUARTZ = new ForgeTier(2,320,6.5f,2.0f,10,
             Tags.Blocks.NEEDS_GOLD_TOOL, () -> Ingredient.of(Items.QUARTZ));
 
