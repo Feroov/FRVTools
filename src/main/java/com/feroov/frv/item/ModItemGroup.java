@@ -12,7 +12,7 @@ public class ModItemGroup
         @Override
         public ItemStack makeIcon()
         {
-            return new ItemStack(Items.AMETHYST_SHARD);
+            return new ItemStack(ModItems.LEAD_PICKAXE.get());
         }
     };
 

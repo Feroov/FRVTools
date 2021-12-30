@@ -83,12 +83,11 @@ public class CampsiteStructure extends StructureFeature<JigsawConfiguration>
                 context.registryAccess()
         );
 
-
+        // changes structure position on Y level negativee below, higher above ground
         BlockPos blockpos = context.chunkPos().getMiddleBlockPosition(0);
 
         Optional<PieceGenerator<JigsawConfiguration>> structurePiecesGenerator =
-                JigsawPlacement.addPieces(newContext, PoolElementStructurePiece::new, blockpos, false, true
-                );
+                JigsawPlacement.addPieces(newContext, PoolElementStructurePiece::new, blockpos, false, true);
         if(structurePiecesGenerator.isPresent()) {
             // I use to debug and quickly find out if the structure is spawning or not and where it is.
             // This is returning the coordinates of the center starting piece.

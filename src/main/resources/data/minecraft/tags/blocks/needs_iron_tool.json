@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-
+    "frv:lead_ore",
+    "frv:deepslate_lead_ore"
   ]
 }

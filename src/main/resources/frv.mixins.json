@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "com.feroov.frv.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "repurposed_structures.refmap.json",
+  "mixins": [
+    "features.LessjungleBushInStructuresMixin"
+
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "minVersion": "0.8"
+}

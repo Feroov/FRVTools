@@ -23,7 +23,10 @@ public enum ModArmorMaterial implements ArmorMaterial
     QUARTZ("quartz", 26, new int[]{2, 5, 6, 3}, 9, SoundEvents.ARMOR_EQUIP_DIAMOND,
             0.0F, 0.0F, () -> {return Ingredient.of(Items.QUARTZ);}),
 
-    AMETHYST("amethyst", 33, new int[]{3, 6, 8, 3}, 10, SoundEvents.ARMOR_EQUIP_DIAMOND,
+    LEAD("lead", 28, new int[]{3, 5, 6, 4}, 14, SoundEvents.ARMOR_EQUIP_IRON,
+            0.0F, 0.0F, () -> {return Ingredient.of(ModItems.LEAD_INGOT.get());}),
+
+    AMETHYST("amethyst", 33, new int[]{3, 6, 8, 3}, 10, SoundEvents.AMETHYST_CLUSTER_HIT,
             2.0F, 0.2F, () -> {return Ingredient.of(Items.AMETHYST_SHARD);});
 
     /**

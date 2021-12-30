@@ -28,7 +28,11 @@ import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.StructureSettings;
 import net.minecraft.world.level.levelgen.feature.ConfiguredStructureFeature;
 import net.minecraft.world.level.levelgen.feature.StructureFeature;
+import net.minecraft.world.level.levelgen.feature.configurations.JigsawConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.StructureFeatureConfiguration;
+import net.minecraft.world.level.levelgen.feature.structures.JigsawPlacement;
+import net.minecraft.world.level.levelgen.structure.PoolElementStructurePiece;
+import net.minecraft.world.level.levelgen.structure.pieces.PieceGenerator;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.world.WorldEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
@@ -43,6 +47,7 @@ import software.bernie.geckolib3.GeckoLib;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 
 @Mod(Frv.MOD_ID)
@@ -115,12 +120,6 @@ public class Frv
                     .add(Biomes.PLAINS).add(Biomes.FOREST).add(Biomes.JUNGLE).add(Biomes.SAVANNA).build();
             overworldBiomes.forEach(biomeKey -> associateBiomeToConfiguredStructure(FrvStructureToMultiMap, FrvConfiguredStructures.CONFIGURED_CAMP_SITE, biomeKey));
 
-
-
-
-
-
-
             ImmutableMap.Builder<StructureFeature<?>, ImmutableMultimap<ConfiguredStructureFeature<?, ?>,
                     ResourceKey<Biome>>> tempStructureToMultiMap = ImmutableMap.builder();
             worldStructureConfig.configuredStructures.entrySet().stream().filter(entry ->
@@ -135,6 +134,8 @@ public class Frv
             worldStructureConfig.structureConfig = tempMap;
         }
     }
+
+
 
     private static void associateBiomeToConfiguredStructure(Map<StructureFeature<?>, HashMultimap<ConfiguredStructureFeature<?, ?>,
             ResourceKey<Biome>>> STStructureToMultiMap, ConfiguredStructureFeature<?, ?> configuredStructureFeature, ResourceKey<Biome> biomeRegistryKey)

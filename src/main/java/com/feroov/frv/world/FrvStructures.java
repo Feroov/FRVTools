@@ -21,6 +21,20 @@ public class FrvStructures
     public static final DeferredRegister<StructureFeature<?>> DEFERRED_REGISTRY_STRUCTURE
             = DeferredRegister.create(ForgeRegistries.STRUCTURE_FEATURES, Frv.MOD_ID);
 
+    /**
+     * StructureFeatureConfiguration( WHAT VALUE GOES HERE );
+     * 1.) Stronghold, buried treasure, mineshaft 1/0
+     * 2.) nether fossil 2/1
+     * 3.) shipwreck 24/4
+     * 4.) bastion, nether fortress 27/4
+     * 5.) ocean monument 32/5
+     * 6.) ocean ruin 20/8
+     * 7.) village, igloo, pyramid, swamp hut, pillager outpost 32/8
+     * 8.) end city 20/11
+     * 9.) ruined portal 40/15
+     * 10.) woodland mansion 80/20
+     */
+
     public static final RegistryObject<StructureFeature<JigsawConfiguration>> CAMP_SITE =
             DEFERRED_REGISTRY_STRUCTURE.register("campsite", () -> (new CampsiteStructure(JigsawConfiguration.CODEC)));
 

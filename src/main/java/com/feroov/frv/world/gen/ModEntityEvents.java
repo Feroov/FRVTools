@@ -46,51 +46,51 @@ public class ModEntityEvents
 
         if (biome.getBiomeCategory() == Biome.BiomeCategory.PLAINS)
             event.getSpawns().getSpawner(MobCategory.CREATURE)
-                    .add(new MobSpawnSettings.SpawnerData(ModEntityTypes.HUNTER.get(), 65, 1, 3));
+                    .add(new MobSpawnSettings.SpawnerData(ModEntityTypes.HUNTER.get(), 65, 1, 2));
 
         if (biome.getBiomeCategory() == Biome.BiomeCategory.PLAINS)
             event.getSpawns().getSpawner(MobCategory.CREATURE)
-                    .add(new MobSpawnSettings.SpawnerData(ModEntityTypes.FEMALE_HUNTER.get(), 65, 1, 3));
+                    .add(new MobSpawnSettings.SpawnerData(ModEntityTypes.FEMALE_HUNTER.get(), 65, 1, 2));
 
         if (biome.getBiomeCategory() == Biome.BiomeCategory.EXTREME_HILLS)
             event.getSpawns().getSpawner(MobCategory.CREATURE)
-                    .add(new MobSpawnSettings.SpawnerData(ModEntityTypes.HUNTER.get(), 80, 1, 3));
+                    .add(new MobSpawnSettings.SpawnerData(ModEntityTypes.HUNTER.get(), 80, 1, 2));
 
         if (biome.getBiomeCategory() == Biome.BiomeCategory.EXTREME_HILLS)
             event.getSpawns().getSpawner(MobCategory.CREATURE)
-                    .add(new MobSpawnSettings.SpawnerData(ModEntityTypes.FEMALE_HUNTER.get(), 80, 1, 3));
+                    .add(new MobSpawnSettings.SpawnerData(ModEntityTypes.FEMALE_HUNTER.get(), 80, 1, 2));
 
         if (biome.getBiomeCategory() == Biome.BiomeCategory.FOREST)
             event.getSpawns().getSpawner(MobCategory.CREATURE)
-                    .add(new MobSpawnSettings.SpawnerData(ModEntityTypes.HUNTER.get(), 200, 1, 3));
+                    .add(new MobSpawnSettings.SpawnerData(ModEntityTypes.HUNTER.get(), 200, 1, 2));
 
         if (biome.getBiomeCategory() == Biome.BiomeCategory.FOREST)
             event.getSpawns().getSpawner(MobCategory.CREATURE)
-                    .add(new MobSpawnSettings.SpawnerData(ModEntityTypes.FEMALE_HUNTER.get(), 200, 1, 3));
+                    .add(new MobSpawnSettings.SpawnerData(ModEntityTypes.FEMALE_HUNTER.get(), 200, 1, 2));
 
         if (biome.getBiomeCategory() == Biome.BiomeCategory.JUNGLE)
             event.getSpawns().getSpawner(MobCategory.CREATURE)
-                    .add(new MobSpawnSettings.SpawnerData(ModEntityTypes.HUNTER.get(), 200, 1, 3));
+                    .add(new MobSpawnSettings.SpawnerData(ModEntityTypes.HUNTER.get(), 200, 1, 2));
 
         if (biome.getBiomeCategory() == Biome.BiomeCategory.JUNGLE)
             event.getSpawns().getSpawner(MobCategory.CREATURE)
-                    .add(new MobSpawnSettings.SpawnerData(ModEntityTypes.FEMALE_HUNTER.get(), 200, 1, 3));
+                    .add(new MobSpawnSettings.SpawnerData(ModEntityTypes.FEMALE_HUNTER.get(), 200, 1, 2));
 
         if (biome.getBiomeCategory() == Biome.BiomeCategory.SAVANNA)
             event.getSpawns().getSpawner(MobCategory.CREATURE)
-                    .add(new MobSpawnSettings.SpawnerData(ModEntityTypes.HUNTER.get(), 200, 1, 3));
+                    .add(new MobSpawnSettings.SpawnerData(ModEntityTypes.HUNTER.get(), 40, 1, 2));
 
         if (biome.getBiomeCategory() == Biome.BiomeCategory.SAVANNA)
             event.getSpawns().getSpawner(MobCategory.CREATURE)
-                    .add(new MobSpawnSettings.SpawnerData(ModEntityTypes.FEMALE_HUNTER.get(), 200, 1, 3));
+                    .add(new MobSpawnSettings.SpawnerData(ModEntityTypes.FEMALE_HUNTER.get(), 40, 1, 2));
 
         if (biome.getBiomeCategory() == Biome.BiomeCategory.TAIGA)
             event.getSpawns().getSpawner(MobCategory.CREATURE)
-                    .add(new MobSpawnSettings.SpawnerData(ModEntityTypes.HUNTER.get(), 80, 1, 3));
+                    .add(new MobSpawnSettings.SpawnerData(ModEntityTypes.HUNTER.get(), 80, 1, 2));
 
         if (biome.getBiomeCategory() == Biome.BiomeCategory.TAIGA)
             event.getSpawns().getSpawner(MobCategory.CREATURE)
-                    .add(new MobSpawnSettings.SpawnerData(ModEntityTypes.FEMALE_HUNTER.get(), 80, 1, 3));
+                    .add(new MobSpawnSettings.SpawnerData(ModEntityTypes.FEMALE_HUNTER.get(), 80, 1, 2));
     }
 
     /***************************************************************************/

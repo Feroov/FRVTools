@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "frv:deepslate_lead_ore"
+  },
+  "result": "frv:lead_ingot",
+  "experience": 0.7,
+  "cookingtime": 200
+}

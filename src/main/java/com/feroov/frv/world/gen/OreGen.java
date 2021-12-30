@@ -42,7 +42,20 @@ public class OreGen
             (new TagMatchTest(BlockTags.BASE_STONE_OVERWORLD), ModBlocks.DEEPSLATE_TIN_ORE.get().defaultBlockState(), 10,0.0f));
     public static final PlacedFeature TIN_DEEP_PF = TIN_DEEP_CF.placed(CountPlacement.of(5), InSquarePlacement.spread(),
             HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(14), VerticalAnchor.belowTop(330)), BiomeFilter.biome());
-    /****************************************************** Tin Ore ******************************************************************************/
+    /**********************************************************************************************************************************************/
+
+    /****************************************************** Lead Ore ******************************************************************************/
+    // Normal
+    public static final ConfiguredFeature<?, ?> LEAD_CF = Feature.ORE.configured(new OreConfiguration
+            (new TagMatchTest(BlockTags.BASE_STONE_OVERWORLD), ModBlocks.LEAD_ORE.get().defaultBlockState(), 6,0.0f));
+    public static final PlacedFeature LEAD_PF = LEAD_CF.placed(CountPlacement.of(5), InSquarePlacement.spread(),
+            HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(80), VerticalAnchor.belowTop(275)), BiomeFilter.biome());
+    // Deepslate
+    public static final ConfiguredFeature<?, ?> LEAD_DEEP_CF = Feature.ORE.configured(new OreConfiguration
+            (new TagMatchTest(BlockTags.BASE_STONE_OVERWORLD), ModBlocks.DEEPSLATE_LEAD_ORE.get().defaultBlockState(), 7,0.0f));
+    public static final PlacedFeature LEAD_DEEP_PF = LEAD_DEEP_CF.placed(CountPlacement.of(3), InSquarePlacement.spread(),
+            HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(14), VerticalAnchor.belowTop(330)), BiomeFilter.biome());
+    /**********************************************************************************************************************************************/
 
 
     @Mod.EventBusSubscriber(modid = Frv.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
@@ -64,6 +77,8 @@ public class OreGen
 
         OVERWORLD_ORES.add(Registry.register(registry, new ResourceLocation(Frv.MOD_ID, "tin_ore"), OreGen.TIN_PF));
         OVERWORLD_ORES.add(Registry.register(registry, new ResourceLocation(Frv.MOD_ID, "deepslate_tin_ore"), OreGen.TIN_DEEP_PF));
+        OVERWORLD_ORES.add(Registry.register(registry, new ResourceLocation(Frv.MOD_ID, "lead_ore"), OreGen.LEAD_PF));
+        OVERWORLD_ORES.add(Registry.register(registry, new ResourceLocation(Frv.MOD_ID, "deepslate_lead_ore"), OreGen.LEAD_DEEP_PF));
     }
 
     public static void registerConfigured()
@@ -72,5 +87,7 @@ public class OreGen
 
         Registry.register(registry, new ResourceLocation(Frv.MOD_ID, "tin_ore"), OreGen.TIN_CF);
         Registry.register(registry, new ResourceLocation(Frv.MOD_ID, "deepslate_tin_ore"), OreGen.TIN_DEEP_CF);
+        Registry.register(registry, new ResourceLocation(Frv.MOD_ID, "lead_ore"), OreGen.LEAD_CF);
+        Registry.register(registry, new ResourceLocation(Frv.MOD_ID, "deepslate_lead_ore"), OreGen.LEAD_DEEP_CF);
     }
 }
