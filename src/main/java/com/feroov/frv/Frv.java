@@ -116,9 +116,15 @@ public class Frv
 
             HashMap<StructureFeature<?>, HashMultimap<ConfiguredStructureFeature<?, ?>, ResourceKey<Biome>>> FrvStructureToMultiMap = new HashMap<>();
 
-            ImmutableSet<ResourceKey<Biome>> overworldBiomes = ImmutableSet.<ResourceKey<Biome>>builder()
+            ImmutableSet<ResourceKey<Biome>> campsite = ImmutableSet.<ResourceKey<Biome>>builder()
                     .add(Biomes.PLAINS).add(Biomes.FOREST).add(Biomes.JUNGLE).add(Biomes.SAVANNA).build();
-            overworldBiomes.forEach(biomeKey -> associateBiomeToConfiguredStructure(FrvStructureToMultiMap, FrvConfiguredStructures.CONFIGURED_CAMP_SITE, biomeKey));
+            campsite.forEach(biomeKey -> associateBiomeToConfiguredStructure(FrvStructureToMultiMap, FrvConfiguredStructures.CONFIGURED_CAMP_SITE, biomeKey));
+
+            ImmutableSet<ResourceKey<Biome>> pirateship = ImmutableSet.<ResourceKey<Biome>>builder()
+                    .add(Biomes.DEEP_OCEAN).add(Biomes.DEEP_COLD_OCEAN).add(Biomes.DEEP_LUKEWARM_OCEAN).build();
+            pirateship.forEach(biomeKey -> associateBiomeToConfiguredStructure(FrvStructureToMultiMap, FrvConfiguredStructures.CONFIGURED_PIRATE_SHIP, biomeKey));
+
+
 
             ImmutableMap.Builder<StructureFeature<?>, ImmutableMultimap<ConfiguredStructureFeature<?, ?>,
                     ResourceKey<Biome>>> tempStructureToMultiMap = ImmutableMap.builder();
@@ -129,9 +135,13 @@ public class Frv
             FrvStructureToMultiMap.forEach((key, value) -> tempStructureToMultiMap.put(key, ImmutableMultimap.copyOf(value)));
             worldStructureConfig.configuredStructures = tempStructureToMultiMap.build();
 
-            Map<StructureFeature<?>, StructureFeatureConfiguration> tempMap = new HashMap<>(worldStructureConfig.structureConfig());
-            tempMap.putIfAbsent(FrvStructures.CAMP_SITE.get(), StructureSettings.DEFAULTS.get(FrvStructures.CAMP_SITE.get()));
-            worldStructureConfig.structureConfig = tempMap;
+            Map<StructureFeature<?>, StructureFeatureConfiguration> campsiteMap = new HashMap<>(worldStructureConfig.structureConfig());
+            campsiteMap.putIfAbsent(FrvStructures.CAMP_SITE.get(), StructureSettings.DEFAULTS.get(FrvStructures.CAMP_SITE.get()));
+            worldStructureConfig.structureConfig = campsiteMap;
+
+            Map<StructureFeature<?>, StructureFeatureConfiguration> pirateshipMap = new HashMap<>(worldStructureConfig.structureConfig());
+            pirateshipMap.putIfAbsent(FrvStructures.PIRATE_SHIP.get(), StructureSettings.DEFAULTS.get(FrvStructures.PIRATE_SHIP.get()));
+            worldStructureConfig.structureConfig = pirateshipMap;
         }
     }
 

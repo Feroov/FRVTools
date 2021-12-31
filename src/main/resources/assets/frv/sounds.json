@@ -100,10 +100,27 @@
     "name": "frv:hunter_no3"}, {
     "name": "frv:hunter_no4"}], "subtitle": "frv.hunter_no"
   },
+
+
+
+  "pirate_captain_ambient": {"category": "passive", "sounds": [{
+    "name": "frv:pirate_captain_ambient"}, {
+    "name": "frv:pirate_captain_ambient2"}], "subtitle": "frv.pirate_captain_ambient"
+  },
+
+  "pirate_captain_hurt": {"category": "passive", "sounds": [{
+    "name": "frv:pirate_captain_hurt"}, {
+    "name": "frv:pirate_captain_hurt2"}], "subtitle": "frv.pirate_captain_hurt"
+  },
+
+  "pirate_captain_death": {"category": "passive", "sounds": [{
+    "name": "frv:pirate_captain_death"}, {
+    "name": "frv:pirate_captain_death2"}], "subtitle": "frv.pirate_death"
+  },
   
   
 
 
-  "detector_sound": {"category": "misc", "sounds": [{"name": "frv:detector_sound"}], "subtitle": "frv.detector_sound"
-  }
+  "detector_sound": {"category": "misc", "sounds": [{"name": "frv:detector_sound"}], "subtitle": "frv.detector_sound"},
+  "sword_swing": {"category": "misc", "sounds": [{"name": "frv:sword_swing"}], "subtitle": "frv.sword_swing"}
 }

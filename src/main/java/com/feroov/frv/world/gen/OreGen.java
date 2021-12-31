@@ -52,7 +52,7 @@ public class OreGen
             HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(80), VerticalAnchor.belowTop(275)), BiomeFilter.biome());
     // Deepslate
     public static final ConfiguredFeature<?, ?> LEAD_DEEP_CF = Feature.ORE.configured(new OreConfiguration
-            (new TagMatchTest(BlockTags.BASE_STONE_OVERWORLD), ModBlocks.DEEPSLATE_LEAD_ORE.get().defaultBlockState(), 7,0.0f));
+            (new TagMatchTest(BlockTags.BASE_STONE_OVERWORLD), ModBlocks.DEEPSLATE_LEAD_ORE.get().defaultBlockState(), 3,0.0f));
     public static final PlacedFeature LEAD_DEEP_PF = LEAD_DEEP_CF.placed(CountPlacement.of(3), InSquarePlacement.spread(),
             HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(14), VerticalAnchor.belowTop(330)), BiomeFilter.biome());
     /**********************************************************************************************************************************************/

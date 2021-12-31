@@ -1,9 +1,11 @@
 package com.feroov.frv.events;
 
 import com.feroov.frv.Frv;
+import com.feroov.frv.entities.projectiles.render.MeleeRender;
 import com.feroov.frv.entities.render.CroakerRenderer;
 import com.feroov.frv.entities.render.FemaleHunterRenderer;
 import com.feroov.frv.entities.render.HunterRenderer;
+import com.feroov.frv.entities.render.PirateCaptainRenderer;
 import com.feroov.frv.init.ModEntityTypes;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -30,5 +32,11 @@ public class ClientModEvents
         event.registerEntityRenderer(ModEntityTypes.CROAKER.get(), CroakerRenderer::new);
         event.registerEntityRenderer(ModEntityTypes.HUNTER.get(), HunterRenderer::new);
         event.registerEntityRenderer(ModEntityTypes.FEMALE_HUNTER.get(), FemaleHunterRenderer::new);
+
+        /** Hostile **/
+        event.registerEntityRenderer(ModEntityTypes.PIRATE_CAPTAIN.get(), PirateCaptainRenderer::new);
+
+        /** Misc **/
+        event.registerEntityRenderer(ModEntityTypes.MELEE.get(), MeleeRender::new);
     }
 }

@@ -2,6 +2,7 @@ package com.feroov.frv.world;
 
 import com.feroov.frv.Frv;
 import com.feroov.frv.world.structure.CampsiteStructure;
+import com.feroov.frv.world.structure.PirateshipStructure;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.data.BuiltinRegistries;
@@ -38,9 +39,12 @@ public class FrvStructures
     public static final RegistryObject<StructureFeature<JigsawConfiguration>> CAMP_SITE =
             DEFERRED_REGISTRY_STRUCTURE.register("campsite", () -> (new CampsiteStructure(JigsawConfiguration.CODEC)));
 
-    public static void setupStructures() {setupMapSpacingAndLand(CAMP_SITE.get(),
-            new StructureFeatureConfiguration(20 , 8 , 1234567890), true);
+    public static final RegistryObject<StructureFeature<JigsawConfiguration>> PIRATE_SHIP =
+            DEFERRED_REGISTRY_STRUCTURE.register("pirateship", () -> (new PirateshipStructure(JigsawConfiguration.CODEC)));
 
+    public static void setupStructures() {
+        setupMapSpacingAndLand(CAMP_SITE.get(), new StructureFeatureConfiguration(20 , 8 , 1234567890), true);
+        setupMapSpacingAndLand(PIRATE_SHIP.get(), new StructureFeatureConfiguration(32 , 8 , 1234567890), false);
     }
 
     public static <F extends StructureFeature<?>>
