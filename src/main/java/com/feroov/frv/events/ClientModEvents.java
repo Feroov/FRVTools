@@ -1,11 +1,10 @@
 package com.feroov.frv.events;
 
 import com.feroov.frv.Frv;
-import com.feroov.frv.entities.projectiles.render.MeleeRender;
-import com.feroov.frv.entities.render.CroakerRenderer;
-import com.feroov.frv.entities.render.FemaleHunterRenderer;
-import com.feroov.frv.entities.render.HunterRenderer;
-import com.feroov.frv.entities.render.PirateCaptainRenderer;
+import com.feroov.frv.entities.projectiles.render.CannonBallRender;
+import com.feroov.frv.entities.projectiles.render.MusketAmmoRender;
+import com.feroov.frv.entities.projectiles.render.PirateCaptainMeleeRender;
+import com.feroov.frv.entities.render.*;
 import com.feroov.frv.init.ModEntityTypes;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -35,8 +34,12 @@ public class ClientModEvents
 
         /** Hostile **/
         event.registerEntityRenderer(ModEntityTypes.PIRATE_CAPTAIN.get(), PirateCaptainRenderer::new);
+        event.registerEntityRenderer(ModEntityTypes.FLINTLOCKER.get(), FlintlockerRenderer::new);
 
         /** Misc **/
-        event.registerEntityRenderer(ModEntityTypes.MELEE.get(), MeleeRender::new);
+        event.registerEntityRenderer(ModEntityTypes.PIRATE_CAPTAIN_MELEE.get(), PirateCaptainMeleeRender::new);
+        event.registerEntityRenderer(ModEntityTypes.CANNON_BALL.get(), CannonBallRender::new);
+        event.registerEntityRenderer(ModEntityTypes.MUSKET_AMMO.get(), MusketAmmoRender::new);
+        event.registerEntityRenderer(ModEntityTypes.CANNON.get(), CannonRenderer::new);
     }
 }

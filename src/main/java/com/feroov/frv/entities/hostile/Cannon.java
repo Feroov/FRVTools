@@ -1,6 +1,7 @@
 package com.feroov.frv.entities.hostile;
 
 
+import com.feroov.frv.entities.projectiles.CannonBall;
 import com.feroov.frv.entities.projectiles.PirateCaptainMelee;
 import com.feroov.frv.sound.ModSoundEvents;
 import net.minecraft.nbt.CompoundTag;
@@ -21,7 +22,8 @@ import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
-import net.minecraft.world.entity.monster.*;
+import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.monster.RangedAttackMob;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -40,43 +42,23 @@ import javax.annotation.Nullable;
 import java.util.EnumSet;
 
 
-public class PirateCaptain extends PathfinderMob implements IAnimatable, RangedAttackMob
+public class Cannon extends Monster implements IAnimatable, RangedAttackMob
 {
-    public static final EntityDataAccessor<Boolean> STUNNED = SynchedEntityData.defineId(PirateCaptain.class, EntityDataSerializers.BOOLEAN);
-    public static final EntityDataAccessor<Integer> STATE = SynchedEntityData.defineId(PirateCaptain.class, EntityDataSerializers.INT);
-    public static final EntityDataAccessor<Integer> ATTACK = SynchedEntityData.defineId(PirateCaptain.class, EntityDataSerializers.INT);
+    public static final EntityDataAccessor<Boolean> STUNNED = SynchedEntityData.defineId(Cannon.class, EntityDataSerializers.BOOLEAN);
+    public static final EntityDataAccessor<Integer> STATE = SynchedEntityData.defineId(Cannon.class, EntityDataSerializers.INT);
+    public static final EntityDataAccessor<Integer> ATTACK = SynchedEntityData.defineId(Cannon.class, EntityDataSerializers.INT);
 
-    private final ServerBossEvent bossInfo = (new ServerBossEvent(this.getDisplayName(),
-            BossEvent.BossBarColor.RED, BossEvent.BossBarOverlay.PROGRESS));
-
-    public ServerBossEvent getBossInfo() {
-        return bossInfo;
-    }
     /******************************** Animation methods *****************************/
     private final AnimationFactory factory = new AnimationFactory(this);
+
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event)
     {
-        if (event.isMoving())
-        {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("walk", true));
-            return PlayState.CONTINUE;
-        }
-        if ((this.dead || this.getHealth() < 0.01 || this.isDeadOrDying()))
-        {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("death", false));
-            return PlayState.CONTINUE;
-        }
         event.getController().setAnimation(new AnimationBuilder().addAnimation("idle", true));
         return PlayState.CONTINUE;
     }
 
     private <E extends IAnimatable> PlayState attack(AnimationEvent<E> event)
     {
-        if ((this.dead || this.getHealth() < 0.01 || this.isDeadOrDying()))
-        {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("death", false));
-            return PlayState.CONTINUE;
-        }
         if (isAggressive())
         {
             event.getController().setAnimation(new AnimationBuilder().addAnimation("attack", true));
@@ -89,9 +71,9 @@ public class PirateCaptain extends PathfinderMob implements IAnimatable, RangedA
     @Override
     public void registerControllers(AnimationData data)
     {
-        data.addAnimationController(new AnimationController<PirateCaptain>
-                (this, "controller", 0, this::predicate));
-        data.addAnimationController(new AnimationController<PirateCaptain>
+        data.addAnimationController(new AnimationController<Cannon>
+                (this, "predicate", 0, this::predicate));
+        data.addAnimationController(new AnimationController<Cannon>
                 (this, "attackController", 0, this::attack));
     }
 
@@ -109,9 +91,10 @@ public class PirateCaptain extends PathfinderMob implements IAnimatable, RangedA
 
 
     /******************************** Constructor *************************************/
-    public PirateCaptain(EntityType<? extends PathfinderMob> p_i48549_1_, Level p_i48549_2_)
+    public Cannon(EntityType<? extends Monster> p_i48549_1_, Level p_i48549_2_)
     {
         super(p_i48549_1_, p_i48549_2_);
+        this.isNoAi();
     }
     /*********************************************************************************/
 
@@ -128,10 +111,12 @@ public class PirateCaptain extends PathfinderMob implements IAnimatable, RangedA
     public static AttributeSupplier.Builder createAttributes()
     {
         return Mob.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 155.0D)
-                .add(Attributes.MOVEMENT_SPEED, 0.62D)
-                .add(Attributes.FOLLOW_RANGE, 15.0D)
-                .add(Attributes.ATTACK_DAMAGE, 0.0D);
+                .add(Attributes.MAX_HEALTH, 10.0D)
+                .add(Attributes.MOVEMENT_SPEED, 0.0D)
+                .add(Attributes.FOLLOW_RANGE, 24.0D)
+                .add(Attributes.ATTACK_DAMAGE, 0.0D)
+                .add(Attributes.ATTACK_KNOCKBACK, 20.0D)
+                .add(Attributes.KNOCKBACK_RESISTANCE, 100.0D);
     }
 
     @Override
@@ -155,22 +140,17 @@ public class PirateCaptain extends PathfinderMob implements IAnimatable, RangedA
     protected void registerGoals()
     {
         super.registerGoals();
-        this.goalSelector.addGoal(0, new FloatGoal(this));
-        this.goalSelector.addGoal(1, new OpenDoorGoal(this,true));
-        this.targetSelector.addGoal(2, new PirateCaptainAttackGoal(this, 0.35D, true, 3));//These are combined
+        this.targetSelector.addGoal(2, new CannonAttackGoal(this, 0.0D, true, 3));//These are combined
         this.goalSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, Player.class, true));
-        this.goalSelector.addGoal(4, new PirateCaptainRangedAttackGoal(this, 0.35D, 18, 1.0F, 0)); // These are combined
-        this.goalSelector.addGoal(5, new WaterAvoidingRandomStrollGoal(this, 0.4D));
-        this.goalSelector.addGoal(6, new MoveTowardsRestrictionGoal(this, 0.4D));
-        this.goalSelector.addGoal(7, new RandomLookAroundGoal(this));
+        this.goalSelector.addGoal(4, new CannonRangedAttackGoal(this, 0.0D, 80, 24.0F, 0)); // These are combined
     }
 
 
     /*************************** Attack Goal *********************************/
     /** Must combine ranged and normal attack in order to anim ranged (state stuff)**/
-    static class PirateCaptainAttackGoal extends MeleeAttackGoal
+    static class CannonAttackGoal extends MeleeAttackGoal
     {
-        private final PirateCaptain entity;
+        private final Cannon entity;
         private final double speedModifier;
         private int statecheck;
         private int ticksUntilNextAttack;
@@ -179,7 +159,7 @@ public class PirateCaptain extends PathfinderMob implements IAnimatable, RangedA
         private double pathedTargetY;
         private double pathedTargetZ;
 
-        public PirateCaptainAttackGoal(PirateCaptain zombieIn, double speedIn, boolean longMemoryIn, int state)
+        public CannonAttackGoal(Cannon zombieIn, double speedIn, boolean longMemoryIn, int state)
         {
             super(zombieIn, speedIn, longMemoryIn);
             this.entity = zombieIn;
@@ -265,9 +245,9 @@ public class PirateCaptain extends PathfinderMob implements IAnimatable, RangedA
             return this.mob.getBbWidth() * 0.0F * this.mob.getBbWidth() * 0.0F + attackTarget.getBbWidth();
         }
     }
-    public static class PirateCaptainRangedAttackGoal extends Goal {
-        private final PirateCaptain mob;
-        private final PirateCaptain rangedAttackMob;
+    public static class CannonRangedAttackGoal extends Goal {
+        private final Cannon mob;
+        private final Cannon rangedAttackMob;
         private int statecheck;
         @Nullable
         private LivingEntity target;
@@ -279,11 +259,11 @@ public class PirateCaptain extends PathfinderMob implements IAnimatable, RangedA
         private final float attackRadius;
         private final float attackRadiusSqr;
 
-        public PirateCaptainRangedAttackGoal(PirateCaptain femaleHunter, double speedIn, int dpsIn, float rangeIn, int state) {
+        public CannonRangedAttackGoal(Cannon femaleHunter, double speedIn, int dpsIn, float rangeIn, int state) {
             this(femaleHunter, speedIn, dpsIn, dpsIn, rangeIn, state);
         }
 
-        public PirateCaptainRangedAttackGoal(PirateCaptain femaleHunter, double speedIn, int atckIntervalMin, int atckIntervalMax, float atckRadius, int state) {
+        public CannonRangedAttackGoal(Cannon femaleHunter, double speedIn, int atckIntervalMin, int atckIntervalMax, float atckRadius, int state) {
             if (femaleHunter == null) {
                 throw new IllegalArgumentException("ArrowAttackGoal requires Mob implements RangedAttackMob");
             } else {
@@ -375,14 +355,15 @@ public class PirateCaptain extends PathfinderMob implements IAnimatable, RangedA
 
 
     public void performRangedAttack(LivingEntity livingEntity, float p_32142_) {
-        PirateCaptainMelee arrow = new PirateCaptainMelee(this.level, this);
+        CannonBall arrow = new CannonBall(this.level, this);
         double d0 = livingEntity.getEyeY() - (double)1.1F;
         double d1 = livingEntity.getX() - this.getX();
         double d2 = d0 - arrow.getY();
         double d3 = livingEntity.getZ() - this.getZ();
         double d4 = Math.sqrt(d1 * d1 + d3 * d3) * (double)0.2F;
-        arrow.shoot(d1, d2 + d4, d3, 1.6F, 4.0F);
-        this.playSound(SoundEvents.SKELETON_SHOOT, 0.0F, 0.4F / (this.getRandom().nextFloat() * 0.4F + 0.8F));
+                                                  //speed          // accuracy
+        arrow.shoot(d1, d2 + d4, d3, 1.6F, 6.0F);
+        this.playSound(ModSoundEvents.CANNON_SHOOT.get(), 6.0F, 1.0F / (this.getRandom().nextFloat() * 0.4F + 0.8F));
         this.level.addFreshEntity(arrow);
 
     }
@@ -397,85 +378,44 @@ public class PirateCaptain extends PathfinderMob implements IAnimatable, RangedA
     @Override
     protected SoundEvent getAmbientSound()
     {
-        this.playSound(ModSoundEvents.PIRATE_CAPTAIN_AMBIENT.get(), 1.0F, 1.0F);
+        this.playSound(ModSoundEvents.PIRATE_CAPTAIN_AMBIENT.get(), 0.0F, 1.0F);
         return null;
     }
 
     @Override
     protected SoundEvent getHurtSound(@Nonnull DamageSource damageSourceIn)
     {
-        this.playSound(ModSoundEvents.PIRATE_CAPTAIN_HURT.get(), 1.0F, 1.0F);
+        this.playSound(ModSoundEvents.PIRATE_CAPTAIN_HURT.get(), 0.0F, 1.0F);
         return null;
     }
 
     @Override
     protected SoundEvent getDeathSound()
     {
-        this.playSound(ModSoundEvents.PIRATE_CAPTAIN_DEATH.get(), 1.0F, 1.0F);
+        this.playSound(ModSoundEvents.PIRATE_CAPTAIN_DEATH.get(), 0.0F, 1.0F);
         return null;
     }
     /*************************************************************************/
 
-
     @Override
-    protected float getStandingEyeHeight(Pose poseIn, EntityDimensions sizeIn)
+    public boolean isPushable()
     {
-        return 2.25F;
+        return false;
     }
 
     @Override
-    protected void tickDeath()
+    protected void pushEntities()
     {
-        ++this.deathTime;
-        if (this.deathTime == 60 && !this.level.isClientSide())
-        {
-            this.level.broadcastEntityEvent(this, (byte)60);
-            this.remove(RemovalReason.KILLED);
-        }
-
     }
-
+    @Override
+    protected int getExperienceReward(@Nonnull Player player)
+    {
+        return 0;
+    }
     @Override
     public boolean isBaby()
     {
         return false;
     }
 
-    /************ Boss Bar **************/
-    @Override
-    public void startSeenByPlayer(ServerPlayer player) {
-        super.startSeenByPlayer(player);
-        this.bossInfo.addPlayer(player);
-    }
-
-    @Override
-    public void stopSeenByPlayer(ServerPlayer player) {
-        super.stopSeenByPlayer(player);
-        this.bossInfo.removePlayer(player);
-    }
-
-    @Override
-    public int getMaxSpawnClusterSize() {
-        return 1;
-    }
-
-    @Override
-    public void readAdditionalSaveData(CompoundTag compound) {
-        super.readAdditionalSaveData(compound);
-        if (this.hasCustomName()) {
-            this.bossInfo.setName(this.getDisplayName());
-        }
-    }
-
-    @Override
-    public void setCustomName(Component name) {
-        super.setCustomName(name);
-        this.bossInfo.setName(this.getDisplayName());
-    }
-
-    @Override
-    protected void customServerAiStep() {
-        super.customServerAiStep();
-        this.bossInfo.setProgress(this.getHealth() / this.getMaxHealth());
-    }
 }

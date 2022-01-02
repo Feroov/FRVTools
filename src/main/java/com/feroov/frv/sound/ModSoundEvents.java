@@ -74,7 +74,7 @@ public class ModSoundEvents
     public static final RegistryObject<SoundEvent> FEMALE_HUNTER_NO3 = SOUND_EVENTS.register("female_hunter_no3", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "female_hunter_no3")));
     public static final RegistryObject<SoundEvent> FEMALE_HUNTER_NO4 = SOUND_EVENTS.register("female_hunter_no4", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "female_hunter_no4")));
 
-    //Pirate Captain
+    // Pirate Captain
     public static final RegistryObject<SoundEvent> PIRATE_CAPTAIN_AMBIENT = SOUND_EVENTS.register("pirate_captain_ambient", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "pirate_captain_ambient")));
     public static final RegistryObject<SoundEvent> PIRATE_CAPTAIN_AMBIENT2 = SOUND_EVENTS.register("pirate_captain_ambient2", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "pirate_captain_ambient2")));
     public static final RegistryObject<SoundEvent> PIRATE_CAPTAIN_HURT = SOUND_EVENTS.register("pirate_captain_hurt", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "pirate_captain_hurt")));
@@ -82,6 +82,13 @@ public class ModSoundEvents
     public static final RegistryObject<SoundEvent> PIRATE_CAPTAIN_DEATH = SOUND_EVENTS.register("pirate_captain_death", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "pirate_captain_death")));
     public static final RegistryObject<SoundEvent> PIRATE_CAPTAIN_DEATH2 = SOUND_EVENTS.register("pirate_captain_death2", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "pirate_captain_death2")));
 
+    // Flintlocker
+    public static final RegistryObject<SoundEvent> FLINTLOCKER_AMBIENT = SOUND_EVENTS.register("flintlocker_ambient", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "flintlocker_ambient")));
+    public static final RegistryObject<SoundEvent> FLINTLOCKER_AMBIENT2 = SOUND_EVENTS.register("flintlocker_ambient2", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "flintlocker_ambient2")));
+    public static final RegistryObject<SoundEvent> FLINTLOCKER_HURT = SOUND_EVENTS.register("flintlocker_hurt", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "flintlocker_hurt")));
+    public static final RegistryObject<SoundEvent> FLINTLOCKER_HURT2 = SOUND_EVENTS.register("flintlocker_hurt2", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "flintlocker_hurt2")));
+    public static final RegistryObject<SoundEvent> FLINTLOCKER_DEATH = SOUND_EVENTS.register("flintlocker_death", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "flintlocker_death")));
+    public static final RegistryObject<SoundEvent> FLINTLOCKER_DEATH2 = SOUND_EVENTS.register("flintlocker_death2", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "flintlocker_death2")));
 
     /****************************/
 
@@ -90,6 +97,9 @@ public class ModSoundEvents
     /*********** Misc ***********/
     public static final RegistryObject<SoundEvent> DETECTOR_SOUND = SOUND_EVENTS.register("detector_sound", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "detector_sound")));
     public static final RegistryObject<SoundEvent> SWORD_SWING = SOUND_EVENTS.register("sword_swing", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "sword_swing")));
+    public static final RegistryObject<SoundEvent> MUSKET = SOUND_EVENTS.register("musket", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "musket")));
+    public static final RegistryObject<SoundEvent> MUSKET_RELOAD = SOUND_EVENTS.register("musket_reload", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "musket_reload")));
+    public static final RegistryObject<SoundEvent> CANNON_SHOOT = SOUND_EVENTS.register("cannon_shoot", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "cannon_shoot")));
     /****************************/
 
     public static void register(IEventBus eventBus)

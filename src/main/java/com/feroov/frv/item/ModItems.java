@@ -4,6 +4,8 @@ import com.feroov.frv.Frv;
 import com.feroov.frv.init.ModEntityTypes;
 import com.feroov.frv.item.custom.armors.AmethystArmor;
 import com.feroov.frv.item.custom.items.*;
+import com.feroov.frv.item.custom.ranged.Musket;
+import com.feroov.frv.item.custom.ranged.MusketBullet;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -48,6 +50,14 @@ public class ModItems
 
     public static final RegistryObject<ModSpawnEggItem> PIRATE_CAPTAIN_SPAWN_EGG = ITEMS.register("pirate_captain_spawn_egg",
             () -> new ModSpawnEggItem(ModEntityTypes.PIRATE_CAPTAIN, 0X087D62, 0X087A62,
+                    new Item.Properties().tab(ModItemGroup.FRV_TAB_EGGS)));
+
+    public static final RegistryObject<ModSpawnEggItem> CANNON = ITEMS.register("cannon_spawn_egg",
+            () -> new ModSpawnEggItem(ModEntityTypes.CANNON, 0X087D62, 0X087A62,
+                    new Item.Properties().tab(ModItemGroup.FRV_TAB_EGGS)));
+
+    public static final RegistryObject<ModSpawnEggItem> FLINTLOCKER = ITEMS.register("flintlocker_spawn_egg",
+            () -> new ModSpawnEggItem(ModEntityTypes.FLINTLOCKER, 0X087D62, 0X087A62,
                     new Item.Properties().tab(ModItemGroup.FRV_TAB_EGGS)));
     /***********************************************************************************************/
 
@@ -108,6 +118,12 @@ public class ModItems
                 }
             }
             );
+
+    // Ranged stuff
+    public static final RegistryObject<Item> MUSKET = ITEMS.register("musket", () -> new Musket());
+
+    public static final RegistryObject<Item> MUSKET_BULLET = ITEMS.register("musket_bullet",
+            () -> new MusketBullet(new Item.Properties().tab(ModItemGroup.FRV_TAB_MISC), 1));
     /***********************************************************************************************/
 
     /********************************** (COPPER) **********************************************/

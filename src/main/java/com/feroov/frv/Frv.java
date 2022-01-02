@@ -2,9 +2,12 @@ package com.feroov.frv;
 
 
 import com.feroov.frv.block.ModBlocks;
+import com.feroov.frv.init.Keybindings;
 import com.feroov.frv.init.ModEntityTypes;
 import com.feroov.frv.item.ModItems;
+import com.feroov.frv.item.custom.RangedItems;
 import com.feroov.frv.sound.ModSoundEvents;
+import com.feroov.frv.util.packets.FrvPacketHandler;
 import com.feroov.frv.world.FrvConfiguredStructures;
 import com.feroov.frv.world.FrvStructures;
 import com.feroov.frv.world.gen.ModEntityEvents;
@@ -14,6 +17,7 @@ import com.google.common.collect.HashMultimap;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.ImmutableSet;
+import net.minecraft.client.KeyMapping;
 import net.minecraft.data.BuiltinRegistries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
@@ -33,6 +37,7 @@ import net.minecraft.world.level.levelgen.feature.configurations.StructureFeatur
 import net.minecraft.world.level.levelgen.feature.structures.JigsawPlacement;
 import net.minecraft.world.level.levelgen.structure.PoolElementStructurePiece;
 import net.minecraft.world.level.levelgen.structure.pieces.PieceGenerator;
+import net.minecraftforge.client.ClientRegistry;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.world.WorldEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
@@ -43,6 +48,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.lwjgl.glfw.GLFW;
 import software.bernie.geckolib3.GeckoLib;
 
 import java.util.HashMap;
@@ -79,17 +85,23 @@ public class Frv
 
     private void doClientStuff(final FMLClientSetupEvent event)
     {
+        Keybindings.RELOAD = new KeyMapping("key." + Frv.MOD_ID + ".reload", GLFW.GLFW_KEY_R, "key.categories." + Frv.MOD_ID);
+        ClientRegistry.registerKeyBinding(Keybindings.RELOAD);
+
         SpawnPlacements.register(ModEntityTypes.CROAKER.get(), SpawnPlacements.Type.NO_RESTRICTIONS,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkMobSpawnRules);
         SpawnPlacements.register(ModEntityTypes.HUNTER.get(), SpawnPlacements.Type.NO_RESTRICTIONS,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkMobSpawnRules);
         SpawnPlacements.register(ModEntityTypes.FEMALE_HUNTER.get(), SpawnPlacements.Type.NO_RESTRICTIONS,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkMobSpawnRules);
+
+        RangedItems.addRanged();
     }
 
 
     private void setup(final FMLCommonSetupEvent event)
     {
+        FrvPacketHandler.register();
         event.enqueueWork(() ->
         {
             OreGen.registerConfigured();

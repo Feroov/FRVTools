@@ -61,6 +61,10 @@
   "entity.frv.hunter": "Hunter",
   "item.frv.female_hunter_spawn_egg": "Female Hunter Spawn Egg",
   "entity.frv.female_hunter": "Female Hunter",
+  "item.frv.cannon_spawn_egg": "Cannon Spawn Egg",
+  "entity.frv.cannon": "Cannon",
+  "item.frv.flintlocker_spawn_egg": "Flintlocker Spawn Egg",
+  "entity.frv.flintlocker": "Flintlocker",
   "item.frv.pirate_captain_spawn_egg": "\u00A7l\u00A7cPirate Captain\u00A7c Spawn Egg",
   "entity.frv.pirate_captain": "\u00A7l\u00A7cPirate Captain\u00A7c",
 
@@ -89,6 +93,8 @@
   "item.frv.all_detector": "All Ores Detector",
   "item.frv.all_detector_prime": "All Ores Detector Prime",
   "item.frv.all_detector.no_valuables": "\u00A74\nNo Ores detected!\n\u00A74",
+  "item.frv.musket": "Flintlock",
+  "item.frv.musket_bullet": "Flintlock Bullet",
 
 
 

@@ -122,5 +122,8 @@
 
 
   "detector_sound": {"category": "misc", "sounds": [{"name": "frv:detector_sound"}], "subtitle": "frv.detector_sound"},
-  "sword_swing": {"category": "misc", "sounds": [{"name": "frv:sword_swing"}], "subtitle": "frv.sword_swing"}
+  "sword_swing": {"category": "misc", "sounds": [{"name": "frv:sword_swing"}], "subtitle": "frv.sword_swing"},
+  "musket": {"category": "misc", "sounds": [{"name": "frv:musket"}], "subtitle": "frv.musket"},
+  "musket_reload": {"category": "misc", "sounds": [{"name": "frv:musket_reload"}], "subtitle": "frv.musket_reload"},
+  "cannon_shoot": {"category": "misc", "sounds": [{"name": "frv:cannon_shoot"}], "subtitle": "frv.cannon_shoot"}
 }
