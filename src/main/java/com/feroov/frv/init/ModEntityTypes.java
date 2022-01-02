@@ -3,6 +3,7 @@ package com.feroov.frv.init;
 import com.feroov.frv.Frv;
 import com.feroov.frv.entities.hostile.Cannon;
 import com.feroov.frv.entities.hostile.Flintlocker;
+import com.feroov.frv.entities.hostile.Pirate;
 import com.feroov.frv.entities.hostile.PirateCaptain;
 import com.feroov.frv.entities.passive.Croaker;
 import com.feroov.frv.entities.passive.FemaleHunter;
@@ -38,11 +39,15 @@ public class ModEntityTypes
                     .sized(0.7f,1.8f).build("female_hunter"));
     /** Hostile **/
     public static final RegistryObject<EntityType<PirateCaptain>> PIRATE_CAPTAIN = ENTITIES.register("pirate_captain",
-            () -> EntityType.Builder.of(PirateCaptain::new, MobCategory.CREATURE)
+            () -> EntityType.Builder.of(PirateCaptain::new, MobCategory.CREATURE).canSpawnFarFromPlayer()
                     .sized(0.7f,2.8f).build("pirate_captain"));
 
+    public static final RegistryObject<EntityType<Pirate>> PIRATE = ENTITIES.register("pirate",
+            () -> EntityType.Builder.of(Pirate::new, MobCategory.CREATURE).canSpawnFarFromPlayer()
+                    .sized(0.7f,1.8f).build("pirate"));
+
     public static final RegistryObject<EntityType<Flintlocker>> FLINTLOCKER = ENTITIES.register("flintlocker",
-            () -> EntityType.Builder.of(Flintlocker::new, MobCategory.CREATURE)
+            () -> EntityType.Builder.of(Flintlocker::new, MobCategory.CREATURE).canSpawnFarFromPlayer()
                     .sized(0.7f,1.8f).build("flintlocker"));
 
     /** Misc **/

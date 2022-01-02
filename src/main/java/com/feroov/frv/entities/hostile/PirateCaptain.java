@@ -382,7 +382,7 @@ public class PirateCaptain extends PathfinderMob implements IAnimatable, RangedA
         double d3 = livingEntity.getZ() - this.getZ();
         double d4 = Math.sqrt(d1 * d1 + d3 * d3) * (double)0.2F;
         arrow.shoot(d1, d2 + d4, d3, 1.6F, 4.0F);
-        this.playSound(SoundEvents.SKELETON_SHOOT, 0.0F, 0.4F / (this.getRandom().nextFloat() * 0.4F + 0.8F));
+        this.playSound(ModSoundEvents.SWORD_SWING.get(), 0.0F, 0.4F / (this.getRandom().nextFloat() * 0.4F + 0.8F));
         this.level.addFreshEntity(arrow);
 
     }

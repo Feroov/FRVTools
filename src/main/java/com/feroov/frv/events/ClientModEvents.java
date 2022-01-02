@@ -35,6 +35,7 @@ public class ClientModEvents
         /** Hostile **/
         event.registerEntityRenderer(ModEntityTypes.PIRATE_CAPTAIN.get(), PirateCaptainRenderer::new);
         event.registerEntityRenderer(ModEntityTypes.FLINTLOCKER.get(), FlintlockerRenderer::new);
+        event.registerEntityRenderer(ModEntityTypes.PIRATE.get(), PirateRenderer::new);
 
         /** Misc **/
         event.registerEntityRenderer(ModEntityTypes.PIRATE_CAPTAIN_MELEE.get(), PirateCaptainMeleeRender::new);

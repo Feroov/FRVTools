@@ -103,19 +103,47 @@
 
 
 
-  "pirate_captain_ambient": {"category": "passive", "sounds": [{
+  "pirate_captain_ambient": {"category": "hostile", "sounds": [{
     "name": "frv:pirate_captain_ambient"}, {
     "name": "frv:pirate_captain_ambient2"}], "subtitle": "frv.pirate_captain_ambient"
   },
 
-  "pirate_captain_hurt": {"category": "passive", "sounds": [{
+  "pirate_captain_hurt": {"category": "hostile", "sounds": [{
     "name": "frv:pirate_captain_hurt"}, {
     "name": "frv:pirate_captain_hurt2"}], "subtitle": "frv.pirate_captain_hurt"
   },
 
-  "pirate_captain_death": {"category": "passive", "sounds": [{
+  "pirate_captain_death": {"category": "hostile", "sounds": [{
     "name": "frv:pirate_captain_death"}, {
-    "name": "frv:pirate_captain_death2"}], "subtitle": "frv.pirate_death"
+    "name": "frv:pirate_captain_death2"}], "subtitle": "frv.pirate_captain_death"
+  },
+
+  "pirate_ambient": {"category": "hostile", "sounds": [{
+    "name": "frv:pirate_ambient"}, {
+    "name": "frv:pirate_ambient2"}], "subtitle": "frv.pirate_ambient"
+  },
+
+  "pirate_hurt": {"category": "hostile", "sounds": [{
+    "name": "frv:pirate_hurt"}, {
+    "name": "frv:pirate_hurt2"}], "subtitle": "frv.pirate_hurt"
+  },
+
+  "pirate_death": {"category": "hostile", "sounds": [{
+    "name": "frv:pirate_death"}], "subtitle": "frv.pirate_death"
+  },
+
+  "flintlocker_ambient": {"category": "hostile", "sounds": [{
+    "name": "frv:flintlocker_ambient"}, {
+    "name": "frv:flintlocker_ambient2"}], "subtitle": "frv.flintlocker_ambient"
+  },
+
+  "flintlocker_hurt": {"category": "hostile", "sounds": [{
+    "name": "frv:flintlocker_hurt"}, {
+    "name": "frv:flintlocker_hurt2"}], "subtitle": "frv.flintlocker_hurt"
+  },
+
+  "flintlocker_death": {"category": "hostile", "sounds": [{
+    "name": "frv:flintlocker_death"}], "subtitle": "frv.flintlocker_death"
   },
   
   

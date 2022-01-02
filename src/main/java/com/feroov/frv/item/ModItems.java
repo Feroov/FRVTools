@@ -56,6 +56,10 @@ public class ModItems
             () -> new ModSpawnEggItem(ModEntityTypes.CANNON, 0X087D62, 0X087A62,
                     new Item.Properties().tab(ModItemGroup.FRV_TAB_EGGS)));
 
+    public static final RegistryObject<ModSpawnEggItem> PIRATE = ITEMS.register("pirate_spawn_egg",
+            () -> new ModSpawnEggItem(ModEntityTypes.PIRATE, 0X087D62, 0X087A62,
+                    new Item.Properties().tab(ModItemGroup.FRV_TAB_EGGS)));
+
     public static final RegistryObject<ModSpawnEggItem> FLINTLOCKER = ITEMS.register("flintlocker_spawn_egg",
             () -> new ModSpawnEggItem(ModEntityTypes.FLINTLOCKER, 0X087D62, 0X087A62,
                     new Item.Properties().tab(ModItemGroup.FRV_TAB_EGGS)));

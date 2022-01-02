@@ -93,7 +93,7 @@ public class PirateCaptainMelee extends AbstractArrow implements IAnimatable {
                 ((LivingEntity) entity1).setLastHurtMob(entity);
             }
         }
-        if (entity.hurt(damagesource, 10.0F)) {
+        if (entity.hurt(damagesource, 20.0F)) {
             if (entity instanceof LivingEntity) {
                 LivingEntity livingentity = (LivingEntity) entity;
                 if (!this.level.isClientSide && entity1 instanceof LivingEntity) {

@@ -3,6 +3,7 @@ package com.feroov.frv.events;
 import com.feroov.frv.Frv;
 import com.feroov.frv.entities.hostile.Cannon;
 import com.feroov.frv.entities.hostile.Flintlocker;
+import com.feroov.frv.entities.hostile.Pirate;
 import com.feroov.frv.entities.hostile.PirateCaptain;
 import com.feroov.frv.entities.passive.Croaker;
 import com.feroov.frv.entities.passive.FemaleHunter;
@@ -26,6 +27,7 @@ public class ModEvents
         /** Hostile **/
         event.put(ModEntityTypes.PIRATE_CAPTAIN.get(), PirateCaptain.createAttributes().build());
         event.put(ModEntityTypes.FLINTLOCKER.get(), Flintlocker.createAttributes().build());
+        event.put(ModEntityTypes.PIRATE.get(), Pirate.createAttributes().build());
         event.put(ModEntityTypes.CANNON.get(), Cannon.createAttributes().build());
     }
 }
