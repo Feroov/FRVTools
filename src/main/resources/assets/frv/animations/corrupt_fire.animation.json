@@ -1,0 +1,146 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"idle": {
+			"animation_length": 10,
+			"bones": {
+				"flame": {
+					"rotation": {
+						"vector": [35, 0, 0]
+					},
+					"position": {
+						"0.0": {
+							"vector": [-11, 0, 0]
+						},
+						"0.4167": {
+							"vector": [2, -11, -27]
+						},
+						"1.4583": {
+							"vector": [7, -15, -43],
+							"easing": "easeInOutSine"
+						}
+					},
+					"scale": {
+						"0.0": {
+							"vector": [1, 1, 1]
+						},
+						"1.2083": {
+							"vector": [1, 1, 1]
+						},
+						"1.4583": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"flame2": {
+					"rotation": {
+						"vector": [45, 0, 0]
+					},
+					"position": {
+						"0.0": {
+							"vector": [10, 0, 4]
+						},
+						"0.4167": {
+							"vector": [0, -6, -26]
+						},
+						"1.4583": {
+							"vector": [-5, -9, -45],
+							"easing": "easeInOutSine"
+						}
+					},
+					"scale": {
+						"0.0": {
+							"vector": [1, 1, 1]
+						},
+						"1.2083": {
+							"vector": [1, 1, 1]
+						},
+						"1.4583": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"flame3": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, -40, 0]
+						},
+						"0.4167": {
+							"vector": [42.5, -40, 0]
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [3, 0, 16]
+						},
+						"0.4167": {
+							"vector": [29, -6, -4]
+						},
+						"1.4583": {
+							"vector": [47, -16, -19],
+							"easing": "easeInOutSine"
+						}
+					},
+					"scale": {
+						"0.0": {
+							"vector": [1, 1, 1]
+						},
+						"1.2083": {
+							"vector": [1, 1, 1]
+						},
+						"1.4583": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"flame4": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 27.5, 0]
+						},
+						"0.4167": {
+							"vector": [40, 40, 0]
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [-1, 0, 14]
+						},
+						"0.4167": {
+							"vector": [-17, 0, -21]
+						},
+						"1.4583": {
+							"vector": [-34, -15, -26],
+							"easing": "easeInOutSine"
+						}
+					},
+					"scale": {
+						"0.0": {
+							"vector": [1, 1, 1]
+						},
+						"1.2083": {
+							"vector": [1, 1, 1]
+						},
+						"1.4583": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"flame5": {
+					"scale": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.9583": {
+							"vector": [0, 0, 0]
+						},
+						"1.2917": {
+							"vector": [2, 2, 2]
+						}
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}

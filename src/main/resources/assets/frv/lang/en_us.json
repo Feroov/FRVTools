@@ -69,6 +69,8 @@
   "entity.frv.pirate": "Pirate",
   "item.frv.pirate_captain_spawn_egg": "\u00A7l\u00A7cPirate Captain\u00A7c Spawn Egg",
   "entity.frv.pirate_captain": "\u00A7l\u00A7cPirate Captain\u00A7c",
+  "item.frv.corrupt_spawn_egg": "\u00A7a\u00A7kCorrupt\u00A7k\u00A7a Spawn Egg",
+  "entity.frv.corrupt": "\u00A7a\u00A7kCorrupt\u00A7a",
 
 
   "item.frv.coal_detector": "\u00A78Coal Detector\u00A78",
@@ -97,6 +99,7 @@
   "item.frv.all_detector.no_valuables": "\u00A74\nNo Ores detected!\n\u00A74",
   "item.frv.musket": "Flintlock",
   "item.frv.musket_bullet": "Flintlock Bullet",
+  "item.frv.ale": "Ale",
 
 
 
@@ -105,5 +108,6 @@
   "block.frv.deepslate_tin_ore": "Deepslate Tin Ore",
   "item.frv.lead_ingot": "Lead Ingot",
   "block.frv.lead_ore": "Lead Ore",
-  "block.frv.deepslate_lead_ore": "Deepslate Lead Ore"
+  "block.frv.deepslate_lead_ore": "Deepslate Lead Ore",
+  "block.frv.matrix": "\u00A7a\u00A7kMatrix\u00A7a"
 }

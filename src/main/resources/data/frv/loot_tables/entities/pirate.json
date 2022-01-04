@@ -45,13 +45,13 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "frv:musket"
+          "name": "minecraft:iron_sword"
         }
       ],
       "conditions": [
         {
           "condition": "minecraft:random_chance",
-          "chance": 0.3
+          "chance": 0.2
         }
       ]
     }

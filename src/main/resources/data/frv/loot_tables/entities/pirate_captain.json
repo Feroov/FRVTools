@@ -1,0 +1,53 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "rolls": {
+        "min": 38,
+        "max": 42
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:gunpowder"
+        }
+      ]
+    },
+    {
+      "rolls": {
+        "min": 1,
+        "max": 1
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_golden_apple"
+        }
+      ]
+    },
+    {
+      "rolls": {
+        "min": 25,
+        "max": 34
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "frv:musket_bullet"
+        }
+      ]
+    },
+    {
+      "rolls": {
+        "min": 1,
+        "max": 1
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "frv:musket"
+        }
+      ]
+    }
+  ]
+}

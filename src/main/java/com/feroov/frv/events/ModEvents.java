@@ -1,13 +1,11 @@
 package com.feroov.frv.events;
 
 import com.feroov.frv.Frv;
-import com.feroov.frv.entities.hostile.Cannon;
-import com.feroov.frv.entities.hostile.Flintlocker;
-import com.feroov.frv.entities.hostile.Pirate;
-import com.feroov.frv.entities.hostile.PirateCaptain;
+import com.feroov.frv.entities.hostile.*;
 import com.feroov.frv.entities.passive.Croaker;
 import com.feroov.frv.entities.passive.FemaleHunter;
 import com.feroov.frv.entities.passive.Hunter;
+import com.feroov.frv.entities.projectiles.Electricity;
 import com.feroov.frv.init.ModEntityTypes;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -29,5 +27,7 @@ public class ModEvents
         event.put(ModEntityTypes.FLINTLOCKER.get(), Flintlocker.createAttributes().build());
         event.put(ModEntityTypes.PIRATE.get(), Pirate.createAttributes().build());
         event.put(ModEntityTypes.CANNON.get(), Cannon.createAttributes().build());
+        event.put(ModEntityTypes.CORRUPT.get(), Corrupt.createAttributes().build());
+        event.put(ModEntityTypes.ELECTRICITY.get(), Electricity.createAttributes().build());
     }
 }

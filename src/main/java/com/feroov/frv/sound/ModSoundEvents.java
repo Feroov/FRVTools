@@ -96,6 +96,15 @@ public class ModSoundEvents
     public static final RegistryObject<SoundEvent> PIRATE_HURT2 = SOUND_EVENTS.register("pirate_hurt2", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "pirate_hurt2")));
     public static final RegistryObject<SoundEvent> PIRATE_DEATH = SOUND_EVENTS.register("pirate_death", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "pirate_death")));
 
+
+    // Corrupt
+    public static final RegistryObject<SoundEvent> CORRUPT_AMBIENT = SOUND_EVENTS.register("corrupt_ambient", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "corrupt_ambient")));
+    public static final RegistryObject<SoundEvent> CORRUPT_AMBIENT2 = SOUND_EVENTS.register("corrupt_ambient2", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "corrupt_ambient2")));
+    public static final RegistryObject<SoundEvent> CORRUPT_AMBIENT3 = SOUND_EVENTS.register("corrupt_ambient3", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "corrupt_ambient3")));
+    public static final RegistryObject<SoundEvent> CORRUPT_HURT = SOUND_EVENTS.register("corrupt_hurt", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "corrupt_hurt")));
+    public static final RegistryObject<SoundEvent> CORRUPT_HURT2 = SOUND_EVENTS.register("corrupt_hurt2", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "corrupt_hurt2")));
+    public static final RegistryObject<SoundEvent> CORRUPT_DEATH = SOUND_EVENTS.register("corrupt_death", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "corrupt_death")));
+
     /****************************/
 
 
@@ -106,7 +115,9 @@ public class ModSoundEvents
     public static final RegistryObject<SoundEvent> MUSKET = SOUND_EVENTS.register("musket", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "musket")));
     public static final RegistryObject<SoundEvent> MUSKET_RELOAD = SOUND_EVENTS.register("musket_reload", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "musket_reload")));
     public static final RegistryObject<SoundEvent> CANNON_SHOOT = SOUND_EVENTS.register("cannon_shoot", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "cannon_shoot")));
+    public static final RegistryObject<SoundEvent> CORRUPT_FIRE = SOUND_EVENTS.register("corrupt_fire", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "corrupt_fire")));
     /****************************/
+
 
     public static void register(IEventBus eventBus)
     {

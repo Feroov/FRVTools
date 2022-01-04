@@ -310,9 +310,9 @@ public class Pirate extends Monster implements IAnimatable
     protected void tickDeath()
     {
         ++this.deathTime;
-        if (this.deathTime == 60 && !this.level.isClientSide())
+        if (this.deathTime == 50 && !this.level.isClientSide())
         {
-            this.level.broadcastEntityEvent(this, (byte)60);
+            this.level.broadcastEntityEvent(this, (byte)50);
             this.remove(RemovalReason.KILLED);
         }
 

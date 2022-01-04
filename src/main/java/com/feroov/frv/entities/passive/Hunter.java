@@ -228,7 +228,8 @@ public class Hunter extends HunterAbstractVillagerEntity implements IAnimatable,
         this.goalSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, Rabbit.class, true));
         this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, Mob.class, 5, false, false, (p_28879_) -> {return p_28879_ instanceof Enemy && !(p_28879_ instanceof Creeper);}));
         this.goalSelector.addGoal(5, new HunterRevengeGoal(this));
-        this.targetSelector.addGoal(5, new HunterAttackGoal(this, 0.67D, true, 5));
+        //this.targetSelector.addGoal(5, new HunterAttackGoal(this, 0.67D, true, 5));
+        this.targetSelector.addGoal(1, new MeleeAttackGoal(this, 0.66D, true));
         this.goalSelector.addGoal(6, new Hunter.LookAtTradingPlayerGoal(this));
         this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Mob.class, 8.0F));
         this.goalSelector.addGoal(7, new WaterAvoidingRandomStrollGoal(this, 0.4D));

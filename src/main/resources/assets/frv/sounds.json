@@ -145,6 +145,21 @@
   "flintlocker_death": {"category": "hostile", "sounds": [{
     "name": "frv:flintlocker_death"}], "subtitle": "frv.flintlocker_death"
   },
+
+  "corrupt_ambient": {"category": "hostile", "sounds": [{
+    "name": "frv:corrupt_ambient"}, {
+    "name": "frv:corrupt_ambient2"}, {
+    "name": "frv:corrupt_ambient3"}], "subtitle": "frv.corrupt_ambient"
+  },
+
+  "corrupt_hurt": {"category": "hostile", "sounds": [{
+    "name": "frv:corrupt_hurt"},{
+    "name": "frv:corrupt_hurt2"}], "subtitle": "frv.corrupt_hurt"
+  },
+
+  "corrupt_death": {"category": "hostile", "sounds": [{
+    "name": "frv:corrupt_death"}], "subtitle": "frv.corrupt_death"
+  },
   
   
 
@@ -153,5 +168,6 @@
   "sword_swing": {"category": "misc", "sounds": [{"name": "frv:sword_swing"}], "subtitle": "frv.sword_swing"},
   "musket": {"category": "misc", "sounds": [{"name": "frv:musket"}], "subtitle": "frv.musket"},
   "musket_reload": {"category": "misc", "sounds": [{"name": "frv:musket_reload"}], "subtitle": "frv.musket_reload"},
-  "cannon_shoot": {"category": "misc", "sounds": [{"name": "frv:cannon_shoot"}], "subtitle": "frv.cannon_shoot"}
+  "cannon_shoot": {"category": "misc", "sounds": [{"name": "frv:cannon_shoot"}], "subtitle": "frv.cannon_shoot"},
+  "corrupt_fire": {"category": "misc", "sounds": [{"name": "frv:corrupt_fire"}], "subtitle": "frv.corrupt_fire"}
 }

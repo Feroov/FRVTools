@@ -1,21 +1,29 @@
 package com.feroov.frv.events;
 
 import com.feroov.frv.Frv;
-import com.feroov.frv.entities.projectiles.render.CannonBallRender;
-import com.feroov.frv.entities.projectiles.render.MusketAmmoRender;
-import com.feroov.frv.entities.projectiles.render.PirateCaptainMeleeRender;
+import com.feroov.frv.entities.hostile.PirateCaptain;
+import com.feroov.frv.entities.projectiles.render.*;
 import com.feroov.frv.entities.render.*;
 import com.feroov.frv.init.ModEntityTypes;
+import net.minecraft.client.Minecraft;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.entity.Entity;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @Mod.EventBusSubscriber(modid = Frv.MOD_ID, bus = Bus.MOD, value = Dist.CLIENT)
 public class ClientModEvents
 {
-    private ClientModEvents(){}
+
+
+    public ClientModEvents(){}
     /**
      * @SubscribeEvent
      * public static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event)
@@ -36,11 +44,14 @@ public class ClientModEvents
         event.registerEntityRenderer(ModEntityTypes.PIRATE_CAPTAIN.get(), PirateCaptainRenderer::new);
         event.registerEntityRenderer(ModEntityTypes.FLINTLOCKER.get(), FlintlockerRenderer::new);
         event.registerEntityRenderer(ModEntityTypes.PIRATE.get(), PirateRenderer::new);
+        event.registerEntityRenderer(ModEntityTypes.CORRUPT.get(), CorruptRenderer::new);
 
         /** Misc **/
         event.registerEntityRenderer(ModEntityTypes.PIRATE_CAPTAIN_MELEE.get(), PirateCaptainMeleeRender::new);
         event.registerEntityRenderer(ModEntityTypes.CANNON_BALL.get(), CannonBallRender::new);
         event.registerEntityRenderer(ModEntityTypes.MUSKET_AMMO.get(), MusketAmmoRender::new);
+        event.registerEntityRenderer(ModEntityTypes.CORRUPT_FIRE.get(), CorruptFireRender::new);
         event.registerEntityRenderer(ModEntityTypes.CANNON.get(), CannonRenderer::new);
+        event.registerEntityRenderer(ModEntityTypes.ELECTRICITY.get(), ElectricityRenderer::new);
     }
 }

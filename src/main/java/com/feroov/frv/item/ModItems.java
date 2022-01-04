@@ -6,6 +6,8 @@ import com.feroov.frv.item.custom.armors.AmethystArmor;
 import com.feroov.frv.item.custom.items.*;
 import com.feroov.frv.item.custom.ranged.Musket;
 import com.feroov.frv.item.custom.ranged.MusketBullet;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -35,6 +37,21 @@ public class ModItems
             () -> new Item(new Item.Properties().tab(ModItemGroup.FRV_TAB_BLOCKS_ITEMS)));
     /*************************************************************************************/
 
+    /********************************** (Food) **************************************/
+
+    public static final RegistryObject<Item> ALE = ITEMS.register("ale",
+            () -> new Item(new Item.Properties().tab(ModItemGroup.FRV_TAB_BLOCKS_ITEMS).food(ModFoods.ALE).stacksTo(1))
+            {
+                @Override
+                public SoundEvent getEatingSound()
+                {
+                    return SoundEvents.GENERIC_DRINK;
+                }
+            });
+
+    /************************************************************************************/
+
+
     /**********************************  (MOBS EGGS) **********************************************/
     public static final RegistryObject<ModSpawnEggItem> CROAKER_SPAWN_EGG = ITEMS.register("croaker_spawn_egg",
             () -> new ModSpawnEggItem(ModEntityTypes.CROAKER, 0X087D62, 0X087A62,
@@ -62,6 +79,10 @@ public class ModItems
 
     public static final RegistryObject<ModSpawnEggItem> FLINTLOCKER = ITEMS.register("flintlocker_spawn_egg",
             () -> new ModSpawnEggItem(ModEntityTypes.FLINTLOCKER, 0X087D62, 0X087A62,
+                    new Item.Properties().tab(ModItemGroup.FRV_TAB_EGGS)));
+
+    public static final RegistryObject<ModSpawnEggItem> CORRUPT = ITEMS.register("corrupt_spawn_egg",
+            () -> new ModSpawnEggItem(ModEntityTypes.CORRUPT, 0X087D62, 0X087A62,
                     new Item.Properties().tab(ModItemGroup.FRV_TAB_EGGS)));
     /***********************************************************************************************/
 

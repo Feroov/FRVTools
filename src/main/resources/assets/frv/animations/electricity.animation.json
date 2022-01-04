@@ -1,0 +1,112 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"lightning": {
+			"loop": true,
+			"animation_length": 0.25,
+			"bones": {
+				"bone": {
+					"rotation": {
+						"vector": [0, 0, 0]
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.1667": {
+							"vector": [0, -6, 0],
+							"easing": "easeInBounce"
+						},
+						"0.25": {
+							"vector": [0, 3, 0],
+							"easing": "easeInBounce"
+						}
+					}
+				},
+				"bone2": {
+					"rotation": {
+						"vector": [0, 0, 0]
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.1667": {
+							"vector": [0, 1.19, 0]
+						},
+						"0.25": {
+							"vector": [0, -7, 0],
+							"easing": "easeInBounce"
+						}
+					}
+				},
+				"bone3": {
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.1667": {
+							"vector": [0, -4, 0],
+							"easing": "easeInBounce"
+						},
+						"0.25": {
+							"vector": [0, 2, 0],
+							"easing": "easeInBounce"
+						}
+					}
+				},
+				"bone4": {
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.1667": {
+							"vector": [0, -9, 0],
+							"easing": "easeInBounce"
+						},
+						"0.25": {
+							"vector": [0, -5, 0],
+							"easing": "easeInBounce"
+						}
+					}
+				},
+				"bone5": {
+					"rotation": {
+						"vector": [0, 0, 0]
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.1667": {
+							"vector": [0, -11.36, 0]
+						},
+						"0.25": {
+							"vector": [0, -8, 0],
+							"easing": "easeInBounce"
+						}
+					}
+				},
+				"bone6": {
+					"rotation": {
+						"vector": [0, 0, 0]
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.1667": {
+							"vector": [0, -5, 0],
+							"easing": "easeInBounce"
+						},
+						"0.25": {
+							"vector": [0, 4, 0],
+							"easing": "easeInBounce"
+						}
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}

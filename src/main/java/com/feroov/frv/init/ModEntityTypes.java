@@ -1,16 +1,11 @@
 package com.feroov.frv.init;
 
 import com.feroov.frv.Frv;
-import com.feroov.frv.entities.hostile.Cannon;
-import com.feroov.frv.entities.hostile.Flintlocker;
-import com.feroov.frv.entities.hostile.Pirate;
-import com.feroov.frv.entities.hostile.PirateCaptain;
+import com.feroov.frv.entities.hostile.*;
 import com.feroov.frv.entities.passive.Croaker;
 import com.feroov.frv.entities.passive.FemaleHunter;
 import com.feroov.frv.entities.passive.Hunter;
-import com.feroov.frv.entities.projectiles.CannonBall;
-import com.feroov.frv.entities.projectiles.MusketAmmo;
-import com.feroov.frv.entities.projectiles.PirateCaptainMelee;
+import com.feroov.frv.entities.projectiles.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -50,6 +45,10 @@ public class ModEntityTypes
             () -> EntityType.Builder.of(Flintlocker::new, MobCategory.CREATURE).canSpawnFarFromPlayer()
                     .sized(0.7f,1.8f).build("flintlocker"));
 
+    public static final RegistryObject<EntityType<Corrupt>> CORRUPT = ENTITIES.register("corrupt",
+            () -> EntityType.Builder.of(Corrupt::new, MobCategory.CREATURE).canSpawnFarFromPlayer().fireImmune()
+                    .sized(0.7f,2.4f).build("corrupt"));
+
     /** Misc **/
     // Projectiles
     public static final RegistryObject<EntityType<PirateCaptainMelee>> PIRATE_CAPTAIN_MELEE = ENTITIES.register("pirate_captain_melee",
@@ -63,10 +62,21 @@ public class ModEntityTypes
     public static final RegistryObject<EntityType<MusketAmmo>> MUSKET_AMMO = ENTITIES.register("musket_bullet",
             () -> EntityType.Builder.<MusketAmmo>of(MusketAmmo::new, MobCategory.MISC).sized(0.5F, 0.5F)
                     .clientTrackingRange(9).build(new ResourceLocation(Frv.MOD_ID, "musket_bullet").toString()));
+
+    public static final RegistryObject<EntityType<CorruptFire>> CORRUPT_FIRE = ENTITIES.register("corrupt_fire",
+            () -> EntityType.Builder.<CorruptFire>of(CorruptFire::new, MobCategory.MISC).sized(1.5F, 1.5F)
+                    .clientTrackingRange(9).build(new ResourceLocation(Frv.MOD_ID, "corrupt_fire").toString()));
+
     // Other
     public static final RegistryObject<EntityType<Cannon>> CANNON = ENTITIES.register("cannon",
             () -> EntityType.Builder.<Cannon>of(Cannon::new, MobCategory.CREATURE).sized(0.8F, 0.8F).fireImmune()
                     .build(new ResourceLocation(Frv.MOD_ID, "cannon").toString()));
+
+
+    public static final RegistryObject<EntityType<Electricity>> ELECTRICITY = ENTITIES.register("electricity",
+            () -> EntityType.Builder.of(Electricity::new, MobCategory.MISC).fireImmune()
+                    .sized(0.1f,20.0f).fireImmune().build("electricity"));
+
 
 
 }

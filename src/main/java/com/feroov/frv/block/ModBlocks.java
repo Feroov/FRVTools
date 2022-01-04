@@ -43,6 +43,8 @@ public class ModBlocks
     /******************************************************************************************/
 
 
+    public static final RegistryObject<Block> MATRIX = registerBlock("matrix",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(-1.0F, 3600000.0F).noDrops().lightLevel((light) -> {return 15;})));
 
 
 
