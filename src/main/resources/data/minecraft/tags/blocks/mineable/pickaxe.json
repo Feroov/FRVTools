@@ -4,6 +4,8 @@
     "frv:tin_ore",
     "frv:deepslate_tin_ore",
     "frv:lead_ore",
-    "frv:deepslate_lead_ore"
+    "frv:deepslate_lead_ore",
+    "frv:silver_ore",
+    "frv:deepslate_silver_ore"
   ]
 }

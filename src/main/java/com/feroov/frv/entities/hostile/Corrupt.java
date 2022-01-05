@@ -2,18 +2,22 @@ package com.feroov.frv.entities.hostile;
 
 
 import com.feroov.frv.entities.projectiles.CorruptFire;
-import com.feroov.frv.entities.projectiles.MusketAmmo;
-import com.feroov.frv.item.custom.ranged.Musket;
-import com.feroov.frv.item.custom.ranged.MusketBullet;
+import com.feroov.frv.entities.projectiles.Electricity;
+import com.feroov.frv.init.ModEntityTypes;
 import com.feroov.frv.sound.ModSoundEvents;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerBossEvent;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
 import net.minecraft.world.BossEvent;
 import net.minecraft.world.DifficultyInstance;
@@ -25,14 +29,15 @@ import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
-import net.minecraft.world.entity.animal.Animal;
-import net.minecraft.world.entity.monster.Monster;
-import net.minecraft.world.entity.monster.RangedAttackMob;
+import net.minecraft.world.entity.animal.Chicken;
+import net.minecraft.world.entity.monster.*;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ProjectileWeaponItem;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.IAnimationTickable;
 import software.bernie.geckolib3.core.PlayState;
@@ -53,6 +58,10 @@ public class Corrupt extends Monster implements IAnimatable, IAnimationTickable,
     public static final EntityDataAccessor<Boolean> STUNNED = SynchedEntityData.defineId(Corrupt.class, EntityDataSerializers.BOOLEAN);
     public static final EntityDataAccessor<Integer> STATE = SynchedEntityData.defineId(Corrupt.class, EntityDataSerializers.INT);
     public static final EntityDataAccessor<Integer> ATTACK = SynchedEntityData.defineId(Corrupt.class, EntityDataSerializers.INT);
+
+   // protected int spellCastingTickCount;
+    //private static final EntityDataAccessor<Byte> DATA_SPELL_CASTING_ID = SynchedEntityData.defineId(SpellcasterIllager.class, EntityDataSerializers.BYTE);
+    //private Corrupt.SpellType currentSpell = Corrupt.SpellType.NONE;
 
     private final ServerBossEvent bossInfo = (ServerBossEvent) (new ServerBossEvent(this.getDisplayName(),
             BossEvent.BossBarColor.GREEN, BossEvent.BossBarOverlay.PROGRESS)).setDarkenScreen(true).setPlayBossMusic(true)
@@ -123,10 +132,12 @@ public class Corrupt extends Monster implements IAnimatable, IAnimationTickable,
         this.entityData.define(ATTACK, 1);
     }
 
+
+
     public static AttributeSupplier.Builder createAttributes()
     {
         return Mob.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 100.0D)
+                .add(Attributes.MAX_HEALTH, 400.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.62D)
                 .add(Attributes.FOLLOW_RANGE, 37.0D)
                 .add(Attributes.ATTACK_DAMAGE, 8.0D);
@@ -154,6 +165,7 @@ public class Corrupt extends Monster implements IAnimatable, IAnimationTickable,
     {
         super.registerGoals();
         this.goalSelector.addGoal(0, new FloatGoal(this));
+       // this.goalSelector.addGoal(0, new Corrupt.AttackSpellGoal());
         this.targetSelector.addGoal(1, new CorruptAttackGoal(this, 0.0D, true, 3));//These are combined
         this.goalSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
         this.goalSelector.addGoal(3, new Corrupt.CorruptRangedAttackGoal(this, 0.10D, 35.3D, 37.0F, 0)); // These are combined
@@ -161,13 +173,17 @@ public class Corrupt extends Monster implements IAnimatable, IAnimationTickable,
         this.goalSelector.addGoal(5, new MoveTowardsRestrictionGoal(this, 0.4D));
         this.goalSelector.addGoal(6, new RandomLookAroundGoal(this));
     }
-
-
     /************************* Texture anim tick stuff ****************************************/
     @Override
     public void aiStep()
     {
         super.aiStep();
+        if (this.level.isClientSide) {
+            for(int i = 0; i < 2; ++i) {
+                this.level.addParticle(ParticleTypes.TOTEM_OF_UNDYING, this.getRandomX(0.5D),
+                        this.getRandomY() - 0.85D, this.getRandomZ(0.5D), (this.random.nextDouble() - 0.5D) * 2.0D, -this.random.nextDouble(), (this.random.nextDouble() - 0.5D) * 2.0D);
+            }
+        }
         textureTimer = (textureTimer + 1) % 8;
     }
 
@@ -388,7 +404,7 @@ public class Corrupt extends Monster implements IAnimatable, IAnimationTickable,
                     } else if (d0 < (double)(this.attackRadiusSqr * 0.25F)) {
                         this.strafingBackwards = true;
                     }                                                           //speed shit
-                    this.mob.getMoveControl().strafe(this.strafingBackwards ? -0.60F : 0.60F, this.strafingClockwise ? 0.60F : -0.60F);
+                    this.mob.getMoveControl().strafe(this.strafingBackwards ? -0.45F : 0.45F, this.strafingClockwise ? 0.45F : -0.45F);
                     this.mob.lookAt(livingentity, 30.0F, 30.0F);
                 }
                 this.mob.getLookControl().setLookAt(this.target, 30.0F, 30.0F);
@@ -495,7 +511,7 @@ public class Corrupt extends Monster implements IAnimatable, IAnimationTickable,
     @Override
     protected float getStandingEyeHeight(Pose poseIn, EntityDimensions sizeIn)
     {
-        return 2.15F;
+        return 3.75F;
     }
 
     @Override
@@ -543,6 +559,8 @@ public class Corrupt extends Monster implements IAnimatable, IAnimationTickable,
         }
     }
 
+
+
     @Override
     public void setCustomName(Component name) {
         super.setCustomName(name);
@@ -555,4 +573,227 @@ public class Corrupt extends Monster implements IAnimatable, IAnimationTickable,
         this.bossInfo.setProgress(this.getHealth() / this.getMaxHealth());
     }
     /*************************************************************************/
+
+    /************************************************** Spell casting stuff ******************************************************************************/
+/*
+    public class CastingASpellGoal extends Goal {
+        public CastingASpellGoal() {
+            this.setFlags(EnumSet.of(Goal.Flag.MOVE, Goal.Flag.LOOK));
+        }
+
+        public boolean canUse() {
+            return Corrupt.this.getSpellCastingTime() > 0;
+        }
+
+        public void start() {
+            super.start();
+            Corrupt.this.navigation.stop();
+        }
+
+        public void stop() {
+            super.stop();
+            Corrupt.this.setIsCastingSpell(Corrupt.SpellType.NONE);
+        }
+
+        public void tick() {
+            if (Corrupt.this.getTarget() != null) {
+                Corrupt.this.getLookControl().setLookAt(Corrupt.this.getTarget(), (float)Corrupt.this.getMaxHeadYRot(), (float)Corrupt.this.getMaxHeadXRot());
+            }
+
+        }
+    }
+
+    public void setIsCastingSpell(Corrupt.SpellType p_193081_1_) {
+        this.currentSpell = p_193081_1_;
+        this.entityData.set(DATA_SPELL_CASTING_ID, (byte)p_193081_1_.id);
+    }
+
+    protected int getSpellCastingTime() {
+        return this.spellCastingTickCount;
+    }
+
+    public enum SpellType {
+        NONE(0, 0.0D, 0.0D, 0.0D),
+        SUMMON_SPIDER(1, 0.7D, 0.7D, 0.8D);
+
+        private final int id;
+        private final double[] spellColor;
+
+        private SpellType(int p_i47561_3_, double p_i47561_4_, double p_i47561_6_, double p_i47561_8_) {
+            this.id = p_i47561_3_;
+            this.spellColor = new double[]{p_i47561_4_, p_i47561_6_, p_i47561_8_};
+        }
+
+        public static SpellType byId(int p_193337_0_) {
+            for(Corrupt.SpellType spellcastingillagerentity$spelltype : values()) {
+                if (p_193337_0_ == spellcastingillagerentity$spelltype.id) {
+                    return spellcastingillagerentity$spelltype;
+                }
+            }
+            return NONE;
+        }
+    }
+
+    public abstract class UseSpellGoal extends Goal {
+        protected int attackWarmupDelay;
+        protected int nextAttackTickCount;
+
+        protected UseSpellGoal() {
+        }
+
+        public boolean canUse() {
+            LivingEntity livingentity = Corrupt.this.getTarget();
+            if (livingentity != null && livingentity.isAlive()) {
+                if (Corrupt.this.isCastingSpell()) {
+                    return false;
+                } else {
+                    return Corrupt.this.tickCount >= this.nextAttackTickCount;
+                }
+            } else {
+                return false;
+            }
+        }
+
+        public boolean canContinueToUse() {
+            LivingEntity livingentity = Corrupt.this.getTarget();
+            return livingentity != null && livingentity.isAlive() && this.attackWarmupDelay > 0;
+        }
+
+        public void start() {
+            this.attackWarmupDelay = this.getCastWarmupTime();
+            Corrupt.this.spellCastingTickCount = this.getCastingTime();
+            this.nextAttackTickCount = Corrupt.this.tickCount + this.getCastingInterval();
+            SoundEvent soundevent = this.getSpellPrepareSound();
+            if (soundevent != null) {
+                Corrupt.this.playSound(soundevent, 0.0F, 1.0F);
+            }
+        }
+
+        public void tick() {
+            --this.attackWarmupDelay;
+            if (this.attackWarmupDelay == 0) {
+                this.performSpellCasting();
+                Corrupt.this.playSound(Corrupt.this.getCastingSoundEvent(), 1.0F, 1.0F);
+            }
+
+        }
+
+        protected abstract void performSpellCasting();
+
+        protected int getCastWarmupTime() {
+            return 20;
+        }
+
+        protected abstract int getCastingTime();
+
+        protected abstract int getCastingInterval();
+
+        @Nullable
+        protected abstract SoundEvent getSpellPrepareSound();
+
+        protected abstract Corrupt.SpellType getSpell();
+    }
+
+    protected SoundEvent getCastingSoundEvent() {
+        return null;
+    }
+
+    public boolean isCastingSpell() {
+        if (this.level.isClientSide) {
+            return this.entityData.get(DATA_SPELL_CASTING_ID) > 0;
+        } else {
+            return this.spellCastingTickCount > 0;
+        }
+    }
+
+    class AttackSpellGoal extends Corrupt.UseSpellGoal {
+        private AttackSpellGoal() {
+        }
+
+        protected int getCastingTime() {
+            return 40;
+        }
+
+        protected int getCastingInterval() {
+            return 100;
+        }
+
+        protected void performSpellCasting() {
+            LivingEntity livingentity = Corrupt.this.getTarget();
+            double d0 = Math.min(livingentity.getY(), Corrupt.this.getY());
+            double d1 = Math.max(livingentity.getY(), Corrupt.this.getY()) + 1.0D;
+            float f = (float) Mth.atan2(livingentity.getZ() -
+                    Corrupt.this.getZ(), livingentity.getX() - Corrupt.this.getX());
+            if (Corrupt.this.distanceToSqr(livingentity) < 9.0D) {
+                for(int i = 0; i < 5; ++i) {
+                    float f1 = f + (float)i * (float)Math.PI * 0.4F;
+                    this.createSpellEntity(Corrupt.this.getX() + (double)Mth.cos(f1) * 1.5D,
+                            Corrupt.this.getZ() + (double)Mth.sin(f1) * 1.5D, d0, d1, f1, 0);
+                }
+
+                for(int k = 0; k < 8; ++k) {
+                    float f2 = f + (float)k * (float)Math.PI * 2.0F / 8.0F + 1.2566371F;
+                    this.createSpellEntity(Corrupt.this.getX() + (double)Mth.cos(f2) * 2.5D,
+                            Corrupt.this.getZ() + (double)Mth.sin(f2) * 2.5D, d0, d1, f2, 3);
+                }
+            } else {
+                for(int l = 0; l < 16; ++l) {
+                    double d2 = 1.25D * (double)(l + 1);
+                    int j = 1 * l;
+                    this.createSpellEntity(Corrupt.this.getX() +
+                            (double)Mth.cos(f) * d2, Corrupt.this.getZ() + (double)Mth.sin(f) * d2, d0, d1, f, j);
+                }
+            }
+
+        }
+
+        private void createSpellEntity(double p_190876_1_, double p_190876_3_, double p_190876_5_, double p_190876_7_, float p_190876_9_, int p_190876_10_) {
+            BlockPos blockpos = new BlockPos(p_190876_1_, p_190876_7_, p_190876_3_);
+            boolean flag = false;
+            double d0 = 0.0D;
+
+            do {
+                BlockPos blockpos1 = blockpos.below();
+                BlockState blockstate = Corrupt.this.level.getBlockState(blockpos1);
+                if (blockstate.isFaceSturdy(Corrupt.this.level, blockpos1, Direction.UP)) {
+                    if (!Corrupt.this.level.isEmptyBlock(blockpos)) {
+                        BlockState blockstate1 = Corrupt.this.level.getBlockState(blockpos);
+                        VoxelShape voxelshape = blockstate1.getCollisionShape(Corrupt.this.level, blockpos);
+                        if (!voxelshape.isEmpty()) {
+                            d0 = voxelshape.max(Direction.Axis.Y);
+                        }
+                    }
+
+                    flag = true;
+                    break;
+                }
+
+                blockpos = blockpos.below();
+            } while(blockpos.getY() >= Mth.floor(p_190876_5_) - 1);
+
+            ServerLevel serverworld = (ServerLevel)Corrupt.this.level;
+
+            for(int i = 0; i < 1; ++i) {
+                BlockPos blockpos2 = Corrupt.this.blockPosition().offset(-2 +
+                        Corrupt.this.random.nextInt(1), 1, -2 + Corrupt.this.random.nextInt(1));
+                CorruptMinion corruptMinion = ModEntityTypes.CORRUPT_MINION.get().create(Corrupt.this.level);
+                corruptMinion.moveTo(blockpos2, 0.0F, 0.0F);
+                corruptMinion.finalizeSpawn(serverworld, Corrupt.this.level.getCurrentDifficultyAt(blockpos),
+                        MobSpawnType.MOB_SUMMONED, (SpawnGroupData)null, (CompoundTag)null);
+                serverworld.addFreshEntityWithPassengers(corruptMinion);
+            }
+
+        }
+
+        protected SoundEvent getSpellPrepareSound() {
+            return SoundEvents.EVOKER_PREPARE_ATTACK;
+        }
+
+        protected Corrupt.SpellType getSpell() {
+            return SpellType.NONE;
+        }
+    }
+
+ */
+    /***********************************************************************************************************************************************/
 }

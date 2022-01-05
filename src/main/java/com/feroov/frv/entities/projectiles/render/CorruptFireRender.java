@@ -38,6 +38,6 @@ public class CorruptFireRender extends GeoProjectilesRenderer<CorruptFire> {
                             @Nullable MultiBufferSource renderTypeBuffer, @Nullable VertexConsumer vertexBuilder, int packedLightIn,
                             int packedOverlayIn, float red, float green, float blue, float partialTicks)
     {
-        stackIn.scale(1.0F,1.0F,1.0F);
+        stackIn.scale(2.8F,2.8F,2.8F);
     }
 }

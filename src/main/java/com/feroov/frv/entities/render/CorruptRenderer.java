@@ -40,8 +40,9 @@ public class CorruptRenderer extends GeoEntityRenderer<Corrupt>
                             @Nullable MultiBufferSource renderTypeBuffer, @Nullable VertexConsumer vertexBuilder, int packedLightIn,
                             int packedOverlayIn, float red, float green, float blue, float partialTicks)
     {
-        stackIn.scale(0.95F,0.95F,0.95F);
+        stackIn.scale(1.95F,1.95F,1.95F);
     }
+
     @Override
     protected int getBlockLightLevel(Corrupt entityIn, BlockPos partialTicks) {
         return entityIn.getTextureTimer() == 1 ? 15 : 1;

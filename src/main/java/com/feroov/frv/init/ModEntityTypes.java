@@ -47,7 +47,8 @@ public class ModEntityTypes
 
     public static final RegistryObject<EntityType<Corrupt>> CORRUPT = ENTITIES.register("corrupt",
             () -> EntityType.Builder.of(Corrupt::new, MobCategory.CREATURE).canSpawnFarFromPlayer().fireImmune()
-                    .sized(0.7f,2.4f).build("corrupt"));
+                    .sized(1.7f,4.9f).build("corrupt"));
+
 
     /** Misc **/
     // Projectiles
@@ -64,8 +65,9 @@ public class ModEntityTypes
                     .clientTrackingRange(9).build(new ResourceLocation(Frv.MOD_ID, "musket_bullet").toString()));
 
     public static final RegistryObject<EntityType<CorruptFire>> CORRUPT_FIRE = ENTITIES.register("corrupt_fire",
-            () -> EntityType.Builder.<CorruptFire>of(CorruptFire::new, MobCategory.MISC).sized(1.5F, 1.5F)
+            () -> EntityType.Builder.<CorruptFire>of(CorruptFire::new, MobCategory.MISC).sized(1.0F, 1.0F)
                     .clientTrackingRange(9).build(new ResourceLocation(Frv.MOD_ID, "corrupt_fire").toString()));
+
 
     // Other
     public static final RegistryObject<EntityType<Cannon>> CANNON = ENTITIES.register("cannon",

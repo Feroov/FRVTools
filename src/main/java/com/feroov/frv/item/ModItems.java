@@ -30,13 +30,6 @@ public class ModItems
     /* ********************* */
     /***********************************************************************************************/
 
-    /********************************** (Materials) **************************************/
-    public static final RegistryObject<Item> TIN_INGOT = ITEMS.register("tin_ingot",
-            () -> new Item(new Item.Properties().tab(ModItemGroup.FRV_TAB_BLOCKS_ITEMS)));
-    public static final RegistryObject<Item> LEAD_INGOT = ITEMS.register("lead_ingot",
-            () -> new Item(new Item.Properties().tab(ModItemGroup.FRV_TAB_BLOCKS_ITEMS)));
-    /*************************************************************************************/
-
     /********************************** (Food) **************************************/
 
     public static final RegistryObject<Item> ALE = ITEMS.register("ale",
@@ -51,39 +44,21 @@ public class ModItems
 
     /************************************************************************************/
 
+    /********************************** (Materials) **************************************/
+    public static final RegistryObject<Item> TIN_INGOT = ITEMS.register("tin_ingot", () -> new Item(new Item.Properties().tab(ModItemGroup.FRV_TAB_BLOCKS_ITEMS)));
+    public static final RegistryObject<Item> LEAD_INGOT = ITEMS.register("lead_ingot", () -> new Item(new Item.Properties().tab(ModItemGroup.FRV_TAB_BLOCKS_ITEMS)));
+    public static final RegistryObject<Item> SILVER_INGOT = ITEMS.register("silver_ingot", () -> new Item(new Item.Properties().tab(ModItemGroup.FRV_TAB_BLOCKS_ITEMS)));
+    /*************************************************************************************/
 
     /**********************************  (MOBS EGGS) **********************************************/
-    public static final RegistryObject<ModSpawnEggItem> CROAKER_SPAWN_EGG = ITEMS.register("croaker_spawn_egg",
-            () -> new ModSpawnEggItem(ModEntityTypes.CROAKER, 0X087D62, 0X087A62,
-                    new Item.Properties().tab(ModItemGroup.FRV_TAB_EGGS)));
-
-    public static final RegistryObject<ModSpawnEggItem> HUNTER_SPAWN_EGG = ITEMS.register("hunter_spawn_egg",
-            () -> new ModSpawnEggItem(ModEntityTypes.HUNTER, 0X087D62, 0X087A62,
-                    new Item.Properties().tab(ModItemGroup.FRV_TAB_EGGS)));
-
-    public static final RegistryObject<ModSpawnEggItem> FEMALE_HUNTER_SPAWN_EGG = ITEMS.register("female_hunter_spawn_egg",
-            () -> new ModSpawnEggItem(ModEntityTypes.FEMALE_HUNTER, 0X087D62, 0X087A62,
-                    new Item.Properties().tab(ModItemGroup.FRV_TAB_EGGS)));
-
-    public static final RegistryObject<ModSpawnEggItem> PIRATE_CAPTAIN_SPAWN_EGG = ITEMS.register("pirate_captain_spawn_egg",
-            () -> new ModSpawnEggItem(ModEntityTypes.PIRATE_CAPTAIN, 0X087D62, 0X087A62,
-                    new Item.Properties().tab(ModItemGroup.FRV_TAB_EGGS)));
-
-    public static final RegistryObject<ModSpawnEggItem> CANNON = ITEMS.register("cannon_spawn_egg",
-            () -> new ModSpawnEggItem(ModEntityTypes.CANNON, 0X087D62, 0X087A62,
-                    new Item.Properties().tab(ModItemGroup.FRV_TAB_EGGS)));
-
-    public static final RegistryObject<ModSpawnEggItem> PIRATE = ITEMS.register("pirate_spawn_egg",
-            () -> new ModSpawnEggItem(ModEntityTypes.PIRATE, 0X087D62, 0X087A62,
-                    new Item.Properties().tab(ModItemGroup.FRV_TAB_EGGS)));
-
-    public static final RegistryObject<ModSpawnEggItem> FLINTLOCKER = ITEMS.register("flintlocker_spawn_egg",
-            () -> new ModSpawnEggItem(ModEntityTypes.FLINTLOCKER, 0X087D62, 0X087A62,
-                    new Item.Properties().tab(ModItemGroup.FRV_TAB_EGGS)));
-
-    public static final RegistryObject<ModSpawnEggItem> CORRUPT = ITEMS.register("corrupt_spawn_egg",
-            () -> new ModSpawnEggItem(ModEntityTypes.CORRUPT, 0X087D62, 0X087A62,
-                    new Item.Properties().tab(ModItemGroup.FRV_TAB_EGGS)));
+    public static final RegistryObject<ModSpawnEggItem> CROAKER_SPAWN_EGG = ITEMS.register("croaker_spawn_egg", () -> new ModSpawnEggItem(ModEntityTypes.CROAKER, 0X087D62, 0X087A62, new Item.Properties().tab(ModItemGroup.FRV_TAB_EGGS)));
+    public static final RegistryObject<ModSpawnEggItem> HUNTER_SPAWN_EGG = ITEMS.register("hunter_spawn_egg", () -> new ModSpawnEggItem(ModEntityTypes.HUNTER, 0X087D62, 0X087A62, new Item.Properties().tab(ModItemGroup.FRV_TAB_EGGS)));
+    public static final RegistryObject<ModSpawnEggItem> FEMALE_HUNTER_SPAWN_EGG = ITEMS.register("female_hunter_spawn_egg", () -> new ModSpawnEggItem(ModEntityTypes.FEMALE_HUNTER, 0X087D62, 0X087A62, new Item.Properties().tab(ModItemGroup.FRV_TAB_EGGS)));
+    public static final RegistryObject<ModSpawnEggItem> PIRATE_CAPTAIN_SPAWN_EGG = ITEMS.register("pirate_captain_spawn_egg", () -> new ModSpawnEggItem(ModEntityTypes.PIRATE_CAPTAIN, 0X087D62, 0X087A62, new Item.Properties().tab(ModItemGroup.FRV_TAB_EGGS)));
+    public static final RegistryObject<ModSpawnEggItem> CANNON = ITEMS.register("cannon_spawn_egg", () -> new ModSpawnEggItem(ModEntityTypes.CANNON, 0X087D62, 0X087A62, new Item.Properties().tab(ModItemGroup.FRV_TAB_EGGS)));
+    public static final RegistryObject<ModSpawnEggItem> PIRATE = ITEMS.register("pirate_spawn_egg", () -> new ModSpawnEggItem(ModEntityTypes.PIRATE, 0X087D62, 0X087A62, new Item.Properties().tab(ModItemGroup.FRV_TAB_EGGS)));
+    public static final RegistryObject<ModSpawnEggItem> FLINTLOCKER = ITEMS.register("flintlocker_spawn_egg", () -> new ModSpawnEggItem(ModEntityTypes.FLINTLOCKER, 0X087D62, 0X087A62, new Item.Properties().tab(ModItemGroup.FRV_TAB_EGGS)));
+    public static final RegistryObject<ModSpawnEggItem> CORRUPT = ITEMS.register("corrupt_spawn_egg", () -> new ModSpawnEggItem(ModEntityTypes.CORRUPT, 0X087D62, 0X087A62, new Item.Properties().tab(ModItemGroup.FRV_TAB_EGGS)));
     /***********************************************************************************************/
 
 
@@ -300,6 +275,43 @@ public class ModItems
 
     public static final RegistryObject<Item> LEAD_BOOTS = ITEMS.register("lead_boots",
             () -> new ArmorItem(ModArmorMaterial.LEAD, EquipmentSlot.FEET,
+                    new Item.Properties().tab(ModItemGroup.FRV_TAB)));
+
+    /*************************************  Silver  ************************************************/
+    public static final RegistryObject<Item> SILVER_SWORD = ITEMS.register("silver_sword",
+            () -> new SwordItem(ModTiers.SILVER, 3, -2.4f,
+                    new Item.Properties().tab(ModItemGroup.FRV_TAB)));
+
+    public static final RegistryObject<Item> SILVER_PICKAXE = ITEMS.register("silver_pickaxe",
+            () -> new PickaxeItem(ModTiers.SILVER, 0, -2.8f,
+                    new Item.Properties().tab(ModItemGroup.FRV_TAB)));
+
+    public static final RegistryObject<Item> SILVER_SHOVEL= ITEMS.register("silver_shovel",
+            () -> new ShovelItem(ModTiers.SILVER, 0.1f, -3f,
+                    new Item.Properties().tab(ModItemGroup.FRV_TAB)));
+
+    public static final RegistryObject<Item> SILVER_AXE = ITEMS.register("silver_axe",
+            () -> new AxeItem(ModTiers.SILVER, 5, -3.1f,
+                    new Item.Properties().tab(ModItemGroup.FRV_TAB)));
+
+    public static final RegistryObject<Item> SILVER_HOE = ITEMS.register("silver_hoe",
+            () -> new HoeItem(ModTiers.SILVER, -3, 0f,
+                    new Item.Properties().tab(ModItemGroup.FRV_TAB)));
+
+    public static final RegistryObject<Item> SILVER_HELMET = ITEMS.register("silver_helmet",
+            () -> new ArmorItem(ModArmorMaterial.SILVER, EquipmentSlot.HEAD,
+                    new Item.Properties().tab(ModItemGroup.FRV_TAB)));
+
+    public static final RegistryObject<Item> SILVER_CHESTPLATE = ITEMS.register("silver_chestplate",
+            () -> new ArmorItem(ModArmorMaterial.SILVER, EquipmentSlot.CHEST,
+                    new Item.Properties().tab(ModItemGroup.FRV_TAB)));
+
+    public static final RegistryObject<Item> SILVER_LEGGINGS = ITEMS.register("silver_leggings",
+            () -> new ArmorItem(ModArmorMaterial.SILVER, EquipmentSlot.LEGS,
+                    new Item.Properties().tab(ModItemGroup.FRV_TAB)));
+
+    public static final RegistryObject<Item> SILVER_BOOTS = ITEMS.register("silver_boots",
+            () -> new ArmorItem(ModArmorMaterial.SILVER, EquipmentSlot.FEET,
                     new Item.Properties().tab(ModItemGroup.FRV_TAB)));
     
     /**********************************  (AMETHYST)  **********************************************/

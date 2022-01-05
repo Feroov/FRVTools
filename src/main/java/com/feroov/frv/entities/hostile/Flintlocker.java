@@ -47,6 +47,7 @@ public class Flintlocker extends Monster implements IAnimatable, Npc, RangedAtta
     public static final EntityDataAccessor<Integer> ATTACK = SynchedEntityData.defineId(Flintlocker.class, EntityDataSerializers.INT);
     private static final EntityDataAccessor<Integer> DATA_ID_TYPE_VARIANT = SynchedEntityData.defineId(Flintlocker.class, EntityDataSerializers.INT);
 
+
     /******************************** Animation methods *****************************/
     private final AnimationFactory factory = new AnimationFactory(this);
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event)

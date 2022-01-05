@@ -31,6 +31,11 @@
   "item.frv.lead_axe": "Lead Axe",
   "item.frv.lead_shovel": "Lead Shovel",
   "item.frv.lead_hoe": "Lead Hoe",
+  "item.frv.silver_sword": "Silver Sword",
+  "item.frv.silver_pickaxe": "Silver Pickaxe",
+  "item.frv.silver_axe": "Silver Axe",
+  "item.frv.silver_shovel": "Silver Shovel",
+  "item.frv.silver_hoe": "Silver Hoe",
 
   "item.frv.quartz_helmet": "Quartz Helmet",
   "item.frv.quartz_chestplate": "Quartz Chestplate",
@@ -52,6 +57,10 @@
   "item.frv.lead_chestplate": "Lead Chestplate",
   "item.frv.lead_leggings": "Lead Leggings",
   "item.frv.lead_boots": "Lead Boots",
+  "item.frv.silver_helmet": "Silver Helmet",
+  "item.frv.silver_chestplate": "Silver Chestplate",
+  "item.frv.silver_leggings": "Silver Leggings",
+  "item.frv.silver_boots": "Silver Boots",
 
 
 
@@ -109,5 +118,8 @@
   "item.frv.lead_ingot": "Lead Ingot",
   "block.frv.lead_ore": "Lead Ore",
   "block.frv.deepslate_lead_ore": "Deepslate Lead Ore",
-  "block.frv.matrix": "\u00A7a\u00A7kMatrix\u00A7a"
+  "block.frv.matrix": "\u00A7a\u00A7kMatrix\u00A7a",
+  "item.frv.silver_ingot": "Silver Ingot",
+  "block.frv.silver_ore": "Silver Ore",
+  "block.frv.deepslate_silver_ore": "Deepslate Silver Ore"
 }

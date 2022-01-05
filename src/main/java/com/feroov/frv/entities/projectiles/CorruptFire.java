@@ -113,27 +113,29 @@ public class CorruptFire extends AbstractArrow implements IAnimatable {
                     mobeffectinstance.isAmbient(), mobeffectinstance.isVisible()), entity);
         }
 
-            livingEntity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 35));
-           // livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 80));
+
+            livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 60, 6));
+
 
         if(!livingEntity.level.isClientSide()) {
             ServerLevel world = (ServerLevel) livingEntity.level;
-            ServerPlayer player = ((ServerPlayer) livingEntity);
             BlockPos position = livingEntity.blockPosition();
 
-            EntityType.LIGHTNING_BOLT.spawn(world, null, player, position,
+            EntityType.LIGHTNING_BOLT.spawn(world, null, null, position,
                         MobSpawnType.TRIGGERED, true, true);
 
-            EntityType.LIGHTNING_BOLT.spawn(world, null, player, position,
+            EntityType.LIGHTNING_BOLT.spawn(world, null, null, position,
                     MobSpawnType.TRIGGERED, true, true);
 
-            EntityType.LIGHTNING_BOLT.spawn(world, null, player, position,
+            EntityType.LIGHTNING_BOLT.spawn(world, null, null, position,
                     MobSpawnType.TRIGGERED, true, true);
 
-            ModEntityTypes.ELECTRICITY.get().spawn(world, null, player, position,
+            ModEntityTypes.ELECTRICITY.get().spawn(world, null, null, position,
                     MobSpawnType.TRIGGERED, true, true);
 
         }
+
+
 
         if (!this.effects.isEmpty()) {
             for(MobEffectInstance mobeffectinstance1 : this.effects) {
@@ -164,7 +166,7 @@ public class CorruptFire extends AbstractArrow implements IAnimatable {
             }
         }
 
-        if (entity.hurt(damagesource, 22.0f))
+        if (entity.hurt(damagesource, 27.0f))
         {
             if (entity instanceof LivingEntity)
             {
