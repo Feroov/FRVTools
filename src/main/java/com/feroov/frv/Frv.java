@@ -122,15 +122,19 @@ public class Frv
             StructureSettings worldStructureConfig = chunkGenerator.getSettings();
 
             HashMap<StructureFeature<?>, HashMultimap<ConfiguredStructureFeature<?, ?>, ResourceKey<Biome>>> FrvStructureToMultiMap = new HashMap<>();
-
+            /********************************* Structure biome spawning **********************************************************************************/
             ImmutableSet<ResourceKey<Biome>> campsite = ImmutableSet.<ResourceKey<Biome>>builder()
                     .add(Biomes.PLAINS).add(Biomes.FOREST).add(Biomes.JUNGLE).add(Biomes.SAVANNA).build();
             campsite.forEach(biomeKey -> associateBiomeToConfiguredStructure(FrvStructureToMultiMap, FrvConfiguredStructures.CONFIGURED_CAMP_SITE, biomeKey));
 
+            ImmutableSet<ResourceKey<Biome>> corruption = ImmutableSet.<ResourceKey<Biome>>builder()
+                    .add(Biomes.PLAINS).add(Biomes.DESERT).add(Biomes.END_BARRENS).add(Biomes.END_HIGHLANDS).add(Biomes.END_MIDLANDS).build();
+            corruption.forEach(biomeKey -> associateBiomeToConfiguredStructure(FrvStructureToMultiMap, FrvConfiguredStructures.CONFIGURED_CORRUPTION, biomeKey));
+
             ImmutableSet<ResourceKey<Biome>> pirateship = ImmutableSet.<ResourceKey<Biome>>builder()
                     .add(Biomes.DEEP_OCEAN).add(Biomes.DEEP_COLD_OCEAN).add(Biomes.DEEP_LUKEWARM_OCEAN).build();
             pirateship.forEach(biomeKey -> associateBiomeToConfiguredStructure(FrvStructureToMultiMap, FrvConfiguredStructures.CONFIGURED_PIRATE_SHIP, biomeKey));
-
+            /**************************************************************************************************************************************/
 
 
             ImmutableMap.Builder<StructureFeature<?>, ImmutableMultimap<ConfiguredStructureFeature<?, ?>,
@@ -142,13 +146,19 @@ public class Frv
             FrvStructureToMultiMap.forEach((key, value) -> tempStructureToMultiMap.put(key, ImmutableMultimap.copyOf(value)));
             worldStructureConfig.configuredStructures = tempStructureToMultiMap.build();
 
+            /********************************* Configured stuff  **********************************************************************************/
             Map<StructureFeature<?>, StructureFeatureConfiguration> campsiteMap = new HashMap<>(worldStructureConfig.structureConfig());
             campsiteMap.putIfAbsent(FrvStructures.CAMP_SITE.get(), StructureSettings.DEFAULTS.get(FrvStructures.CAMP_SITE.get()));
             worldStructureConfig.structureConfig = campsiteMap;
 
+            Map<StructureFeature<?>, StructureFeatureConfiguration> corruptionMap = new HashMap<>(worldStructureConfig.structureConfig());
+            corruptionMap.putIfAbsent(FrvStructures.CORRUPTION.get(), StructureSettings.DEFAULTS.get(FrvStructures.CAMP_SITE.get()));
+            worldStructureConfig.structureConfig = corruptionMap;
+
             Map<StructureFeature<?>, StructureFeatureConfiguration> pirateshipMap = new HashMap<>(worldStructureConfig.structureConfig());
             pirateshipMap.putIfAbsent(FrvStructures.PIRATE_SHIP.get(), StructureSettings.DEFAULTS.get(FrvStructures.PIRATE_SHIP.get()));
             worldStructureConfig.structureConfig = pirateshipMap;
+            /**************************************************************************************************************************************/
         }
     }
 
@@ -174,5 +184,4 @@ public class Frv
             configuredStructureToBiomeMultiMap.put(configuredStructureFeature, biomeRegistryKey);
         }
     }
-
 }

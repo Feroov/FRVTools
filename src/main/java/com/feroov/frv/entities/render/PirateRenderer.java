@@ -36,7 +36,7 @@ public class PirateRenderer extends GeoEntityRenderer<Pirate>
     public PirateRenderer(EntityRendererProvider.Context renderManager)
     {
         super(renderManager, new PirateModel());
-        this.shadowRadius = 0.55F;
+        this.shadowRadius = 0.44F;
     }
     @Override
     public RenderType getRenderType(Pirate animatable, float partialTicks, PoseStack stack,

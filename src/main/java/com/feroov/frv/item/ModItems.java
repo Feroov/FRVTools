@@ -25,7 +25,7 @@ public class ModItems
                     new Item.Properties().tab(ModItemGroup.FRV_TAB_MISC)));
 
     /* ***** (Tab pics) *****/
-    public static final RegistryObject<Item> CROAKER_PIC = ITEMS.register("croaker_pic",
+    public static final RegistryObject<Item> MOB_PIC = ITEMS.register("mob_pic",
             () -> new Item(new Item.Properties()));
     /* ********************* */
     /***********************************************************************************************/
@@ -55,9 +55,9 @@ public class ModItems
     public static final RegistryObject<ModSpawnEggItem> HUNTER_SPAWN_EGG = ITEMS.register("hunter_spawn_egg", () -> new ModSpawnEggItem(ModEntityTypes.HUNTER, 0X087D62, 0X087A62, new Item.Properties().tab(ModItemGroup.FRV_TAB_EGGS)));
     public static final RegistryObject<ModSpawnEggItem> FEMALE_HUNTER_SPAWN_EGG = ITEMS.register("female_hunter_spawn_egg", () -> new ModSpawnEggItem(ModEntityTypes.FEMALE_HUNTER, 0X087D62, 0X087A62, new Item.Properties().tab(ModItemGroup.FRV_TAB_EGGS)));
     public static final RegistryObject<ModSpawnEggItem> PIRATE_CAPTAIN_SPAWN_EGG = ITEMS.register("pirate_captain_spawn_egg", () -> new ModSpawnEggItem(ModEntityTypes.PIRATE_CAPTAIN, 0X087D62, 0X087A62, new Item.Properties().tab(ModItemGroup.FRV_TAB_EGGS)));
-    public static final RegistryObject<ModSpawnEggItem> CANNON = ITEMS.register("cannon_spawn_egg", () -> new ModSpawnEggItem(ModEntityTypes.CANNON, 0X087D62, 0X087A62, new Item.Properties().tab(ModItemGroup.FRV_TAB_EGGS)));
     public static final RegistryObject<ModSpawnEggItem> PIRATE = ITEMS.register("pirate_spawn_egg", () -> new ModSpawnEggItem(ModEntityTypes.PIRATE, 0X087D62, 0X087A62, new Item.Properties().tab(ModItemGroup.FRV_TAB_EGGS)));
     public static final RegistryObject<ModSpawnEggItem> FLINTLOCKER = ITEMS.register("flintlocker_spawn_egg", () -> new ModSpawnEggItem(ModEntityTypes.FLINTLOCKER, 0X087D62, 0X087A62, new Item.Properties().tab(ModItemGroup.FRV_TAB_EGGS)));
+    public static final RegistryObject<ModSpawnEggItem> CANNON = ITEMS.register("cannon_spawn_egg", () -> new ModSpawnEggItem(ModEntityTypes.CANNON, 0X087D62, 0X087A62, new Item.Properties().tab(ModItemGroup.FRV_TAB_EGGS)));
     public static final RegistryObject<ModSpawnEggItem> CORRUPT = ITEMS.register("corrupt_spawn_egg", () -> new ModSpawnEggItem(ModEntityTypes.CORRUPT, 0X087D62, 0X087A62, new Item.Properties().tab(ModItemGroup.FRV_TAB_EGGS)));
     /***********************************************************************************************/
 

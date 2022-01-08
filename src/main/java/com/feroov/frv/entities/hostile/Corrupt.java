@@ -451,7 +451,7 @@ public class Corrupt extends Monster implements IAnimatable, IAnimationTickable,
         double d1 = livingEntity.getY(0.3333333333333333D) - arrow.getY();
         double d2 = livingEntity.getZ() - this.getZ();
         double d3 = (double) Mth.sqrt((float) (d0 * d0 + d2 * d2));
-        arrow.shoot(d0, d1 + d3 * (double) 0.05F, d2, 1.6F, 0.0F);
+        arrow.shoot(d0, d1 + d3 * (double) 0.05F, d2, 2.6F, 0.0F);
         this.playSound(ModSoundEvents.CORRUPT_FIRE.get(), 4.0F, 1.0F / (this.getRandom().nextFloat() * 0.4F + 0.8F));
         this.level.addFreshEntity(arrow);
     }

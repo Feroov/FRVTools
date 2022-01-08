@@ -1,22 +1,15 @@
 package com.feroov.frv.events;
 
 import com.feroov.frv.Frv;
-import com.feroov.frv.entities.hostile.PirateCaptain;
 import com.feroov.frv.entities.projectiles.render.*;
 import com.feroov.frv.entities.render.*;
 import com.feroov.frv.init.ModEntityTypes;
-import net.minecraft.client.Minecraft;
-import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.entity.Entity;
 import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 
-import java.util.HashMap;
-import java.util.Map;
 
 @Mod.EventBusSubscriber(modid = Frv.MOD_ID, bus = Bus.MOD, value = Dist.CLIENT)
 public class ClientModEvents

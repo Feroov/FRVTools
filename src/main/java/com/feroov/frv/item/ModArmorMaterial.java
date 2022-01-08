@@ -29,8 +29,8 @@ public enum ModArmorMaterial implements ArmorMaterial
     SILVER("silver", 30, new int[]{3, 6, 7, 2}, 15, SoundEvents.ARMOR_EQUIP_IRON,
             0.5F, 0.0F, () -> {return Ingredient.of(ModItems.SILVER_INGOT.get());}),
 
-    AMETHYST("amethyst", 33, new int[]{3, 6, 8, 3}, 10, SoundEvents.AMETHYST_CLUSTER_HIT,
-            2.0F, 0.2F, () -> {return Ingredient.of(Items.AMETHYST_SHARD);});
+    AMETHYST("amethyst", 36, new int[]{3, 6, 8, 3}, 18, SoundEvents.AMETHYST_CLUSTER_HIT,
+            2.5F, 0.2F, () -> {return Ingredient.of(Items.AMETHYST_SHARD);});
 
     /**
      *    LEATHER("leather", 5, new int[]{1, 2, 3, 1}, 15, SoundEvents.ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, () -> {

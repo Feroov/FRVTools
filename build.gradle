@@ -1,23 +1,19 @@
 buildscript {
     repositories {
         maven { url = 'https://maven.minecraftforge.net' }
-        maven { url = 'https://repo.spongepowered.org/maven'}
-        mavenCentral()
     }
     dependencies {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
-        classpath 'org.spongepowered:mixingradle:0.7-SNAPSHOT'
     }
 }
 
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
-apply plugin: 'org.spongepowered.mixin'
 
 version = '2.1'
 group = 'com.feroov.frv'
-archivesBaseName = 'frv'
+archivesBaseName = 'FRV Tools'
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
@@ -31,7 +27,6 @@ minecraft {
             workingDirectory project.file('run')
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
-            arg "-mixin.config=frv.mixins.json"
             mods {
                 frv {
                     source sourceSets.main
@@ -68,16 +63,13 @@ dependencies {
 jar {
     manifest {
         attributes([
-                "Specification-Title"     : "frv",
+                "Specification-Title"     : "FRV Tools",
                 "Specification-Vendor"    : "frvsareus",
                 "Specification-Version"   : "1", // We are version 1 of ourselves
                 "Implementation-Title"    : project.name,
                 "Implementation-Version"  : project.jar.archiveVersion,
                 "Implementation-Vendor"   : "examplemodsareus",
-                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
-                "TweakClass": "org.spongepowered.asm.launch.MixinTweaker",
-                "TweakOrder": 0,
-                "MixinConfigs" : "frv.mixins.json"
+                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
     }
 }

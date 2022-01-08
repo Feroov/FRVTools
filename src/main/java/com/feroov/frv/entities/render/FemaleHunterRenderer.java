@@ -34,7 +34,7 @@ public class FemaleHunterRenderer extends GeoEntityRenderer<FemaleHunter>
     public FemaleHunterRenderer(EntityRendererProvider.Context renderManager)
     {
         super(renderManager, new FemaleHunterModel());
-        this.shadowRadius = 0.55F;
+        this.shadowRadius = 0.44F;
     }
     @Override
     public RenderType getRenderType(FemaleHunter animatable, float partialTicks, PoseStack stack,

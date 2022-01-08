@@ -3,7 +3,6 @@ package com.feroov.frv.item;
 import com.feroov.frv.block.ModBlocks;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 
 public class ModItemGroup
 {
@@ -12,7 +11,7 @@ public class ModItemGroup
         @Override
         public ItemStack makeIcon()
         {
-            return new ItemStack(ModItems.LEAD_PICKAXE.get());
+            return new ItemStack(ModItems.SILVER_PICKAXE.get());
         }
     };
 
@@ -30,7 +29,7 @@ public class ModItemGroup
         @Override
         public ItemStack makeIcon()
         {
-            return new ItemStack(ModBlocks.TIN_ORE.get());
+            return new ItemStack(ModBlocks.MATRIX.get());
         }
     };
 
@@ -39,7 +38,7 @@ public class ModItemGroup
         @Override
         public ItemStack makeIcon()
         {
-            return new ItemStack(ModItems.CROAKER_PIC.get());
+            return new ItemStack(ModItems.MOB_PIC.get());
         }
     };
 

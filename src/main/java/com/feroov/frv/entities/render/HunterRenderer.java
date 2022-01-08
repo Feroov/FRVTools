@@ -34,7 +34,7 @@ public class HunterRenderer extends GeoEntityRenderer<Hunter>
     public HunterRenderer(EntityRendererProvider.Context renderManager)
     {
         super(renderManager, new HunterModel());
-        this.shadowRadius = 0.55F;
+        this.shadowRadius = 0.44F;
     }
     @Override
     public RenderType getRenderType(Hunter animatable, float partialTicks, PoseStack stack,

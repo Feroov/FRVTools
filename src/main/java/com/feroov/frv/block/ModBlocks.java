@@ -3,11 +3,18 @@ package com.feroov.frv.block;
 import com.feroov.frv.Frv;
 import com.feroov.frv.item.ModItemGroup;
 import com.feroov.frv.item.ModItems;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -51,9 +58,25 @@ public class ModBlocks
     /******************************************************************************************/
 
 
+    /********************************** Other blocks *************************************/
     public static final RegistryObject<Block> MATRIX = registerBlock("matrix",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(-1.0F, 3600000.0F).noDrops().lightLevel((light) -> {return 15;})));
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(-1.0F, 3600000.0F).noDrops().lightLevel((light) -> {return 15;}))
+            {
+                @Override
+                public void stepOn(Level pLevel, BlockPos pPos, BlockState pState, Entity pEntity) {
+                    if(!pLevel.isClientSide())
+                    {
+                        if(pEntity instanceof LivingEntity)
+                        {
+                            LivingEntity entity = ((LivingEntity) pEntity);
+                            entity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 40));
+                        }
+                    }
 
+                    super.stepOn(pLevel, pPos, pState, pEntity);
+                }
+            });
+    /******************************************************************************************/
 
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block)

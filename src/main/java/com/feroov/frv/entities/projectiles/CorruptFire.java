@@ -114,7 +114,8 @@ public class CorruptFire extends AbstractArrow implements IAnimatable {
         }
 
 
-            livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 60, 6));
+            livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 200));
+            livingEntity.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 60));
 
 
         if(!livingEntity.level.isClientSide()) {
