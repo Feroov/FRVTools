@@ -40,6 +40,10 @@ public class ModBlocks
     public static final RegistryObject<Block> SILVER_ORE = registerBlock("silver_ore",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength
                     (3.6f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> PLATINUM_ORE = registerBlock("platinum_ore",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength
+                    (4.2f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
     /******************************************************************************************/
 
 
@@ -55,6 +59,10 @@ public class ModBlocks
     public static final RegistryObject<Block> DEEPSLATE_SILVER_ORE = registerBlock("deepslate_silver_ore",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength
                     (5.0f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
+
+    public static final RegistryObject<Block> DEEPSLATE_PLATINUM_ORE = registerBlock("deepslate_platinum_ore",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength
+                    (5.7f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
     /******************************************************************************************/
 
 

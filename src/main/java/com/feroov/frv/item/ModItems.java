@@ -48,6 +48,7 @@ public class ModItems
     public static final RegistryObject<Item> TIN_INGOT = ITEMS.register("tin_ingot", () -> new Item(new Item.Properties().tab(ModItemGroup.FRV_TAB_BLOCKS_ITEMS)));
     public static final RegistryObject<Item> LEAD_INGOT = ITEMS.register("lead_ingot", () -> new Item(new Item.Properties().tab(ModItemGroup.FRV_TAB_BLOCKS_ITEMS)));
     public static final RegistryObject<Item> SILVER_INGOT = ITEMS.register("silver_ingot", () -> new Item(new Item.Properties().tab(ModItemGroup.FRV_TAB_BLOCKS_ITEMS)));
+    public static final RegistryObject<Item> PLATINUM_INGOT = ITEMS.register("platinum_ingot", () -> new Item(new Item.Properties().tab(ModItemGroup.FRV_TAB_BLOCKS_ITEMS)));
     /*************************************************************************************/
 
     /**********************************  (MOBS EGGS) **********************************************/
@@ -313,6 +314,47 @@ public class ModItems
     public static final RegistryObject<Item> SILVER_BOOTS = ITEMS.register("silver_boots",
             () -> new ArmorItem(ModArmorMaterial.SILVER, EquipmentSlot.FEET,
                     new Item.Properties().tab(ModItemGroup.FRV_TAB)));
+    /***********************************************************************************************/
+
+
+    /********************************** (PLATINUM) **********************************************/
+    public static final RegistryObject<Item> PLATINUM_SWORD = ITEMS.register("platinum_sword",
+            () -> new SwordItem(ModTiers.PLATINUM, 3, 3f,
+                    new Item.Properties().tab(ModItemGroup.FRV_TAB)));
+
+    public static final RegistryObject<Item> PLATINUM_PICKAXE = ITEMS.register("platinum_pickaxe",
+            () -> new PickaxeItem(ModTiers.PLATINUM, 2, 3f,
+                    new Item.Properties().tab(ModItemGroup.FRV_TAB)));
+
+    public static final RegistryObject<Item> PLATINUM_AXE = ITEMS.register("platinum_axe",
+            () -> new AxeItem(ModTiers.PLATINUM, 6, 3f,
+                    new Item.Properties().tab(ModItemGroup.FRV_TAB)));
+
+    public static final RegistryObject<Item> PLATINUM_SHOVEL = ITEMS.register("platinum_shovel",
+            () -> new ShovelItem(ModTiers.PLATINUM, 2.5f, 3f,
+                    new Item.Properties().tab(ModItemGroup.FRV_TAB)));
+
+    public static final RegistryObject<Item> PLATINUM_HOE = ITEMS.register("platinum_hoe",
+            () -> new HoeItem(ModTiers.PLATINUM, -1, 3f,
+                    new Item.Properties().tab(ModItemGroup.FRV_TAB)));
+
+    public static final RegistryObject<Item> PLATINUM_HELMET = ITEMS.register("platinum_helmet",
+            () -> new ArmorItem(ModArmorMaterial.PLATINUM, EquipmentSlot.HEAD,
+                    new Item.Properties().tab(ModItemGroup.FRV_TAB)));
+
+    public static final RegistryObject<Item> PLATINUM_CHESTPLATE = ITEMS.register("platinum_chestplate",
+            () -> new ArmorItem(ModArmorMaterial.PLATINUM, EquipmentSlot.CHEST,
+                    new Item.Properties().tab(ModItemGroup.FRV_TAB)));
+
+    public static final RegistryObject<Item> PLATINUM_LEGGINGS = ITEMS.register("platinum_leggings",
+            () -> new ArmorItem(ModArmorMaterial.PLATINUM, EquipmentSlot.LEGS,
+                    new Item.Properties().tab(ModItemGroup.FRV_TAB)));
+
+    public static final RegistryObject<Item> PLATINUM_BOOTS = ITEMS.register("platinum_boots",
+            () -> new ArmorItem(ModArmorMaterial.PLATINUM, EquipmentSlot.FEET,
+                    new Item.Properties().tab(ModItemGroup.FRV_TAB)));
+    /***********************************************************************************************/
+
     
     /**********************************  (AMETHYST)  **********************************************/
     public static final RegistryObject<Item> AMETHYST_SWORD = ITEMS.register("amethyst_sword",

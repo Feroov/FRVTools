@@ -36,6 +36,11 @@
   "item.frv.silver_axe": "Silver Axe",
   "item.frv.silver_shovel": "Silver Shovel",
   "item.frv.silver_hoe": "Silver Hoe",
+  "item.frv.platinum_sword": "Platinum Sword",
+  "item.frv.platinum_pickaxe": "Platinum Pickaxe",
+  "item.frv.platinum_axe": "Platinum Axe",
+  "item.frv.platinum_shovel": "Platinum Shovel",
+  "item.frv.platinum_hoe": "Platinum Hoe",
 
   "item.frv.quartz_helmet": "Quartz Helmet",
   "item.frv.quartz_chestplate": "Quartz Chestplate",
@@ -61,6 +66,10 @@
   "item.frv.silver_chestplate": "Silver Chestplate",
   "item.frv.silver_leggings": "Silver Leggings",
   "item.frv.silver_boots": "Silver Boots",
+  "item.frv.platinum_helmet": "Platinum Helmet",
+  "item.frv.platinum_chestplate": "Platinum Chestplate",
+  "item.frv.platinum_leggings": "Platinum Leggings",
+  "item.frv.platinum_boots": "Platinum Boots",
 
 
 
@@ -121,5 +130,8 @@
   "block.frv.matrix": "\u00A7a\u00A7kMatrix\u00A7a",
   "item.frv.silver_ingot": "Silver Ingot",
   "block.frv.silver_ore": "Silver Ore",
-  "block.frv.deepslate_silver_ore": "Deepslate Silver Ore"
+  "block.frv.deepslate_silver_ore": "Deepslate Silver Ore",
+  "item.frv.platinum_ingot": "Platinum Ingot",
+  "block.frv.platinum_ore": "Platinum Ore",
+  "block.frv.deepslate_platinum_ore": "Deepslate Platinum Ore"
 }

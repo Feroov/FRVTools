@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "# #",
+    "# #"
+  ],
+  "key": {
+    "#": {
+      "item": "frv:platinum_ingot"
+    }
+  },
+  "result": {
+    "item": "frv:platinum_leggings",
+    "count": 1
+  }
+}

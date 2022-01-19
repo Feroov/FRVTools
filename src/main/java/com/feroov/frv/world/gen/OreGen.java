@@ -65,11 +65,24 @@ public class OreGen
     public static final ConfiguredFeature<?, ?> SILVER_CF = Feature.ORE.configured(new OreConfiguration
             (new TagMatchTest(BlockTags.BASE_STONE_OVERWORLD), ModBlocks.SILVER_ORE.get().defaultBlockState(), 6,0.0f));
     public static final PlacedFeature SILVER_PF = SILVER_CF.placed(CountPlacement.of(5), InSquarePlacement.spread(),
-            HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(80), VerticalAnchor.belowTop(275)), BiomeFilter.biome());
+            HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(80), VerticalAnchor.belowTop(287)), BiomeFilter.biome());
     // Deepslate
     public static final ConfiguredFeature<?, ?> SILVER_DEEP_CF = Feature.ORE.configured(new OreConfiguration
             (new TagMatchTest(BlockTags.BASE_STONE_OVERWORLD), ModBlocks.DEEPSLATE_SILVER_ORE.get().defaultBlockState(), 3,0.0f));
     public static final PlacedFeature SILVER_DEEP_PF = SILVER_DEEP_CF.placed(CountPlacement.of(3), InSquarePlacement.spread(),
+            HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(14), VerticalAnchor.belowTop(330)), BiomeFilter.biome());
+    /**********************************************************************************************************************************************/
+
+    /****************************************************** Platinum Ore ******************************************************************************/
+    // Normal
+    public static final ConfiguredFeature<?, ?> PLATINUM_CF = Feature.ORE.configured(new OreConfiguration
+            (new TagMatchTest(BlockTags.BASE_STONE_OVERWORLD), ModBlocks.PLATINUM_ORE.get().defaultBlockState(), 5,0.0f));
+    public static final PlacedFeature PLATINUM_PF = PLATINUM_CF.placed(CountPlacement.of(4), InSquarePlacement.spread(),
+            HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(80), VerticalAnchor.belowTop(299)), BiomeFilter.biome());
+    // Deepslate
+    public static final ConfiguredFeature<?, ?> PLATINUM_DEEP_CF = Feature.ORE.configured(new OreConfiguration
+            (new TagMatchTest(BlockTags.BASE_STONE_OVERWORLD), ModBlocks.DEEPSLATE_PLATINUM_ORE.get().defaultBlockState(), 4,0.0f));
+    public static final PlacedFeature PLATINUM_DEEP_PF = PLATINUM_DEEP_CF.placed(CountPlacement.of(2), InSquarePlacement.spread(),
             HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(14), VerticalAnchor.belowTop(330)), BiomeFilter.biome());
     /**********************************************************************************************************************************************/
 
@@ -97,6 +110,9 @@ public class OreGen
         OVERWORLD_ORES.add(Registry.register(registry, new ResourceLocation(Frv.MOD_ID, "deepslate_lead_ore"), OreGen.LEAD_DEEP_PF));
         OVERWORLD_ORES.add(Registry.register(registry, new ResourceLocation(Frv.MOD_ID, "silver_ore"), OreGen.SILVER_PF));
         OVERWORLD_ORES.add(Registry.register(registry, new ResourceLocation(Frv.MOD_ID, "deepslate_silver_ore"), OreGen.SILVER_DEEP_PF));
+        OVERWORLD_ORES.add(Registry.register(registry, new ResourceLocation(Frv.MOD_ID, "platinum_ore"), OreGen.PLATINUM_PF));
+        OVERWORLD_ORES.add(Registry.register(registry, new ResourceLocation(Frv.MOD_ID, "deepslate_platinum_ore"), OreGen.PLATINUM_DEEP_PF));
+
     }
 
     public static void registerConfigured()
@@ -109,5 +125,7 @@ public class OreGen
         Registry.register(registry, new ResourceLocation(Frv.MOD_ID, "deepslate_lead_ore"), OreGen.LEAD_DEEP_CF);
         Registry.register(registry, new ResourceLocation(Frv.MOD_ID, "silver_ore"), OreGen.SILVER_CF);
         Registry.register(registry, new ResourceLocation(Frv.MOD_ID, "deepslate_silver_ore"), OreGen.SILVER_DEEP_CF);
+        Registry.register(registry, new ResourceLocation(Frv.MOD_ID, "platinum_ore"), OreGen.PLATINUM_CF);
+        Registry.register(registry, new ResourceLocation(Frv.MOD_ID, "deepslate_platinum_ore"), OreGen.PLATINUM_DEEP_CF);
     }
 }

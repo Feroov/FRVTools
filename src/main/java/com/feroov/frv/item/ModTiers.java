@@ -22,6 +22,9 @@ public class ModTiers
     public static final ForgeTier SILVER = new ForgeTier(2,650,7.4f,2.8f,10,
             Tags.Blocks.NEEDS_GOLD_TOOL, () -> Ingredient.of(ModItems.SILVER_INGOT.get()));
 
+    public static final ForgeTier PLATINUM = new ForgeTier(3,1320,7.9f,3.0f,10,
+            Tags.Blocks.NEEDS_GOLD_TOOL, () -> Ingredient.of(ModItems.PLATINUM_INGOT.get()));
+
     public static final ForgeTier AMETHYST = new ForgeTier(3,1863,8.6f,3.8f,10,
             Tags.Blocks.NEEDS_GOLD_TOOL, () -> Ingredient.of(Items.AMETHYST_SHARD));
 
