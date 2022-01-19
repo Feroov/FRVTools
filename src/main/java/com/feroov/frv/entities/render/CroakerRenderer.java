@@ -32,7 +32,7 @@ public class CroakerRenderer extends GeoEntityRenderer<Croaker>
 
     public CroakerRenderer(EntityRendererProvider.Context renderManager) {
         super(renderManager, new CroakerModel());
-        this.shadowRadius = 0.55F;
+        this.shadowRadius = 0.39F;
     }
     @Override
     public RenderType getRenderType(Croaker animatable, float partialTicks, PoseStack stack,
