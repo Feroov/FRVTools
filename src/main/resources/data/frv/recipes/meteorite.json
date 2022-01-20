@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "frv:meteorite"
+  },
+  "result": "frv:meteorite_ingot",
+  "experience": 0.7,
+  "cookingtime": 200
+}

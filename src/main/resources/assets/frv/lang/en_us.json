@@ -127,11 +127,14 @@
   "item.frv.lead_ingot": "Lead Ingot",
   "block.frv.lead_ore": "Lead Ore",
   "block.frv.deepslate_lead_ore": "Deepslate Lead Ore",
-  "block.frv.matrix": "\u00A7a\u00A7kMatrix\u00A7a",
   "item.frv.silver_ingot": "Silver Ingot",
   "block.frv.silver_ore": "Silver Ore",
   "block.frv.deepslate_silver_ore": "Deepslate Silver Ore",
   "item.frv.platinum_ingot": "Platinum Ingot",
   "block.frv.platinum_ore": "Platinum Ore",
-  "block.frv.deepslate_platinum_ore": "Deepslate Platinum Ore"
+  "block.frv.deepslate_platinum_ore": "Deepslate Platinum Ore",
+
+  "block.frv.matrix": "\u00A7a\u00A7kMatrix\u00A7a",
+  "block.frv.meteorite": "\u00A7eMeteorite",
+  "item.frv.meteorite_ingot": "\u00A7Meteorite Ingot"
 }

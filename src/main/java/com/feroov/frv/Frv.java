@@ -134,6 +134,10 @@ public class Frv
             ImmutableSet<ResourceKey<Biome>> pirateship = ImmutableSet.<ResourceKey<Biome>>builder()
                     .add(Biomes.DEEP_OCEAN).add(Biomes.DEEP_COLD_OCEAN).add(Biomes.DEEP_LUKEWARM_OCEAN).build();
             pirateship.forEach(biomeKey -> associateBiomeToConfiguredStructure(FrvStructureToMultiMap, FrvConfiguredStructures.CONFIGURED_PIRATE_SHIP, biomeKey));
+
+            ImmutableSet<ResourceKey<Biome>> crater = ImmutableSet.<ResourceKey<Biome>>builder()
+                    .add(Biomes.PLAINS).add(Biomes.FOREST).add(Biomes.DARK_FOREST).build();
+            crater.forEach(biomeKey -> associateBiomeToConfiguredStructure(FrvStructureToMultiMap, FrvConfiguredStructures.CONFIGURED_CRATER, biomeKey));
             /**************************************************************************************************************************************/
 
 
@@ -158,6 +162,10 @@ public class Frv
             Map<StructureFeature<?>, StructureFeatureConfiguration> pirateshipMap = new HashMap<>(worldStructureConfig.structureConfig());
             pirateshipMap.putIfAbsent(FrvStructures.PIRATE_SHIP.get(), StructureSettings.DEFAULTS.get(FrvStructures.PIRATE_SHIP.get()));
             worldStructureConfig.structureConfig = pirateshipMap;
+
+            Map<StructureFeature<?>, StructureFeatureConfiguration> craterMap = new HashMap<>(worldStructureConfig.structureConfig());
+            craterMap.putIfAbsent(FrvStructures.CRATER.get(), StructureSettings.DEFAULTS.get(FrvStructures.CRATER.get()));
+            worldStructureConfig.structureConfig = craterMap;
             /**************************************************************************************************************************************/
         }
     }

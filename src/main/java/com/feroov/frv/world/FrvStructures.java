@@ -3,6 +3,7 @@ package com.feroov.frv.world;
 import com.feroov.frv.Frv;
 import com.feroov.frv.world.structure.CampsiteStructure;
 import com.feroov.frv.world.structure.CorruptionStructure;
+import com.feroov.frv.world.structure.CraterStructure;
 import com.feroov.frv.world.structure.PirateshipStructure;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -46,10 +47,14 @@ public class FrvStructures
     public static final RegistryObject<StructureFeature<JigsawConfiguration>> PIRATE_SHIP =
             DEFERRED_REGISTRY_STRUCTURE.register("pirateship", () -> (new PirateshipStructure(JigsawConfiguration.CODEC)));
 
+    public static final RegistryObject<StructureFeature<JigsawConfiguration>> CRATER =
+            DEFERRED_REGISTRY_STRUCTURE.register("crater", () -> (new CraterStructure(JigsawConfiguration.CODEC)));
+
     public static void setupStructures() {
         setupMapSpacingAndLand(CAMP_SITE.get(), new StructureFeatureConfiguration(20 , 8 , 1234567890), true);
         setupMapSpacingAndLand(CORRUPTION.get(), new StructureFeatureConfiguration(80 , 20 , 1234567890), true);
         setupMapSpacingAndLand(PIRATE_SHIP.get(), new StructureFeatureConfiguration(32 , 8 , 1234567890), false);
+        setupMapSpacingAndLand(CRATER.get(), new StructureFeatureConfiguration(80 , 20 , 1234567890), true);
     }
 
     public static <F extends StructureFeature<?>>
