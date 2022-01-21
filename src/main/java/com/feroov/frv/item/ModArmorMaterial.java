@@ -33,7 +33,10 @@ public enum ModArmorMaterial implements ArmorMaterial
             1.35F, 0.0F, () -> {return Ingredient.of(ModItems.PLATINUM_INGOT.get());}),
 
     AMETHYST("amethyst", 36, new int[]{3, 6, 8, 3}, 18, SoundEvents.AMETHYST_CLUSTER_HIT,
-            2.5F, 0.2F, () -> {return Ingredient.of(Items.AMETHYST_SHARD);});
+            2.5F, 0.2F, () -> {return Ingredient.of(Items.AMETHYST_SHARD);}),
+
+    METEORITE("meteorite", 42, new int[]{3, 6, 8, 3}, 18, SoundEvents.ANCIENT_DEBRIS_BREAK,
+            5.5F, 1.0F, () -> {return Ingredient.of(ModItems.METEORITE_INGOT.get());});
 
     /**
      *    LEATHER("leather", 5, new int[]{1, 2, 3, 1}, 15, SoundEvents.ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, () -> {

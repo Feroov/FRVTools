@@ -28,6 +28,9 @@ public class ModTiers
     public static final ForgeTier AMETHYST = new ForgeTier(3,1863,8.6f,3.8f,10,
             Tags.Blocks.NEEDS_GOLD_TOOL, () -> Ingredient.of(Items.AMETHYST_SHARD));
 
+    public static final ForgeTier METEORITE = new ForgeTier(4,2863,12.5f,5.3f,15,
+            Tags.Blocks.NEEDS_GOLD_TOOL, () -> Ingredient.of(ModItems.METEORITE_INGOT.get()));
+
     public static final ForgeTier ADMIN = new ForgeTier(999,999999,999f,9999f,10,
             Tags.Blocks.NEEDS_GOLD_TOOL, () -> Ingredient.of(Items.AMETHYST_SHARD));
 

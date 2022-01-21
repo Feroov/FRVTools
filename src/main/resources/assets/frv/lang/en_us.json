@@ -41,6 +41,11 @@
   "item.frv.platinum_axe": "Platinum Axe",
   "item.frv.platinum_shovel": "Platinum Shovel",
   "item.frv.platinum_hoe": "Platinum Hoe",
+  "item.frv.meteorite_sword": "\u00A7eMeteorite Sword",
+  "item.frv.meteorite_pickaxe": "\u00A7eMeteorite Pickaxe",
+  "item.frv.meteorite_axe": "\u00A7eMeteorite Axe",
+  "item.frv.meteorite_shovel": "\u00A7eMeteorite Shovel",
+  "item.frv.meteorite_hoe": "\u00A7eMeteorite Hoe",
 
   "item.frv.quartz_helmet": "Quartz Helmet",
   "item.frv.quartz_chestplate": "Quartz Chestplate",
@@ -70,6 +75,10 @@
   "item.frv.platinum_chestplate": "Platinum Chestplate",
   "item.frv.platinum_leggings": "Platinum Leggings",
   "item.frv.platinum_boots": "Platinum Boots",
+  "item.frv.meteorite_helmet": "\u00A7eMeteorite Helmet",
+  "item.frv.meteorite_chestplate": "\u00A7eMeteorite Chestplate",
+  "item.frv.meteorite_leggings": "\u00A7eMeteorite Leggings",
+  "item.frv.meteorite_boots": "\u00A7eMeteorite Boots",
 
 
 
@@ -136,5 +145,5 @@
 
   "block.frv.matrix": "\u00A7a\u00A7kMatrix\u00A7a",
   "block.frv.meteorite": "\u00A7eMeteorite",
-  "item.frv.meteorite_ingot": "\u00A7Meteorite Ingot"
+  "item.frv.meteorite_ingot": "\u00A7eMeteorite Ingot"
 }

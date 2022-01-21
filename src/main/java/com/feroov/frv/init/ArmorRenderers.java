@@ -2,7 +2,9 @@ package com.feroov.frv.init;
 
 import com.feroov.frv.Frv;
 import com.feroov.frv.item.custom.armors.AmethystArmor;
+import com.feroov.frv.item.custom.armors.MeteoriteArmor;
 import com.feroov.frv.item.custom.armors.renders.AmethystArmorRenderer;
+import com.feroov.frv.item.custom.armors.renders.MeteoriteArmorRenderer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -17,5 +19,6 @@ public class ArmorRenderers
     public static void registerRenderers(final EntityRenderersEvent.AddLayers event)
     {
         GeoArmorRenderer.registerArmorRenderer(AmethystArmor.class, new AmethystArmorRenderer());
+        GeoArmorRenderer.registerArmorRenderer(MeteoriteArmor.class, new MeteoriteArmorRenderer());
     }
 }

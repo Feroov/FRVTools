@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:blasting",
+  "group": "meteorite_ingot",
+  "ingredient": {
+    "item": "frv:meteorite"
+  },
+  "result": "frv:meteorite_ingot",
+  "experience": 1.0,
+  "cookingtime": 100
+}

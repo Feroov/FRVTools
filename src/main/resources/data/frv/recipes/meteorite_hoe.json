@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "## ",
+    " / ",
+    " / "
+  ],
+  "key": {
+    "#": {
+      "item": "frv:meteorite_ingot"
+    },
+    "/": {
+      "item": "minecraft:coal_block"
+    }
+  },
+  "result": {
+    "item": "frv:meteorite_hoe",
+    "count": 1
+  }
+}

@@ -3,6 +3,7 @@ package com.feroov.frv.item;
 import com.feroov.frv.Frv;
 import com.feroov.frv.init.ModEntityTypes;
 import com.feroov.frv.item.custom.armors.AmethystArmor;
+import com.feroov.frv.item.custom.armors.MeteoriteArmor;
 import com.feroov.frv.item.custom.items.*;
 import com.feroov.frv.item.custom.ranged.Musket;
 import com.feroov.frv.item.custom.ranged.MusketBullet;
@@ -17,6 +18,8 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class ModItems
 {
+    //TODO 356, 30, -30 photoshop
+
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, Frv.MOD_ID);
     /********************************** (Misc/Unobtainable) *******************************************/
@@ -320,23 +323,23 @@ public class ModItems
 
     /********************************** (PLATINUM) **********************************************/
     public static final RegistryObject<Item> PLATINUM_SWORD = ITEMS.register("platinum_sword",
-            () -> new SwordItem(ModTiers.PLATINUM, 3, 3f,
+            () -> new SwordItem(ModTiers.PLATINUM, 3, -2.4f,
                     new Item.Properties().tab(ModItemGroup.FRV_TAB)));
 
     public static final RegistryObject<Item> PLATINUM_PICKAXE = ITEMS.register("platinum_pickaxe",
-            () -> new PickaxeItem(ModTiers.PLATINUM, 2, 3f,
+            () -> new PickaxeItem(ModTiers.PLATINUM, 0, -2.8f,
                     new Item.Properties().tab(ModItemGroup.FRV_TAB)));
 
     public static final RegistryObject<Item> PLATINUM_AXE = ITEMS.register("platinum_axe",
-            () -> new AxeItem(ModTiers.PLATINUM, 6, 3f,
+            () -> new AxeItem(ModTiers.PLATINUM, 0.1f, -3f,
                     new Item.Properties().tab(ModItemGroup.FRV_TAB)));
 
     public static final RegistryObject<Item> PLATINUM_SHOVEL = ITEMS.register("platinum_shovel",
-            () -> new ShovelItem(ModTiers.PLATINUM, 2.5f, 3f,
+            () -> new ShovelItem(ModTiers.PLATINUM, 5f, -3.1f,
                     new Item.Properties().tab(ModItemGroup.FRV_TAB)));
 
     public static final RegistryObject<Item> PLATINUM_HOE = ITEMS.register("platinum_hoe",
-            () -> new HoeItem(ModTiers.PLATINUM, -1, 3f,
+            () -> new HoeItem(ModTiers.PLATINUM, -3, 0f,
                     new Item.Properties().tab(ModItemGroup.FRV_TAB)));
 
     public static final RegistryObject<Item> PLATINUM_HELMET = ITEMS.register("platinum_helmet",
@@ -359,23 +362,23 @@ public class ModItems
     
     /**********************************  (AMETHYST)  **********************************************/
     public static final RegistryObject<Item> AMETHYST_SWORD = ITEMS.register("amethyst_sword",
-            () -> new SwordItem(ModTiers.AMETHYST, 3, 3f,
+            () -> new SwordItem(ModTiers.AMETHYST, 3, -2.4f,
                     new Item.Properties().tab(ModItemGroup.FRV_TAB)));
 
     public static final RegistryObject<Item> AMETHYST_PICKAXE = ITEMS.register("amethyst_pickaxe",
-            () -> new PickaxeItem(ModTiers.AMETHYST, 2, 3f,
+            () -> new PickaxeItem(ModTiers.AMETHYST, 2, -2.8f,
                     new Item.Properties().tab(ModItemGroup.FRV_TAB)));
 
     public static final RegistryObject<Item> AMETHYST_AXE = ITEMS.register("amethyst_axe",
-            () -> new AxeItem(ModTiers.AMETHYST, 6, 3f,
+            () -> new AxeItem(ModTiers.AMETHYST, 6, -3f,
                     new Item.Properties().tab(ModItemGroup.FRV_TAB)));
 
     public static final RegistryObject<Item> AMETHYST_SHOVEL = ITEMS.register("amethyst_shovel",
-            () -> new ShovelItem(ModTiers.AMETHYST, 2.5f, 3f,
+            () -> new ShovelItem(ModTiers.AMETHYST, 2.5f, -3.1f,
                     new Item.Properties().tab(ModItemGroup.FRV_TAB)));
 
     public static final RegistryObject<Item> AMETHYST_HOE = ITEMS.register("amethyst_hoe",
-            () -> new HoeItem(ModTiers.AMETHYST, -1, 3f,
+            () -> new HoeItem(ModTiers.AMETHYST, -1, 0f,
                     new Item.Properties().tab(ModItemGroup.FRV_TAB)));
 
     public static final RegistryObject<Item> AMETHYST_HELMET = ITEMS.register("amethyst_helmet",
@@ -392,6 +395,44 @@ public class ModItems
 
     public static final RegistryObject<Item> AMETHYST_BOOTS = ITEMS.register("amethyst_boots",
             () -> new AmethystArmor(ModArmorMaterial.AMETHYST, EquipmentSlot.FEET,
+                    new Item.Properties().tab(ModItemGroup.FRV_TAB)));
+    /***********************************************************************************************/
+
+    /**********************************  (METEORITE)  **********************************************/
+    public static final RegistryObject<Item> METEORITE_SWORD = ITEMS.register("meteorite_sword",
+            () -> new SwordItem(ModTiers.METEORITE, 3, -2.4f,
+                    new Item.Properties().tab(ModItemGroup.FRV_TAB)));
+
+    public static final RegistryObject<Item> METEORITE_PICKAXE = ITEMS.register("meteorite_pickaxe",
+            () -> new PickaxeItem(ModTiers.METEORITE, 2, -2.8f,
+                    new Item.Properties().tab(ModItemGroup.FRV_TAB)));
+
+    public static final RegistryObject<Item> METEORITE_AXE = ITEMS.register("meteorite_axe",
+            () -> new AxeItem(ModTiers.METEORITE, 6, -3f,
+                    new Item.Properties().tab(ModItemGroup.FRV_TAB)));
+
+    public static final RegistryObject<Item> METEORITE_SHOVEL = ITEMS.register("meteorite_shovel",
+            () -> new ShovelItem(ModTiers.METEORITE, 2.5f, -3.1f,
+                    new Item.Properties().tab(ModItemGroup.FRV_TAB)));
+
+    public static final RegistryObject<Item> METEORITE_HOE = ITEMS.register("meteorite_hoe",
+            () -> new HoeItem(ModTiers.METEORITE, -1, 0f,
+                    new Item.Properties().tab(ModItemGroup.FRV_TAB)));
+
+    public static final RegistryObject<Item> METEORITE_HELMET = ITEMS.register("meteorite_helmet",
+            () -> new MeteoriteArmor(ModArmorMaterial.METEORITE, EquipmentSlot.HEAD,
+                    new Item.Properties().tab(ModItemGroup.FRV_TAB)));
+
+    public static final RegistryObject<Item> METEORITE_CHESTPLATE = ITEMS.register("meteorite_chestplate",
+            () -> new MeteoriteArmor(ModArmorMaterial.METEORITE, EquipmentSlot.CHEST,
+                    new Item.Properties().tab(ModItemGroup.FRV_TAB)));
+
+    public static final RegistryObject<Item> METEORITE_LEGGINGS = ITEMS.register("meteorite_leggings",
+            () -> new MeteoriteArmor(ModArmorMaterial.METEORITE, EquipmentSlot.LEGS,
+                    new Item.Properties().tab(ModItemGroup.FRV_TAB)));
+
+    public static final RegistryObject<Item> METEORITE_BOOTS = ITEMS.register("meteorite_boots",
+            () -> new MeteoriteArmor(ModArmorMaterial.METEORITE, EquipmentSlot.FEET,
                     new Item.Properties().tab(ModItemGroup.FRV_TAB)));
     /***********************************************************************************************/
 
