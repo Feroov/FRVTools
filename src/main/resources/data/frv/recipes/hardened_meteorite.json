@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    "XNX",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+    "item": "frv:meteorite_shards"
+    },
+    "N": {
+      "item": "minecraft:netherite_ingot"
+    }
+  },
+  "result": {
+    "item": "frv:hardened_meteorite",
+    "count": 1
+  }
+}

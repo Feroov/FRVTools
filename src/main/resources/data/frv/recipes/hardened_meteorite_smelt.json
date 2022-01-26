@@ -1,7 +1,7 @@
 {
   "type": "minecraft:smelting",
   "ingredient": {
-    "item": "frv:meteorite"
+    "item": "frv:hardened_meteorite"
   },
   "result": "frv:meteorite_ingot",
   "experience": 0.7,

@@ -136,7 +136,7 @@ public class Frv
             pirateship.forEach(biomeKey -> associateBiomeToConfiguredStructure(FrvStructureToMultiMap, FrvConfiguredStructures.CONFIGURED_PIRATE_SHIP, biomeKey));
 
             ImmutableSet<ResourceKey<Biome>> crater = ImmutableSet.<ResourceKey<Biome>>builder()
-                    .add(Biomes.PLAINS).add(Biomes.FOREST).add(Biomes.DARK_FOREST).build();
+                    .add(Biomes.PLAINS).add(Biomes.FOREST).build();
             crater.forEach(biomeKey -> associateBiomeToConfiguredStructure(FrvStructureToMultiMap, FrvConfiguredStructures.CONFIGURED_CRATER, biomeKey));
             /**************************************************************************************************************************************/
 

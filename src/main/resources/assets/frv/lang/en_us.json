@@ -145,5 +145,8 @@
 
   "block.frv.matrix": "\u00A7a\u00A7kMatrix\u00A7a",
   "block.frv.meteorite": "\u00A7eMeteorite",
+  "item.frv.meteorite_shards": "\u00A7eMeteorite Shards",
+  "item.frv.hardened_meteorite": "\u00A7eHardened Meteorite",
   "item.frv.meteorite_ingot": "\u00A7eMeteorite Ingot"
+
 }

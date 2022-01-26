@@ -1,8 +1,8 @@
 {
   "type": "minecraft:blasting",
-  "group": "meteorite_ingot",
+  "group": "lead_ingot",
   "ingredient": {
-    "item": "frv:meteorite"
+    "item": "frv:hardened_meteorite"
   },
   "result": "frv:meteorite_ingot",
   "experience": 1.0,
