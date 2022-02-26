@@ -504,6 +504,13 @@ public class Corrupt extends Monster implements IAnimatable, IAnimationTickable,
         this.playSound(ModSoundEvents.CORRUPT_DEATH.get(), 3.0F, 1.0F);
         return null;
     }
+
+    @Override
+    protected void playStepSound(BlockPos p_28864_, BlockState p_28865_)
+    {
+        // Sound is set to 0 on purpose
+        this.playSound(ModSoundEvents.CORRUPT_AMBIENT2.get(), 0.0F, 0.0F);
+    }
     /*************************************************************************/
 
 
