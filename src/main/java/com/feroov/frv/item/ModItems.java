@@ -403,39 +403,39 @@ public class ModItems
     /**********************************  (METEORITE)  **********************************************/
     public static final RegistryObject<Item> METEORITE_SWORD = ITEMS.register("meteorite_sword",
             () -> new SwordItem(ModTiers.METEORITE, 3, -2.4f,
-                    new Item.Properties().tab(ModItemGroup.FRV_TAB)));
+                    new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
 
     public static final RegistryObject<Item> METEORITE_PICKAXE = ITEMS.register("meteorite_pickaxe",
             () -> new PickaxeItem(ModTiers.METEORITE, 2, -2.8f,
-                    new Item.Properties().tab(ModItemGroup.FRV_TAB)));
+                    new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
 
     public static final RegistryObject<Item> METEORITE_AXE = ITEMS.register("meteorite_axe",
             () -> new AxeItem(ModTiers.METEORITE, 6, -3f,
-                    new Item.Properties().tab(ModItemGroup.FRV_TAB)));
+                    new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
 
     public static final RegistryObject<Item> METEORITE_SHOVEL = ITEMS.register("meteorite_shovel",
             () -> new ShovelItem(ModTiers.METEORITE, 2.5f, -3.1f,
-                    new Item.Properties().tab(ModItemGroup.FRV_TAB)));
+                    new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
 
     public static final RegistryObject<Item> METEORITE_HOE = ITEMS.register("meteorite_hoe",
             () -> new HoeItem(ModTiers.METEORITE, -1, 0f,
-                    new Item.Properties().tab(ModItemGroup.FRV_TAB)));
+                    new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
 
     public static final RegistryObject<Item> METEORITE_HELMET = ITEMS.register("meteorite_helmet",
             () -> new MeteoriteArmor(ModArmorMaterial.METEORITE, EquipmentSlot.HEAD,
-                    new Item.Properties().tab(ModItemGroup.FRV_TAB)));
+                    new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
 
     public static final RegistryObject<Item> METEORITE_CHESTPLATE = ITEMS.register("meteorite_chestplate",
             () -> new MeteoriteArmor(ModArmorMaterial.METEORITE, EquipmentSlot.CHEST,
-                    new Item.Properties().tab(ModItemGroup.FRV_TAB)));
+                    new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
 
     public static final RegistryObject<Item> METEORITE_LEGGINGS = ITEMS.register("meteorite_leggings",
             () -> new MeteoriteArmor(ModArmorMaterial.METEORITE, EquipmentSlot.LEGS,
-                    new Item.Properties().tab(ModItemGroup.FRV_TAB)));
+                    new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
 
     public static final RegistryObject<Item> METEORITE_BOOTS = ITEMS.register("meteorite_boots",
             () -> new MeteoriteArmor(ModArmorMaterial.METEORITE, EquipmentSlot.FEET,
-                    new Item.Properties().tab(ModItemGroup.FRV_TAB)));
+                    new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
     /***********************************************************************************************/
 
 
