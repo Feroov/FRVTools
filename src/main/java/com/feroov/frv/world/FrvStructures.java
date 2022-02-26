@@ -50,11 +50,12 @@ public class FrvStructures
     public static final RegistryObject<StructureFeature<JigsawConfiguration>> CRATER =
             DEFERRED_REGISTRY_STRUCTURE.register("crater", () -> (new CraterStructure(JigsawConfiguration.CODEC)));
 
-    public static void setupStructures() {
+    public static void setupStructures()
+    {
         setupMapSpacingAndLand(CAMP_SITE.get(), new StructureFeatureConfiguration(20 , 8 , 1234567890), true);
         setupMapSpacingAndLand(CORRUPTION.get(), new StructureFeatureConfiguration(80 , 20 , 1234567890), true);
         setupMapSpacingAndLand(PIRATE_SHIP.get(), new StructureFeatureConfiguration(32 , 8 , 1234567890), false);
-        setupMapSpacingAndLand(CRATER.get(), new StructureFeatureConfiguration(80 , 20 , 1234567890), true);
+        setupMapSpacingAndLand(CRATER.get(), new StructureFeatureConfiguration(70 , 10 , 1234567890), true);
     }
 
     public static <F extends StructureFeature<?>>
@@ -64,7 +65,8 @@ public class FrvStructures
         StructureFeature.STRUCTURES_REGISTRY.put(structure.getRegistryName().toString(), structure);
 
 
-        if(transformSurroundingLand){
+        if(transformSurroundingLand)
+        {
             StructureFeature.NOISE_AFFECTING_FEATURES =
                     ImmutableList.<StructureFeature<?>>builder()
                             .addAll(StructureFeature.NOISE_AFFECTING_FEATURES)
@@ -79,16 +81,19 @@ public class FrvStructures
                         .build();
 
 
-        BuiltinRegistries.NOISE_GENERATOR_SETTINGS.entrySet().forEach(settings -> {
+        BuiltinRegistries.NOISE_GENERATOR_SETTINGS.entrySet().forEach(settings ->
+        {
             Map<StructureFeature<?>, StructureFeatureConfiguration> structureMap = settings.getValue().structureSettings().structureConfig();
 
 
-            if(structureMap instanceof ImmutableMap){
+            if(structureMap instanceof ImmutableMap)
+            {
                 Map<StructureFeature<?>, StructureFeatureConfiguration> tempMap = new HashMap<>(structureMap);
                 tempMap.put(structure, structureFeatureConfiguration);
                 settings.getValue().structureSettings().structureConfig = tempMap;
             }
-            else{
+            else
+            {
                 structureMap.put(structure, structureFeatureConfiguration);
             }
         });

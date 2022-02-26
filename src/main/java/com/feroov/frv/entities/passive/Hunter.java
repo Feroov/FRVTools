@@ -65,6 +65,7 @@ public class Hunter extends HunterAbstractVillagerEntity implements IAnimatable,
     public static final EntityDataAccessor<Integer> ATTACK = SynchedEntityData.defineId(Hunter.class, EntityDataSerializers.INT);
     private static final EntityDataAccessor<Integer> DATA_ID_TYPE_VARIANT = SynchedEntityData.defineId(Hunter.class, EntityDataSerializers.INT);
 
+
     /******************************** Animation methods *****************************/
     private final AnimationFactory factory = new AnimationFactory(this);
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event)
@@ -124,6 +125,7 @@ public class Hunter extends HunterAbstractVillagerEntity implements IAnimatable,
     public Hunter(EntityType<? extends HunterAbstractVillagerEntity> p_i48549_1_, Level p_i48549_2_)
     {
         super(p_i48549_1_, p_i48549_2_);
+        this.setCanPickUpLoot(true);
     }
     /*********************************************************************************/
 
@@ -238,6 +240,7 @@ public class Hunter extends HunterAbstractVillagerEntity implements IAnimatable,
         this.goalSelector.addGoal(10, new RandomLookAroundGoal(this));
         this.goalSelector.addGoal(11, new AvoidEntityGoal<>(this, Creeper.class, 12.0F, 0.5D, 0.5D));
     }
+
 
 
     /*************************** Trade with player goal ****************************/

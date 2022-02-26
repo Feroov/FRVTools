@@ -2,6 +2,7 @@ package com.feroov.frv.item.custom.armors;
 
 import com.feroov.frv.item.ModArmorMaterial;
 import com.feroov.frv.item.ModItemGroup;
+import com.feroov.frv.item.ModItems;
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -45,32 +46,29 @@ public class AmethystArmor extends GeoArmorItem implements IAnimatable {
     }
 
 
-    private static final Map<ArmorMaterial, MobEffect> MATERIAL_TO_EFFECT_MAP =
-            (new ImmutableMap.Builder<ArmorMaterial, MobEffect>())
-                    .put(ModArmorMaterial.AMETHYST, MobEffects.MOVEMENT_SPEED).build();
+
 
     public AmethystArmor(ArmorMaterial material, EquipmentSlot slot, Properties settings)
     {
         super(material, slot, settings);
     }
 
+    private static final Map<ArmorMaterial, MobEffect> MATERIAL_TO_EFFECT_MAP = new ImmutableMap.Builder<ArmorMaterial,
+            MobEffect>().put(ModArmorMaterial.AMETHYST, MobEffects.MOVEMENT_SPEED).build();
+
+
     @Override
     public void inventoryTick(ItemStack stack, Level world, Entity entity, int slot, boolean selected)
     {
-        if(!world.isClientSide())
-        {
-            if(entity instanceof Player)
-            {
-                Player player = (Player)entity;
+        if(!world.isClientSide()) {
+            if (entity instanceof Player) {
+                Player player = (Player) entity;
 
-                if(hasFullSuitOfArmorOn(player))
-                {
+                if (hasFullSuitOfArmorOn(player)) {
                     evaluateArmorEffects(player);
                 }
             }
         }
-
-        super.inventoryTick(stack, world, entity, slot, selected);
     }
 
 
@@ -90,11 +88,9 @@ public class AmethystArmor extends GeoArmorItem implements IAnimatable {
     private void addStatusEffectForMaterial(Player player, ArmorMaterial mapArmorMaterial,
                                             MobEffect mapStatusEffect)
     {
-        boolean hasPlayerEffect = player.hasEffect(mapStatusEffect);
-
-        if(hasCorrectArmorOn(mapArmorMaterial, player) && !hasPlayerEffect)
+        if(hasCorrectArmorOn(mapArmorMaterial, player))
         {
-            player.addEffect(new MobEffectInstance(mapStatusEffect));
+            player.addEffect(new MobEffectInstance(mapStatusEffect, 150));
         }
     }
 
@@ -111,12 +107,20 @@ public class AmethystArmor extends GeoArmorItem implements IAnimatable {
 
     private boolean hasCorrectArmorOn(ArmorMaterial material, Player player)
     {
+        for (ItemStack armorStack: player.getInventory().armor)
+        {
+            if(!(armorStack.getItem() instanceof ArmorItem))
+            {
+                return false;
+            }
+        }
+
         ArmorItem boots = ((ArmorItem)player.getInventory().getArmor(0).getItem());
         ArmorItem leggings = ((ArmorItem)player.getInventory().getArmor(1).getItem());
         ArmorItem breastplate = ((ArmorItem)player.getInventory().getArmor(2).getItem());
         ArmorItem helmet = ((ArmorItem)player.getInventory().getArmor(3).getItem());
 
-        return helmet.getMaterial() == material && breastplate.getMaterial() == material &&
-                leggings.getMaterial() == material && boots.getMaterial() == material;
+        return helmet.getMaterial() == material && breastplate.getMaterial()
+                == material && leggings.getMaterial() == material && boots.getMaterial() == material;
     }
 }

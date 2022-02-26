@@ -20,20 +20,20 @@ public enum ModArmorMaterial implements ArmorMaterial
     TIN("tin", 15, new int[]{2, 4, 4, 3}, 9, SoundEvents.ARMOR_EQUIP_IRON,
             0.0F, 0.0F, () -> {return Ingredient.of(ModItems.TIN_INGOT.get());}),
 
-    QUARTZ("quartz", 26, new int[]{2, 5, 6, 3}, 9, SoundEvents.ARMOR_EQUIP_DIAMOND,
+    QUARTZ("quartz", 19, new int[]{2, 5, 6, 3}, 9, SoundEvents.ARMOR_EQUIP_DIAMOND,
             0.0F, 0.0F, () -> {return Ingredient.of(Items.QUARTZ);}),
 
-    LEAD("lead", 28, new int[]{3, 5, 6, 4}, 14, SoundEvents.ARMOR_EQUIP_IRON,
+    LEAD("lead", 23, new int[]{3, 5, 6, 4}, 14, SoundEvents.ARMOR_EQUIP_IRON,
             0.0F, 0.0F, () -> {return Ingredient.of(ModItems.LEAD_INGOT.get());}),
 
-    SILVER("silver", 30, new int[]{3, 6, 7, 2}, 15, SoundEvents.ARMOR_EQUIP_IRON,
+    SILVER("silver", 26, new int[]{3, 6, 7, 2}, 15, SoundEvents.ARMOR_EQUIP_IRON,
             0.5F, 0.0F, () -> {return Ingredient.of(ModItems.SILVER_INGOT.get());}),
 
-    PLATINUM("platinum", 33, new int[]{3, 6, 8, 3}, 15, SoundEvents.ARMOR_EQUIP_IRON,
+    PLATINUM("platinum", 30, new int[]{3, 6, 8, 3}, 15, SoundEvents.ARMOR_EQUIP_IRON,
             1.35F, 0.0F, () -> {return Ingredient.of(ModItems.PLATINUM_INGOT.get());}),
 
     AMETHYST("amethyst", 36, new int[]{3, 6, 8, 3}, 18, SoundEvents.AMETHYST_CLUSTER_HIT,
-            2.5F, 0.2F, () -> {return Ingredient.of(Items.AMETHYST_SHARD);}),
+            1.8F, 0.1F, () -> {return Ingredient.of(Items.AMETHYST_SHARD);}),
 
     METEORITE("meteorite", 42, new int[]{3, 6, 8, 3}, 18, SoundEvents.ANCIENT_DEBRIS_BREAK,
             5.5F, 1.0F, () -> {return Ingredient.of(ModItems.METEORITE_INGOT.get());});
