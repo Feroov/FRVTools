@@ -4,11 +4,10 @@ loaderVersion="[39,)"
 license="All rights reserved"
 [[mods]]
 modId="frv"
-version="1.18.1" #mandatory
+version="1.18.1-1.2.0" #mandatory
 displayName="FRV Tools"
 displayURL="https://www.curseforge.com/minecraft/mc-mods/frv-tools" #optional
 logoFile="frvtools.png" #optional
-credits=""
 authors="FRV (a.k.a Feroov)"
 description='''
 FRV Tools adds an enormous amount of tools to the game, structures, mobs, and many more!
