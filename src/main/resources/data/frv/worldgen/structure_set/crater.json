@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "frv:crater",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 1694767560,
+    "spacing": 70,
+    "separation": 10,
+    "type": "minecraft:random_spread"
+  }
+}

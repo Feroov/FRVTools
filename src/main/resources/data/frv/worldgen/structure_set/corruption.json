@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "frv:corruption",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 1625467080,
+    "spacing": 80,
+    "separation": 20,
+    "type": "minecraft:random_spread"
+  }
+}

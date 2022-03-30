@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:village",
+
+  "config": {
+
+    "start_pool": "frv:crater/start_pool",
+    "size": 2
+  },
+
+  "biomes": "#frv:has_structure/crater",
+  "adapt_noise": true,
+  "spawn_overrides": {}
+}

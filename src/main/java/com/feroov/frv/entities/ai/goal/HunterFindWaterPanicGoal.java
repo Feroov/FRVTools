@@ -7,6 +7,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.util.DefaultRandomPos;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.Vec3;
 
 import javax.annotation.Nullable;
@@ -90,7 +91,7 @@ public class HunterFindWaterPanicGoal extends Goal
                 for(int z = entityZ - horizontalRange; z <= entityZ + horizontalRange; ++z)
                 {
                     currentPos.set(x, y, z);
-                    if(blockGetter.getFluidState(currentPos).is(FluidTags.WATER))
+                    if(blockGetter.getFluidState(currentPos).is(Fluids.WATER))
                     {
                         float f1 = (float) ((x - entityX) * (x - entityX) + (y - entityY) * (y - entityY) + (z - entityZ) * (z - entityZ));
                         if(f1 < range)

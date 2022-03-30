@@ -1,5 +1,5 @@
 {
-  "name": "repurposed_structures:corruption/start_pool",
+  "name": "frv:corruption/start_pool",
   "fallback": "minecraft:empty",
   "elements": [
     {
