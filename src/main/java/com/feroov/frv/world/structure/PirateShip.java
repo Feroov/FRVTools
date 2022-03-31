@@ -33,20 +33,20 @@ public class PirateShip extends StructureFeature<JigsawConfiguration>
         ChunkPos chunkpos = context.chunkPos();
 
 
-        return !context.chunkGenerator().m_212265_(BuiltinStructureSets.f_209826_, context.seed(), chunkpos.x, chunkpos.z, 10);
+        return !context.chunkGenerator().hasFeatureChunkInRange(BuiltinStructureSets.OCEAN_MONUMENTS, context.seed(), chunkpos.x, chunkpos.z, 10);
     }
 
     public static Optional<PieceGenerator<JigsawConfiguration>> createPiecesGenerator(PieceGeneratorSupplier.Context<JigsawConfiguration> context) {
 
         if (!PirateShip.isFeatureChunk(context)) { return Optional.empty(); }
 
-        BlockPos blockpos = context.chunkPos().getMiddleBlockPosition(-10);
+        BlockPos blockpos = context.chunkPos().getMiddleBlockPosition(0);
 
-        int topLandY = context.chunkGenerator().getFirstFreeHeight(blockpos.getX(), blockpos.getZ(), Heightmap.Types.OCEAN_FLOOR_WG, context.heightAccessor());
-        blockpos = blockpos.above(topLandY + 50);
+        int topLandY = context.chunkGenerator().getFirstFreeHeight(blockpos.getX(), blockpos.getZ(), Heightmap.Types.WORLD_SURFACE_WG, context.heightAccessor());
+        blockpos = blockpos.above(topLandY + -1);
 
         Optional<PieceGenerator<JigsawConfiguration>> structurePiecesGenerator =
-                JigsawPlacement.m_210284_(context, PoolElementStructurePiece::new, blockpos, false, false);
+                JigsawPlacement.addPieces(context, PoolElementStructurePiece::new, blockpos, false, false);
 
         if(structurePiecesGenerator.isPresent()) { LogManager.getLogger().log(Level.DEBUG, "Pirate ship at {}", blockpos); }
         return structurePiecesGenerator;

@@ -135,23 +135,23 @@ public class ModItems
 
     /********************************** (COPPER) **********************************************/
     public static final RegistryObject<Item> COPPER_SWORD = ITEMS.register("copper_sword",
-            () -> new SwordItem(ModTiers.COPPER, 3, 3f,
+            () -> new SwordItem(ModTiers.COPPER, 3, -2.4f,
                     new Item.Properties().tab(ModItemGroup.FRV_TAB)));
 
     public static final RegistryObject<Item> COPPER_PICKAXE = ITEMS.register("copper_pickaxe",
-            () -> new PickaxeItem(ModTiers.COPPER, 2, 3f,
+            () -> new PickaxeItem(ModTiers.COPPER, 2, -2.8f,
                     new Item.Properties().tab(ModItemGroup.FRV_TAB)));
 
     public static final RegistryObject<Item> COPPER_AXE = ITEMS.register("copper_axe",
-            () -> new AxeItem(ModTiers.COPPER, 6, 3f,
+            () -> new AxeItem(ModTiers.COPPER, 6, -3f,
                     new Item.Properties().tab(ModItemGroup.FRV_TAB)));
 
     public static final RegistryObject<Item> COPPER_SHOVEL = ITEMS.register("copper_shovel",
-            () -> new ShovelItem(ModTiers.COPPER, 2.5f, 3f,
+            () -> new ShovelItem(ModTiers.COPPER, 2.5f, -3.1f,
                     new Item.Properties().tab(ModItemGroup.FRV_TAB)));
 
     public static final RegistryObject<Item> COPPER_HOE = ITEMS.register("copper_hoe",
-            () -> new HoeItem(ModTiers.COPPER, -1, 3f,
+            () -> new HoeItem(ModTiers.COPPER, -1, 0f,
                     new Item.Properties().tab(ModItemGroup.FRV_TAB)));
 
     public static final RegistryObject<Item> COPPER_HELMET = ITEMS.register("copper_helmet",
@@ -173,23 +173,23 @@ public class ModItems
 
     /********************************** (Tin) **********************************************/
     public static final RegistryObject<Item> TIN_SWORD = ITEMS.register("tin_sword",
-            () -> new SwordItem(ModTiers.TIN, 3, 3f,
+            () -> new SwordItem(ModTiers.TIN, 3, -2.4f,
                     new Item.Properties().tab(ModItemGroup.FRV_TAB)));
 
     public static final RegistryObject<Item> TIN_PICKAXE = ITEMS.register("tin_pickaxe",
-            () -> new PickaxeItem(ModTiers.TIN, 2, 3f,
+            () -> new PickaxeItem(ModTiers.TIN, 2, -2.8f,
                     new Item.Properties().tab(ModItemGroup.FRV_TAB)));
 
     public static final RegistryObject<Item> TIN_AXE = ITEMS.register("tin_axe",
-            () -> new AxeItem(ModTiers.TIN, 6, 3f,
+            () -> new AxeItem(ModTiers.TIN, 6, -3f,
                     new Item.Properties().tab(ModItemGroup.FRV_TAB)));
 
     public static final RegistryObject<Item> TIN_SHOVEL = ITEMS.register("tin_shovel",
-            () -> new ShovelItem(ModTiers.TIN, 2.5f, 3f,
+            () -> new ShovelItem(ModTiers.TIN, 2.5f, -3.1f,
                     new Item.Properties().tab(ModItemGroup.FRV_TAB)));
 
     public static final RegistryObject<Item> TIN_HOE = ITEMS.register("tin_hoe",
-            () -> new HoeItem(ModTiers.TIN, -1, 3f,
+            () -> new HoeItem(ModTiers.TIN, -1, 0f,
                     new Item.Properties().tab(ModItemGroup.FRV_TAB)));
 
     public static final RegistryObject<Item> TIN_HELMET = ITEMS.register("tin_helmet",
@@ -211,23 +211,23 @@ public class ModItems
 
     /********************************** (QUARTZ) **********************************************/
     public static final RegistryObject<Item> QUARTZ_SWORD = ITEMS.register("quartz_sword",
-            () -> new SwordItem(ModTiers.QUARTZ, 3, 3f,
+            () -> new SwordItem(ModTiers.QUARTZ, 3, -2.4f,
                     new Item.Properties().tab(ModItemGroup.FRV_TAB)));
 
     public static final RegistryObject<Item> QUARTZ_PICKAXE = ITEMS.register("quartz_pickaxe",
-            () -> new PickaxeItem(ModTiers.QUARTZ, 2, 3f,
+            () -> new PickaxeItem(ModTiers.QUARTZ, 2, -2.8f,
                     new Item.Properties().tab(ModItemGroup.FRV_TAB)));
 
     public static final RegistryObject<Item> QUARTZ_AXE = ITEMS.register("quartz_axe",
-            () -> new AxeItem(ModTiers.QUARTZ, 6, 3f,
+            () -> new AxeItem(ModTiers.QUARTZ, 6, -3f,
                     new Item.Properties().tab(ModItemGroup.FRV_TAB)));
 
     public static final RegistryObject<Item> QUARTZ_SHOVEL = ITEMS.register("quartz_shovel",
-            () -> new ShovelItem(ModTiers.QUARTZ, 2.5f, 3f,
+            () -> new ShovelItem(ModTiers.QUARTZ, 2.5f, -3.1f,
                     new Item.Properties().tab(ModItemGroup.FRV_TAB)));
 
     public static final RegistryObject<Item> QUARTZ_HOE = ITEMS.register("quartz_hoe",
-            () -> new HoeItem(ModTiers.QUARTZ, -1, 3f,
+            () -> new HoeItem(ModTiers.QUARTZ, -1, 0f,
                     new Item.Properties().tab(ModItemGroup.FRV_TAB)));
 
     public static final RegistryObject<Item> QUARTZ_HELMET = ITEMS.register("quartz_helmet",

@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:village",
+  "type": "frv:crater",
 
   "config": {
 
@@ -8,6 +8,6 @@
   },
 
   "biomes": "#frv:has_structure/crater",
-  "adapt_noise": true,
+  "adapt_noise": false,
   "spawn_overrides": {}
 }

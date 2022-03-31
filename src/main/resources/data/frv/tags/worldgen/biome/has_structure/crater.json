@@ -3,10 +3,7 @@
 
   "values":
   [
-    "minecraft:forest",
-    "minecraft:jungle",
     "minecraft:savanna",
-    "minecraft:taiga",
     "minecraft:plains"
   ]
 }

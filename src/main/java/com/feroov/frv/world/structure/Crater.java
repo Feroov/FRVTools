@@ -33,7 +33,7 @@ public class Crater extends StructureFeature<JigsawConfiguration>
         ChunkPos chunkpos = context.chunkPos();
 
 
-        return !context.chunkGenerator().m_212265_(BuiltinStructureSets.f_209826_, context.seed(), chunkpos.x, chunkpos.z, 10);
+        return !context.chunkGenerator().hasFeatureChunkInRange(BuiltinStructureSets.OCEAN_MONUMENTS, context.seed(), chunkpos.x, chunkpos.z, 10);
     }
 
     public static Optional<PieceGenerator<JigsawConfiguration>> createPiecesGenerator(PieceGeneratorSupplier.Context<JigsawConfiguration> context)
@@ -44,12 +44,12 @@ public class Crater extends StructureFeature<JigsawConfiguration>
         BlockPos blockpos = context.chunkPos().getMiddleBlockPosition(0);
 
         int topLandY = context.chunkGenerator().getFirstFreeHeight(blockpos.getX(), blockpos.getZ(), Heightmap.Types.WORLD_SURFACE_WG, context.heightAccessor());
-        blockpos = blockpos.above(topLandY + 60);
+        blockpos = blockpos.above(topLandY + -85);
 
         Optional<PieceGenerator<JigsawConfiguration>> structurePiecesGenerator =
-                JigsawPlacement.m_210284_(context, PoolElementStructurePiece::new, blockpos, true, true);
+                JigsawPlacement.addPieces(context, PoolElementStructurePiece::new, blockpos, true, true);
 
-        if(structurePiecesGenerator.isPresent()) {LogManager.getLogger().log(Level.DEBUG, "Crater at {}", blockpos); }
+        if(structurePiecesGenerator.isPresent()) { LogManager.getLogger().log(Level.DEBUG, "Crater at {}", blockpos); }
         return structurePiecesGenerator;
     }
 }

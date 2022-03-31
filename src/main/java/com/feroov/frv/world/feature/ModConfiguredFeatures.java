@@ -42,30 +42,30 @@ public class ModConfiguredFeatures
      */
 
     /************************************************ TIN ORE *****************************************************************/
-    public static final Holder<ConfiguredFeature<OreConfiguration, ?>> TIN_ORE = FeatureUtils.m_206488_("tin_ore",
+    public static final Holder<ConfiguredFeature<OreConfiguration, ?>> TIN_ORE = FeatureUtils.register("tin_ore",
             Feature.ORE, new OreConfiguration(OVERWORLD_TIN_ORE, 9));
-    public static final Holder<ConfiguredFeature<OreConfiguration, ?>> DEEPSLATE_TIN_ORE = FeatureUtils.m_206488_("deepslate_tin_ore",
+    public static final Holder<ConfiguredFeature<OreConfiguration, ?>> DEEPSLATE_TIN_ORE = FeatureUtils.register("deepslate_tin_ore",
             Feature.ORE, new OreConfiguration(OVERWORLD_DEEPSLATE_TIN_ORE, 9));
     /************************************************************************************************************************/
 
     /************************************************ LEAD ORE *****************************************************************/
-    public static final Holder<ConfiguredFeature<OreConfiguration, ?>> LEAD_ORE = FeatureUtils.m_206488_("lead_ore",
+    public static final Holder<ConfiguredFeature<OreConfiguration, ?>> LEAD_ORE = FeatureUtils.register("lead_ore",
             Feature.ORE, new OreConfiguration(OVERWORLD_LEAD_ORE, 8));
-    public static final Holder<ConfiguredFeature<OreConfiguration, ?>> DEEPSLATE_LEAD_ORE = FeatureUtils.m_206488_("deepslate_lead_ore",
+    public static final Holder<ConfiguredFeature<OreConfiguration, ?>> DEEPSLATE_LEAD_ORE = FeatureUtils.register("deepslate_lead_ore",
             Feature.ORE, new OreConfiguration(OVERWORLD_DEEPSLATE_LEAD_ORE, 6));
     /************************************************************************************************************************/
 
     /************************************************ SILVER ORE *****************************************************************/
-    public static final Holder<ConfiguredFeature<OreConfiguration, ?>> SILVER_ORE = FeatureUtils.m_206488_("silver_ore",
+    public static final Holder<ConfiguredFeature<OreConfiguration, ?>> SILVER_ORE = FeatureUtils.register("silver_ore",
             Feature.ORE, new OreConfiguration(OVERWORLD_SILVER_ORE, 6));
-    public static final Holder<ConfiguredFeature<OreConfiguration, ?>> DEEPSLATE_SILVER_ORE = FeatureUtils.m_206488_("deepslate_silver_ore",
+    public static final Holder<ConfiguredFeature<OreConfiguration, ?>> DEEPSLATE_SILVER_ORE = FeatureUtils.register("deepslate_silver_ore",
             Feature.ORE, new OreConfiguration(OVERWORLD_DEEPSLATE_SILVER_ORE, 4));
     /************************************************************************************************************************/
 
     /************************************************ PLATINUM ORE *****************************************************************/
-    public static final Holder<ConfiguredFeature<OreConfiguration, ?>> PLATINUM_ORE = FeatureUtils.m_206488_("platinum_ore",
+    public static final Holder<ConfiguredFeature<OreConfiguration, ?>> PLATINUM_ORE = FeatureUtils.register("platinum_ore",
             Feature.ORE, new OreConfiguration(OVERWORLD_PLATINUM_ORE, 4));
-    public static final Holder<ConfiguredFeature<OreConfiguration, ?>> DEEPSLATE_PLATINUM_ORE = FeatureUtils.m_206488_("deepslate_platinum_ore",
+    public static final Holder<ConfiguredFeature<OreConfiguration, ?>> DEEPSLATE_PLATINUM_ORE = FeatureUtils.register("deepslate_platinum_ore",
             Feature.ORE, new OreConfiguration(OVERWORLD_DEEPSLATE_PLATINUM_ORE, 2));
     /************************************************************************************************************************/
 }
