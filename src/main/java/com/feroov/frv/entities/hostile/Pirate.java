@@ -50,7 +50,8 @@ public class Pirate extends Monster implements IAnimatable
             event.getController().setAnimation(new AnimationBuilder().addAnimation("walk", true));
             return PlayState.CONTINUE;
         }
-        if ((this.dead || this.getHealth() < 0.01 || this.isDeadOrDying()))
+
+        if ((this.dead || this.getSpeed() < 0.01 || this.isDeadOrDying()))
         {
             if (level.isClientSide)
             {
@@ -58,6 +59,7 @@ public class Pirate extends Monster implements IAnimatable
                 return PlayState.CONTINUE;
             }
         }
+
         if (this.isAggressive() && !(this.dead || this.getHealth() < 0.01 || this.isDeadOrDying()))
         {
             event.getController().setAnimation(new AnimationBuilder().addAnimation("attack", true));

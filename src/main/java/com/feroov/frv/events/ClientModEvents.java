@@ -38,6 +38,7 @@ public class ClientModEvents
         event.registerEntityRenderer(ModEntityTypes.FLINTLOCKER.get(), FlintlockerRenderer::new);
         event.registerEntityRenderer(ModEntityTypes.PIRATE.get(), PirateRenderer::new);
         event.registerEntityRenderer(ModEntityTypes.CORRUPT.get(), CorruptRenderer::new);
+        event.registerEntityRenderer(ModEntityTypes.MIMIC.get(), MimicRenderer::new);
 
         /** Misc **/
         event.registerEntityRenderer(ModEntityTypes.PIRATE_CAPTAIN_MELEE.get(), PirateCaptainMeleeRender::new);

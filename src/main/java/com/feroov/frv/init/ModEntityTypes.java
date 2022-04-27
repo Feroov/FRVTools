@@ -32,6 +32,7 @@ public class ModEntityTypes
     public static final RegistryObject<EntityType<FemaleHunter>> FEMALE_HUNTER = ENTITIES.register("female_hunter",
             () -> EntityType.Builder.of(FemaleHunter::new, MobCategory.CREATURE)
                     .sized(0.7f,1.8f).build("female_hunter"));
+
     /** Hostile **/
     public static final RegistryObject<EntityType<PirateCaptain>> PIRATE_CAPTAIN = ENTITIES.register("pirate_captain",
             () -> EntityType.Builder.of(PirateCaptain::new, MobCategory.CREATURE).canSpawnFarFromPlayer()
@@ -48,6 +49,10 @@ public class ModEntityTypes
     public static final RegistryObject<EntityType<Corrupt>> CORRUPT = ENTITIES.register("corrupt",
             () -> EntityType.Builder.of(Corrupt::new, MobCategory.CREATURE).canSpawnFarFromPlayer().fireImmune()
                     .sized(1.7f,5.3f).build("corrupt"));
+
+    public static final RegistryObject<EntityType<Mimic>> MIMIC = ENTITIES.register("mimic",
+            () -> EntityType.Builder.of(Mimic::new, MobCategory.CREATURE).canSpawnFarFromPlayer().fireImmune()
+                    .sized(1.4f,1.4f).build("mimic"));
 
 
     /** Misc **/

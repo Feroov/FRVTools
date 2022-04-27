@@ -44,6 +44,10 @@ public class ModEntityEvents
         addEntityToSpecificBiomes(event, ModEntityTypes.HUNTER.get(), 65, 1, 2, Biomes.TAIGA);
         addEntityToSpecificBiomes(event, ModEntityTypes.FEMALE_HUNTER.get(), 65, 1, 2, Biomes.TAIGA);
 
+        /** Mimic **/
+        addEntityToSpecificBiomes(event, ModEntityTypes.MIMIC.get(), 20, 1, 1, Biomes.PLAINS);
+        addEntityToSpecificBiomes(event, ModEntityTypes.MIMIC.get(), 20, 1, 1, Biomes.DRIPSTONE_CAVES);
+        addEntityToSpecificBiomes(event, ModEntityTypes.MIMIC.get(), 20, 1, 1, Biomes.LUSH_CAVES);
     }
 
     @SafeVarargs

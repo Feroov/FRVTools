@@ -3,6 +3,8 @@
   "itemGroup.frvtoolsMisc": "FRV Tools - Special",
   "itemGroup.frvtoolsEgg": "FRV Tools - Mobs",
   "itemGroup.frvtoolsBlocksItems": "FRV Tools - Blocks & Items",
+  "key.frv.reload": "Reload Weapons",
+  "key.categories.frv": "FRV Tools",
 
   "item.frv.admin_sword": "\u00A74\u00A7lAdmin Sword",
 
@@ -82,22 +84,24 @@
 
 
 
-  "item.frv.croaker_spawn_egg": "Croaker Spawn Egg",
+  "item.frv.croaker_spawn_egg": "Croaker Spawn",
   "entity.frv.croaker": "Croaker",
-  "item.frv.hunter_spawn_egg": "Hunter Spawn Egg",
+  "item.frv.hunter_spawn_egg": "Hunter Spawn",
   "entity.frv.hunter": "Hunter",
-  "item.frv.female_hunter_spawn_egg": "Female Hunter Spawn Egg",
+  "item.frv.female_hunter_spawn_egg": "Female Hunter Spawn",
   "entity.frv.female_hunter": "Female Hunter",
-  "item.frv.cannon_spawn_egg": "Cannon Spawn Egg",
+  "item.frv.cannon_spawn_egg": "Cannon Spawn",
   "entity.frv.cannon": "Cannon",
-  "item.frv.flintlocker_spawn_egg": "Flintlocker Spawn Egg",
+  "item.frv.flintlocker_spawn_egg": "Flintlocker Spawn",
   "entity.frv.flintlocker": "Flintlocker",
-  "item.frv.pirate_spawn_egg": "Pirate Spawn Egg",
+  "item.frv.pirate_spawn_egg": "Pirate Spawn",
   "entity.frv.pirate": "Pirate",
-  "item.frv.pirate_captain_spawn_egg": "\u00A7l\u00A7cPirate Captain\u00A7c Spawn Egg",
+  "item.frv.pirate_captain_spawn_egg": "\u00A7l\u00A7cPirate Captain\u00A7c Spawn",
   "entity.frv.pirate_captain": "\u00A7l\u00A7cPirate Captain\u00A7c",
-  "item.frv.corrupt_spawn_egg": "\u00A7a\u00A7kCorrupt\u00A7k\u00A7a Spawn Egg",
+  "item.frv.corrupt_spawn_egg": "\u00A7a\u00A7kCorrupt\u00A7k\u00A7a Spawn",
   "entity.frv.corrupt": "\u00A7a\u00A7kCorrupt\u00A7a",
+  "item.frv.mimic_spawn_egg": "Mimic Spawn",
+  "entity.frv.mimic": "\u00A7l\u00A76Mimic\u00A76",
 
 
   "item.frv.coal_detector": "\u00A78Coal Detector\u00A78",

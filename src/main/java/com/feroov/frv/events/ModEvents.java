@@ -29,5 +29,6 @@ public class ModEvents
         event.put(ModEntityTypes.CANNON.get(), Cannon.createAttributes().build());
         event.put(ModEntityTypes.CORRUPT.get(), Corrupt.createAttributes().build());
         event.put(ModEntityTypes.ELECTRICITY.get(), Electricity.createAttributes().build());
+        event.put(ModEntityTypes.MIMIC.get(), Mimic.createAttributes().build());
     }
 }
