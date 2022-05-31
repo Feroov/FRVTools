@@ -69,7 +69,7 @@ public class Musket extends FrvItem
                     worldIn.addFreshEntity(abstractarrowentity);
                     worldIn.playSound((Player) null, playerentity.getX(), playerentity.getY(), playerentity.getZ(),
                             ModSoundEvents.MUSKET.get(), SoundSource.PLAYERS, 1.0F,
-                            1.0F / (worldIn.random.nextFloat() * 0.4F + 1.2F) + 0.25F * 0.5F);
+                            1.0F / (worldIn.random.nextFloat() * 0.4F + 10.2F) + 0.25F * 0.5F);
 
                     if (!worldIn.isClientSide)
                     {

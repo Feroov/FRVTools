@@ -1,10 +1,10 @@
 package com.feroov.frv.item.custom;
 
-import com.feroov.frv.item.ModItems;
+
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
+
 
 public class RangedItems
 {
