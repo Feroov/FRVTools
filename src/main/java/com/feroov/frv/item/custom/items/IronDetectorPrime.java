@@ -2,8 +2,7 @@ package com.feroov.frv.item.custom.items;
 
 import com.feroov.frv.sound.ModSoundEvents;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.chat.TextComponent;
-import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -44,8 +43,7 @@ public class IronDetectorPrime extends Item
 
             if(!foundBlock)
             {
-                player.sendMessage(new TranslatableComponent("item.frv.iron_detector.no_valuables"),
-                        player.getUUID());
+                player.sendSystemMessage(Component.translatable("item.frv.iron_detector.no_valuables"));
             }
         }
 
@@ -57,9 +55,10 @@ public class IronDetectorPrime extends Item
 
     private void outputValuableCoordinates(BlockPos blockPos, Player player, Block blockBelow)
     {
-        player.sendMessage(new TextComponent("\u00A72\nDetected Iron at \u00A72" +
-                "\u00A72(X: \u00A72" + blockPos.getX() + "\u00A72, \u00A72" +
-                 "\u00A72Z: \u00A72" + blockPos.getZ() + "\u00A72)\n\u00A72"), player.getUUID());
+
+        player.sendSystemMessage(Component.literal("\u00A7a\nDetected Iron Ore\n" + "\nat" + "(X:"
+                + blockPos.getX() + " , " + "Z:"
+                + blockPos.getZ() + ")\n"));
     }
 
     private boolean isValuableBlock(Block block)

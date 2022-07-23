@@ -1,5 +1,5 @@
 {
-  "name": "frv:corruption/start_pool",
+  "name": "frv:corruption",
   "fallback": "minecraft:empty",
   "elements": [
     {

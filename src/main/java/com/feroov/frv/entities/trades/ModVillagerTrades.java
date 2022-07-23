@@ -5,6 +5,7 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import net.minecraft.core.Registry;
 import net.minecraft.util.Mth;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.npc.VillagerDataHolder;
 import net.minecraft.world.entity.npc.VillagerType;
@@ -96,7 +97,7 @@ public class ModVillagerTrades
             this.priceMultiplier = 0.05F;
         }
 
-        public MerchantOffer getOffer(Entity p_35662_, Random p_35663_) {
+        public MerchantOffer getOffer(Entity p_35662_, RandomSource p_35663_) {
             ItemStack itemstack = new ItemStack(this.item, this.cost);
             return new MerchantOffer(itemstack, new ItemStack(Items.EMERALD), this.maxUses, this.villagerXp, this.priceMultiplier);
         }
@@ -121,7 +122,7 @@ public class ModVillagerTrades
         }
 
         @Nullable
-        public MerchantOffer getOffer(Entity p_35674_, Random p_35675_) {
+        public MerchantOffer getOffer(Entity p_35674_, RandomSource p_35675_) {
             if (p_35674_ instanceof VillagerDataHolder) {
                 ItemStack itemstack = new ItemStack(this.trades.get(((VillagerDataHolder)p_35674_).getVillagerData().getType()), this.cost);
                 return new MerchantOffer(itemstack, new ItemStack(Items.EMERALD), this.maxUses, this.villagerXp, 0.05F);
@@ -138,10 +139,11 @@ public class ModVillagerTrades
             this.villagerXp = p_35683_;
         }
 
-        public MerchantOffer getOffer(Entity p_35685_, Random p_35686_) {
+        public MerchantOffer getOffer(Entity p_35685_, RandomSource p_35686_)
+        {
             List<Enchantment> list = Registry.ENCHANTMENT.stream().filter(Enchantment::isTradeable).collect(Collectors.toList());
             Enchantment enchantment = list.get(p_35686_.nextInt(list.size()));
-            int i = Mth.nextInt(p_35686_, enchantment.getMinLevel(), enchantment.getMaxLevel());
+            int i = Mth.nextInt((RandomSource) p_35686_, enchantment.getMinLevel(), enchantment.getMaxLevel());
             ItemStack itemstack = EnchantedBookItem.createForEnchantment(new EnchantmentInstance(enchantment, i));
             int j = 2 + p_35686_.nextInt(5 + i * 10) + 3 * i;
             if (enchantment.isTreasureOnly()) {
@@ -159,7 +161,7 @@ public class ModVillagerTrades
     public interface ItemListing
     {
         @Nullable
-        MerchantOffer getOffer(Entity p_35706_, Random p_35707_);
+        MerchantOffer getOffer(Entity p_35706_, RandomSource p_35707_);
     }
 
     static class ItemsAndEmeraldsToItems implements ModVillagerTrades.ItemListing {
@@ -188,7 +190,7 @@ public class ModVillagerTrades
         }
 
         @Nullable
-        public MerchantOffer getOffer(Entity p_35732_, Random p_35733_) {
+        public MerchantOffer getOffer(Entity p_35732_, RandomSource p_35733_) {
             return new MerchantOffer(new ItemStack(Items.EMERALD, this.emeraldCost),
                     new ItemStack(this.fromItem.getItem(), this.fromCount),
                     new ItemStack(this.toItem.getItem(), this.toCount), this.maxUses, this.villagerXp, this.priceMultiplier);
@@ -228,7 +230,7 @@ public class ModVillagerTrades
             this.priceMultiplier = p_35763_;
         }
 
-        public MerchantOffer getOffer(Entity p_35771_, Random p_35772_) {
+        public MerchantOffer getOffer(Entity p_35771_, RandomSource p_35772_) {
             return new MerchantOffer(new ItemStack(Items.EMERALD, this.emeraldCost),
                     new ItemStack(this.itemStack.getItem(), this.numberOfItems), this.maxUses, this.villagerXp, this.priceMultiplier);
         }
@@ -267,7 +269,7 @@ public class ModVillagerTrades
             this.priceMultiplier = p_35763_;
         }
 
-        public MerchantOffer getOffer(Entity p_35771_, Random p_35772_)
+        public MerchantOffer getOffer(Entity p_35771_, RandomSource p_35772_)
         {
             return new MerchantOffer(new ItemStack(Items.DIAMOND, this.emeraldCost),
                     new ItemStack(this.itemStack.getItem(), this.numberOfItems),
@@ -308,7 +310,7 @@ public class ModVillagerTrades
             this.priceMultiplier = p_35763_;
         }
 
-        public MerchantOffer getOffer(Entity p_35771_, Random p_35772_) {
+        public MerchantOffer getOffer(Entity p_35771_, RandomSource p_35772_) {
             return new MerchantOffer(new ItemStack(Blocks.OAK_LOG, this.emeraldCost),
                     new ItemStack(this.itemStack.getItem(), this.numberOfItems), this.maxUses, this.villagerXp, this.priceMultiplier);
         }
@@ -347,7 +349,7 @@ public class ModVillagerTrades
             this.priceMultiplier = p_35763_;
         }
 
-        public MerchantOffer getOffer(Entity p_35771_, Random p_35772_) {
+        public MerchantOffer getOffer(Entity p_35771_, RandomSource p_35772_) {
             return new MerchantOffer(new ItemStack(Items.IRON_INGOT, this.emeraldCost),
                     new ItemStack(this.itemStack.getItem(), this.numberOfItems), this.maxUses, this.villagerXp, this.priceMultiplier);
         }
@@ -386,7 +388,7 @@ public class ModVillagerTrades
             this.priceMultiplier = p_35763_;
         }
 
-        public MerchantOffer getOffer(Entity p_35771_, Random p_35772_) {
+        public MerchantOffer getOffer(Entity p_35771_, RandomSource p_35772_) {
             return new MerchantOffer(new ItemStack(Items.DIAMOND, this.emeraldCost),
                     new ItemStack(this.itemStack.getItem(), this.numberOfItems), this.maxUses, this.villagerXp, this.priceMultiplier);
         }
@@ -425,7 +427,7 @@ public class ModVillagerTrades
             this.priceMultiplier = p_35763_;
         }
 
-        public MerchantOffer getOffer(Entity p_35771_, Random p_35772_) {
+        public MerchantOffer getOffer(Entity p_35771_, RandomSource p_35772_) {
             return new MerchantOffer(new ItemStack(Items.LEATHER, this.emeraldCost),
                     new ItemStack(this.itemStack.getItem(), this.numberOfItems), this.maxUses, this.villagerXp, this.priceMultiplier);
         }
@@ -464,7 +466,7 @@ public class ModVillagerTrades
             this.priceMultiplier = p_35763_;
         }
 
-        public MerchantOffer getOffer(Entity p_35771_, Random p_35772_) {
+        public MerchantOffer getOffer(Entity p_35771_, RandomSource p_35772_) {
             return new MerchantOffer(new ItemStack(Items.LEATHER, this.emeraldCost),
                     new ItemStack(this.itemStack.getItem(), this.numberOfItems), this.maxUses, this.villagerXp, this.priceMultiplier);
         }

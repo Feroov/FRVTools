@@ -2,8 +2,7 @@ package com.feroov.frv.item.custom.items;
 
 import com.feroov.frv.sound.ModSoundEvents;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.chat.TextComponent;
-import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -44,8 +43,7 @@ public class AllOreDetector extends Item
 
             if(!foundBlock)
             {
-                player.sendMessage(new TranslatableComponent("item.frv.all_detector.no_valuables"),
-                        player.getUUID());
+                player.sendSystemMessage(Component.translatable("item.frv.all_detector.no_valuables"));
             }
         }
 
@@ -57,10 +55,11 @@ public class AllOreDetector extends Item
 
     private void outputValuableCoordinates(BlockPos blockPos, Player player, Block blockBelow)
     {
-        player.sendMessage(new TextComponent("\u00A72\nDetected \n\u00A72" +
-                blockBelow.asItem().getRegistryName().toString() + "\u00A72\nat \u00A72 " +
-                "\u00A72(X:\u00A72 " + blockPos.getX() + "\u00A72,\u00A72" +
-                "\u00A72Z:\u00A72 " + blockPos.getZ() + "\u00A72)\n\u00A72"), player.getUUID());
+
+        player.sendSystemMessage(Component.literal("\u00A7a\nDetected\n"
+                + blockBelow.asItem() + "\nat" + "(X:"
+                + blockPos.getX() + " , " + "Z:"
+                + blockPos.getZ() + ")\n"));
     }
 
     private boolean isValuableBlock(Block block)
@@ -70,6 +69,9 @@ public class AllOreDetector extends Item
                 block == Blocks.GOLD_ORE ||
                 block == Blocks.EMERALD_ORE ||
                 block == Blocks.DIAMOND_ORE ||
+                block == Blocks.LAPIS_ORE ||
+                block == Blocks.REDSTONE_ORE ||
+                block == Blocks.COPPER_ORE ||
                 block == Blocks.ANCIENT_DEBRIS;
     }
 }

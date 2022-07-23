@@ -24,6 +24,7 @@ import net.minecraft.world.entity.ai.control.JumpControl;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.animal.Rabbit;
 import net.minecraft.world.entity.monster.*;
+import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -326,8 +327,8 @@ public class Croaker extends CroakerAbstractVillagerEntity implements IAnimatabl
             MerchantOffers merchantoffers = this.getOffers();
             this.addOffersFromItemListings(merchantoffers, avillagertrades$itrade, 9);
             int i = this.random.nextInt(avillagertrades$itrade.length);
-            ModVillagerTrades.ItemListing villagertrades$itrade = avillagertrades$itrade[i];
-            MerchantOffer merchantoffer = villagertrades$itrade.getOffer(this, this.random);
+            ModVillagerTrades.ItemListing villagertrades$itemlisting = avillagertrades$itrade[i];
+            MerchantOffer merchantoffer = villagertrades$itemlisting.getOffer(this, this.random);
             if (merchantoffer != null)
             {
                 merchantoffers.add(merchantoffer);

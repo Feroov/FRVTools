@@ -15,19 +15,19 @@ public class HunterModel extends AnimatedGeoModel<Hunter>
     public HunterModel() {}
 
     @Override
-    public ResourceLocation getModelLocation(Hunter object)
+    public ResourceLocation getModelResource(Hunter object)
     {
         return new ResourceLocation(Frv.MOD_ID, "geo/hunter.geo.json");
     }
 
     @Override
-    public ResourceLocation getTextureLocation(Hunter entity)
+    public ResourceLocation getTextureResource(Hunter entity)
     {
         return HunterRenderer.LOCATION_BY_VARIANT.get(entity.getVariant());
     }
 
     @Override
-    public ResourceLocation getAnimationFileLocation(Hunter object)
+    public ResourceLocation getAnimationResource(Hunter object)
     {
         return new ResourceLocation(Frv.MOD_ID, "animations/hunter.animation.json");
     }

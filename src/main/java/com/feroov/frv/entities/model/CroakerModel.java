@@ -14,19 +14,19 @@ public class CroakerModel extends AnimatedGeoModel<Croaker>
     public CroakerModel() {}
 
     @Override
-    public ResourceLocation getModelLocation(Croaker object)
+    public ResourceLocation getModelResource(Croaker object)
     {
         return new ResourceLocation(Frv.MOD_ID, "geo/croaker.geo.json");
     }
 
     @Override
-    public ResourceLocation getTextureLocation(Croaker entity)
+    public ResourceLocation getTextureResource(Croaker entity)
     {
         return CroakerRenderer.LOCATION_BY_VARIANT.get(entity.getVariant());
     }
 
     @Override
-    public ResourceLocation getAnimationFileLocation(Croaker object)
+    public ResourceLocation getAnimationResource(Croaker object)
     {
         return new ResourceLocation(Frv.MOD_ID, "animations/croaker.animation.json");
     }

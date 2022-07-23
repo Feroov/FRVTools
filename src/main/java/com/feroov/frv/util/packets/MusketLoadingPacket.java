@@ -10,27 +10,25 @@ import net.minecraftforge.network.NetworkEvent;
 
 import java.util.function.Supplier;
 
-public class MusketLoadingPacket {
+public class MusketLoadingPacket
+{
 
     public int slot;
 
-    public MusketLoadingPacket(int slot) {
-        this.slot = slot;
-    }
+    public MusketLoadingPacket(int slot) { this.slot = slot; }
 
-    public MusketLoadingPacket(final FriendlyByteBuf packetBuffer) {
-        this.slot = packetBuffer.readInt();
-    }
+    public MusketLoadingPacket(final FriendlyByteBuf packetBuffer) { this.slot = packetBuffer.readInt(); }
 
-    public void encode(final FriendlyByteBuf packetBuffer) {
-        packetBuffer.writeInt(this.slot);
-    }
+    public void encode(final FriendlyByteBuf packetBuffer) { packetBuffer.writeInt(this.slot); }
 
-    public static void handle(MusketLoadingPacket packet, Supplier<NetworkEvent.Context> ctx) {
-        ctx.get().enqueueWork(() -> {
+    public static void handle(MusketLoadingPacket packet, Supplier<NetworkEvent.Context> ctx)
+    {
+        ctx.get().enqueueWork(() ->
+        {
             NetworkEvent.Context context = ctx.get();
             PacketListener handler = context.getNetworkManager().getPacketListener();
-            if (handler instanceof ServerGamePacketListenerImpl) {
+            if (handler instanceof ServerGamePacketListenerImpl)
+            {
                 ServerPlayer playerEntity = ((ServerGamePacketListenerImpl) handler).player;
                 Musket.reload(playerEntity, InteractionHand.MAIN_HAND);
             }

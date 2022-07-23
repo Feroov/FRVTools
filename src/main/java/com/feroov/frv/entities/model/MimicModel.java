@@ -11,19 +11,19 @@ public class MimicModel extends AnimatedGeoModel<Mimic>
     public MimicModel() {}
 
     @Override
-    public ResourceLocation getModelLocation(Mimic object)
+    public ResourceLocation getModelResource(Mimic object)
     {
         return new ResourceLocation(Frv.MOD_ID, "geo/mimic.geo.json");
     }
 
     @Override
-    public ResourceLocation getTextureLocation(Mimic entity)
+    public ResourceLocation getTextureResource(Mimic entity)
     {
         return new ResourceLocation(Frv.MOD_ID, "textures/entity/mimic/mimic.png");
     }
 
     @Override
-    public ResourceLocation getAnimationFileLocation(Mimic object)
+    public ResourceLocation getAnimationResource(Mimic object)
     {
         return new ResourceLocation(Frv.MOD_ID, "animations/mimic.animation.json");
     }

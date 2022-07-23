@@ -27,6 +27,7 @@ import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import net.minecraft.world.phys.Vec3;
 
 import javax.annotation.Nullable;
+import java.util.Random;
 import java.util.Set;
 
 public class HunterAbstractVillagerEntity extends AgeableMob implements InventoryCarrier, Npc, Merchant

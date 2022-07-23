@@ -1,5 +1,5 @@
 {
-  "name": "frv:pirate_ship/start_pool",
+  "name": "frv:pirate_ship",
   "fallback": "minecraft:empty",
   "elements": [
     {

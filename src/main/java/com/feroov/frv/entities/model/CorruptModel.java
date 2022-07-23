@@ -25,20 +25,20 @@ public class CorruptModel extends AnimatedTickingGeoModel<Corrupt>
             new ResourceLocation(Frv.MOD_ID, "textures/entity/corrupt/corrupt7.png") };
 
     @Override
-    public ResourceLocation getModelLocation(Corrupt object)
+    public ResourceLocation getModelResource(Corrupt object)
     {
         return new ResourceLocation(Frv.MOD_ID, "geo/corrupt.geo.json");
     }
 
     @Override
-    public ResourceLocation getTextureLocation(Corrupt entity)
+    public ResourceLocation getTextureResource(Corrupt entity)
     {
         return TEX[(entity.getTextureTimer())];
         //TODO: Texture anims
     }
 
     @Override
-    public ResourceLocation getAnimationFileLocation(Corrupt object)
+    public ResourceLocation getAnimationResource(Corrupt object)
     {
         return new ResourceLocation(Frv.MOD_ID, "animations/corrupt.animation.json");
     }

@@ -15,19 +15,19 @@ public class FemaleHunterModel extends AnimatedGeoModel<FemaleHunter>
     public FemaleHunterModel() {}
 
     @Override
-    public ResourceLocation getModelLocation(FemaleHunter object)
+    public ResourceLocation getModelResource(FemaleHunter object)
     {
         return new ResourceLocation(Frv.MOD_ID, "geo/female_hunter.geo.json");
     }
 
     @Override
-    public ResourceLocation getTextureLocation(FemaleHunter entity)
+    public ResourceLocation getTextureResource(FemaleHunter entity)
     {
         return FemaleHunterRenderer.LOCATION_BY_VARIANT.get(entity.getVariant());
     }
 
     @Override
-    public ResourceLocation getAnimationFileLocation(FemaleHunter object)
+    public ResourceLocation getAnimationResource(FemaleHunter object)
     {
         return new ResourceLocation(Frv.MOD_ID, "animations/female_hunter.animation.json");
     }

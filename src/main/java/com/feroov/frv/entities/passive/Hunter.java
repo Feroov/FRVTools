@@ -30,6 +30,7 @@ import net.minecraft.world.entity.npc.Npc;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraft.world.item.trading.MerchantOffers;
 import net.minecraft.world.level.Level;
@@ -46,10 +47,7 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import java.util.EnumSet;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.UUID;
+import java.util.*;
 
 
 public class Hunter extends HunterAbstractVillagerEntity implements IAnimatable, Npc
@@ -62,7 +60,8 @@ public class Hunter extends HunterAbstractVillagerEntity implements IAnimatable,
 
     public static final EntityDataAccessor<Boolean> STUNNED = SynchedEntityData.defineId(Hunter.class, EntityDataSerializers.BOOLEAN);
     public static final EntityDataAccessor<Integer> STATE = SynchedEntityData.defineId(Hunter.class, EntityDataSerializers.INT);
-    public static final EntityDataAccessor<Integer> ATTACK = SynchedEntityData.defineId(Hunter.class, EntityDataSerializers.INT);
+    private static final Ingredient TEMP = Ingredient.of(Items.BEEF, Items.MUTTON, Items.PORKCHOP, Items.COD);
+    protected static final EntityDataAccessor<Boolean> ATTACKING = SynchedEntityData.defineId(Hunter.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Integer> DATA_ID_TYPE_VARIANT = SynchedEntityData.defineId(Hunter.class, EntityDataSerializers.INT);
 
 
@@ -70,33 +69,33 @@ public class Hunter extends HunterAbstractVillagerEntity implements IAnimatable,
     private final AnimationFactory factory = new AnimationFactory(this);
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event)
     {
-        if (event.isMoving())
-        {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("walk", true));
-            return PlayState.CONTINUE;
-        }
         if ((this.dead || this.getHealth() < 0.01 || this.isDeadOrDying()))
         {
             event.getController().setAnimation(new AnimationBuilder().addAnimation("death", false));
             return PlayState.CONTINUE;
         }
-        event.getController().setAnimation(new AnimationBuilder().addAnimation("idle", true));
-        return PlayState.CONTINUE;
-    }
 
-    private <E extends IAnimatable> PlayState attack(AnimationEvent<E> event)
-    {
-        if ((this.dead || this.getHealth() < 0.01 || this.isDeadOrDying()))
-        {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("death", false));
-            return PlayState.CONTINUE;
-        }
-        if(isAggressive())
+        if(isAttacking())
         {
             event.getController().setAnimation(new AnimationBuilder().addAnimation("attack", true));
             return PlayState.CONTINUE;
         }
-        return PlayState.STOP;
+
+        if (!(animationSpeed > -0.10F && animationSpeed < 0.10F) && !this.isAggressive())
+        {
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("walk", true));
+            return PlayState.CONTINUE;
+        }
+
+        if(isAggressive())
+        {
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("walk", true));
+            return PlayState.CONTINUE;
+        }
+
+
+        event.getController().setAnimation(new AnimationBuilder().addAnimation("idle", true));
+        return PlayState.CONTINUE;
     }
 
     @Override
@@ -104,19 +103,12 @@ public class Hunter extends HunterAbstractVillagerEntity implements IAnimatable,
     {
         data.addAnimationController(new AnimationController<Hunter>
                 (this, "controller", 0, this::predicate));
-        data.addAnimationController(new AnimationController<Hunter>
-                (this, "attackController", 0, this::attack));
     }
 
     @Override
     public AnimationFactory getFactory()
     {
         return this.factory;
-    }
-
-    public void setAttackingState(int time)
-    {
-        this.entityData.set(ATTACK, time);
     }
     /*********************************************************************************/
 
@@ -170,6 +162,14 @@ public class Hunter extends HunterAbstractVillagerEntity implements IAnimatable,
     }
     /*********************************************************************************/
 
+    public void setAttacking(boolean attack) {
+        this.entityData.set(ATTACKING, attack);
+    }
+
+    public boolean isAttacking() {
+        return this.entityData.get(ATTACKING);
+    }
+
     @Override
     protected void defineSynchedData()
     {
@@ -177,7 +177,7 @@ public class Hunter extends HunterAbstractVillagerEntity implements IAnimatable,
         this.entityData.define(STATE, 0);
         this.entityData.define(STUNNED, false);
         this.entityData.define(DATA_ID_TYPE_VARIANT, 0);
-        this.entityData.define(ATTACK, 0);
+        this.entityData.define(ATTACKING, false);
     }
 
     public static AttributeSupplier.Builder createAttributes()
@@ -220,6 +220,7 @@ public class Hunter extends HunterAbstractVillagerEntity implements IAnimatable,
         super.registerGoals();
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(1, new HunterFindWaterPanicGoal(this, 0.5F));
+        this.goalSelector.addGoal(1, new HunterMeleeAttack(this, 0.53, true));
         this.goalSelector.addGoal(2, new OpenDoorGoal(this,true));
         this.goalSelector.addGoal(3, new Hunter.TradeWithPlayerGoal(this));
         this.goalSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, Cow.class, true));
@@ -229,9 +230,8 @@ public class Hunter extends HunterAbstractVillagerEntity implements IAnimatable,
         this.goalSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, Cod.class, true));
         this.goalSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, Rabbit.class, true));
         this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, Mob.class, 5, false, false, (p_28879_) -> {return p_28879_ instanceof Enemy && !(p_28879_ instanceof Creeper);}));
-        this.goalSelector.addGoal(5, new HunterRevengeGoal(this));
-        //this.targetSelector.addGoal(5, new HunterAttackGoal(this, 0.67D, true, 5));
-        this.targetSelector.addGoal(1, new MeleeAttackGoal(this, 0.66D, true));
+        this.goalSelector.addGoal(4, new HunterRevengeGoal(this));
+        this.goalSelector.addGoal(5, new TemptGoal(this, 0.43F, TEMP, false));
         this.goalSelector.addGoal(6, new Hunter.LookAtTradingPlayerGoal(this));
         this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Mob.class, 8.0F));
         this.goalSelector.addGoal(7, new WaterAvoidingRandomStrollGoal(this, 0.4D));
@@ -397,101 +397,57 @@ public class Hunter extends HunterAbstractVillagerEntity implements IAnimatable,
 
 
     /*************************** Attack Goal *********************************/
-    static class HunterAttackGoal extends MeleeAttackGoal
-    {
-        private final Hunter entity;
-        private final double speedModifier;
-        private int statecheck;
-        private int ticksUntilNextAttack;
-        private int ticksUntilNextPathRecalculation;
-        private double pathedTargetX;
-        private double pathedTargetY;
-        private double pathedTargetZ;
+    public static class HunterMeleeAttack extends MeleeAttackGoal {
+        private Hunter entity;
+        private int animCounter = 0;
+        private int animTickLength = 19;
 
-        public HunterAttackGoal(Hunter zombieIn, double speedIn, boolean longMemoryIn, int state)
+        public HunterMeleeAttack(PathfinderMob mob, double speedModifier, boolean followingTargetEvenIfNotSeen)
         {
-            super(zombieIn, speedIn, longMemoryIn);
-            this.entity = zombieIn;
-            this.statecheck = state;
-            this.speedModifier = speedIn;
+            super(mob, speedModifier, followingTargetEvenIfNotSeen);
+            if(mob instanceof Hunter c)
+            {
+                entity = c;
+            }
         }
 
-        public void start()
+        @Override
+        protected void checkAndPerformAttack(LivingEntity p_25557_, double p_25558_)
         {
-            super.start();
+            if (p_25558_ <= this.getAttackReachSqr(p_25557_) && this.getTicksUntilNextAttack() <= 0)
+            {
+                if(entity != null)
+                {
+                    entity.setAttacking(true);
+                    animCounter = 0;
+                }
+            }
+
+            super.checkAndPerformAttack(p_25557_, p_25558_);
         }
 
-        public boolean canUse()
-        {
-            return super.canUse();
-        }
-
-        public void stop()
-        {
-            super.stop();
-            this.entity.setAggressive(false);
-            this.entity.setAttackingState(0);
-        }
-
+        @Override
         public void tick()
         {
-            LivingEntity livingentity = this.entity.getTarget();
-            if (livingentity != null)
+            super.tick();
+            if(entity.isAttacking())
             {
-                this.mob.getLookControl().setLookAt(livingentity, 30.0F, 30.0F);
-                double d0 = this.mob.distanceToSqr(livingentity.getX(), livingentity.getY(), livingentity.getZ());
-                this.ticksUntilNextPathRecalculation = Math.max(this.ticksUntilNextPathRecalculation - 1, 0);
-                if ((this.mob.getSensing().hasLineOfSight(livingentity))
-                        && this.ticksUntilNextPathRecalculation <= 0
-                        && (this.pathedTargetX == 0.0D && this.pathedTargetY == 0.0D && this.pathedTargetZ == 0.0D
-                        || livingentity.distanceToSqr(this.pathedTargetX, this.pathedTargetY,
-                        this.pathedTargetZ) >= 1.0D
-                        || this.mob.getRandom().nextFloat() < 0.05F)) {
-                    this.pathedTargetX = livingentity.getX();
-                    this.pathedTargetY = livingentity.getY();
-                    this.pathedTargetZ = livingentity.getZ();
-                    this.ticksUntilNextPathRecalculation = 4 + this.mob.getRandom().nextInt(7);
-                    if (d0 > 1024.0D)
-                    {
-                        this.ticksUntilNextPathRecalculation += 10;
-                    }
-                    else if (d0 > 256.0D)
-                    {
-                        this.ticksUntilNextPathRecalculation += 5;
-                    }
+                animCounter++;
 
-                    if (!this.mob.getNavigation().moveTo(livingentity, this.speedModifier))
-                    {
-                        this.ticksUntilNextPathRecalculation += 15;
-                    }
+                if(animCounter >= animTickLength)
+                {
+                    animCounter = 0;
+                    entity.setAttacking(false);
                 }
-                this.ticksUntilNextAttack = Math.max(this.ticksUntilNextAttack - 0, 0);
-                this.checkAndPerformAttack(livingentity, d0);
             }
         }
 
         @Override
-        protected void checkAndPerformAttack(LivingEntity livingentity, double squaredDistance)
+        public void stop()
         {
-            double d0 = this.getAttackReachSqr(livingentity);
-            if (squaredDistance <= d0 && this.getTicksUntilNextAttack() <= 0)
-            {
-                this.resetAttackCooldown();
-                this.entity.setAttackingState(statecheck);
-                this.mob.doHurtTarget(livingentity);
-            }
-        }
-
-        @Override
-        protected int getAttackInterval()
-        {
-            return 50;
-        }
-
-        @Override
-        protected double getAttackReachSqr(LivingEntity attackTarget)
-        {
-            return this.mob.getBbWidth() * 1.0F * this.mob.getBbWidth() * 1.0F + attackTarget.getBbWidth();
+            animCounter = 0;
+            entity.setAttacking(false);
+            super.stop();
         }
     }
     /*************************************************************************/

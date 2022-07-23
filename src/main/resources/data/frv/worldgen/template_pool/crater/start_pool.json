@@ -1,5 +1,5 @@
 {
-  "name": "frv:crater/start_pool",
+  "name": "frv:crater",
   "fallback": "minecraft:empty",
   "elements": [
     {

@@ -20,7 +20,7 @@ public class ModItemGroup
         @Override
         public ItemStack makeIcon()
         {
-            return new ItemStack(ModItems.DIAMOND_DETECTOR.get());
+            return new ItemStack(ModItems.ALL_DETECTOR_PRIME.get());
         }
     };
 
@@ -41,5 +41,4 @@ public class ModItemGroup
             return new ItemStack(ModItems.MOB_PIC.get());
         }
     };
-
 }

@@ -37,6 +37,7 @@ import net.minecraft.world.entity.projectile.Arrow;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ProjectileWeaponItem;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraft.world.item.trading.MerchantOffers;
 import net.minecraft.world.level.Level;
@@ -51,10 +52,7 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import java.util.EnumSet;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.UUID;
+import java.util.*;
 
 
 public class FemaleHunter extends FemaleHunterAbstractVillagerEntity implements IAnimatable, Npc, RangedAttackMob
@@ -68,6 +66,7 @@ public class FemaleHunter extends FemaleHunterAbstractVillagerEntity implements 
 
     public static final EntityDataAccessor<Boolean> STUNNED = SynchedEntityData.defineId(FemaleHunter.class, EntityDataSerializers.BOOLEAN);
     public static final EntityDataAccessor<Integer> STATE = SynchedEntityData.defineId(FemaleHunter.class, EntityDataSerializers.INT);
+    private static final Ingredient TEMP = Ingredient.of(Items.BEEF, Items.MUTTON, Items.PORKCHOP, Items.COD);
     public static final EntityDataAccessor<Integer> ATTACK = SynchedEntityData.defineId(FemaleHunter.class, EntityDataSerializers.INT);
     private static final EntityDataAccessor<Integer> DATA_ID_TYPE_VARIANT = SynchedEntityData.defineId(FemaleHunter.class, EntityDataSerializers.INT);
 
@@ -234,10 +233,11 @@ public class FemaleHunter extends FemaleHunterAbstractVillagerEntity implements 
         this.goalSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, Pig.class, true));
         this.goalSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, Cod.class, true));
         this.goalSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, Salmon.class, true));
+        this.goalSelector.addGoal(4, new FemaleHunterRevengeGoal(this));
         this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, Mob.class, 5, false, false, (p_28879_) -> {return p_28879_ instanceof Enemy && !(p_28879_ instanceof Creeper);}));
+        this.goalSelector.addGoal(5, new TemptGoal(this, 0.43F, TEMP, false));
         this.goalSelector.addGoal(6, new FemaleHunter.LookAtTradingPlayerGoal(this));
         this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Mob.class, 8.0F));
-        this.goalSelector.addGoal(8, new FemaleHunterRevengeGoal(this));
         this.targetSelector.addGoal(9, new FemaleHunter.FemaleHunterAttackGoal(this, 0.0D, true, 3));//These are combined
         this.goalSelector.addGoal(9, new FemaleHunterRangedAttackGoal(this, 0.10D, 28, 17.0F, 0)); // These are combined
         this.goalSelector.addGoal(10, new WaterAvoidingRandomStrollGoal(this, 0.4D));
@@ -653,10 +653,6 @@ public class FemaleHunter extends FemaleHunterAbstractVillagerEntity implements 
         }
     }
 
-    protected void populateDefaultEquipmentSlots(DifficultyInstance p_32136_) {
-        super.populateDefaultEquipmentSlots(p_32136_);
-        this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.BOW));
-    }
 
 
     public void performRangedAttack(LivingEntity livingEntity, float p_32142_) {

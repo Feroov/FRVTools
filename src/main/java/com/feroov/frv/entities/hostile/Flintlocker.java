@@ -454,11 +454,6 @@ public class Flintlocker extends Monster implements IAnimatable, Npc, RangedAtta
         }
     }
 
-    protected void populateDefaultEquipmentSlots(DifficultyInstance p_32136_) {
-        super.populateDefaultEquipmentSlots(p_32136_);
-        this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.BOW));
-    }
-
 
     public void performRangedAttack(LivingEntity livingEntity, float p_32142_) {
         MusketAmmo arrow = new MusketAmmo(this.level, this);

@@ -348,11 +348,6 @@ public class Cannon extends Monster implements IAnimatable, RangedAttackMob
         }
     }
 
-    protected void populateDefaultEquipmentSlots(DifficultyInstance p_32136_) {
-        super.populateDefaultEquipmentSlots(p_32136_);
-        this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.BOW));
-    }
-
 
     public void performRangedAttack(LivingEntity livingEntity, float p_32142_) {
         CannonBall arrow = new CannonBall(this.level, this);
@@ -404,14 +399,9 @@ public class Cannon extends Monster implements IAnimatable, RangedAttackMob
     }
 
     @Override
-    protected void pushEntities()
-    {
+    protected void pushEntities() {
     }
-    @Override
-    protected int getExperienceReward(@Nonnull Player player)
-    {
-        return 0;
-    }
+
     @Override
     public boolean isBaby()
     {

@@ -367,10 +367,7 @@ public class PirateCaptain extends PathfinderMob implements IAnimatable, RangedA
         }
     }
 
-    protected void populateDefaultEquipmentSlots(DifficultyInstance p_32136_) {
-        super.populateDefaultEquipmentSlots(p_32136_);
-        this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.BOW));
-    }
+
 
 
     public void performRangedAttack(LivingEntity livingEntity, float p_32142_) {

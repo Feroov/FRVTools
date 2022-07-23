@@ -13,19 +13,19 @@ public class PirateCaptainModel extends AnimatedGeoModel<PirateCaptain>
     public PirateCaptainModel() {}
 
     @Override
-    public ResourceLocation getModelLocation(PirateCaptain object)
+    public ResourceLocation getModelResource(PirateCaptain object)
     {
         return new ResourceLocation(Frv.MOD_ID, "geo/pirate_captain.geo.json");
     }
 
     @Override
-    public ResourceLocation getTextureLocation(PirateCaptain entity)
+    public ResourceLocation getTextureResource(PirateCaptain entity)
     {
         return new ResourceLocation(Frv.MOD_ID, "textures/entity/pirates/pirate_captain.png");
     }
 
     @Override
-    public ResourceLocation getAnimationFileLocation(PirateCaptain object)
+    public ResourceLocation getAnimationResource(PirateCaptain object)
     {
         return new ResourceLocation(Frv.MOD_ID, "animations/pirate_captain.animation.json");
     }

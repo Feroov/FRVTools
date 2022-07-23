@@ -1,5 +1,5 @@
 {
-  "name": "frv:camp_site/start_pool",
+  "name": "frv:camp_site",
   "fallback": "minecraft:empty",
   "elements": [
     {

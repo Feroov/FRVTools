@@ -11,20 +11,21 @@ public class CorruptFireModel extends AnimatedGeoModel<CorruptFire> {
 
     public CorruptFireModel() {}
 
-
-
     @Override
-    public ResourceLocation getModelLocation(CorruptFire object) {
+    public ResourceLocation getModelResource(CorruptFire object)
+    {
         return new ResourceLocation(Frv.MOD_ID, "geo/corrupt_fire.geo.json");
     }
 
     @Override
-    public ResourceLocation getTextureLocation(CorruptFire object) {
+    public ResourceLocation getTextureResource(CorruptFire object)
+    {
         return new ResourceLocation(Frv.MOD_ID, "textures/item/corrupt_fire.png");
     }
 
     @Override
-    public ResourceLocation getAnimationFileLocation(CorruptFire animatable) {
+    public ResourceLocation getAnimationResource(CorruptFire animatable)
+    {
         return new ResourceLocation(Frv.MOD_ID, "animations/empty.animation.json");
     }
 }

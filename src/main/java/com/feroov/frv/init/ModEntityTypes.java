@@ -17,7 +17,7 @@ public class ModEntityTypes
 {
     private ModEntityTypes(){}
 
-    public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(ForgeRegistries.ENTITIES,
+    public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES,
             Frv.MOD_ID);
 
     /** Passive **/
@@ -52,7 +52,7 @@ public class ModEntityTypes
 
     public static final RegistryObject<EntityType<Mimic>> MIMIC = ENTITIES.register("mimic",
             () -> EntityType.Builder.of(Mimic::new, MobCategory.CREATURE).canSpawnFarFromPlayer().fireImmune()
-                    .sized(1.4f,1.4f).build("mimic"));
+                    .sized(1.0f,1.0f).build("mimic"));
 
 
     /** Misc **/

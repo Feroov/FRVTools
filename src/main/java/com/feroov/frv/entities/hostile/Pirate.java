@@ -2,6 +2,8 @@ package com.feroov.frv.entities.hostile;
 
 
 
+import com.feroov.frv.entities.passive.FemaleHunter;
+import com.feroov.frv.entities.passive.Hunter;
 import com.feroov.frv.entities.variants.PirateVariant;
 import com.feroov.frv.sound.ModSoundEvents;
 import net.minecraft.Util;
@@ -38,33 +40,40 @@ public class Pirate extends Monster implements IAnimatable
 
     public static final EntityDataAccessor<Boolean> STUNNED = SynchedEntityData.defineId(Pirate.class, EntityDataSerializers.BOOLEAN);
     public static final EntityDataAccessor<Integer> STATE = SynchedEntityData.defineId(Pirate.class, EntityDataSerializers.INT);
-    public static final EntityDataAccessor<Integer> ATTACK = SynchedEntityData.defineId(Pirate.class, EntityDataSerializers.INT);
+    protected static final EntityDataAccessor<Boolean> ATTACKING = SynchedEntityData.defineId(Pirate.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Integer> DATA_ID_TYPE_VARIANT = SynchedEntityData.defineId(Pirate.class, EntityDataSerializers.INT);
 
     /******************************** Animation methods *****************************/
     private final AnimationFactory factory = new AnimationFactory(this);
+
+
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event)
     {
+        if ((this.dead || this.getHealth() < 0.01 || this.isDeadOrDying()))
+        {
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("death", false));
+            return PlayState.CONTINUE;
+        }
+
+        if(isAttacking())
+        {
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("attack", true));
+            return PlayState.CONTINUE;
+        }
+
         if (!(animationSpeed > -0.10F && animationSpeed < 0.10F) && !this.isAggressive())
         {
             event.getController().setAnimation(new AnimationBuilder().addAnimation("walk", true));
             return PlayState.CONTINUE;
         }
 
-        if ((this.dead || this.getSpeed() < 0.01 || this.isDeadOrDying()))
+        if(isAggressive())
         {
-            if (level.isClientSide)
-            {
-                event.getController().setAnimation(new AnimationBuilder().addAnimation("death", false));
-                return PlayState.CONTINUE;
-            }
-        }
-
-        if (this.isAggressive() && !(this.dead || this.getHealth() < 0.01 || this.isDeadOrDying()))
-        {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("attack", true));
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("walk", true));
             return PlayState.CONTINUE;
         }
+
+
         event.getController().setAnimation(new AnimationBuilder().addAnimation("idle", true));
         return PlayState.CONTINUE;
     }
@@ -83,10 +92,6 @@ public class Pirate extends Monster implements IAnimatable
         return this.factory;
     }
 
-    public void setAttackingState(int time)
-    {
-        this.entityData.set(ATTACK, time);
-    }
     /*********************************************************************************/
 
 
@@ -138,6 +143,14 @@ public class Pirate extends Monster implements IAnimatable
     }
     /*********************************************************************************/
 
+    public void setAttacking(boolean attack) {
+        this.entityData.set(ATTACKING, attack);
+    }
+
+    public boolean isAttacking() {
+        return this.entityData.get(ATTACKING);
+    }
+
     @Override
     protected void defineSynchedData()
     {
@@ -145,7 +158,7 @@ public class Pirate extends Monster implements IAnimatable
         this.entityData.define(STATE, 0);
         this.entityData.define(STUNNED, false);
         this.entityData.define(DATA_ID_TYPE_VARIANT, 0);
-        this.entityData.define(ATTACK, 1);
+        this.entityData.define(ATTACKING, false);
     }
 
     public static AttributeSupplier.Builder createAttributes()
@@ -179,9 +192,10 @@ public class Pirate extends Monster implements IAnimatable
     {
         super.registerGoals();
         this.goalSelector.addGoal(0, new FloatGoal(this));
-        //this.targetSelector.addGoal(1, new PirateAttackGoal(this, 0.42D, true, 0));
-        this.targetSelector.addGoal(1, new MeleeAttackGoal(this, 0.42D, true));
+        this.goalSelector.addGoal(1, new PirateMeleeAttack(this, 0.43, true));
         this.goalSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
+        this.goalSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Hunter.class, true));
+        this.goalSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, FemaleHunter.class, true));
         this.goalSelector.addGoal(3, new WaterAvoidingRandomStrollGoal(this, 0.4D));
         this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
     }
@@ -189,89 +203,57 @@ public class Pirate extends Monster implements IAnimatable
 
     /*************************** Attack Goal *********************************/
     /** Must combine ranged and normal attack in order to anim ranged (state stuff)**/
-    public class PirateAttackGoal extends MeleeAttackGoal {
-        private final Pirate entity;
-        private final double speedModifier;
-        private int statecheck;
-        private int ticksUntilNextAttack;
-        private int ticksUntilNextPathRecalculation;
-        private final boolean followingTargetEvenIfNotSeen;
-        private double pathedTargetX;
-        private double pathedTargetY;
-        private double pathedTargetZ;
+    public class PirateMeleeAttack extends MeleeAttackGoal {
+        private Pirate entity;
+        private int animCounter = 0;
+        private int animTickLength = 19;
 
-        public PirateAttackGoal(Pirate zombieIn, double speedIn, boolean longMemoryIn, int state) {
-            super(zombieIn, speedIn, longMemoryIn);
-            this.entity = zombieIn;
-            this.statecheck = state;
-            this.speedModifier = speedIn;
-            this.followingTargetEvenIfNotSeen = longMemoryIn;
+        public PirateMeleeAttack(PathfinderMob mob, double speedModifier, boolean followingTargetEvenIfNotSeen)
+        {
+            super(mob, speedModifier, followingTargetEvenIfNotSeen);
+            if(mob instanceof Pirate c)
+            {
+                entity = c;
+            }
         }
 
-        public void start() {
-            super.start();
-        }
-
-        public boolean canUse() {
-            return super.canUse();
-        }
-
-        public void stop() {
-            super.stop();
-            this.entity.setAggressive(false);
-            this.entity.setAttackingState(0);
-        }
-
-        public void tick() {
-            LivingEntity livingentity = this.entity.getTarget();
-            if (livingentity != null) {
-                this.mob.getLookControl().setLookAt(livingentity, 30.0F, 30.0F);
-                double d0 = this.mob.distanceToSqr(livingentity.getX(), livingentity.getY(), livingentity.getZ());
-                this.ticksUntilNextPathRecalculation = Math.max(this.ticksUntilNextPathRecalculation - 1, 0);
-                if ((this.followingTargetEvenIfNotSeen || this.mob.getSensing().hasLineOfSight(livingentity))
-                        && this.ticksUntilNextPathRecalculation <= 0
-                        && (this.pathedTargetX == 0.0D && this.pathedTargetY == 0.0D && this.pathedTargetZ == 0.0D
-                        || livingentity.distanceToSqr(this.pathedTargetX, this.pathedTargetY,
-                        this.pathedTargetZ) >= 1.0D
-                        || this.mob.getRandom().nextFloat() < 0.05F)) {
-                    this.pathedTargetX = livingentity.getX();
-                    this.pathedTargetY = livingentity.getY();
-                    this.pathedTargetZ = livingentity.getZ();
-                    this.ticksUntilNextPathRecalculation = 4 + this.mob.getRandom().nextInt(7);
-                    if (d0 > 1024.0D) {
-                        this.ticksUntilNextPathRecalculation += 10;
-                    } else if (d0 > 256.0D) {
-                        this.ticksUntilNextPathRecalculation += 5;
-                    }
-
-                    if (!this.mob.getNavigation().moveTo(livingentity, this.speedModifier)) {
-                        this.ticksUntilNextPathRecalculation += 15;
-                    }
+        @Override
+        protected void checkAndPerformAttack(LivingEntity p_25557_, double p_25558_)
+        {
+            if (p_25558_ <= this.getAttackReachSqr(p_25557_) && this.getTicksUntilNextAttack() <= 0)
+            {
+                if(entity != null)
+                {
+                    entity.setAttacking(true);
+                    animCounter = 0;
                 }
+            }
 
-                this.ticksUntilNextAttack = Math.max(this.ticksUntilNextAttack - 0, 0);
-                this.checkAndPerformAttack(livingentity, d0);
+            super.checkAndPerformAttack(p_25557_, p_25558_);
+        }
+
+        @Override
+        public void tick()
+        {
+            super.tick();
+            if(entity.isAttacking())
+            {
+                animCounter++;
+
+                if(animCounter >= animTickLength)
+                {
+                    animCounter = 0;
+                    entity.setAttacking(false);
+                }
             }
         }
 
         @Override
-        protected void checkAndPerformAttack(LivingEntity livingentity, double squaredDistance) {
-            double d0 = this.getAttackReachSqr(livingentity);
-            if (squaredDistance <= d0 && this.getTicksUntilNextAttack() <= 0) {
-                this.resetAttackCooldown();
-                this.entity.setAttackingState(statecheck);
-                this.mob.doHurtTarget(livingentity);
-            }
-        }
-
-        @Override
-        protected int getAttackInterval() {
-            return 50;
-        }
-
-        @Override
-        protected double getAttackReachSqr(LivingEntity attackTarget) {
-            return (double) (this.mob.getBbWidth() * 1.0F * this.mob.getBbWidth() * 1.0F + attackTarget.getBbWidth());
+        public void stop()
+        {
+            animCounter = 0;
+            entity.setAttacking(false);
+            super.stop();
         }
     }
     /*************************************************************************/
@@ -312,9 +294,9 @@ public class Pirate extends Monster implements IAnimatable
     protected void tickDeath()
     {
         ++this.deathTime;
-        if (this.deathTime == 50 && !this.level.isClientSide())
+        if (this.deathTime == 40 && !this.level.isClientSide())
         {
-            this.level.broadcastEntityEvent(this, (byte)50);
+            this.level.broadcastEntityEvent(this, (byte)40);
             this.remove(RemovalReason.KILLED);
         }
 

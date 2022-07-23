@@ -16,19 +16,19 @@ public class FlintlockerModel extends AnimatedGeoModel<Flintlocker>
     public FlintlockerModel() {}
 
     @Override
-    public ResourceLocation getModelLocation(Flintlocker object)
+    public ResourceLocation getModelResource(Flintlocker object)
     {
         return new ResourceLocation(Frv.MOD_ID, "geo/flintlocker.geo.json");
     }
 
     @Override
-    public ResourceLocation getTextureLocation(Flintlocker entity)
+    public ResourceLocation getTextureResource(Flintlocker entity)
     {
         return FlintlockerRenderer.LOCATION_BY_VARIANT.get(entity.getVariant());
     }
 
     @Override
-    public ResourceLocation getAnimationFileLocation(Flintlocker object)
+    public ResourceLocation getAnimationResource(Flintlocker object)
     {
         return new ResourceLocation(Frv.MOD_ID, "animations/pirate.animation.json");
     }

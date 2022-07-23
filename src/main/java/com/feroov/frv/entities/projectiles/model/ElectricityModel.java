@@ -10,19 +10,19 @@ public class ElectricityModel extends AnimatedGeoModel<Electricity>
     public ElectricityModel() {}
 
     @Override
-    public ResourceLocation getModelLocation(Electricity object)
+    public ResourceLocation getModelResource(Electricity object)
     {
         return new ResourceLocation(Frv.MOD_ID, "geo/electricity.geo.json");
     }
 
     @Override
-    public ResourceLocation getTextureLocation(Electricity object)
+    public ResourceLocation getTextureResource(Electricity object)
     {
         return new ResourceLocation(Frv.MOD_ID, "textures/entity/electricity.png");
     }
 
     @Override
-    public ResourceLocation getAnimationFileLocation(Electricity object)
+    public ResourceLocation getAnimationResource(Electricity object)
     {
         return new ResourceLocation(Frv.MOD_ID, "animations/electricity.animation.json");
     }

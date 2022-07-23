@@ -16,19 +16,19 @@ public class PirateModel extends AnimatedGeoModel<Pirate>
     public PirateModel() {}
 
     @Override
-    public ResourceLocation getModelLocation(Pirate object)
+    public ResourceLocation getModelResource(Pirate object)
     {
         return new ResourceLocation(Frv.MOD_ID, "geo/pirate.geo.json");
     }
 
     @Override
-    public ResourceLocation getTextureLocation(Pirate entity)
+    public ResourceLocation getTextureResource(Pirate entity)
     {
         return PirateRenderer.LOCATION_BY_VARIANT.get(entity.getVariant());
     }
 
     @Override
-    public ResourceLocation getAnimationFileLocation(Pirate object)
+    public ResourceLocation getAnimationResource(Pirate object)
     {
         return new ResourceLocation(Frv.MOD_ID, "animations/pirate_melee.animation.json");
     }

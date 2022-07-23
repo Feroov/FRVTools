@@ -1,56 +1,66 @@
 package com.feroov.frv.world.feature;
 
+import com.feroov.frv.Frv;
 import net.minecraft.core.Holder;
+import net.minecraft.core.Registry;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
-import net.minecraft.world.level.levelgen.placement.HeightRangePlacement;
-import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import net.minecraft.world.level.levelgen.placement.*;
+import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.RegistryObject;
+
+import java.util.List;
 
 public class ModPlacedFeatures
 {
+    public static final DeferredRegister<PlacedFeature> PLACED_FEATURES =
+            DeferredRegister.create(Registry.PLACED_FEATURE_REGISTRY, Frv.MOD_ID);
+
+
     /**
-        HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(80) Min height for ore to spawn (worldMinHeight + height)  (min height -64)
-        VerticalAnchor.belowTop(175)) Max height for it to spawn (worldMaxHeight - height) (max height 319)
+        Check for OrePlacements.java for reference
     */
 
 
-    /************************************************* Tin Ore ***********************************************************/
-    public static final Holder<PlacedFeature> TIN_ORE_PLACED = PlacementUtils.register("tin_ore_placed",
-            ModConfiguredFeatures.TIN_ORE, ModOrePlacement.commonOrePlacement(9, // VeinsPerChunk
-                    HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(80), VerticalAnchor.belowTop(255))));
+    public static final RegistryObject<PlacedFeature> TIN_ORE_PLACED = PLACED_FEATURES.register("tin_ore_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.TIN_ORE.getHolder().get(),
+                    commonOrePlacement(9,
+                            HeightRangePlacement.triangle(VerticalAnchor.absolute(0), VerticalAnchor.top()))));
 
-    public static final Holder<PlacedFeature> DEEPSLATE_TIN_ORE_PLACED = PlacementUtils.register("deepslate_tin_ore_placed",
-            ModConfiguredFeatures.DEEPSLATE_TIN_ORE, ModOrePlacement.commonOrePlacement(7, // VeinsPerChunk
-                    HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(14), VerticalAnchor.belowTop(330))));
-    /************************************************************************************************************************/
+    public static final RegistryObject<PlacedFeature> LEAD_ORE_PLACED = PLACED_FEATURES.register("lead_ore_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.LEAD_ORE.getHolder().get(),
+                    commonOrePlacement(8,
+                            HeightRangePlacement.triangle(VerticalAnchor.absolute(0), VerticalAnchor.absolute(170)))));
 
-    /************************************************* Lead Ore ***********************************************************/
-    public static final Holder<PlacedFeature> LEAD_ORE_PLACED = PlacementUtils.register("lead_ore_placed",
-            ModConfiguredFeatures.LEAD_ORE, ModOrePlacement.commonOrePlacement(8, // VeinsPerChunk
-                    HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(80), VerticalAnchor.belowTop(281))));
+    public static final RegistryObject<PlacedFeature> SILVER_ORE_PLACED = PLACED_FEATURES.register("silver_ore_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.SILVER_ORE.getHolder().get(),
+                    commonOrePlacement(7,
+                            HeightRangePlacement.triangle(VerticalAnchor.absolute(-24), VerticalAnchor.absolute(300)))));
 
-    public static final Holder<PlacedFeature> DEEPSLATE_LEAD_ORE_PLACED = PlacementUtils.register("deepslate_lead_ore_placed",
-            ModConfiguredFeatures.DEEPSLATE_LEAD_ORE, ModOrePlacement.commonOrePlacement(6, // VeinsPerChunk
-                    HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(14), VerticalAnchor.belowTop(330))));
-    /************************************************************************************************************************/
+    public static final RegistryObject<PlacedFeature> PLATINUM_ORE_PLACED = PLACED_FEATURES.register("platinum_ore_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.PLATINUM_ORE.getHolder().get(),
+                    commonOrePlacement(7,
+                            HeightRangePlacement.triangle(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(40)))));
 
-    /************************************************* Silver Ore ***********************************************************/
-    public static final Holder<PlacedFeature> SILVER_ORE_PLACED = PlacementUtils.register("silver_ore_placed",
-            ModConfiguredFeatures.SILVER_ORE, ModOrePlacement.commonOrePlacement(6, // VeinsPerChunk
-                    HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(80), VerticalAnchor.belowTop(287))));
 
-    public static final Holder<PlacedFeature> DEEPSLATE_SILVER_ORE_PLACED = PlacementUtils.register("deepslate_silver_ore_placed",
-            ModConfiguredFeatures.DEEPSLATE_SILVER_ORE, ModOrePlacement.commonOrePlacement(4, // VeinsPerChunk
-                    HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(14), VerticalAnchor.belowTop(330))));
-    /************************************************************************************************************************/
 
-    /************************************************* PLatinum Ore ***********************************************************/
-    public static final Holder<PlacedFeature> PLATINUM_ORE_PLACED = PlacementUtils.register("platinum_ore_placed",
-            ModConfiguredFeatures.PLATINUM_ORE, ModOrePlacement.commonOrePlacement(4, // VeinsPerChunk
-                    HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(80), VerticalAnchor.belowTop(299))));
 
-    public static final Holder<PlacedFeature> DEEPSLATE_PLATINUM_ORE_PLACED = PlacementUtils.register("deepslate_platinum_ore_placed",
-            ModConfiguredFeatures.DEEPSLATE_PLATINUM_ORE, ModOrePlacement.commonOrePlacement(2, // VeinsPerChunk
-                    HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(14), VerticalAnchor.belowTop(330))));
-    /************************************************************************************************************************/
+    private static List<PlacementModifier> orePlacement(PlacementModifier p_195347_, PlacementModifier p_195348_)
+    {
+        return List.of(p_195347_, InSquarePlacement.spread(), p_195348_, BiomeFilter.biome());
+    }
+
+    private static List<PlacementModifier> commonOrePlacement(int p_195344_, PlacementModifier p_195345_)
+    {
+        return orePlacement(CountPlacement.of(p_195344_), p_195345_);
+    }
+
+    private static List<PlacementModifier> rareOrePlacement(int p_195350_, PlacementModifier p_195351_)
+    {
+        return orePlacement(RarityFilter.onAverageOnceEvery(p_195350_), p_195351_);
+    }
+
+    public static void register(IEventBus eventBus){ PLACED_FEATURES.register(eventBus); }
+
 }

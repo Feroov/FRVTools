@@ -10,19 +10,19 @@ public class CannonModel extends AnimatedGeoModel<Cannon>
     public CannonModel() {}
 
     @Override
-    public ResourceLocation getModelLocation(Cannon object)
+    public ResourceLocation getModelResource(Cannon object)
     {
         return new ResourceLocation(Frv.MOD_ID, "geo/cannon.geo.json");
     }
 
     @Override
-    public ResourceLocation getTextureLocation(Cannon entity)
+    public ResourceLocation getTextureResource(Cannon entity)
     {
         return new ResourceLocation(Frv.MOD_ID, "textures/entity/pirates/cannon.png");
     }
 
     @Override
-    public ResourceLocation getAnimationFileLocation(Cannon object)
+    public ResourceLocation getAnimationResource(Cannon object)
     {
         return new ResourceLocation(Frv.MOD_ID, "animations/cannon.animation.json");
     }
