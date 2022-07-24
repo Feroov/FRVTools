@@ -1,0 +1,36 @@
+{
+  "display": {
+    "icon": {
+      "item": "frv:pirate_spawn_egg"
+    },
+    "title": {
+      "translate": "advancements.frv.find_pirate_ship.title"
+    },
+    "description": {
+      "translate": "advancements.frv.find_pirate_ship.description"
+    },
+    "background": "minecraft:textures/block/gold_block.png",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "bastion": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structure": "frv:pirate_ship"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

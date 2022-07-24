@@ -83,14 +83,17 @@ public class ModItems
     public static final RegistryObject<Item> REDSTONE_DETECTOR = ITEMS.register("redstone_detector",
             () -> new RedstoneDetector(new Item.Properties().tab(ModItemGroup.FRV_TAB_MISC).durability(320)));
 
+    public static final RegistryObject<Item> LAPIS_DETECTOR = ITEMS.register("lapis_detector",
+            () -> new LapisDetector(new Item.Properties().tab(ModItemGroup.FRV_TAB_MISC).durability(320)));
+
     public static final RegistryObject<Item> EMERALD_DETECTOR = ITEMS.register("emerald_detector",
-            () -> new EmeraldDetector(new Item.Properties().tab(ModItemGroup.FRV_TAB_MISC).durability(120)));
+            () -> new EmeraldDetector(new Item.Properties().tab(ModItemGroup.FRV_TAB_MISC).durability(250)));
 
     public static final RegistryObject<Item> DIAMOND_DETECTOR = ITEMS.register("diamond_detector",
-            () -> new DiamondDetector(new Item.Properties().tab(ModItemGroup.FRV_TAB_MISC).durability(215)));
+            () -> new DiamondDetector(new Item.Properties().tab(ModItemGroup.FRV_TAB_MISC).durability(300)));
 
     public static final RegistryObject<Item> NETHERITE_DETECTOR = ITEMS.register("netherite_detector",
-            () -> new NetheriteDetector(new Item.Properties().tab(ModItemGroup.FRV_TAB_MISC).durability(50)));
+            () -> new NetheriteDetector(new Item.Properties().tab(ModItemGroup.FRV_TAB_MISC).durability(300)));
 
     public static final RegistryObject<Item> COAL_DETECTOR_PRIME = ITEMS.register("coal_detector_prime",
             () -> new CoalDetectorPrime(new Item.Properties().tab(ModItemGroup.FRV_TAB_MISC).durability(165)));
@@ -104,20 +107,23 @@ public class ModItems
     public static final RegistryObject<Item> REDSTONE_DETECTOR_PRIME = ITEMS.register("redstone_detector_prime",
             () -> new RedstoneDetectorPrime(new Item.Properties().tab(ModItemGroup.FRV_TAB_MISC).durability(565)));
 
+    public static final RegistryObject<Item> LAPIS_DETECTOR_PRIME = ITEMS.register("lapis_detector_prime",
+            () -> new LapisDetectorPrime(new Item.Properties().tab(ModItemGroup.FRV_TAB_MISC).durability(565)));
+
     public static final RegistryObject<Item> EMERALD_DETECTOR_PRIME = ITEMS.register("emerald_detector_prime",
-            () -> new EmeraldDetectorPrime(new Item.Properties().tab(ModItemGroup.FRV_TAB_MISC).durability(265)));
+            () -> new EmeraldDetectorPrime(new Item.Properties().tab(ModItemGroup.FRV_TAB_MISC).durability(500)));
 
     public static final RegistryObject<Item> DIAMOND_DETECTOR_PRIME = ITEMS.register("diamond_detector_prime",
-            () -> new DiamondDetectorPrime(new Item.Properties().tab(ModItemGroup.FRV_TAB_MISC).durability(385)));
+            () -> new DiamondDetectorPrime(new Item.Properties().tab(ModItemGroup.FRV_TAB_MISC).durability(600)));
 
     public static final RegistryObject<Item> NETHERITE_DETECTOR_PRIME = ITEMS.register("netherite_detector_prime",
-            () -> new NetheriteDetectorPrime(new Item.Properties().tab(ModItemGroup.FRV_TAB_MISC).durability(100)));
+            () -> new NetheriteDetectorPrime(new Item.Properties().tab(ModItemGroup.FRV_TAB_MISC).durability(600)));
 
     public static final RegistryObject<Item> ALL_DETECTOR = ITEMS.register("all_detector",
-            () -> new AllOreDetector(new Item.Properties().tab(ModItemGroup.FRV_TAB_MISC).durability(200)));
+            () -> new AllOreDetector(new Item.Properties().tab(ModItemGroup.FRV_TAB_MISC).durability(400)));
 
     public static final RegistryObject<Item> ALL_DETECTOR_PRIME = ITEMS.register("all_detector_prime",
-            () -> new AllOreDetectorPrime(new Item.Properties().tab(ModItemGroup.FRV_TAB_MISC).durability(700))
+            () -> new AllOreDetectorPrime(new Item.Properties().tab(ModItemGroup.FRV_TAB_MISC).durability(900))
             {
                 @Override
                 public boolean isFoil(ItemStack p_41453_)

@@ -1,0 +1,51 @@
+{
+  "display": {
+    "icon": {
+      "item": "frv:meteorite_chestplate",
+      "nbt": "{Damage:0}"
+    },
+    "title": {
+      "translate": "advancements.frv.meteorite_armor.title"
+    },
+    "description": {
+      "translate": "advancements.frv.meteorite_armor.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "frv:aquire_meteorite",
+  "criteria": {
+    "netherite_armor": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frv:meteorite_helmet"
+            ]
+          },
+          {
+            "items": [
+              "frv:meteorite_chestplate"
+            ]
+          },
+          {
+            "items": [
+              "frv:meteorite_leggings"
+            ]
+          },
+          {
+            "items": [
+              "frv:meteorite_boots"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 100
+  }
+}

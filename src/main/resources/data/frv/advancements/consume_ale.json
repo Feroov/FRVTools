@@ -1,0 +1,33 @@
+{
+  "display": {
+    "icon": {
+      "item": "frv:ale"
+    },
+    "title": {
+      "translate": "advancements.frv.consume_ale.title"
+    },
+    "description": {
+      "translate": "advancements.frv.consume_ale.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "frv:kill_pirate_captain",
+  "criteria": {
+    "ale": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "frv:ale"
+          ]
+        }
+      }
+    }
+  },
+  "rewards": {
+    "experience": 100
+  }
+}

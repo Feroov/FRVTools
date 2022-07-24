@@ -25,18 +25,18 @@ public class ModPlacedFeatures
 
     public static final RegistryObject<PlacedFeature> TIN_ORE_PLACED = PLACED_FEATURES.register("tin_ore_placed",
             () -> new PlacedFeature(ModConfiguredFeatures.TIN_ORE.getHolder().get(),
-                    commonOrePlacement(9,
-                            HeightRangePlacement.triangle(VerticalAnchor.absolute(0), VerticalAnchor.top()))));
+                    commonOrePlacement(11,
+                            HeightRangePlacement.triangle(VerticalAnchor.absolute(-10), VerticalAnchor.absolute(70)))));
 
     public static final RegistryObject<PlacedFeature> LEAD_ORE_PLACED = PLACED_FEATURES.register("lead_ore_placed",
             () -> new PlacedFeature(ModConfiguredFeatures.LEAD_ORE.getHolder().get(),
                     commonOrePlacement(8,
-                            HeightRangePlacement.triangle(VerticalAnchor.absolute(0), VerticalAnchor.absolute(170)))));
+                            HeightRangePlacement.triangle(VerticalAnchor.absolute(-20), VerticalAnchor.absolute(60)))));
 
     public static final RegistryObject<PlacedFeature> SILVER_ORE_PLACED = PLACED_FEATURES.register("silver_ore_placed",
             () -> new PlacedFeature(ModConfiguredFeatures.SILVER_ORE.getHolder().get(),
                     commonOrePlacement(7,
-                            HeightRangePlacement.triangle(VerticalAnchor.absolute(-24), VerticalAnchor.absolute(300)))));
+                            HeightRangePlacement.triangle(VerticalAnchor.absolute(-54), VerticalAnchor.absolute(40)))));
 
     public static final RegistryObject<PlacedFeature> PLATINUM_ORE_PLACED = PLACED_FEATURES.register("platinum_ore_placed",
             () -> new PlacedFeature(ModConfiguredFeatures.PLATINUM_ORE.getHolder().get(),

@@ -4,7 +4,7 @@ import com.feroov.frv.entities.projectiles.MusketAmmo;
 import com.feroov.frv.init.Keybindings;
 import com.feroov.frv.item.ModItemGroup;
 import com.feroov.frv.item.ModItems;
-import com.feroov.frv.item.custom.FrvItem;
+import com.feroov.frv.item.custom.RangedItemsComplex;
 import com.feroov.frv.item.custom.ranged.render.MusketRender;
 import com.feroov.frv.sound.ModSoundEvents;
 import com.feroov.frv.util.packets.FrvPacketHandler;
@@ -26,7 +26,7 @@ import software.bernie.geckolib3.util.GeckoLibUtil;
 
 import java.util.function.Consumer;
 
-public class Musket extends FrvItem
+public class Musket extends RangedItemsComplex
 {
     public Musket()
     {

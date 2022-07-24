@@ -5,6 +5,7 @@
   [
     "minecraft:plains",
     "minecraft:desert",
-    "minecraft:snowy_plains"
+    "minecraft:snowy_plains",
+    "minecraft:nether_wastes"
   ]
 }

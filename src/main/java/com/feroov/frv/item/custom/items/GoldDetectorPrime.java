@@ -1,5 +1,6 @@
 package com.feroov.frv.item.custom.items;
 
+import com.feroov.frv.init.ModParticles;
 import com.feroov.frv.sound.ModSoundEvents;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -33,17 +34,13 @@ public class GoldDetectorPrime extends Item
 
                 if(isValuableBlock(blockBelow))
                 {
-                    outputValuableCoordinates(positionClicked.below(i), player, blockBelow);
+
                     foundBlock = true;
                     pContext.getLevel().playSound(player, positionClicked, ModSoundEvents.DETECTOR_SOUND.get(),
                             SoundSource.BLOCKS, 1f,1f);
+                    spawnFoundParticles(pContext, positionClicked);
                     break;
                 }
-            }
-
-            if(!foundBlock)
-            {
-                player.sendSystemMessage(Component.translatable("item.frv.gold_detector.no_valuables"));
             }
         }
 
@@ -53,13 +50,19 @@ public class GoldDetectorPrime extends Item
         return super.useOn(pContext);
     }
 
-    private void outputValuableCoordinates(BlockPos blockPos, Player player, Block blockBelow)
+    private void spawnFoundParticles(UseOnContext pContext, BlockPos positionClicked)
     {
-
-        player.sendSystemMessage(Component.literal("\u00A7a\nDetected Gold Ore\n" + "\nat" + "(X:"
-                + blockPos.getX() + " , " + "Z:"
-                + blockPos.getZ() + ")\n"));
+        for(int i = 0; i < 360; i++)
+        {
+            if(i % 20 == 0)
+            {
+                pContext.getLevel().addParticle(ModParticles.GOLD_PARTICLES.get(),
+                        positionClicked.getX() + 0.5d, positionClicked.getY() + 1, positionClicked.getZ() + 0.5d,
+                        Math.cos(i) * 0.15d, 0.15d, Math.sin(i) * 0.15d);
+            }
+        }
     }
+
     private boolean isValuableBlock(Block block)
     {
         return block == Blocks.GOLD_ORE || block == Blocks.DEEPSLATE_GOLD_ORE;

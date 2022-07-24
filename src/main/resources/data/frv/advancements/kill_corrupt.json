@@ -1,0 +1,35 @@
+{
+  "display": {
+    "icon": {
+      "item": "frv:corrupt_spawn_egg",
+      "nbt": "{Damage:0}"
+    },
+    "title": {
+      "translate": "advancements.frv.kill_corrupt.title"
+    },
+    "description": {
+      "translate": "advancements.frv.kill_corrupt.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "frv:find_corruption",
+  "criteria": {
+    "minecraft:blaze": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "frv:corrupt"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -22,13 +22,13 @@ import software.bernie.geckolib3.util.GeckoLibUtil;
 
 
 
-public class FrvItem extends Item implements IAnimatable, ISyncable
+public class RangedItemsComplex extends Item implements IAnimatable, ISyncable
 {
     public AnimationFactory factory = new AnimationFactory(this);
     public String controllerName = "controller";
     public static final int STATE = 0;
 
-    public FrvItem(Properties p_41383_) {
+    public RangedItemsComplex(Properties p_41383_) {
         super(p_41383_);
         GeckoLibNetwork.registerSyncable(this);
     }
@@ -71,7 +71,8 @@ public class FrvItem extends Item implements IAnimatable, ISyncable
         return false;
     }
 
-    public static void removeAmmo(Item ammo, Player playerEntity) {
+    public static void removeAmmo(Item ammo, Player playerEntity)
+    {
 
         if (!playerEntity.isCreative())
         {

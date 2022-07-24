@@ -1,0 +1,17 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": [
+    "minecraft:plains",
+    "minecraft:forest",
+    "minecraft:snowy_plains",
+    "minecraft:taiga",
+    "minecraft:savanna"
+  ],
+  "spawners":
+  {
+    "type": "frv:female_hunter",
+    "weight": 75,
+    "minCount": 1,
+    "maxCount": 3
+  }
+}

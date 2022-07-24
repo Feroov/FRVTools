@@ -15,8 +15,8 @@ public class FrvPacketHandler
             PROTOCOL_VERSION::equals);
 
 
-    public static void register() {
-
+    public static void register()
+    {
         MUSKET.registerMessage(channel_id++, MusketLoadingPacket.class, MusketLoadingPacket::encode,
                 MusketLoadingPacket::new, MusketLoadingPacket::handle);
     }

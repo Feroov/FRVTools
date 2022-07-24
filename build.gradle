@@ -47,15 +47,28 @@ repositories {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.19-41.0.99'
+    minecraft 'net.minecraftforge:forge:1.19-41.0.110'
 
     repositories{
         maven { url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/' }
         maven { url "https://nexus.resourcefulbees.com/repository/maven-public/" }
+        maven {
+            name = "Progwml6 maven"
+            url = "https://dvs1.progwml6.com/files/maven/"
+        }
+        maven {
+            // location of a maven mirror for JEI files, as a fallback
+            name = "ModMaven"
+            url = "https://modmaven.dev"
+        }
     }
     dependencies{
         implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.19:3.1.9')
         runtimeOnly fg.deobf("com.telepathicgrunt:CommandStructures-Forge:3.0.0+1.19")
+        compileOnly fg.deobf("mezz.jei:jei-1.19-common-api:11.1.0.233")
+        compileOnly fg.deobf("mezz.jei:jei-1.19-forge-api:11.1.0.233")
+        // at runtime, use the full JEI jar for Forge
+        runtimeOnly fg.deobf("mezz.jei:jei-1.19-forge:11.1.0.233")
     }
 
 }

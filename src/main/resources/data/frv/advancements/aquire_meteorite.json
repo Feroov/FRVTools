@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "item": "frv:meteorite_shards"
+    },
+    "title": {
+      "translate": "advancements.frv.get_meteorite_shards.title"
+    },
+    "description": {
+      "translate": "advancements.frv.get_meteorite_shards.description"
+    },
+    "background": "frv:textures/block/meteorite_advancement.png",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "wither_skull": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frv:meteorite_shards"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

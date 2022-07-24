@@ -1,8 +1,10 @@
 package com.feroov.frv.item.custom.items;
 
+import com.feroov.frv.init.ModParticles;
 import com.feroov.frv.sound.ModSoundEvents;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -33,17 +35,20 @@ public class AllOreDetector extends Item
 
                 if(isValuableBlock(blockBelow))
                 {
-                    outputValuableCoordinates(positionClicked.below(i), player, blockBelow);
                     foundBlock = true;
                     pContext.getLevel().playSound(player, positionClicked, ModSoundEvents.DETECTOR_SOUND.get(),
                             SoundSource.BLOCKS, 1f,1f);
+                    if(blockBelow == Blocks.COAL_ORE){ spawnCoal(pContext, positionClicked); }
+                    if(blockBelow == Blocks.IRON_ORE){ spawnIron(pContext, positionClicked); }
+                    if(blockBelow == Blocks.GOLD_ORE){ spawnGold(pContext, positionClicked); }
+                    if(blockBelow == Blocks.EMERALD_ORE){ spawnEmerald(pContext, positionClicked); }
+                    if(blockBelow == Blocks.DIAMOND_ORE){ spawnDiamond(pContext, positionClicked); }
+                    if(blockBelow == Blocks.REDSTONE_ORE){ spawnRedstone(pContext, positionClicked); }
+                    if(blockBelow == Blocks.LAPIS_ORE){ spawnLapis(pContext, positionClicked); }
+                    if(blockBelow == Blocks.ANCIENT_DEBRIS){ spawnNetherite(pContext, positionClicked); }
+
                     break;
                 }
-            }
-
-            if(!foundBlock)
-            {
-                player.sendSystemMessage(Component.translatable("item.frv.all_detector.no_valuables"));
             }
         }
 
@@ -53,13 +58,108 @@ public class AllOreDetector extends Item
         return super.useOn(pContext);
     }
 
-    private void outputValuableCoordinates(BlockPos blockPos, Player player, Block blockBelow)
+    private void spawnCoal(UseOnContext pContext, BlockPos positionClicked)
     {
+        for(int i = 0; i < 360; i++)
+        {
+            if(i % 20 == 0)
+            {
+                pContext.getLevel().addParticle(ModParticles.COAL_PARTICLES.get(),
+                        positionClicked.getX() + 0.5d, positionClicked.getY() + 1, positionClicked.getZ() + 0.5d,
+                        Math.cos(i) * 0.15d, 0.15d, Math.sin(i) * 0.15d);
+            }
+        }
+    }
 
-        player.sendSystemMessage(Component.literal("\u00A7a\nDetected\n"
-                + blockBelow.asItem() + "\nat" + "(X:"
-                + blockPos.getX() + " , " + "Z:"
-                + blockPos.getZ() + ")\n"));
+    private void spawnIron(UseOnContext pContext, BlockPos positionClicked)
+    {
+        for(int i = 0; i < 360; i++)
+        {
+            if(i % 20 == 0)
+            {
+                pContext.getLevel().addParticle(ModParticles.IRON_PARTICLES.get(),
+                        positionClicked.getX() + 0.5d, positionClicked.getY() + 1, positionClicked.getZ() + 0.5d,
+                        Math.cos(i) * 0.15d, 0.15d, Math.sin(i) * 0.15d);
+            }
+        }
+    }
+
+    private void spawnGold(UseOnContext pContext, BlockPos positionClicked)
+    {
+        for(int i = 0; i < 360; i++)
+        {
+            if(i % 20 == 0)
+            {
+                pContext.getLevel().addParticle(ModParticles.GOLD_PARTICLES.get(),
+                        positionClicked.getX() + 0.5d, positionClicked.getY() + 1, positionClicked.getZ() + 0.5d,
+                        Math.cos(i) * 0.15d, 0.15d, Math.sin(i) * 0.15d);
+            }
+        }
+    }
+
+    private void spawnRedstone(UseOnContext pContext, BlockPos positionClicked)
+    {
+        for(int i = 0; i < 360; i++)
+        {
+            if(i % 20 == 0)
+            {
+                pContext.getLevel().addParticle(ModParticles.REDSTONE_PARTICLES.get(),
+                        positionClicked.getX() + 0.5d, positionClicked.getY() + 1, positionClicked.getZ() + 0.5d,
+                        Math.cos(i) * 0.15d, 0.15d, Math.sin(i) * 0.15d);
+            }
+        }
+    }
+
+    private void spawnLapis(UseOnContext pContext, BlockPos positionClicked)
+    {
+        for(int i = 0; i < 360; i++)
+        {
+            if(i % 20 == 0)
+            {
+                pContext.getLevel().addParticle(ModParticles.LAPIS_PARTICLES.get(),
+                        positionClicked.getX() + 0.5d, positionClicked.getY() + 1, positionClicked.getZ() + 0.5d,
+                        Math.cos(i) * 0.15d, 0.15d, Math.sin(i) * 0.15d);
+            }
+        }
+    }
+
+    private void spawnEmerald(UseOnContext pContext, BlockPos positionClicked)
+    {
+        for(int i = 0; i < 360; i++)
+        {
+            if(i % 20 == 0)
+            {
+                pContext.getLevel().addParticle(ModParticles.EMERALD_PARTICLES.get(),
+                        positionClicked.getX() + 0.5d, positionClicked.getY() + 1, positionClicked.getZ() + 0.5d,
+                        Math.cos(i) * 0.15d, 0.15d, Math.sin(i) * 0.15d);
+            }
+        }
+    }
+
+    private void spawnDiamond(UseOnContext pContext, BlockPos positionClicked)
+    {
+        for(int i = 0; i < 360; i++)
+        {
+            if(i % 20 == 0)
+            {
+                pContext.getLevel().addParticle(ModParticles.DIAMOND_PARTICLES.get(),
+                        positionClicked.getX() + 0.5d, positionClicked.getY() + 1, positionClicked.getZ() + 0.5d,
+                        Math.cos(i) * 0.15d, 0.15d, Math.sin(i) * 0.15d);
+            }
+        }
+    }
+
+    private void spawnNetherite(UseOnContext pContext, BlockPos positionClicked)
+    {
+        for(int i = 0; i < 360; i++)
+        {
+            if(i % 20 == 0)
+            {
+                pContext.getLevel().addParticle(ModParticles.NETHERITE_PARTICLES.get(),
+                        positionClicked.getX() + 0.5d, positionClicked.getY() + 1, positionClicked.getZ() + 0.5d,
+                        Math.cos(i) * 0.15d, 0.15d, Math.sin(i) * 0.15d);
+            }
+        }
     }
 
     private boolean isValuableBlock(Block block)
@@ -71,7 +171,6 @@ public class AllOreDetector extends Item
                 block == Blocks.DIAMOND_ORE ||
                 block == Blocks.LAPIS_ORE ||
                 block == Blocks.REDSTONE_ORE ||
-                block == Blocks.COPPER_ORE ||
                 block == Blocks.ANCIENT_DEBRIS;
     }
 }

@@ -124,8 +124,7 @@
   },
 
   "pirate_hurt": {"category": "hostile", "sounds": [{
-    "name": "frv:pirate_hurt"}, {
-    "name": "frv:pirate_hurt2"}], "subtitle": "frv.pirate_hurt"
+    "name": "frv:pirate_hurt"}], "subtitle": "frv.pirate_hurt"
   },
 
   "pirate_death": {"category": "hostile", "sounds": [{
@@ -138,8 +137,7 @@
   },
 
   "flintlocker_hurt": {"category": "hostile", "sounds": [{
-    "name": "frv:flintlocker_hurt"}, {
-    "name": "frv:flintlocker_hurt2"}], "subtitle": "frv.flintlocker_hurt"
+    "name": "frv:flintlocker_hurt"}], "subtitle": "frv.flintlocker_hurt"
   },
 
   "flintlocker_death": {"category": "hostile", "sounds": [{

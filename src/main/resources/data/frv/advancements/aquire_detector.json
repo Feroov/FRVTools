@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "item": "frv:all_detector_prime"
+    },
+    "title": {
+      "translate": "advancements.frv.get_detector.title"
+    },
+    "description": {
+      "translate": "advancements.frv.get_detector.description"
+    },
+    "parent": "minecraft:adventure/root",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "wither_skull": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frv:all_detector_prime"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -4,6 +4,9 @@
   "values":
   [
     "minecraft:savanna",
-    "minecraft:plains"
+    "minecraft:plains",
+    "minecraft:forest",
+    "minecraft:swamp",
+    "minecraft:taiga"
   ]
 }
