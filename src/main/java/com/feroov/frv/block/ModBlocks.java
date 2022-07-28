@@ -4,6 +4,9 @@ import com.feroov.frv.Frv;
 import com.feroov.frv.item.ModItemGroup;
 import com.feroov.frv.item.ModItems;
 import net.minecraft.core.BlockPos;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
@@ -20,6 +23,8 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+
+
 
 import java.util.function.Supplier;
 
@@ -86,7 +91,8 @@ public class ModBlocks
             });
 
     public static final RegistryObject<Block> METEORITE = registerBlock("meteorite",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(30.0F, 40.0F).requiresCorrectToolForDrops().lightLevel((light) -> {return 15;}))
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(30.0F, 40.0F)
+                    .requiresCorrectToolForDrops().lightLevel((light) -> {return 15;}))
             {
                 @Override
                 public void stepOn(Level pLevel, BlockPos pPos, BlockState pState, Entity pEntity) {
@@ -103,6 +109,9 @@ public class ModBlocks
                 }
             });
     /******************************************************************************************/
+
+
+
 
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block)
@@ -122,4 +131,5 @@ public class ModBlocks
     {
         BLOCKS.register(eventBus);
     }
+
 }

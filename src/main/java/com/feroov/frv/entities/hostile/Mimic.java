@@ -2,16 +2,14 @@ package com.feroov.frv.entities.hostile;
 
 
 
-import com.feroov.frv.entities.variants.PirateVariant;
+import com.feroov.frv.init.ModEntityTypes;
 import com.feroov.frv.sound.ModSoundEvents;
-import net.minecraft.Util;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -19,9 +17,12 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.monster.Slime;
+import net.minecraft.world.entity.monster.ZombifiedPiglin;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.ServerLevelAccessor;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -31,7 +32,6 @@ import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 
 
 public class Mimic extends Monster implements IAnimatable
@@ -137,23 +137,22 @@ public class Mimic extends Monster implements IAnimatable
     /*************************************************************************/
 
 
-    @Override
-    protected float getStandingEyeHeight(Pose poseIn, EntityDimensions sizeIn)
-    {
-        return 1.65F;
-    }
-
-    @Override
-    protected void tickDeath()
-    {
-        ++this.deathTime;
-        if (this.deathTime == 50 && !this.level.isClientSide())
-        {
-            this.level.broadcastEntityEvent(this, (byte)50);
-            this.remove(RemovalReason.KILLED);
-        }
-
-    }
+//    public void remove(Entity.RemovalReason p_149847_)
+//    {
+//        int k = 1 + this.random.nextInt(1);
+//
+//        for(int l = 0; l < k; ++l) {
+//
+//            Pirate pirate = ModEntityTypes.PIRATE.get().create(this.level);
+//            if (this.isPersistenceRequired()) {
+//                pirate.setPersistenceRequired();
+//            }
+//            pirate.setInvulnerable(this.isInvulnerable());
+//            pirate.moveTo(this.getX(), this.getY(), this.getZ());
+//            this.level.addFreshEntity(pirate);
+//        }
+//        super.remove(p_149847_);
+//    }
 
     @Override
     public boolean isBaby()

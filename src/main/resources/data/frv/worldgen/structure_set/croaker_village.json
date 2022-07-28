@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "frv:croaker_village",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 1885837080,
+    "spacing": 34,
+    "separation": 8,
+    "type": "minecraft:random_spread"
+  }
+}

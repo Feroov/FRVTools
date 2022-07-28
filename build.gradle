@@ -47,7 +47,7 @@ repositories {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.19-41.0.110'
+    minecraft 'net.minecraftforge:forge:1.19-41.1.0'
 
     repositories{
         maven { url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/' }

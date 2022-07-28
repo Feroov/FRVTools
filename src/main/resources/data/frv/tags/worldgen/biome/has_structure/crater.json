@@ -5,8 +5,8 @@
   [
     "minecraft:savanna",
     "minecraft:plains",
-    "minecraft:forest",
     "minecraft:swamp",
-    "minecraft:taiga"
+    "minecraft:taiga",
+    "minecraft:desert"
   ]
 }

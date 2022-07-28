@@ -63,7 +63,9 @@ public class Hunter extends HunterAbstractVillagerEntity implements IAnimatable,
     private static final Ingredient TEMP = Ingredient.of(Items.BEEF, Items.MUTTON, Items.PORKCHOP, Items.COD);
     protected static final EntityDataAccessor<Boolean> ATTACKING = SynchedEntityData.defineId(Hunter.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Integer> DATA_ID_TYPE_VARIANT = SynchedEntityData.defineId(Hunter.class, EntityDataSerializers.INT);
-
+    public EntityType<? extends Hunter> getType() {
+        return (EntityType<? extends Hunter>)super.getType();
+    }
 
     /******************************** Animation methods *****************************/
     private final AnimationFactory factory = new AnimationFactory(this);

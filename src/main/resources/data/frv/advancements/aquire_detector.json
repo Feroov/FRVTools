@@ -9,12 +9,12 @@
     "description": {
       "translate": "advancements.frv.get_detector.description"
     },
-    "parent": "minecraft:adventure/root",
     "frame": "challenge",
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
+  "parent": "minecraft:adventure/root",
   "criteria": {
     "wither_skull": {
       "trigger": "minecraft:inventory_changed",

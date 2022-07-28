@@ -146,6 +146,7 @@
   "item.frv.meteorite_shards": "\u00A7eMeteorite Shards",
   "item.frv.hardened_meteorite": "\u00A7eHardened Meteorite",
   "item.frv.meteorite_ingot": "\u00A7eMeteorite Ingot",
+  "item.frv.hellstone": "\u00A7cHellstone",
 
   "advancements.frv.consume_ale.title": "Add a little bit of spice",
   "advancements.frv.consume_ale.description": "Party Time!",
@@ -169,6 +170,7 @@
   "advancements.frv.find_camp_site.title": "Have some accommodation",
   "advancements.frv.find_camp_site.description": "Find a Camp Site",
   "advancements.frv.find_corruption.title": "§a§kCorrupted§a",
-  "advancements.frv.find_corruption.description": "§a§kCorrupted§a"
-
+  "advancements.frv.find_corruption.description": "§a§kCorrupted§a",
+  "advancements.frv.find_suspecious_chest.title": "It's just a prank bro",
+  "advancements.frv.find_suspecious_chest.description": "Find a Suspecious Treasure Chest"
 }

@@ -10,7 +10,6 @@ import com.feroov.frv.item.custom.RangedItems;
 import com.feroov.frv.sound.ModSoundEvents;
 import com.feroov.frv.util.ClientRegistry;
 import com.feroov.frv.util.packets.FrvPacketHandler;
-import com.feroov.frv.world.dimension.ModDimensions;
 import com.feroov.frv.world.feature.ModConfiguredFeatures;
 import com.feroov.frv.world.feature.ModPlacedFeatures;
 import net.minecraft.client.KeyMapping;
@@ -46,7 +45,6 @@ public class Frv
         ModEntityTypes.ENTITIES.register(eventBus);
         ModConfiguredFeatures.register(eventBus);
         ModPlacedFeatures.register(eventBus);
-        ModDimensions.register();
 
         eventBus.addListener(this::setup);
         eventBus.addListener(this::doClientStuff);

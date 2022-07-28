@@ -1,5 +1,7 @@
 package com.feroov.frv.item;
 
+import com.feroov.frv.block.ModBlocks;
+
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.ForgeTier;
@@ -7,6 +9,8 @@ import net.minecraftforge.common.Tags;
 
 public class ModTiers
 {
+
+
     public static final ForgeTier COPPER = new ForgeTier(1,160,4.9f,1.0f,10,
             Tags.Blocks.NEEDS_GOLD_TOOL, () -> Ingredient.of(Items.QUARTZ));
 
@@ -33,6 +37,8 @@ public class ModTiers
 
     public static final ForgeTier ADMIN = new ForgeTier(999,999999,999f,9999f,10,
             Tags.Blocks.NEEDS_GOLD_TOOL, () -> Ingredient.of(Items.AMETHYST_SHARD));
+
+
 
     /**
      *    WOOD(0, 59, 2.0F, 0.0F, 15, () -> {
