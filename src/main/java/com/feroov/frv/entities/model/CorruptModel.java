@@ -34,7 +34,6 @@ public class CorruptModel extends AnimatedTickingGeoModel<Corrupt>
     public ResourceLocation getTextureResource(Corrupt entity)
     {
         return TEX[(entity.getTextureTimer())];
-        //TODO: Texture anims
     }
 
     @Override

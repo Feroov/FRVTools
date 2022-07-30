@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "frv:corrupted_block"
+    },
+    "title": {
+      "translate": "advancements.frv.enter_the_matrix.title"
+    },
+    "description": {
+      "translate": "advancements.frv.enter_the_matrix.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "frv:kill_corrupt",
+  "criteria": {
+    "entered_end": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "frv:the_matrix"
+      }
+    }
+  }
+}

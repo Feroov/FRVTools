@@ -142,6 +142,8 @@
   "block.frv.deepslate_platinum_ore": "Deepslate Platinum Ore",
 
   "block.frv.matrix": "\u00A7a\u00A7kMatrix\u00A7a",
+  "block.frv.matrix_portal": "§a§kco§r§a404§a§kco",
+  "block.frv.corrupted_block": "\u00A7a\u00A7kMatrix\u00A7a",
   "block.frv.meteorite": "\u00A7eMeteorite",
   "item.frv.meteorite_shards": "\u00A7eMeteorite Shards",
   "item.frv.hardened_meteorite": "\u00A7eHardened Meteorite",
@@ -164,6 +166,8 @@
   "advancements.frv.kill_pcaptain.description": "Do you feel it now Krabs?",
   "advancements.frv.kill_corrupt.title": "§a§kco§r§a404§a§kco",
   "advancements.frv.kill_corrupt.description": "§a§kCorrupted§a",
+  "advancements.frv.enter_the_matrix.title": "§a§kco§r§aNullPointerException§a§kco",
+  "advancements.frv.enter_the_matrix.description": "§a§kco§r§aYou've made it§a§kco",
 
   "advancements.frv.find_pirate_ship.title": "SHIVER ME TIMBERS!",
   "advancements.frv.find_pirate_ship.description": "Find a Pirate Ship",

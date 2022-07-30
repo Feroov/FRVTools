@@ -2,9 +2,7 @@ package com.feroov.frv.entities.projectiles.render;
 
 
 import com.feroov.frv.entities.projectiles.CorruptFire;
-import com.feroov.frv.entities.projectiles.MusketAmmo;
 import com.feroov.frv.entities.projectiles.model.CorruptFireModel;
-import com.feroov.frv.entities.projectiles.model.MusketAmmoModel;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.renderer.MultiBufferSource;

@@ -30,6 +30,7 @@ public class ModItems
     /* ***** (Tab pics) *****/
     public static final RegistryObject<Item> MOB_PIC = ITEMS.register("mob_pic", () -> new Item(new Item.Properties()));
     /* ********************* */
+
     /***********************************************************************************************/
 
     /********************************** (Food) **************************************/
@@ -443,7 +444,6 @@ public class ModItems
             () -> new MeteoriteArmor(ModArmorMaterial.METEORITE, EquipmentSlot.FEET,
                     new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
     /***********************************************************************************************/
-
 
 
 

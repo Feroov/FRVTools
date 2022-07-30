@@ -167,5 +167,6 @@
   "musket": {"category": "misc", "sounds": [{"name": "frv:musket"}], "subtitle": "frv.musket"},
   "musket_reload": {"category": "misc", "sounds": [{"name": "frv:musket_reload"}], "subtitle": "frv.musket_reload"},
   "cannon_shoot": {"category": "misc", "sounds": [{"name": "frv:cannon_shoot"}], "subtitle": "frv.cannon_shoot"},
-  "corrupt_fire": {"category": "misc", "sounds": [{"name": "frv:corrupt_fire"}], "subtitle": "frv.corrupt_fire"}
+  "corrupt_fire": {"category": "misc", "sounds": [{"name": "frv:corrupt_fire"}], "subtitle": "frv.corrupt_fire"},
+  "silent": {"category": "misc", "sounds": [{"name": "frv:silent"}], "subtitle": "frv.silent"}
 }

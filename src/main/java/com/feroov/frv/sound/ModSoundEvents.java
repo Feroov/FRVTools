@@ -55,9 +55,10 @@ public class ModSoundEvents
     public static final RegistryObject<SoundEvent> CORRUPT_AMBIENT2 = SOUND_EVENTS.register("corrupt_ambient2", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "corrupt_ambient2")));
     public static final RegistryObject<SoundEvent> CORRUPT_HURT = SOUND_EVENTS.register("corrupt_hurt", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "corrupt_hurt")));
     public static final RegistryObject<SoundEvent> CORRUPT_DEATH = SOUND_EVENTS.register("corrupt_death", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "corrupt_death")));
-
     /****************************/
 
+
+    public static final RegistryObject<SoundEvent> SILENT = SOUND_EVENTS.register("silent", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "silent")));
 
 
     /*********** Misc ***********/

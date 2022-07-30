@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "frv:matrix_portal",
     "frv:meteorite"
   ]
 }

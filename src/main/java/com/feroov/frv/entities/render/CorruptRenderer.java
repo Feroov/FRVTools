@@ -43,10 +43,10 @@ public class CorruptRenderer extends GeoEntityRenderer<Corrupt>
         stackIn.scale(1.95F,1.95F,1.95F);
     }
 
-    @Override
-    protected int getBlockLightLevel(Corrupt entityIn, BlockPos partialTicks) {
-        return entityIn.getTextureTimer() == 1 ? 15 : 1;
-    }
+//    @Override
+//    protected int getBlockLightLevel(Corrupt entityIn, BlockPos partialTicks) {
+//        return entityIn.getTextureTimer() == 1 ? 15 : 1;
+//    }
 
     @Override
     protected float getDeathMaxRotation(Corrupt entityLivingBaseIn)

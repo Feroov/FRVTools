@@ -9,6 +9,8 @@
     "frv:deepslate_silver_ore",
     "frv:platinum_ore",
     "frv:deepslate_platinum_ore",
-    "frv:meteorite"
+    "frv:meteorite",
+    "frv:corrupted_block",
+    "frv:matrix_portal"
   ]
 }

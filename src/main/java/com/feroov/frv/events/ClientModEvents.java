@@ -6,15 +6,18 @@ import com.feroov.frv.entities.render.*;
 import com.feroov.frv.init.ModEntityTypes;
 import com.feroov.frv.init.ModParticles;
 import com.feroov.frv.item.custom.items.particles.*;
+import com.feroov.frv.world.ModDimensions;
 import net.minecraft.client.Minecraft;
+import net.minecraft.world.BossEvent;
+import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
-import net.minecraftforge.eventbus.api.Event;
+import net.minecraftforge.client.event.ViewportEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
-import net.minecraftforge.fml.event.IModBusEvent;
+import software.bernie.example.client.renderer.tile.HabitatTileRenderer;
 
 
 @Mod.EventBusSubscriber(modid = Frv.MOD_ID, bus = Bus.MOD, value = Dist.CLIENT)
