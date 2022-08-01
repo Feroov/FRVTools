@@ -1,0 +1,17 @@
+{
+  "type": "frv:frv_structures",
+
+  "start_pool": "frv:corrupt_tree/start_pool",
+
+  "size": 2,
+
+  "max_distance_from_center": 80,
+  "biomes": "#frv:has_structure/corrupt_tree",
+  "step": "surface_structures",
+  "start_height": {
+    "absolute": 0
+  },
+  "terrain_adaptation": "beard_thin",
+  "project_start_to_heightmap": "WORLD_SURFACE_WG",
+  "spawn_overrides": {}
+}

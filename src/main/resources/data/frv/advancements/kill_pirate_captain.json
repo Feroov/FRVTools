@@ -15,7 +15,7 @@
     "announce_to_chat": true,
     "hidden": false
   },
-  "parent": "frv:find_pirate_ship",
+  "parent": "frv:consume_ale",
   "criteria": {
     "minecraft:blaze": {
       "trigger": "minecraft:player_killed_entity",

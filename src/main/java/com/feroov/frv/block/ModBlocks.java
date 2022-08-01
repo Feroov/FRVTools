@@ -6,24 +6,21 @@ import com.feroov.frv.item.ModItemGroup;
 import com.feroov.frv.item.ModItems;
 import com.feroov.frv.sound.ModSoundEvents;
 import net.minecraft.core.BlockPos;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.item.ItemEntity;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.common.util.ForgeSoundType;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -31,14 +28,11 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-
-
 import java.util.function.Supplier;
 
 public class ModBlocks
 {
-    public static final DeferredRegister<Block> BLOCKS =
-            DeferredRegister.create(ForgeRegistries.BLOCKS, Frv.MOD_ID);
+    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Frv.MOD_ID);
 
     /************************************* Stone Variant *************************************/
     public static final RegistryObject<Block> TIN_ORE = registerBlock("tin_ore",
@@ -75,6 +69,16 @@ public class ModBlocks
     public static final RegistryObject<Block> DEEPSLATE_PLATINUM_ORE = registerBlock("deepslate_platinum_ore",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength
                     (5.7f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
+
+    public static final RegistryObject<Block> CORRUPT_ORE = registerBlock("corrupt_ore",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength
+                    (60.0f, 70.0F).requiresCorrectToolForDrops().sound(new
+                    ForgeSoundType(1f,1f, () -> ModSoundEvents.GLITCH.get(),
+                    () -> ModSoundEvents.SILENT.get(), //step
+                    () -> ModSoundEvents.CORRUPT_ORE_PLACE.get(), //place
+                    () -> ModSoundEvents.SILENT.get(), //hit
+                    () -> ModSoundEvents.SILENT.get()) //fall
+            ).lightLevel((light) -> {return 15;})));
     /******************************************************************************************/
 
 
@@ -99,7 +103,7 @@ public class ModBlocks
             });
 
     public static final RegistryObject<Block> MATRIX_PORTAL = registerBlock("matrix_portal",
-            () -> new MatrixPortalBlock(BlockBehaviour.Properties.of(Material.STONE).sound(new
+            () -> new MatrixPortalBlock(BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(new
                     ForgeSoundType(1f,1f, () -> ModSoundEvents.CORRUPT_DEATH.get(),
                     () -> ModSoundEvents.SILENT.get(), //step
                     () -> ModSoundEvents.CORRUPT_FIRE.get(), //place
@@ -108,13 +112,13 @@ public class ModBlocks
             ).strength(15.0F, 15.0F).lightLevel((light) -> {return 15;}))
     );
     public static final RegistryObject<Block> CORRUPTED_BLOCK = registerBlock("corrupted_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(1.0F, 1.0F)
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(0.2F)
                     .sound(new
-                            ForgeSoundType(1f,1f, () -> ModSoundEvents.CORRUPT_AMBIENT2.get(),
+                            ForgeSoundType(1f,1f, () -> ModSoundEvents.GLITCH.get(),
                             () -> SoundEvents.GLASS_STEP, //step
                             () -> ModSoundEvents.CORRUPT_FIRE.get(), //place
-                            () -> ModSoundEvents.CORRUPT_AMBIENT.get(), //hit
-                            () -> ModSoundEvents.SILENT.get())).lightLevel((light) -> {return 9;})));
+                            () -> ModSoundEvents.SILENT.get(), //hit
+                            () -> ModSoundEvents.CORRUPT_HURT.get())).lightLevel((light) -> {return 9;})));
 
     public static final RegistryObject<Block> METEORITE = registerBlock("meteorite",
             () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(30.0F, 40.0F)
@@ -134,10 +138,20 @@ public class ModBlocks
                     super.stepOn(pLevel, pPos, pState, pEntity);
                 }
             });
-
     /******************************************************************************************/
 
 
+
+
+    public static class Tags
+    {
+        public static final TagKey<Block> NEEDS_METEORITE_TOOL = create("needs_meteorite_tool");
+
+        private static TagKey<Block> create(String location)
+        {
+            return BlockTags.create(new ResourceLocation(Frv.MOD_ID, location));
+        }
+    }
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block)
     {

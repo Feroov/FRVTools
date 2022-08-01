@@ -32,7 +32,7 @@ public class CorruptRenderer extends GeoEntityRenderer<Corrupt>
     public RenderType getRenderType(Corrupt animatable, float partialTicks, PoseStack stack,
                                     @Nullable MultiBufferSource renderTypeBuffer, @Nullable VertexConsumer vertexBuilder, int packedLightIn,
                                     ResourceLocation textureLocation) {
-        return RenderType.entityCutout(textureLocation);
+        return RenderType.dragonExplosionAlpha(textureLocation);
     }
 
     @Override
@@ -42,11 +42,6 @@ public class CorruptRenderer extends GeoEntityRenderer<Corrupt>
     {
         stackIn.scale(1.95F,1.95F,1.95F);
     }
-
-//    @Override
-//    protected int getBlockLightLevel(Corrupt entityIn, BlockPos partialTicks) {
-//        return entityIn.getTextureTimer() == 1 ? 15 : 1;
-//    }
 
     @Override
     protected float getDeathMaxRotation(Corrupt entityLivingBaseIn)

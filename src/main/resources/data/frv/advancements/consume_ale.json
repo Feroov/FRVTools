@@ -14,7 +14,7 @@
     "announce_to_chat": true,
     "hidden": false
   },
-  "parent": "frv:kill_pirate_captain",
+  "parent": "frv:find_pirate_ship",
   "criteria": {
     "ale": {
       "trigger": "minecraft:consume_item",

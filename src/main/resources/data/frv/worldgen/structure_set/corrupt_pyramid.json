@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "frv:corrupt_pyramid",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 1699986780,
+    "spacing": 30,
+    "separation": 3,
+    "type": "minecraft:random_spread"
+  }
+}

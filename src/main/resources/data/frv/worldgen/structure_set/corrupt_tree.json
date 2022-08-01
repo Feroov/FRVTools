@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "frv:corrupt_tree",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 1986745980,
+    "spacing": 3,
+    "separation": 1,
+    "type": "minecraft:random_spread"
+  }
+}

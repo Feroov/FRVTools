@@ -43,6 +43,11 @@ public class ModPlacedFeatures
                     commonOrePlacement(7,
                             HeightRangePlacement.triangle(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(40)))));
 
+    public static final RegistryObject<PlacedFeature> CORRUPT_ORE = PLACED_FEATURES.register("corrupt_ore_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.MATRIX_ORE.getHolder().get(),
+                    commonOrePlacement(7,
+                            HeightRangePlacement.triangle(VerticalAnchor.absolute(-1), VerticalAnchor.absolute(12)))));
+
 
 
 

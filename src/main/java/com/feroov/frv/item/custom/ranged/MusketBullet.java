@@ -1,6 +1,5 @@
 package com.feroov.frv.item.custom.ranged;
 
-import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -23,6 +22,6 @@ public class MusketBullet extends Item
     public void appendHoverText(ItemStack stack, Level worldIn, List<Component> tooltip, TooltipFlag flagIn)
     {
         super.appendHoverText(stack, worldIn, tooltip, flagIn);
-        tooltip.add(Component.translatable("Press R to reload").withStyle(ChatFormatting.BOLD));
+        tooltip.add(Component.translatable("Press R to reload"));
     }
 }

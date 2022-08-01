@@ -6,7 +6,7 @@
   "key.frv.reload": "Reload Weapons",
   "key.categories.frv": "FRV Tools",
 
-  "item.frv.admin_sword": "\u00A74\u00A7lAdmin Sword",
+  "item.frv.admin_sword": "\u00A74\u00A7lBan Hammer",
 
   "item.frv.quartz_sword": "Quartz Sword",
   "item.frv.quartz_pickaxe": "Quartz Pickaxe",
@@ -83,7 +83,6 @@
   "item.frv.meteorite_boots": "\u00A7eMeteorite Boots",
 
 
-
   "item.frv.croaker_spawn_egg": "Croaker Spawn",
   "entity.frv.croaker": "Croaker",
   "item.frv.hunter_spawn_egg": "Hunter Spawn",
@@ -99,7 +98,9 @@
   "item.frv.pirate_captain_spawn_egg": "\u00A7l\u00A7cPirate Captain\u00A7c Spawn",
   "entity.frv.pirate_captain": "\u00A7l\u00A7cPirate Captain\u00A7c",
   "item.frv.corrupt_spawn_egg": "\u00A7a\u00A7kCorrupt\u00A7k\u00A7a Spawn",
-  "entity.frv.corrupt": "\u00A7a\u00A7kCorrupt\u00A7a",
+  "entity.frv.corrupt": "\u00A7a\u00A7kCorrupt §r§a Spawn",
+  "item.frv.corrupt_zombie_spawn_egg": "§a§kco§r§aCorrupt Zombie§a§kco§r§a Spawn",
+  "entity.frv.corrupt_zombie": "§a§kco§r§aCorrupt Zombie§a§kco",
   "item.frv.mimic_spawn_egg": "Mimic Spawn",
   "entity.frv.mimic": "\u00A7l\u00A76Mimic\u00A76",
 
@@ -127,7 +128,6 @@
   "item.frv.ale": "Ale",
 
 
-
   "item.frv.tin_ingot": "Tin Ingot",
   "block.frv.tin_ore": "Tin Ore",
   "block.frv.deepslate_tin_ore": "Deepslate Tin Ore",
@@ -140,11 +140,13 @@
   "item.frv.platinum_ingot": "Platinum Ingot",
   "block.frv.platinum_ore": "Platinum Ore",
   "block.frv.deepslate_platinum_ore": "Deepslate Platinum Ore",
+  "block.frv.corrupt_ore": "§a§kco§r§aCorrupt Ore§a§kco",
 
   "block.frv.matrix": "\u00A7a\u00A7kMatrix\u00A7a",
   "block.frv.matrix_portal": "§a§kco§r§a404§a§kco",
   "block.frv.corrupted_block": "\u00A7a\u00A7kMatrix\u00A7a",
   "block.frv.meteorite": "\u00A7eMeteorite",
+  "item.frv.corrupt_piece": "§a§kco§r§aCorrupt Piece§a§kco",
   "item.frv.meteorite_shards": "\u00A7eMeteorite Shards",
   "item.frv.hardened_meteorite": "\u00A7eHardened Meteorite",
   "item.frv.meteorite_ingot": "\u00A7eMeteorite Ingot",

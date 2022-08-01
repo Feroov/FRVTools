@@ -50,6 +50,10 @@ public class ModEntityTypes
             () -> EntityType.Builder.of(Corrupt::new, MobCategory.CREATURE).canSpawnFarFromPlayer().fireImmune()
                     .sized(1.7f,5.3f).build("corrupt"));
 
+    public static final RegistryObject<EntityType<CorruptZombie>> CORRUPT_ZOMBIE = ENTITIES.register("corrupt_zombie",
+            () -> EntityType.Builder.of(CorruptZombie::new, MobCategory.CREATURE).canSpawnFarFromPlayer().fireImmune()
+                    .sized(0.7f,1.8f).build("corrupt_zombie"));
+
     public static final RegistryObject<EntityType<Mimic>> MIMIC = ENTITIES.register("mimic",
             () -> EntityType.Builder.of(Mimic::new, MobCategory.CREATURE).canSpawnFarFromPlayer().fireImmune()
                     .sized(1.0f,1.0f).build("mimic"));

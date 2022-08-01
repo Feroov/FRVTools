@@ -39,6 +39,9 @@ public class ModConfiguredFeatures
             OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, ModBlocks.PLATINUM_ORE.get().defaultBlockState()),
             OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ModBlocks.DEEPSLATE_PLATINUM_ORE.get().defaultBlockState())));
 
+    public static final Supplier<List<OreConfiguration.TargetBlockState>> CORRUPT_ORE = Suppliers.memoize(() -> List.of(
+            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ModBlocks.CORRUPT_ORE.get().defaultBlockState())));
+
 
 //    public static final Supplier<List<OreConfiguration.TargetBlockState>> END_OREHERE_ORES = Suppliers.memoize(() -> List.of(
 //            OreConfiguration.target(new BlockMatchTest(Blocks.END_STONE), ModBlocks.YOUR_ORE_HERE.get().defaultBlockState())));
@@ -74,6 +77,11 @@ public class ModConfiguredFeatures
     /************************************************ PLATINUM ORE *****************************************************************/
     public static final RegistryObject<ConfiguredFeature<?, ?>> PLATINUM_ORE = CONFIGURED_FEATURES.register("platinum_ore",
             () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(Objects.requireNonNull(OVERWORLD_PLATINUM_ORES.get()), 7)));
+    /************************************************************************************************************************/
+
+    /************************************************ CORRUPT ORE *****************************************************************/
+    public static final RegistryObject<ConfiguredFeature<?, ?>> MATRIX_ORE = CONFIGURED_FEATURES.register("corrupt_ore",
+            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(Objects.requireNonNull(CORRUPT_ORE.get()), 7)));
     /************************************************************************************************************************/
 
     public static void register(IEventBus eventBus)  { CONFIGURED_FEATURES.register(eventBus); }

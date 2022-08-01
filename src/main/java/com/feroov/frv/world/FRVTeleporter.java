@@ -6,11 +6,16 @@ import com.feroov.frv.sound.ModSoundEvents;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.common.util.ITeleporter;
 
+import javax.annotation.Nullable;
 import java.util.function.Function;
 
 public class FRVTeleporter implements ITeleporter
@@ -72,6 +77,6 @@ public class FRVTeleporter implements ITeleporter
 
     public boolean playTeleportSound(ServerPlayer player, ServerLevel sourceWorld, ServerLevel destWorld)
     {
-        return false;
+        return true;
     }
 }

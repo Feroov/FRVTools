@@ -68,6 +68,12 @@ public class ModSoundEvents
     public static final RegistryObject<SoundEvent> MUSKET_RELOAD = SOUND_EVENTS.register("musket_reload", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "musket_reload")));
     public static final RegistryObject<SoundEvent> CANNON_SHOOT = SOUND_EVENTS.register("cannon_shoot", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "cannon_shoot")));
     public static final RegistryObject<SoundEvent> CORRUPT_FIRE = SOUND_EVENTS.register("corrupt_fire", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "corrupt_fire")));
+    public static final RegistryObject<SoundEvent> GLITCH = SOUND_EVENTS.register("glitch", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "glitch")));
+    public static final RegistryObject<SoundEvent> CORRUPT_ORE_PLACE = SOUND_EVENTS.register("corrupt_ore_place", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "corrupt_ore_place")));
+    /****************************/
+
+    /*********** Musics ***********/
+    public static final RegistryObject<SoundEvent> MATRIX_AMBIENCE = SOUND_EVENTS.register("matrix_ambience", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "matrix_ambience")));
     /****************************/
 
 

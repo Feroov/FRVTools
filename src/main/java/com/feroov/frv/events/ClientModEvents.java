@@ -46,6 +46,7 @@ public class ClientModEvents
         event.registerEntityRenderer(ModEntityTypes.FLINTLOCKER.get(), FlintlockerRenderer::new);
         event.registerEntityRenderer(ModEntityTypes.PIRATE.get(), PirateRenderer::new);
         event.registerEntityRenderer(ModEntityTypes.CORRUPT.get(), CorruptRenderer::new);
+        event.registerEntityRenderer(ModEntityTypes.CORRUPT_ZOMBIE.get(), CorruptZombieRenderer::new);
         event.registerEntityRenderer(ModEntityTypes.MIMIC.get(), MimicRenderer::new);
 
         /** Misc **/
@@ -69,5 +70,6 @@ public class ClientModEvents
         Minecraft.getInstance().particleEngine.register(ModParticles.EMERALD_PARTICLES.get(), EmeraldParticles.Provider::new);
         Minecraft.getInstance().particleEngine.register(ModParticles.LAPIS_PARTICLES.get(), LapisParticles.Provider::new);
         Minecraft.getInstance().particleEngine.register(ModParticles.REDSTONE_PARTICLES.get(), RedstoneParticles.Provider::new);
+        Minecraft.getInstance().particleEngine.register(ModParticles.CORRUPT_PARTICLES.get(), CorruptParticles.Provider::new);
     }
 }

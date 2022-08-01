@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "frv:the_matrix",
+  "features": "frv:corrupt_ore_placed",
+  "step": "underground_ores"
+}

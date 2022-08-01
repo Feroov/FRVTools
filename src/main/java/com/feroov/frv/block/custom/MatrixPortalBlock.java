@@ -1,6 +1,7 @@
 package com.feroov.frv.block.custom;
 
 
+import com.feroov.frv.init.ModParticles;
 import com.feroov.frv.sound.ModSoundEvents;
 import com.feroov.frv.world.FRVTeleporter;
 import com.feroov.frv.world.ModDimensions;
@@ -63,13 +64,13 @@ public class MatrixPortalBlock extends Block {
 
     public void animateTick(BlockState blockstate, Level level, BlockPos blockPos, RandomSource randomSource)
     {
-        if (randomSource.nextInt(100) == 0) {
+        if (randomSource.nextInt(10) == 0) {
             double d0 = (double)blockPos.getX() + randomSource.nextDouble();
             double d1 = (double)blockPos.getY() + 1.0D;
             double d2 = (double)blockPos.getZ() + randomSource.nextDouble();
-            level.addParticle(ParticleTypes.TOTEM_OF_UNDYING, d0, d1, d2, 0.0D, 1.0D, 0.0D);
-            level.addParticle(ParticleTypes.TOTEM_OF_UNDYING, d0, d1, d2, 1.0D, 0.0D, 0.0D);
-            level.addParticle(ParticleTypes.TOTEM_OF_UNDYING, d0, d1, d2, 0.0D, 0.0D, 1.0D);
+            level.addParticle(ModParticles.CORRUPT_PARTICLES.get(), d0, d1, d2, 0.2D, 0.0D, 0.0D);
+            level.addParticle(ModParticles.CORRUPT_PARTICLES.get(), d0, d1, d2, 0.0D, 0.2D, 0.0D);
+            level.addParticle(ModParticles.CORRUPT_PARTICLES.get(), d0, d1, d2, 0.0D, 0.0D, 0.2D);
             level.playLocalSound(d0, d1, d2, ModSoundEvents.CORRUPT_AMBIENT.get(), SoundSource.BLOCKS, 0.2F +
                     randomSource.nextFloat() * 0.2F, 0.9F + randomSource.nextFloat() * 0.15F, false);
         }

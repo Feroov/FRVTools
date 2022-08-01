@@ -3,21 +3,24 @@ package com.feroov.frv.item;
 import com.feroov.frv.Frv;
 
 
+import com.feroov.frv.block.ModBlocks;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.Tiers;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.ForgeTier;
 import net.minecraftforge.common.Tags;
+import net.minecraftforge.common.TierSortingRegistry;
+
+import java.util.List;
 
 
 public class ModTiers
 {
-    public static final TagKey<Block> METEORITE_TAG =
-            BlockTags.create(new ResourceLocation(Frv.MOD_ID, "needs_meteorite_tool"));
-
 
     public static final ForgeTier COPPER = new ForgeTier(1,160,4.9f,1.0f,10,
             Tags.Blocks.NEEDS_GOLD_TOOL, () -> Ingredient.of(Items.QUARTZ));
@@ -40,8 +43,11 @@ public class ModTiers
     public static final ForgeTier AMETHYST = new ForgeTier(3,1863,8.6f,3.8f,10,
             Tags.Blocks.NEEDS_GOLD_TOOL, () -> Ingredient.of(Items.AMETHYST_SHARD));
 
-    public static final ForgeTier METEORITE = new ForgeTier(5,2863,12.5f,6.3f,15,
-            Tags.Blocks.NEEDS_GOLD_TOOL, () -> Ingredient.of(ModItems.METEORITE_INGOT.get()));
+    public static final Tier METEORITE = TierSortingRegistry.registerTier(
+            new ForgeTier(5, 2863, 12.5f, 6.3f, 15, ModBlocks.Tags.NEEDS_METEORITE_TOOL,
+                    () -> Ingredient.of(ModItems.METEORITE_INGOT.get())),
+            new ResourceLocation("frv:needs_meteorite_tool"),
+            List.of(Tiers.NETHERITE), List.of());
 
     public static final ForgeTier ADMIN = new ForgeTier(999,999999,999f,9999f,10,
             Tags.Blocks.NEEDS_GOLD_TOOL, () -> Ingredient.of(Items.AMETHYST_SHARD));
