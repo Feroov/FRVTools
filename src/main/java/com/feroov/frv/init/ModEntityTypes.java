@@ -2,6 +2,7 @@ package com.feroov.frv.init;
 
 import com.feroov.frv.Frv;
 import com.feroov.frv.entities.hostile.*;
+import com.feroov.frv.entities.misc.CorruptBoard;
 import com.feroov.frv.entities.passive.Croaker;
 import com.feroov.frv.entities.passive.FemaleHunter;
 import com.feroov.frv.entities.passive.Hunter;
@@ -12,6 +13,7 @@ import net.minecraft.world.entity.MobCategory;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import software.bernie.example.entity.BikeEntity;
 
 public class ModEntityTypes
 {
@@ -50,6 +52,10 @@ public class ModEntityTypes
             () -> EntityType.Builder.of(Corrupt::new, MobCategory.CREATURE).canSpawnFarFromPlayer().fireImmune()
                     .sized(1.7f,5.3f).build("corrupt"));
 
+    public static final RegistryObject<EntityType<CorruptAngel>> CORRUPT_ANGEL = ENTITIES.register("corrupt_angel",
+            () -> EntityType.Builder.of(CorruptAngel::new, MobCategory.CREATURE).canSpawnFarFromPlayer().fireImmune()
+                    .sized(6.3f,6.3f).build("corrupt_angel"));
+
     public static final RegistryObject<EntityType<CorruptZombie>> CORRUPT_ZOMBIE = ENTITIES.register("corrupt_zombie",
             () -> EntityType.Builder.of(CorruptZombie::new, MobCategory.CREATURE).canSpawnFarFromPlayer().fireImmune()
                     .sized(0.7f,1.8f).build("corrupt_zombie"));
@@ -77,6 +83,10 @@ public class ModEntityTypes
             () -> EntityType.Builder.<CorruptFire>of(CorruptFire::new, MobCategory.MISC).sized(1.7F, 1.7F)
                     .clientTrackingRange(9).build(new ResourceLocation(Frv.MOD_ID, "corrupt_fire").toString()));
 
+    public static final RegistryObject<EntityType<CorruptAngelFire>> CORRUPT_ANGEL_FIRE = ENTITIES.register("corrupt_angel_fire",
+            () -> EntityType.Builder.<CorruptAngelFire>of(CorruptAngelFire::new, MobCategory.MISC).sized(6.7F, 6.7F)
+                    .clientTrackingRange(9).build(new ResourceLocation(Frv.MOD_ID, "corrupt_angel_fire").toString()));
+
 
     // Other
     public static final RegistryObject<EntityType<Cannon>> CANNON = ENTITIES.register("cannon",
@@ -87,5 +97,11 @@ public class ModEntityTypes
     public static final RegistryObject<EntityType<Electricity>> ELECTRICITY = ENTITIES.register("electricity",
             () -> EntityType.Builder.of(Electricity::new, MobCategory.MISC).fireImmune()
                     .sized(0.1f,20.0f).fireImmune().build("electricity"));
+
+    public static final RegistryObject<EntityType<CorruptBoard>> CORRUPT_BOARD = ENTITIES.register("corrupt_board",
+            () -> EntityType.Builder.of(CorruptBoard::new, MobCategory.CREATURE).fireImmune()
+                    .sized(0.9f,0.9f).fireImmune().build("corrupt_board"));
+
+
 }
 

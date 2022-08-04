@@ -6,7 +6,6 @@ import com.feroov.frv.init.Keybindings;
 import com.feroov.frv.init.ModEntityTypes;
 import com.feroov.frv.init.ModParticles;
 import com.feroov.frv.item.ModItems;
-import com.feroov.frv.item.ModTiers;
 import com.feroov.frv.item.custom.RangedItems;
 import com.feroov.frv.sound.ModSoundEvents;
 import com.feroov.frv.util.ClientRegistry;
@@ -15,8 +14,11 @@ import com.feroov.frv.world.ModDimensions;
 import com.feroov.frv.world.feature.ModConfiguredFeatures;
 import com.feroov.frv.world.feature.ModPlacedFeatures;
 import net.minecraft.client.KeyMapping;
+import net.minecraft.world.entity.FlyingMob;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.animal.Animal;
+import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -61,11 +63,15 @@ public class Frv
         ClientRegistry.registerKeyBinding(Keybindings.RELOAD);
 
         SpawnPlacements.register(ModEntityTypes.CROAKER.get(), SpawnPlacements.Type.NO_RESTRICTIONS,
-                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkMobSpawnRules);
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, AbstractVillager::checkMobSpawnRules);
         SpawnPlacements.register(ModEntityTypes.HUNTER.get(), SpawnPlacements.Type.NO_RESTRICTIONS,
-                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkMobSpawnRules);
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, AbstractVillager::checkMobSpawnRules);
         SpawnPlacements.register(ModEntityTypes.FEMALE_HUNTER.get(), SpawnPlacements.Type.NO_RESTRICTIONS,
-                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkMobSpawnRules);
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, AbstractVillager::checkMobSpawnRules);
+        SpawnPlacements.register(ModEntityTypes.CORRUPT_ANGEL.get(), SpawnPlacements.Type.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, FlyingMob::checkMobSpawnRules);
+        SpawnPlacements.register(ModEntityTypes.CORRUPT_ZOMBIE.get(), SpawnPlacements.Type.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkMobSpawnRules);
 
         RangedItems.addRanged();
     }

@@ -115,7 +115,7 @@ public class ModBlocks
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(0.2F)
                     .sound(new
                             ForgeSoundType(1f,1f, () -> ModSoundEvents.GLITCH.get(),
-                            () -> SoundEvents.GLASS_STEP, //step
+                            () -> ModSoundEvents.CORRUPT_STEP.get(), //step
                             () -> ModSoundEvents.CORRUPT_FIRE.get(), //place
                             () -> ModSoundEvents.SILENT.get(), //hit
                             () -> ModSoundEvents.CORRUPT_HURT.get())).lightLevel((light) -> {return 9;})));

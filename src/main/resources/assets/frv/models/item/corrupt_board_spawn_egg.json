@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "frv:item/corrupt_board_spawn_egg"
+  }
+}

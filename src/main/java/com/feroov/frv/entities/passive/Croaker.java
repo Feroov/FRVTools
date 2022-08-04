@@ -1,8 +1,8 @@
 package com.feroov.frv.entities.passive;
 
 import com.feroov.frv.entities.ai.goal.FollowPlayerGoal;
-import com.feroov.frv.entities.trades.CroakerAbstractVillagerEntity;
-import com.feroov.frv.entities.trades.ModVillagerTrades;
+import com.feroov.frv.entities.passive.abstractentity.CroakerAbstractVillagerEntity;
+import com.feroov.frv.entities.passive.abstractentity.ModVillagerTrades;
 import com.feroov.frv.entities.variants.CroakerVariant;
 import com.feroov.frv.sound.ModSoundEvents;
 import net.minecraft.Util;
@@ -20,11 +20,8 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.control.JumpControl;
 import net.minecraft.world.entity.ai.goal.*;
-import net.minecraft.world.entity.animal.Rabbit;
 import net.minecraft.world.entity.monster.*;
-import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;

@@ -1,23 +1,22 @@
 package com.feroov.frv.events;
 
 import com.feroov.frv.Frv;
+import com.feroov.frv.entities.hostile.renderer.*;
+import com.feroov.frv.entities.misc.renderer.CorruptBoardRenderer;
+import com.feroov.frv.entities.passive.renderer.CroakerRenderer;
+import com.feroov.frv.entities.passive.renderer.FemaleHunterRenderer;
+import com.feroov.frv.entities.passive.renderer.HunterRenderer;
 import com.feroov.frv.entities.projectiles.render.*;
-import com.feroov.frv.entities.render.*;
 import com.feroov.frv.init.ModEntityTypes;
 import com.feroov.frv.init.ModParticles;
 import com.feroov.frv.item.custom.items.particles.*;
-import com.feroov.frv.world.ModDimensions;
 import net.minecraft.client.Minecraft;
-import net.minecraft.world.BossEvent;
-import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
-import net.minecraftforge.client.event.ViewportEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
-import software.bernie.example.client.renderer.tile.HabitatTileRenderer;
 
 
 @Mod.EventBusSubscriber(modid = Frv.MOD_ID, bus = Bus.MOD, value = Dist.CLIENT)
@@ -46,6 +45,7 @@ public class ClientModEvents
         event.registerEntityRenderer(ModEntityTypes.FLINTLOCKER.get(), FlintlockerRenderer::new);
         event.registerEntityRenderer(ModEntityTypes.PIRATE.get(), PirateRenderer::new);
         event.registerEntityRenderer(ModEntityTypes.CORRUPT.get(), CorruptRenderer::new);
+        event.registerEntityRenderer(ModEntityTypes.CORRUPT_ANGEL.get(), CorruptAngelRenderer::new);
         event.registerEntityRenderer(ModEntityTypes.CORRUPT_ZOMBIE.get(), CorruptZombieRenderer::new);
         event.registerEntityRenderer(ModEntityTypes.MIMIC.get(), MimicRenderer::new);
 
@@ -54,8 +54,10 @@ public class ClientModEvents
         event.registerEntityRenderer(ModEntityTypes.CANNON_BALL.get(), CannonBallRender::new);
         event.registerEntityRenderer(ModEntityTypes.MUSKET_AMMO.get(), MusketAmmoRender::new);
         event.registerEntityRenderer(ModEntityTypes.CORRUPT_FIRE.get(), CorruptFireRender::new);
+        event.registerEntityRenderer(ModEntityTypes.CORRUPT_ANGEL_FIRE.get(), CorruptAngelFireRender::new);
         event.registerEntityRenderer(ModEntityTypes.CANNON.get(), CannonRenderer::new);
         event.registerEntityRenderer(ModEntityTypes.ELECTRICITY.get(), ElectricityRenderer::new);
+        event.registerEntityRenderer(ModEntityTypes.CORRUPT_BOARD.get(), CorruptBoardRenderer::new);
     }
 
     @Deprecated

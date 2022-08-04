@@ -247,21 +247,21 @@ public class CorruptZombie extends Monster implements IAnimatable, IAnimationTic
     @Override
     protected SoundEvent getAmbientSound()
     {
-        this.playSound(ModSoundEvents.CORRUPT_AMBIENT.get(), 1.0F, 1.0F);
+        this.playSound(ModSoundEvents.CORRUPT_FIRE.get(), 1.0F, 1.2F);
         return null;
     }
 
     @Override
     protected SoundEvent getHurtSound(@Nonnull DamageSource damageSourceIn)
     {
-        this.playSound(ModSoundEvents.GLITCH.get(), 1.0F, 1.0F);
+        this.playSound(ModSoundEvents.GLITCH.get(), 1.0F, 1.2F);
         return null;
     }
 
     @Override
     protected SoundEvent getDeathSound()
     {
-        this.playSound(ModSoundEvents.CORRUPT_DEATH.get(), 1.0F, 1.0F);
+        this.playSound(ModSoundEvents.CORRUPT_DEATH.get(), 1.0F, 1.2F);
         return null;
     }
     /*************************************************************************/
@@ -294,6 +294,11 @@ public class CorruptZombie extends Monster implements IAnimatable, IAnimationTic
     @Override
     public boolean isBaby()
     {
+        return false;
+    }
+
+    @Override
+    public boolean causeFallDamage(float p_148859_, float p_148860_, DamageSource p_148861_) {
         return false;
     }
 }

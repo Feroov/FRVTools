@@ -2,6 +2,7 @@ package com.feroov.frv.events;
 
 import com.feroov.frv.Frv;
 import com.feroov.frv.entities.hostile.*;
+import com.feroov.frv.entities.misc.CorruptBoard;
 import com.feroov.frv.entities.passive.Croaker;
 import com.feroov.frv.entities.passive.FemaleHunter;
 import com.feroov.frv.entities.passive.Hunter;
@@ -28,8 +29,10 @@ public class ModEvents
         event.put(ModEntityTypes.PIRATE.get(), Pirate.createAttributes().build());
         event.put(ModEntityTypes.CANNON.get(), Cannon.createAttributes().build());
         event.put(ModEntityTypes.CORRUPT.get(), Corrupt.createAttributes().build());
+        event.put(ModEntityTypes.CORRUPT_ANGEL.get(), CorruptAngel.createAttributes().build());
         event.put(ModEntityTypes.CORRUPT_ZOMBIE.get(), CorruptZombie.createAttributes().build());
         event.put(ModEntityTypes.ELECTRICITY.get(), Electricity.createAttributes().build());
         event.put(ModEntityTypes.MIMIC.get(), Mimic.createAttributes().build());
+        event.put(ModEntityTypes.CORRUPT_BOARD.get(), CorruptBoard.createAttributes().build());
     }
 }

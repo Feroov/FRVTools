@@ -101,6 +101,10 @@
   "entity.frv.corrupt": "\u00A7a\u00A7kCorrupt §r§a Spawn",
   "item.frv.corrupt_zombie_spawn_egg": "§a§kco§r§aCorrupt Zombie§a§kco§r§a Spawn",
   "entity.frv.corrupt_zombie": "§a§kco§r§aCorrupt Zombie§a§kco",
+  "item.frv.corrupt_angel_spawn_egg": "§a§kco§r§aCorrupt Angel§a§kco§r§a Spawn",
+  "entity.frv.corrupt_angel": "§a§kco§r§aCorrupt Angel§a§kco",
+  "item.frv.corrupt_board_spawn_egg": "§a§kco§r§aCorrupt Board§a§kco§r§a",
+  "entity.frv.corrupt_board": "§a§kco§r§aCorrupt Board§a§kco",
   "item.frv.mimic_spawn_egg": "Mimic Spawn",
   "entity.frv.mimic": "\u00A7l\u00A76Mimic\u00A76",
 
@@ -147,6 +151,7 @@
   "block.frv.corrupted_block": "\u00A7a\u00A7kMatrix\u00A7a",
   "block.frv.meteorite": "\u00A7eMeteorite",
   "item.frv.corrupt_piece": "§a§kco§r§aCorrupt Piece§a§kco",
+  "item.frv.corrupt_energy": "§a§kco§r§aCorrupt Energy§a§kco",
   "item.frv.meteorite_shards": "\u00A7eMeteorite Shards",
   "item.frv.hardened_meteorite": "\u00A7eHardened Meteorite",
   "item.frv.meteorite_ingot": "\u00A7eMeteorite Ingot",

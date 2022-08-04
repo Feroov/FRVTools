@@ -2,8 +2,8 @@ package com.feroov.frv.entities.passive;
 
 import com.feroov.frv.entities.ai.goal.HunterFindWaterPanicGoal;
 import com.feroov.frv.entities.ai.goal.HunterRevengeGoal;
-import com.feroov.frv.entities.trades.HunterAbstractVillagerEntity;
-import com.feroov.frv.entities.trades.ModVillagerTrades;
+import com.feroov.frv.entities.passive.abstractentity.HunterAbstractVillagerEntity;
+import com.feroov.frv.entities.passive.abstractentity.ModVillagerTrades;
 import com.feroov.frv.entities.variants.HunterVariant;
 import com.feroov.frv.sound.ModSoundEvents;
 import net.minecraft.Util;

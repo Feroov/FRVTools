@@ -171,5 +171,7 @@
   "silent": {"category": "misc", "sounds": [{"name": "frv:silent"}], "subtitle": "frv.silent"},
   "matrix_ambience": {"category": "misc", "sounds": [{"name": "frv:matrix_ambience"}], "subtitle": "frv.matrix_ambience"},
   "glitch": {"category": "misc", "sounds": [{"name": "frv:glitch"}], "subtitle": "frv.glitch"},
-  "corrupt_ore_place": {"category": "misc", "sounds": [{"name": "frv:corrupt_ore_place"}], "subtitle": "frv.corrupt_ore_place"}
+  "corrupt_ore_place": {"category": "misc", "sounds": [{"name": "frv:corrupt_ore_place"}], "subtitle": "frv.corrupt_ore_place"},
+  "corrupt_step": {"category": "misc", "sounds": [{"name": "frv:corrupt_step"}], "subtitle": "frv.corrupt_step"},
+  "corrupt_board_ambient": {"category": "misc", "sounds": [{"name": "frv:corrupt_board_ambient"}], "subtitle": "frv.corrupt_board_ambient"}
 }

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#V#",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "frv:corrupt_energy"
+    },
+    "V": {
+      "item": "minecraft:nether_star"
+    }
+  },
+  "result": {
+    "item": "frv:corrupt_board_spawn_egg",
+    "count": 1
+  }
+}

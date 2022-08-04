@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "frv:corrupt_zombie_spawn",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 1694556235,
+    "spacing": 5,
+    "separation": 1,
+    "type": "minecraft:random_spread"
+  }
+}

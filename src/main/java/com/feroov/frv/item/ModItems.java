@@ -65,6 +65,7 @@ public class ModItems
     public static final RegistryObject<Item> HARDENED_METEORITE = ITEMS.register("hardened_meteorite", () -> new Item(new Item.Properties().tab(ModItemGroup.FRV_TAB_BLOCKS_ITEMS)));
     public static final RegistryObject<Item> METEORITE_INGOT = ITEMS.register("meteorite_ingot", () -> new Item(new Item.Properties().tab(ModItemGroup.FRV_TAB_BLOCKS_ITEMS)));
     public static final RegistryObject<Item> CORRUPT_PIECE = ITEMS.register("corrupt_piece", () -> new Item(new Item.Properties().tab(ModItemGroup.FRV_TAB_BLOCKS_ITEMS)));
+    public static final RegistryObject<Item> CORRUPT_ENERGY = ITEMS.register("corrupt_energy", () -> new Item(new Item.Properties().tab(ModItemGroup.FRV_TAB_BLOCKS_ITEMS)));
     /*************************************************************************************/
 
     /**********************************  (MOBS EGGS) **********************************************/
@@ -78,6 +79,8 @@ public class ModItems
     public static final RegistryObject<ModSpawnEggItem> MIMIC = ITEMS.register("mimic_spawn_egg", () -> new ModSpawnEggItem(ModEntityTypes.MIMIC, 0X087D62, 0X087A62, new Item.Properties().tab(ModItemGroup.FRV_TAB_EGGS)));
     public static final RegistryObject<ModSpawnEggItem> CORRUPT = ITEMS.register("corrupt_spawn_egg", () -> new ModSpawnEggItem(ModEntityTypes.CORRUPT, 0X087D62, 0X087A62, new Item.Properties().tab(ModItemGroup.FRV_TAB_EGGS)));
     public static final RegistryObject<ModSpawnEggItem> CORRUPT_ZOMBIE = ITEMS.register("corrupt_zombie_spawn_egg", () -> new ModSpawnEggItem(ModEntityTypes.CORRUPT_ZOMBIE, 0X087D62, 0X087A62, new Item.Properties().tab(ModItemGroup.FRV_TAB_EGGS)));
+    public static final RegistryObject<ModSpawnEggItem> CORRUPT_ANGEL = ITEMS.register("corrupt_angel_spawn_egg", () -> new ModSpawnEggItem(ModEntityTypes.CORRUPT_ANGEL, 0X087D62, 0X087A62, new Item.Properties().tab(ModItemGroup.FRV_TAB_EGGS)));
+    public static final RegistryObject<ModSpawnEggItem> CORRUPT_BOARD = ITEMS.register("corrupt_board_spawn_egg", () -> new ModSpawnEggItem(ModEntityTypes.CORRUPT_BOARD, 0X087D62, 0X087A62, new Item.Properties().tab(ModItemGroup.FRV_TAB_EGGS)));
     /***********************************************************************************************/
 
 

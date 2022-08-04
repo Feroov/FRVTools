@@ -1,0 +1,89 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.CorruptAngelModel",
+				"texture_width": 512,
+				"texture_height": 512,
+				"visible_bounds_width": 15,
+				"visible_bounds_height": 9,
+				"visible_bounds_offset": [0, 3.5, 0]
+			},
+			"bones": [
+				{
+					"name": "corrupt_angel",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "left_wing",
+					"parent": "corrupt_angel",
+					"pivot": [7, 70.4, -6.4],
+					"rotation": [20.00196, 0, -30.00007],
+					"cubes": [
+						{"origin": [3, 60.8, -8.3646], "size": [9, 10, 7], "uv": [197, 0]},
+						{"origin": [3, 54.8124, -1.9776], "size": [94, 16, 1], "uv": [0, 0]},
+						{"origin": [3, 38.8124, -1.9776], "size": [85, 16, 1], "uv": [0, 42]},
+						{"origin": [3, 22.8124, -1.9776], "size": [74, 16, 1], "uv": [103, 84]},
+						{"origin": [3, 6.8124, -1.9776], "size": [48, 16, 1], "uv": [179, 42]},
+						{"origin": [32.41605, 19.16787, -2.4776], "size": [80, 24, 2], "pivot": [70.41605, 41.16787, -1.4776], "rotation": [0, 0, -45], "uv": [179, 63]}
+					]
+				},
+				{
+					"name": "right_wing",
+					"parent": "corrupt_angel",
+					"pivot": [-7, 70.4, -6.4],
+					"rotation": [20.00196, 0, 30.00007],
+					"cubes": [
+						{"origin": [-12, 60.8, -8.3646], "size": [9, 10, 7], "uv": [197, 0], "mirror": true},
+						{"origin": [-97, 54.8124, -1.9776], "size": [94, 16, 1], "uv": [0, 0], "mirror": true},
+						{"origin": [-88, 38.8124, -1.9776], "size": [85, 16, 1], "uv": [0, 42], "mirror": true},
+						{"origin": [-77, 22.8124, -1.9776], "size": [74, 16, 1], "uv": [103, 84], "mirror": true},
+						{"origin": [-51, 6.8124, -1.9776], "size": [48, 16, 1], "uv": [179, 42], "mirror": true},
+						{"origin": [-112.41605, 19.16787, -2.4776], "size": [80, 24, 2], "pivot": [-70.41605, 41.16787, -1.4776], "rotation": [0, 0, 45], "uv": [179, 63], "mirror": true}
+					]
+				},
+				{
+					"name": "right_arm",
+					"parent": "corrupt_angel",
+					"pivot": [-20, 70, -19],
+					"rotation": [-20.00196, 0, 0],
+					"cubes": [
+						{"origin": [-32, 27.0007, -28.00024], "size": [12, 46, 18], "uv": [95, 166]}
+					]
+				},
+				{
+					"name": "left_arm",
+					"parent": "corrupt_angel",
+					"pivot": [19, 68, -19],
+					"rotation": [-20.00196, 0, 0],
+					"cubes": [
+						{"origin": [19, 27.0007, -28.00024], "size": [12, 46, 18], "uv": [160, 166]}
+					]
+				},
+				{
+					"name": "body",
+					"parent": "corrupt_angel",
+					"pivot": [-1.16667, 33.8866, -7.13278],
+					"rotation": [20.00196, 0, 0],
+					"cubes": [
+						{"origin": [-20, 36.3866, -19.13278], "size": [39, 41, 24], "uv": [0, 84]},
+						{"origin": [-15, 21.3866, -19.13278], "size": [27, 15, 24], "uv": [103, 126]},
+						{"origin": [-11, 10.3866, -16.13278], "size": [19, 11, 18], "uv": [0, 197]},
+						{"origin": [-9, -9.6134, -14.13278], "size": [15, 20, 14], "uv": [0, 197]},
+						{"origin": [-9, -9.6134, -14.13278], "size": [15, 20, 14], "uv": [0, 197]}
+					]
+				},
+				{
+					"name": "head",
+					"parent": "corrupt_angel",
+					"pivot": [-0.5, 73.14764, -20.9939],
+					"rotation": [20.00196, 0, 0],
+					"cubes": [
+						{"origin": [-12, 74.63407, -33.58768], "size": [23, 23, 24], "uv": [0, 150]}
+					]
+				}
+			]
+		}
+	]
+}

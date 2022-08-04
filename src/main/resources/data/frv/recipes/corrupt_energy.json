@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "frv:corrupt_piece"
+    }
+  },
+  "result": {
+    "item": "frv:corrupt_energy",
+    "count": 1
+  }
+}

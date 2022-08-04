@@ -60,12 +60,12 @@ public class Corrupt extends Monster implements IAnimatable, IAnimationTickable,
     public static final EntityDataAccessor<Integer> STATE = SynchedEntityData.defineId(Corrupt.class, EntityDataSerializers.INT);
     public static final EntityDataAccessor<Integer> ATTACK = SynchedEntityData.defineId(Corrupt.class, EntityDataSerializers.INT);
 
-   // protected int spellCastingTickCount;
+    // protected int spellCastingTickCount;
     //private static final EntityDataAccessor<Byte> DATA_SPELL_CASTING_ID = SynchedEntityData.defineId(SpellcasterIllager.class, EntityDataSerializers.BYTE);
     //private Corrupt.SpellType currentSpell = Corrupt.SpellType.NONE;
 
     private final ServerBossEvent bossInfo = (ServerBossEvent) (new ServerBossEvent(this.getDisplayName(),
-            BossEvent.BossBarColor.GREEN, BossEvent.BossBarOverlay.PROGRESS)).setDarkenScreen(true).setPlayBossMusic(true)
+            BossEvent.BossBarColor.GREEN, BossEvent.BossBarOverlay.PROGRESS)).setDarkenScreen(true)
             .setCreateWorldFog(true);
 
     /******************************** Animation stuff ****************************************/
