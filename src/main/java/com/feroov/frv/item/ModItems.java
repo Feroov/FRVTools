@@ -3,6 +3,7 @@ package com.feroov.frv.item;
 import com.feroov.frv.Frv;
 import com.feroov.frv.init.ModEntityTypes;
 import com.feroov.frv.item.custom.armors.AmethystArmor;
+import com.feroov.frv.item.custom.armors.FunghoniteArmor;
 import com.feroov.frv.item.custom.armors.MeteoriteArmor;
 import com.feroov.frv.item.custom.items.*;
 import com.feroov.frv.item.custom.ranged.Musket;
@@ -64,6 +65,7 @@ public class ModItems
     public static final RegistryObject<Item> METEORITE_SHARDS = ITEMS.register("meteorite_shards", () -> new Item(new Item.Properties().tab(ModItemGroup.FRV_TAB_BLOCKS_ITEMS)));
     public static final RegistryObject<Item> HARDENED_METEORITE = ITEMS.register("hardened_meteorite", () -> new Item(new Item.Properties().tab(ModItemGroup.FRV_TAB_BLOCKS_ITEMS)));
     public static final RegistryObject<Item> METEORITE_INGOT = ITEMS.register("meteorite_ingot", () -> new Item(new Item.Properties().tab(ModItemGroup.FRV_TAB_BLOCKS_ITEMS)));
+    public static final RegistryObject<Item> HARD_FUNGUS = ITEMS.register("hard_fungus", () -> new Item(new Item.Properties().tab(ModItemGroup.FRV_TAB_BLOCKS_ITEMS)));
     public static final RegistryObject<Item> CORRUPT_PIECE = ITEMS.register("corrupt_piece", () -> new Item(new Item.Properties().tab(ModItemGroup.FRV_TAB_BLOCKS_ITEMS)));
     public static final RegistryObject<Item> CORRUPT_ENERGY = ITEMS.register("corrupt_energy", () -> new Item(new Item.Properties().tab(ModItemGroup.FRV_TAB_BLOCKS_ITEMS)));
     /*************************************************************************************/
@@ -80,7 +82,7 @@ public class ModItems
     public static final RegistryObject<ModSpawnEggItem> CORRUPT = ITEMS.register("corrupt_spawn_egg", () -> new ModSpawnEggItem(ModEntityTypes.CORRUPT, 0X087D62, 0X087A62, new Item.Properties().tab(ModItemGroup.FRV_TAB_EGGS)));
     public static final RegistryObject<ModSpawnEggItem> CORRUPT_ZOMBIE = ITEMS.register("corrupt_zombie_spawn_egg", () -> new ModSpawnEggItem(ModEntityTypes.CORRUPT_ZOMBIE, 0X087D62, 0X087A62, new Item.Properties().tab(ModItemGroup.FRV_TAB_EGGS)));
     public static final RegistryObject<ModSpawnEggItem> CORRUPT_ANGEL = ITEMS.register("corrupt_angel_spawn_egg", () -> new ModSpawnEggItem(ModEntityTypes.CORRUPT_ANGEL, 0X087D62, 0X087A62, new Item.Properties().tab(ModItemGroup.FRV_TAB_EGGS)));
-    public static final RegistryObject<ModSpawnEggItem> CORRUPT_BOARD = ITEMS.register("corrupt_board_spawn_egg", () -> new ModSpawnEggItem(ModEntityTypes.CORRUPT_BOARD, 0X087D62, 0X087A62, new Item.Properties().tab(ModItemGroup.FRV_TAB_EGGS)));
+    public static final RegistryObject<ModSpawnEggItem> CORRUPT_BOARD = ITEMS.register("corrupt_board_spawn_egg", () -> new ModSpawnEggItem(ModEntityTypes.CORRUPT_BOARD, 0X087D62, 0X087A62, new Item.Properties().fireResistant().tab(ModItemGroup.FRV_TAB_EGGS)));
     /***********************************************************************************************/
 
 
@@ -212,7 +214,19 @@ public class ModItems
     public static final RegistryObject<Item> METEORITE_BOOTS = ITEMS.register("meteorite_boots", () -> new MeteoriteArmor(ModArmorMaterial.METEORITE, EquipmentSlot.FEET, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
     /***********************************************************************************************/
 
-/**
+    /**********************************  (FUNGHONITE)  **********************************************/
+    public static final RegistryObject<Item> FUNGHONITE_SWORD = ITEMS.register("funghonite_sword", () -> new SwordItem(ModTiers.FUNGHONITE, 3, -2.4f, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
+    public static final RegistryObject<Item> FUNGHONITE_PICKAXE = ITEMS.register("funghonite_pickaxe", () -> new PickaxeItem(ModTiers.FUNGHONITE, 2, -2.8f, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
+    public static final RegistryObject<Item> FUNGHONITE_AXE = ITEMS.register("funghonite_axe", () -> new AxeItem(ModTiers.FUNGHONITE, 6, -3f, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
+    public static final RegistryObject<Item> FUNGHONITE_SHOVEL = ITEMS.register("funghonite_shovel", () -> new ShovelItem(ModTiers.FUNGHONITE, 2.5f, -3.1f, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
+    public static final RegistryObject<Item> FUNGHONITE_HOE = ITEMS.register("funghonite_hoe", () -> new HoeItem(ModTiers.FUNGHONITE, -1, 0f, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
+    public static final RegistryObject<Item> FUNGHONITE_HELMET = ITEMS.register("funghonite_helmet", () -> new FunghoniteArmor(ModArmorMaterial.FUNGHONITE, EquipmentSlot.HEAD, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
+    public static final RegistryObject<Item> FUNGHONITE_CHESTPLATE = ITEMS.register("funghonite_chestplate", () -> new FunghoniteArmor(ModArmorMaterial.FUNGHONITE, EquipmentSlot.CHEST, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
+    public static final RegistryObject<Item> FUNGHONITE_LEGGINGS = ITEMS.register("funghonite_leggings", () -> new FunghoniteArmor(ModArmorMaterial.FUNGHONITE, EquipmentSlot.LEGS, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
+    public static final RegistryObject<Item> FUNGHONITE_BOOTS = ITEMS.register("funghonite_boots", () -> new FunghoniteArmor(ModArmorMaterial.FUNGHONITE, EquipmentSlot.FEET, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
+    /***********************************************************************************************/
+
+    /**
     @Override
     public boolean hurtEnemy(ItemStack p_41395_, LivingEntity p_41396_, LivingEntity p_41397_)
     {

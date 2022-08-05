@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    " / ",
+    " / "
+  ],
+  "key": {
+    "#": {
+      "item": "frv:hard_fungus"
+    },
+    "/": {
+      "item": "minecraft:red_mushroom"
+    }
+  },
+  "result": {
+    "item": "frv:funghonite_shovel",
+    "count": 1
+  }
+}

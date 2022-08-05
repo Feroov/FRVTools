@@ -48,6 +48,11 @@
   "item.frv.meteorite_axe": "\u00A7eMeteorite Axe",
   "item.frv.meteorite_shovel": "\u00A7eMeteorite Shovel",
   "item.frv.meteorite_hoe": "\u00A7eMeteorite Hoe",
+  "item.frv.funghonite_sword": "\u00A7cFunghonite Sword",
+  "item.frv.funghonite_pickaxe": "\u00A7cFunghonite Pickaxe",
+  "item.frv.funghonite_axe": "\u00A7cFunghonite Axe",
+  "item.frv.funghonite_shovel": "\u00A7cFunghonite Shovel",
+  "item.frv.funghonite_hoe": "\u00A7cFunghonite Hoe",
 
   "item.frv.quartz_helmet": "Quartz Helmet",
   "item.frv.quartz_chestplate": "Quartz Chestplate",
@@ -81,6 +86,10 @@
   "item.frv.meteorite_chestplate": "\u00A7eMeteorite Chestplate",
   "item.frv.meteorite_leggings": "\u00A7eMeteorite Leggings",
   "item.frv.meteorite_boots": "\u00A7eMeteorite Boots",
+  "item.frv.funghonite_helmet": "\u00A7cFunghonite Helmet",
+  "item.frv.funghonite_chestplate": "\u00A7cFunghonite Chestplate",
+  "item.frv.funghonite_leggings": "\u00A7cFunghonite Leggings",
+  "item.frv.funghonite_boots": "\u00A7cFunghonite Boots",
 
 
   "item.frv.croaker_spawn_egg": "Croaker Spawn",
@@ -144,6 +153,7 @@
   "item.frv.platinum_ingot": "Platinum Ingot",
   "block.frv.platinum_ore": "Platinum Ore",
   "block.frv.deepslate_platinum_ore": "Deepslate Platinum Ore",
+  "block.frv.funghonite_ore": "\u00A7cFunghonite Ore",
   "block.frv.corrupt_ore": "§a§kco§r§aCorrupt Ore§a§kco",
 
   "block.frv.matrix": "\u00A7a\u00A7kMatrix\u00A7a",
@@ -155,6 +165,7 @@
   "item.frv.meteorite_shards": "\u00A7eMeteorite Shards",
   "item.frv.hardened_meteorite": "\u00A7eHardened Meteorite",
   "item.frv.meteorite_ingot": "\u00A7eMeteorite Ingot",
+  "item.frv.hard_fungus": "\u00A7cHard Fungus",
   "item.frv.hellstone": "\u00A7cHellstone",
 
   "advancements.frv.consume_ale.title": "Add a little bit of spice",

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "## ",
+    "#/ ",
+    " / "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:hard_fungus"
+    },
+    "/": {
+      "item": "minecraft:red_mushroom"
+    }
+  },
+  "result": {
+    "item": "frv:funghonite_axe",
+    "count": 1
+  }
+}

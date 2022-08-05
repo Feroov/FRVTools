@@ -49,6 +49,12 @@ public class ModTiers
             new ResourceLocation("frv:needs_meteorite_tool"),
             List.of(Tiers.NETHERITE), List.of());
 
+    public static final Tier FUNGHONITE = TierSortingRegistry.registerTier(
+            new ForgeTier(6, 3863, 16.5f, 9.5f, 15, ModBlocks.Tags.NEEDS_FUNGHONITE_TOOL,
+                    () -> Ingredient.of(ModItems.METEORITE_INGOT.get())),
+            new ResourceLocation("frv:needs_funghonite_tool"),
+            List.of(ModTiers.METEORITE), List.of());
+
     public static final ForgeTier ADMIN = new ForgeTier(999,999999,999f,9999f,10,
             Tags.Blocks.NEEDS_GOLD_TOOL, () -> Ingredient.of(Items.AMETHYST_SHARD));
 

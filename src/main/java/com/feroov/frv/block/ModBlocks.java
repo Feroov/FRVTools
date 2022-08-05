@@ -138,6 +138,25 @@ public class ModBlocks
                     super.stepOn(pLevel, pPos, pState, pEntity);
                 }
             });
+
+    public static final RegistryObject<Block> FUNGHONITE_ORE = registerBlock("funghonite_ore",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(45.0F, 50.0F)
+                    .requiresCorrectToolForDrops().lightLevel((light) -> {return 2;}))
+            {
+                @Override
+                public void stepOn(Level pLevel, BlockPos pPos, BlockState pState, Entity pEntity) {
+                    if(!pLevel.isClientSide())
+                    {
+                        if(pEntity instanceof LivingEntity)
+                        {
+                            LivingEntity entity = ((LivingEntity) pEntity);
+                            entity.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 140));
+                        }
+                    }
+
+                    super.stepOn(pLevel, pPos, pState, pEntity);
+                }
+            });
     /******************************************************************************************/
 
 
@@ -146,6 +165,7 @@ public class ModBlocks
     public static class Tags
     {
         public static final TagKey<Block> NEEDS_METEORITE_TOOL = create("needs_meteorite_tool");
+        public static final TagKey<Block> NEEDS_FUNGHONITE_TOOL = create("needs_funghonite_tool");
 
         private static TagKey<Block> create(String location)
         {

@@ -39,6 +39,9 @@ public class ModConfiguredFeatures
             OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, ModBlocks.PLATINUM_ORE.get().defaultBlockState()),
             OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ModBlocks.DEEPSLATE_PLATINUM_ORE.get().defaultBlockState())));
 
+    public static final Supplier<List<OreConfiguration.TargetBlockState>> FUNGHONITE_ORE = Suppliers.memoize(() -> List.of(
+            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ModBlocks.FUNGHONITE_ORE.get().defaultBlockState())));
+
     public static final Supplier<List<OreConfiguration.TargetBlockState>> CORRUPT_ORE = Suppliers.memoize(() -> List.of(
             OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ModBlocks.CORRUPT_ORE.get().defaultBlockState())));
 
@@ -77,6 +80,11 @@ public class ModConfiguredFeatures
     /************************************************ PLATINUM ORE *****************************************************************/
     public static final RegistryObject<ConfiguredFeature<?, ?>> PLATINUM_ORE = CONFIGURED_FEATURES.register("platinum_ore",
             () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(Objects.requireNonNull(OVERWORLD_PLATINUM_ORES.get()), 7)));
+    /************************************************************************************************************************/
+
+    /************************************************ FUNGHONITE ORE *****************************************************************/
+    public static final RegistryObject<ConfiguredFeature<?, ?>> FUNGAL_ORE = CONFIGURED_FEATURES.register("funghonite_ore",
+            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(Objects.requireNonNull(FUNGHONITE_ORE.get()), 7)));
     /************************************************************************************************************************/
 
     /************************************************ CORRUPT ORE *****************************************************************/
