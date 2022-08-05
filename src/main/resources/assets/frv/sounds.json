@@ -101,6 +101,17 @@
     "name": "frv:hunter_no4"}], "subtitle": "frv.hunter_no"
   },
 
+  "lost_person": {"category": "passive", "sounds": [{
+    "name": "frv:lost_person"}, {
+    "name": "frv:lost_person2"}, {
+    "name": "frv:lost_person3"}, {
+    "name": "frv:lost_person4"}, {
+    "name": "frv:lost_person5"}, {
+    "name": "frv:lost_person6"}, {
+    "name": "frv:lost_person7"}, {
+    "name": "frv:lost_person8"}], "subtitle": "frv.lost_person"
+  },
+
 
 
   "pirate_captain_ambient": {"category": "hostile", "sounds": [{

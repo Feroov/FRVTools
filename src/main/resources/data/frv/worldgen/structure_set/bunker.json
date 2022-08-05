@@ -1,14 +1,14 @@
 {
   "structures": [
     {
-      "structure": "frv:corrupt_angel_spawn",
+      "structure": "frv:bunker",
       "weight": 1
     }
   ],
   "placement": {
-    "salt": 1234656835,
-    "spacing": 9,
-    "separation": 1,
+    "salt": 1394367986,
+    "spacing": 20,
+    "separation": 8,
     "type": "minecraft:random_spread"
   }
 }

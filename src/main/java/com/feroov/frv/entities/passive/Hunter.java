@@ -2,6 +2,7 @@ package com.feroov.frv.entities.passive;
 
 import com.feroov.frv.entities.ai.goal.HunterFindWaterPanicGoal;
 import com.feroov.frv.entities.ai.goal.HunterRevengeGoal;
+import com.feroov.frv.entities.hostile.PirateCaptain;
 import com.feroov.frv.entities.passive.abstractentity.HunterAbstractVillagerEntity;
 import com.feroov.frv.entities.passive.abstractentity.ModVillagerTrades;
 import com.feroov.frv.entities.variants.HunterVariant;
@@ -231,6 +232,7 @@ public class Hunter extends HunterAbstractVillagerEntity implements IAnimatable,
         this.goalSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, Pig.class, true));
         this.goalSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, Cod.class, true));
         this.goalSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, Rabbit.class, true));
+        this.goalSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, PirateCaptain.class, true));
         this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, Mob.class, 5, false, false, (p_28879_) -> {return p_28879_ instanceof Enemy && !(p_28879_ instanceof Creeper);}));
         this.goalSelector.addGoal(4, new HunterRevengeGoal(this));
         this.goalSelector.addGoal(5, new TemptGoal(this, 0.43F, TEMP, false));

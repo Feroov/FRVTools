@@ -70,6 +70,44 @@ public class ModBlocks
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength
                     (5.7f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
 
+    public static final RegistryObject<Block> METEORITE = registerBlock("meteorite",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(30.0F, 40.0F)
+                    .requiresCorrectToolForDrops().lightLevel((light) -> {return 15;}))
+            {
+                @Override
+                public void stepOn(Level pLevel, BlockPos pPos, BlockState pState, Entity pEntity) {
+                    if(!pLevel.isClientSide())
+                    {
+                        if(pEntity instanceof LivingEntity)
+                        {
+                            LivingEntity entity = ((LivingEntity) pEntity);
+                            entity.setSecondsOnFire(5);
+                        }
+                    }
+
+                    super.stepOn(pLevel, pPos, pState, pEntity);
+                }
+            });
+
+    public static final RegistryObject<Block> FUNGHONITE_ORE = registerBlock("funghonite_ore",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(45.0F, 50.0F)
+                    .requiresCorrectToolForDrops().lightLevel((light) -> {return 2;}))
+            {
+                @Override
+                public void stepOn(Level pLevel, BlockPos pPos, BlockState pState, Entity pEntity) {
+                    if(!pLevel.isClientSide())
+                    {
+                        if(pEntity instanceof LivingEntity)
+                        {
+                            LivingEntity entity = ((LivingEntity) pEntity);
+                            entity.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 140));
+                        }
+                    }
+
+                    super.stepOn(pLevel, pPos, pState, pEntity);
+                }
+            });
+
     public static final RegistryObject<Block> CORRUPT_ORE = registerBlock("corrupt_ore",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength
                     (60.0f, 70.0F).requiresCorrectToolForDrops().sound(new
@@ -120,43 +158,7 @@ public class ModBlocks
                             () -> ModSoundEvents.SILENT.get(), //hit
                             () -> ModSoundEvents.CORRUPT_HURT.get())).lightLevel((light) -> {return 9;})));
 
-    public static final RegistryObject<Block> METEORITE = registerBlock("meteorite",
-            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(30.0F, 40.0F)
-                    .requiresCorrectToolForDrops().lightLevel((light) -> {return 15;}))
-            {
-                @Override
-                public void stepOn(Level pLevel, BlockPos pPos, BlockState pState, Entity pEntity) {
-                    if(!pLevel.isClientSide())
-                    {
-                        if(pEntity instanceof LivingEntity)
-                        {
-                            LivingEntity entity = ((LivingEntity) pEntity);
-                            entity.setSecondsOnFire(5);
-                        }
-                    }
 
-                    super.stepOn(pLevel, pPos, pState, pEntity);
-                }
-            });
-
-    public static final RegistryObject<Block> FUNGHONITE_ORE = registerBlock("funghonite_ore",
-            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(45.0F, 50.0F)
-                    .requiresCorrectToolForDrops().lightLevel((light) -> {return 2;}))
-            {
-                @Override
-                public void stepOn(Level pLevel, BlockPos pPos, BlockState pState, Entity pEntity) {
-                    if(!pLevel.isClientSide())
-                    {
-                        if(pEntity instanceof LivingEntity)
-                        {
-                            LivingEntity entity = ((LivingEntity) pEntity);
-                            entity.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 140));
-                        }
-                    }
-
-                    super.stepOn(pLevel, pPos, pState, pEntity);
-                }
-            });
     /******************************************************************************************/
 
 

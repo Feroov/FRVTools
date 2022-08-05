@@ -6,6 +6,7 @@ import com.feroov.frv.entities.misc.CorruptBoard;
 import com.feroov.frv.entities.passive.Croaker;
 import com.feroov.frv.entities.passive.FemaleHunter;
 import com.feroov.frv.entities.passive.Hunter;
+import com.feroov.frv.entities.passive.LostPerson;
 import com.feroov.frv.entities.projectiles.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
@@ -34,6 +35,10 @@ public class ModEntityTypes
     public static final RegistryObject<EntityType<FemaleHunter>> FEMALE_HUNTER = ENTITIES.register("female_hunter",
             () -> EntityType.Builder.of(FemaleHunter::new, MobCategory.CREATURE)
                     .sized(0.7f,1.8f).build("female_hunter"));
+
+    public static final RegistryObject<EntityType<LostPerson>> LOST_PERSON = ENTITIES.register("lost_person",
+            () -> EntityType.Builder.of(LostPerson::new, MobCategory.CREATURE)
+                    .sized(0.7f,1.8f).build("lost_person"));
 
     /** Hostile **/
     public static final RegistryObject<EntityType<PirateCaptain>> PIRATE_CAPTAIN = ENTITIES.register("pirate_captain",

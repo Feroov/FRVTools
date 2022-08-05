@@ -98,6 +98,8 @@
   "entity.frv.hunter": "Hunter",
   "item.frv.female_hunter_spawn_egg": "Female Hunter Spawn",
   "entity.frv.female_hunter": "Female Hunter",
+  "item.frv.lost_person_spawn_egg": "Lost Person Spawn",
+  "entity.frv.lost_person": "Lost Person",
   "item.frv.cannon_spawn_egg": "Cannon Spawn",
   "entity.frv.cannon": "Cannon",
   "item.frv.flintlocker_spawn_egg": "Flintlocker Spawn",
