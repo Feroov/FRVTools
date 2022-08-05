@@ -1,0 +1,56 @@
+{
+  "display": {
+    "icon": {
+      "item": "frv:funghonite_sword",
+      "nbt": "{Damage:0}"
+    },
+    "title": {
+      "translate": "advancements.frv.get_funghonite_tools.title"
+    },
+    "description": {
+      "translate": "advancements.frv.get_funghonite_tools.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "frv:aquire_hard_fungus",
+  "criteria": {
+    "netherite_armor": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frv:funghonite_sword"
+            ]
+          },
+          {
+            "items": [
+              "frv:funghonite_pickaxe"
+            ]
+          },
+          {
+            "items": [
+              "frv:funghonite_axe"
+            ]
+          },
+          {
+            "items": [
+              "frv:funghonite_shovel"
+            ]
+          },
+          {
+            "items": [
+              "frv:funghonite_hoe"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 100
+  }
+}

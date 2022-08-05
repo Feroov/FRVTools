@@ -180,6 +180,13 @@
   "advancements.frv.get_meteorite_tools.title": "§eYou're packing heat foo'",
   "advancements.frv.get_meteorite_tools.description": "The hot, juicy tools",
 
+  "advancements.frv.get_funghonite_tools.title": "§cFunky Fungi",
+  "advancements.frv.get_funghonite_tools.description": "Aquire Funghonite Tools",
+  "advancements.frv.get_funghonite_armor.title": "§cAh the squish...",
+  "advancements.frv.get_funghonite_armor.description": "Aquire Funghonite Armor",
+  "advancements.frv.get_hard_fungus.title": "§cSmells very strong!",
+  "advancements.frv.get_hard_fungus.description": "Aquire Hard Fungus",
+
   "advancements.frv.kill_pcaptain.title": "I am the captain now!",
   "advancements.frv.kill_pcaptain.description": "Do you feel it now Krabs?",
   "advancements.frv.kill_corrupt.title": "§a§kco§r§a404§a§kco",

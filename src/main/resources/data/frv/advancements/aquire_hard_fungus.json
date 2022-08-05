@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "item": "frv:hard_fungus"
+    },
+    "title": {
+      "translate": "advancements.frv.get_hard_fungus.title"
+    },
+    "description": {
+      "translate": "advancements.frv.get_hard_fungus.description"
+    },
+    "background": "minecraft:textures/block/red_mushroom_block.png",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "wither_skull": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frv:hard_fungus"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
