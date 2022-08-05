@@ -3,8 +3,16 @@ package com.feroov.frv.world;
 import com.feroov.frv.block.ModBlocks;
 import com.feroov.frv.block.custom.MatrixPortalBlock;
 import com.feroov.frv.sound.ModSoundEvents;
+import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import net.minecraft.client.gui.screens.worldselection.WorldCreationContext;
+import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Holder;
+import net.minecraft.core.Registry;
+import net.minecraft.core.SectionPos;
 import net.minecraft.data.worldgen.features.TreeFeatures;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
@@ -12,7 +20,12 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.ChunkPos;
+import net.minecraft.world.level.chunk.ChunkGenerator;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+import net.minecraft.world.level.levelgen.structure.BoundingBox;
+import net.minecraft.world.level.levelgen.structure.Structure;
+import net.minecraft.world.level.levelgen.structure.StructureStart;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.portal.PortalInfo;
@@ -32,6 +45,22 @@ public class FRVTeleporter implements ITeleporter
         thisPos = pos;
         insideDimension = insideDim;
     }
+
+
+
+// The method I tried to use
+
+//    public void placeStructure(CommandSourceStack commandSourceStack, BlockPos pos, ServerLevel  destinationWorld)  {
+//        ServerLevel serverlevel = commandSourceStack.getLevel();
+//        ChunkGenerator chunkgenerator = serverlevel.getChunkSource().getGenerator();
+//        Structure structure = destinationWorld.registryAccess().registryOrThrow(Registry.STRUCTURE_REGISTRY).get
+//                (new ResourceLocation("frv", "camp_site"));
+//        structure.generate(commandSourceStack.registryAccess(), chunkgenerator, chunkgenerator.getBiomeSource(),
+//                serverlevel.getChunkSource().randomState(), serverlevel.getStructureManager(), serverlevel.getSeed(),
+//                new ChunkPos(pos), 0, serverlevel, (p_214580_) -> {
+//                    return true;
+//                });
+//    }
 
     @Override
     public Entity placeEntity(Entity entity, ServerLevel currentWorld, ServerLevel destinationWorld,
@@ -74,6 +103,8 @@ public class FRVTeleporter implements ITeleporter
             {
                 destinationWorld.setBlock(destinationPos, ModBlocks.MATRIX_PORTAL.get().defaultBlockState(), 3);
             }
+//            placeStructure(entity.createCommandSourceStack(), destinationPos, destinationWorld);
+            // I don't know if this is the correct location to put it
         }
 
         return entity;
