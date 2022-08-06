@@ -14,7 +14,6 @@ import net.minecraft.world.entity.MobCategory;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import software.bernie.example.entity.BikeEntity;
 
 public class ModEntityTypes
 {
@@ -57,6 +56,10 @@ public class ModEntityTypes
             () -> EntityType.Builder.of(Corrupt::new, MobCategory.CREATURE).canSpawnFarFromPlayer().fireImmune()
                     .sized(1.7f,5.3f).build("corrupt"));
 
+    public static final RegistryObject<EntityType<CorruptMinion>> CORRUPT_MINION = ENTITIES.register("corrupt_minion",
+            () -> EntityType.Builder.of(CorruptMinion::new, MobCategory.CREATURE).canSpawnFarFromPlayer().fireImmune()
+                    .sized(1.7f,5.3f).build("corrupt_minion"));
+
     public static final RegistryObject<EntityType<CorruptAngel>> CORRUPT_ANGEL = ENTITIES.register("corrupt_angel",
             () -> EntityType.Builder.of(CorruptAngel::new, MobCategory.CREATURE).canSpawnFarFromPlayer().fireImmune()
                     .sized(6.3f,6.3f).build("corrupt_angel"));
@@ -69,6 +72,9 @@ public class ModEntityTypes
             () -> EntityType.Builder.of(Mimic::new, MobCategory.CREATURE).canSpawnFarFromPlayer().fireImmune()
                     .sized(1.0f,1.0f).build("mimic"));
 
+    public static final RegistryObject<EntityType<LordOfCorruption>> LORD_OF_CORRUPTION = ENTITIES.register("lord_of_corruption",
+            () -> EntityType.Builder.of(LordOfCorruption::new, MobCategory.CREATURE).canSpawnFarFromPlayer().fireImmune()
+                    .sized(6.7f,17.8f).build("lord_of_corruption"));
 
     /** Misc **/
     // Projectiles

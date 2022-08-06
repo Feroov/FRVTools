@@ -1,6 +1,7 @@
 package com.feroov.frv.events;
 
 import com.feroov.frv.Frv;
+import com.feroov.frv.entities.hostile.LordOfCorruption;
 import com.feroov.frv.entities.hostile.renderer.*;
 import com.feroov.frv.entities.misc.renderer.CorruptBoardRenderer;
 import com.feroov.frv.entities.passive.renderer.CroakerRenderer;
@@ -12,7 +13,10 @@ import com.feroov.frv.init.ModEntityTypes;
 import com.feroov.frv.init.ModParticles;
 import com.feroov.frv.item.custom.items.particles.*;
 import net.minecraft.client.Minecraft;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.entity.Entity;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -20,9 +24,12 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 
 
+
+
 @Mod.EventBusSubscriber(modid = Frv.MOD_ID, bus = Bus.MOD, value = Dist.CLIENT)
 public class ClientModEvents
 {
+
 
     public ClientModEvents(){}
     /**
@@ -47,8 +54,10 @@ public class ClientModEvents
         event.registerEntityRenderer(ModEntityTypes.FLINTLOCKER.get(), FlintlockerRenderer::new);
         event.registerEntityRenderer(ModEntityTypes.PIRATE.get(), PirateRenderer::new);
         event.registerEntityRenderer(ModEntityTypes.CORRUPT.get(), CorruptRenderer::new);
+        event.registerEntityRenderer(ModEntityTypes.CORRUPT_MINION.get(), CorruptMinionRenderer::new);
         event.registerEntityRenderer(ModEntityTypes.CORRUPT_ANGEL.get(), CorruptAngelRenderer::new);
         event.registerEntityRenderer(ModEntityTypes.CORRUPT_ZOMBIE.get(), CorruptZombieRenderer::new);
+        event.registerEntityRenderer(ModEntityTypes.LORD_OF_CORRUPTION.get(), LordOfCorruptionRenderer::new);
         event.registerEntityRenderer(ModEntityTypes.MIMIC.get(), MimicRenderer::new);
 
         /** Misc **/

@@ -184,5 +184,7 @@
   "glitch": {"category": "misc", "sounds": [{"name": "frv:glitch"}], "subtitle": "frv.glitch"},
   "corrupt_ore_place": {"category": "misc", "sounds": [{"name": "frv:corrupt_ore_place"}], "subtitle": "frv.corrupt_ore_place"},
   "corrupt_step": {"category": "misc", "sounds": [{"name": "frv:corrupt_step"}], "subtitle": "frv.corrupt_step"},
-  "corrupt_board_ambient": {"category": "misc", "sounds": [{"name": "frv:corrupt_board_ambient"}], "subtitle": "frv.corrupt_board_ambient"}
+  "corrupt_board_ambient": {"category": "misc", "sounds": [{"name": "frv:corrupt_board_ambient"}], "subtitle": "frv.corrupt_board_ambient"},
+  "lord_of_corruption_ambient": {"category": "misc", "sounds": [{"name": "frv:lord_of_corruption_ambient"}], "subtitle": "frv.lord_of_corruption_ambient"},
+  "music_loc": {"category": "misc", "sounds": [{"name": "frv:music_loc"}], "subtitle": "frv.music_loc"}
 }

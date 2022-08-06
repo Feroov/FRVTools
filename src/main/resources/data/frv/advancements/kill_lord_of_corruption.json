@@ -1,0 +1,35 @@
+{
+  "display": {
+    "icon": {
+      "item": "frv:lord_of_corruption_spawn_egg",
+      "nbt": "{Damage:0}"
+    },
+    "title": {
+      "translate": "advancements.frv.kill_lord_of_corruption.title"
+    },
+    "description": {
+      "translate": "advancements.frv.kill_lord_of_corruption.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "frv:enter_the_matrix",
+  "criteria": {
+    "minecraft:blaze": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "frv:lord_of_corruption"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

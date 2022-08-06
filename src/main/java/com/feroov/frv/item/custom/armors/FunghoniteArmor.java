@@ -48,7 +48,7 @@ public class FunghoniteArmor extends GeoArmorItem implements IAnimatable {
     }
 
     private static final Map<ArmorMaterial, MobEffect> MATERIAL_TO_EFFECT_MAP = new ImmutableMap.Builder<ArmorMaterial,
-            MobEffect>().put(ModArmorMaterial.FUNGHONITE, MobEffects.NIGHT_VISION).build();
+            MobEffect>().put(ModArmorMaterial.FUNGHONITE, MobEffects.DIG_SPEED).build();
 
 
     @Override
@@ -80,6 +80,7 @@ public class FunghoniteArmor extends GeoArmorItem implements IAnimatable {
             {
                 addStatusEffectForMaterial(player, mapArmorMaterial, mapStatusEffect);
                 player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 150, 2));
+                player.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 250));
                 player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 150));
             }
         }

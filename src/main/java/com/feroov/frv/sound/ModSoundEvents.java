@@ -56,6 +56,10 @@ public class ModSoundEvents
     public static final RegistryObject<SoundEvent> CORRUPT_HURT = SOUND_EVENTS.register("corrupt_hurt", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "corrupt_hurt")));
     public static final RegistryObject<SoundEvent> CORRUPT_DEATH = SOUND_EVENTS.register("corrupt_death", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "corrupt_death")));
 
+    // Corrupt
+    public static final RegistryObject<SoundEvent> LORD_OF_CORRUPTION_AMBIENT = SOUND_EVENTS.register("lord_of_corruption_ambient", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "lord_of_corruption_ambient")));
+
+
     // Lost Person
     public static final RegistryObject<SoundEvent> LOST_PERSON = SOUND_EVENTS.register("lost_person", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "lost_person")));
     /****************************/
@@ -79,6 +83,7 @@ public class ModSoundEvents
 
     /*********** Musics ***********/
     public static final RegistryObject<SoundEvent> MATRIX_AMBIENCE = SOUND_EVENTS.register("matrix_ambience", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "matrix_ambience")));
+    public static final RegistryObject<SoundEvent> MUSIC_LOC = SOUND_EVENTS.register("music_loc", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "music_loc")));
     /****************************/
 
 

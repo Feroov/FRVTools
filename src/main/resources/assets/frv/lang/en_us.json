@@ -112,10 +112,13 @@
   "entity.frv.corrupt": "\u00A7a\u00A7kCorrupt §r§a Spawn",
   "item.frv.corrupt_zombie_spawn_egg": "§a§kco§r§aCorrupt Zombie§a§kco§r§a Spawn",
   "entity.frv.corrupt_zombie": "§a§kco§r§aCorrupt Zombie§a§kco",
+  "entity.frv.corrupt_minion": "§a§kCorrupt§k§a",
   "item.frv.corrupt_angel_spawn_egg": "§a§kco§r§aCorrupt Angel§a§kco§r§a Spawn",
   "entity.frv.corrupt_angel": "§a§kco§r§aCorrupt Angel§a§kco",
   "item.frv.corrupt_board_spawn_egg": "§a§kco§r§aCorrupt Board§a§kco§r§a",
   "entity.frv.corrupt_board": "§a§kco§r§aCorrupt Board§a§kco",
+  "item.frv.lord_of_corruption_spawn_egg": "§a§kco§r§aLord of Corruption§a§kco§r§a",
+  "entity.frv.lord_of_corruption": "§a§kco§r§aLord of Corruption§a§kco",
   "item.frv.mimic_spawn_egg": "Mimic Spawn",
   "entity.frv.mimic": "\u00A7l\u00A76Mimic\u00A76",
 
@@ -193,6 +196,8 @@
   "advancements.frv.kill_pcaptain.description": "Do you feel it now Krabs?",
   "advancements.frv.kill_corrupt.title": "§a§kco§r§a404§a§kco",
   "advancements.frv.kill_corrupt.description": "§a§kCorrupted§a",
+  "advancements.frv.kill_lord_of_corruption.title": "§a§kco§r§aBegone Evil!§a§kco",
+  "advancements.frv.kill_lord_of_corruption.description": "§a§kThe world has been cleansed§a",
   "advancements.frv.enter_the_matrix.title": "§a§kco§r§aNullPointerException§a§kco",
   "advancements.frv.enter_the_matrix.description": "§a§kco§r§aYou've made it§a§kco",
 

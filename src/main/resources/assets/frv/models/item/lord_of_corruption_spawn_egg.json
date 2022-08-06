@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "frv:item/lord_of_corruption_spawn_egg"
+  }
+}

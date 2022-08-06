@@ -137,23 +137,6 @@ public class Mimic extends Monster implements IAnimatable
     /*************************************************************************/
 
 
-//    public void remove(Entity.RemovalReason p_149847_)
-//    {
-//        int k = 1 + this.random.nextInt(1);
-//
-//        for(int l = 0; l < k; ++l) {
-//
-//            Pirate pirate = ModEntityTypes.PIRATE.get().create(this.level);
-//            if (this.isPersistenceRequired()) {
-//                pirate.setPersistenceRequired();
-//            }
-//            pirate.setInvulnerable(this.isInvulnerable());
-//            pirate.moveTo(this.getX(), this.getY(), this.getZ());
-//            this.level.addFreshEntity(pirate);
-//        }
-//        super.remove(p_149847_);
-//    }
-
     @Override
     public boolean isBaby()
     {

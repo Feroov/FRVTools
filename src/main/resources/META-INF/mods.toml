@@ -4,7 +4,7 @@ loaderVersion="[39,)"
 license="All rights reserved"
 [[mods]]
 modId="frv"
-version="1.19-2.1.0" #mandatory
+version="1.19.2-4.0.0" #mandatory
 displayName="FRV Tools"
 displayURL="https://www.curseforge.com/minecraft/mc-mods/frv-tools" #optional
 logoFile="frvtools.png" #optional
