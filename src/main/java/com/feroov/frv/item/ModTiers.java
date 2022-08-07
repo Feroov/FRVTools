@@ -1,17 +1,14 @@
 package com.feroov.frv.item;
 
-import com.feroov.frv.Frv;
+
 
 
 import com.feroov.frv.block.ModBlocks;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.Tiers;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.ForgeTier;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.TierSortingRegistry;
@@ -54,6 +51,12 @@ public class ModTiers
                     () -> Ingredient.of(ModItems.METEORITE_INGOT.get())),
             new ResourceLocation("frv:needs_funghonite_tool"),
             List.of(ModTiers.METEORITE), List.of());
+
+    public static final Tier HELLSTONE = TierSortingRegistry.registerTier(
+            new ForgeTier(7, 5163, 22.5f, 12.5f, 25, ModBlocks.Tags.NEEDS_HELLSTONE_TOOL,
+                    () -> Ingredient.of(ModItems.METEORITE_INGOT.get())),
+            new ResourceLocation("frv:needs_hellstone_tool"),
+            List.of(ModTiers.FUNGHONITE), List.of());
 
     public static final ForgeTier ADMIN = new ForgeTier(999,999999,999f,9999f,10,
             Tags.Blocks.NEEDS_GOLD_TOOL, () -> Ingredient.of(Items.AMETHYST_SHARD));

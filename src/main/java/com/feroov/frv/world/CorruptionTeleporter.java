@@ -35,32 +35,16 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Function;
 
-public class FRVTeleporter implements ITeleporter
+public class CorruptionTeleporter implements ITeleporter
 {
     public static BlockPos thisPos = BlockPos.ZERO;
     public static boolean insideDimension = true;
 
-    public FRVTeleporter(BlockPos pos, boolean insideDim)
+    public CorruptionTeleporter(BlockPos pos, boolean insideDim)
     {
         thisPos = pos;
         insideDimension = insideDim;
     }
-
-
-
-// The method I tried to use
-
-//    public void placeStructure(CommandSourceStack commandSourceStack, BlockPos pos, ServerLevel  destinationWorld)  {
-//        ServerLevel serverlevel = commandSourceStack.getLevel();
-//        ChunkGenerator chunkgenerator = serverlevel.getChunkSource().getGenerator();
-//        Structure structure = destinationWorld.registryAccess().registryOrThrow(Registry.STRUCTURE_REGISTRY).get
-//                (new ResourceLocation("frv", "camp_site"));
-//        structure.generate(commandSourceStack.registryAccess(), chunkgenerator, chunkgenerator.getBiomeSource(),
-//                serverlevel.getChunkSource().randomState(), serverlevel.getStructureManager(), serverlevel.getSeed(),
-//                new ChunkPos(pos), 0, serverlevel, (p_214580_) -> {
-//                    return true;
-//                });
-//    }
 
     @Override
     public Entity placeEntity(Entity entity, ServerLevel currentWorld, ServerLevel destinationWorld,
@@ -103,8 +87,6 @@ public class FRVTeleporter implements ITeleporter
             {
                 destinationWorld.setBlock(destinationPos, ModBlocks.MATRIX_PORTAL.get().defaultBlockState(), 3);
             }
-//            placeStructure(entity.createCommandSourceStack(), destinationPos, destinationWorld);
-            // I don't know if this is the correct location to put it
         }
 
         return entity;

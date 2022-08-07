@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "frv:loc_spawn",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 1393397986,
+    "spacing": 48,
+    "separation": 6,
+    "type": "minecraft:random_spread"
+  }
+}

@@ -53,6 +53,11 @@
   "item.frv.funghonite_axe": "\u00A7cFunghonite Axe",
   "item.frv.funghonite_shovel": "\u00A7cFunghonite Shovel",
   "item.frv.funghonite_hoe": "\u00A7cFunghonite Hoe",
+  "item.frv.hellstone_sword": "\u00A74Hellstone Sword",
+  "item.frv.hellstone_pickaxe": "\u00A74Hellstone Pickaxe",
+  "item.frv.hellstone_axe": "\u00A74Hellstone Axe",
+  "item.frv.hellstone_shovel": "\u00A74Hellstone Shovel",
+  "item.frv.hellstone_hoe": "\u00A74Hellstone Hoe",
 
   "item.frv.quartz_helmet": "Quartz Helmet",
   "item.frv.quartz_chestplate": "Quartz Chestplate",
@@ -90,6 +95,10 @@
   "item.frv.funghonite_chestplate": "\u00A7cFunghonite Chestplate",
   "item.frv.funghonite_leggings": "\u00A7cFunghonite Leggings",
   "item.frv.funghonite_boots": "\u00A7cFunghonite Boots",
+  "item.frv.hellstone_helmet": "\u00A74Hellstone Helmet",
+  "item.frv.hellstone_chestplate": "\u00A74Hellstone Chestplate",
+  "item.frv.hellstone_leggings": "\u00A74Hellstone Leggings",
+  "item.frv.hellstone_boots": "\u00A74Hellstone Boots",
 
 
   "item.frv.croaker_spawn_egg": "Croaker Spawn",

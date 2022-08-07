@@ -116,7 +116,7 @@ public class CorruptAngel extends FlyingMob implements IAnimatable, IAnimationTi
     public static AttributeSupplier.Builder createAttributes()
     {
         return Mob.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 60.0D)
+                .add(Attributes.MAX_HEALTH, 200.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.62D)
                 .add(Attributes.FOLLOW_RANGE, 50.0D)
                 .add(Attributes.FLYING_SPEED, 20.90D)

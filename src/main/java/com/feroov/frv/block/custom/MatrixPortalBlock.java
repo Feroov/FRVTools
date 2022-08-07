@@ -3,11 +3,9 @@ package com.feroov.frv.block.custom;
 
 import com.feroov.frv.init.ModParticles;
 import com.feroov.frv.sound.ModSoundEvents;
-import com.feroov.frv.world.FRVTeleporter;
+import com.feroov.frv.world.CorruptionTeleporter;
 import com.feroov.frv.world.ModDimensions;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
@@ -15,19 +13,10 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.shapes.VoxelShape;
-
-import javax.annotation.Nullable;
 
 public class MatrixPortalBlock extends Block {
 
@@ -46,12 +35,12 @@ public class MatrixPortalBlock extends Block {
                     if (pLevel.dimension() == ModDimensions.KJDIM_KEY) {
                         ServerLevel overWorld = server.getLevel(Level.OVERWORLD);
                         if (overWorld != null) {
-                            pPlayer.changeDimension(overWorld, new FRVTeleporter(pPos, false));
+                            pPlayer.changeDimension(overWorld, new CorruptionTeleporter(pPos, false));
                         }
                     } else {
                         ServerLevel kjDim = server.getLevel(ModDimensions.KJDIM_KEY);
                         if (kjDim != null) {
-                            pPlayer.changeDimension(kjDim, new FRVTeleporter(pPos, true));
+                            pPlayer.changeDimension(kjDim, new CorruptionTeleporter(pPos, true));
                         }
                     }
                     return InteractionResult.SUCCESS;

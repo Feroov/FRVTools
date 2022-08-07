@@ -168,6 +168,7 @@ public class ModBlocks
     {
         public static final TagKey<Block> NEEDS_METEORITE_TOOL = create("needs_meteorite_tool");
         public static final TagKey<Block> NEEDS_FUNGHONITE_TOOL = create("needs_funghonite_tool");
+        public static final TagKey<Block> NEEDS_HELLSTONE_TOOL = create("needs_hellstone_tool");
 
         private static TagKey<Block> create(String location)
         {

@@ -121,10 +121,10 @@ public class CorruptZombie extends Monster implements IAnimatable, IAnimationTic
     public static AttributeSupplier.Builder createAttributes()
     {
         return Mob.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 50.0D)
+                .add(Attributes.MAX_HEALTH, 100.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.72D)
                 .add(Attributes.FOLLOW_RANGE, 35.0D)
-                .add(Attributes.ATTACK_DAMAGE, 18.0D);
+                .add(Attributes.ATTACK_DAMAGE, 100.0D);
     }
 
     @Override

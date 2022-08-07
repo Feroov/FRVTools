@@ -4,6 +4,7 @@ import com.feroov.frv.Frv;
 import com.feroov.frv.init.ModEntityTypes;
 import com.feroov.frv.item.custom.armors.AmethystArmor;
 import com.feroov.frv.item.custom.armors.FunghoniteArmor;
+import com.feroov.frv.item.custom.armors.HellstoneArmor;
 import com.feroov.frv.item.custom.armors.MeteoriteArmor;
 import com.feroov.frv.item.custom.items.*;
 import com.feroov.frv.item.custom.ranged.Musket;
@@ -14,6 +15,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -228,20 +230,34 @@ public class ModItems
     public static final RegistryObject<Item> FUNGHONITE_BOOTS = ITEMS.register("funghonite_boots", () -> new FunghoniteArmor(ModArmorMaterial.FUNGHONITE, EquipmentSlot.FEET, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
     /***********************************************************************************************/
 
-    /**
-    @Override
-    public boolean hurtEnemy(ItemStack p_41395_, LivingEntity p_41396_, LivingEntity p_41397_)
-    {
-        if(!p_41397_.level.isClientSide())
-        {
-            p_41396_.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, 200, 1));
-        }
-        return super.hurtEnemy(p_41395_, p_41396_, p_41397_);
-    }**/
+    /**********************************  (HELLSTONE)  **********************************************/
+    public static final RegistryObject<Item> HELLSTONE_SWORD = ITEMS.register("hellstone_sword", () -> new SwordItem(ModTiers.HELLSTONE, 3, -2.4f, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()) { @Override public boolean hurtEnemy(ItemStack itemStack, LivingEntity livingEntity, LivingEntity livingEntity1) { livingEntity.setSecondsOnFire(30); return super.hurtEnemy(itemStack, livingEntity, livingEntity1); }});
+    public static final RegistryObject<Item> HELLSTONE_PICKAXE = ITEMS.register("hellstone_pickaxe", () -> new PickaxeItem(ModTiers.HELLSTONE, -5, -2.8f, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
+    public static final RegistryObject<Item> HELLSTONE_AXE = ITEMS.register("hellstone_axe", () -> new AxeItem(ModTiers.HELLSTONE, 6, -3f, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
+    public static final RegistryObject<Item> HELLSTONE_SHOVEL = ITEMS.register("hellstone_shovel", () -> new ShovelItem(ModTiers.HELLSTONE, -5.5f, -3.1f, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
+    public static final RegistryObject<Item> HELLSTONE_HOE = ITEMS.register("hellstone_hoe", () -> new HoeItem(ModTiers.HELLSTONE, -1, -5f, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
+    public static final RegistryObject<Item> HELLSTONE_HELMET = ITEMS.register("hellstone_helmet", () -> new HellstoneArmor(ModArmorMaterial.HELLSTONE, EquipmentSlot.HEAD, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
+    public static final RegistryObject<Item> HELLSTONE_CHESTPLATE = ITEMS.register("hellstone_chestplate", () -> new HellstoneArmor(ModArmorMaterial.HELLSTONE, EquipmentSlot.CHEST, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
+    public static final RegistryObject<Item> HELLSTONE_LEGGINGS = ITEMS.register("hellstone_leggings", () -> new HellstoneArmor(ModArmorMaterial.HELLSTONE, EquipmentSlot.LEGS, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
+    public static final RegistryObject<Item> HELLSTONE_BOOTS = ITEMS.register("hellstone_boots", () -> new HellstoneArmor(ModArmorMaterial.HELLSTONE, EquipmentSlot.FEET, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
+    /***********************************************************************************************/
+
+
+
+//    @Override
+//    public boolean hurtEnemy(ItemStack p_41395_, LivingEntity p_41396_, LivingEntity p_41397_)
+//    {
+//        if(!p_41397_.level.isClientSide())
+//        {
+//            p_41396_.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, 200, 1));
+//        }
+//        return super.hurtEnemy(p_41395_, p_41396_, p_41397_);
+//    }
 
 //@Override
 //public boolean hurtEnemy(ItemStack itemStack, LivingEntity livingEntity, LivingEntity livingEntity1)
 //{
+//    livingEntity.setSecondsOnFire(30);
 //    if(!livingEntity.level.isClientSide())
 //    {
 //        ServerLevel world = (ServerLevel) livingEntity.level;

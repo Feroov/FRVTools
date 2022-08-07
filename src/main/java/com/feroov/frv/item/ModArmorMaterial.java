@@ -39,7 +39,10 @@ public enum ModArmorMaterial implements ArmorMaterial
             5.5F, 1.0F, () -> {return Ingredient.of(ModItems.METEORITE_INGOT.get());}),
 
     FUNGHONITE("funghonite", 49, new int[]{3, 6, 8, 3}, 21, SoundEvents.SCULK_BLOCK_BREAK,
-        6.5F, 1.2F, () -> {return Ingredient.of(ModItems.METEORITE_INGOT.get());});
+        6.5F, 1.2F, () -> {return Ingredient.of(ModItems.METEORITE_INGOT.get());}),
+
+    HELLSTONE("hellstone", 57, new int[]{3, 6, 8, 3}, 31, SoundEvents.ANCIENT_DEBRIS_BREAK,
+        9.5F, 2.2F, () -> {return Ingredient.of(ModItems.METEORITE_INGOT.get());});
 
     /**
      *    LEATHER("leather", 5, new int[]{1, 2, 3, 1}, 15, SoundEvents.ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, () -> {
