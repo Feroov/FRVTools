@@ -83,7 +83,7 @@ public class ModSoundEvents
 
     /*********** Musics ***********/
     public static final RegistryObject<SoundEvent> MATRIX_AMBIENCE = SOUND_EVENTS.register("matrix_ambience", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "matrix_ambience")));
-    public static final RegistryObject<SoundEvent> MUSIC_LOC = SOUND_EVENTS.register("music_loc", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "music_loc")));
+    public static final RegistryObject<SoundEvent> VOID_AMBIENCE = SOUND_EVENTS.register("void_ambience", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "void_ambience")));
     /****************************/
 
 

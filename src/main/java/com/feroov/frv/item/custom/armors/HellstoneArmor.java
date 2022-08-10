@@ -55,8 +55,9 @@ public class HellstoneArmor extends ArmorItem  {
             if(hasCorrectArmorOn(mapArmorMaterial, player))
             {
                 addStatusEffectForMaterial(player, mapArmorMaterial, mapStatusEffect);
-                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 150, 3));
+                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 150, 1));
                 player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 250));
+                player.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 250));
             }
         }
     }

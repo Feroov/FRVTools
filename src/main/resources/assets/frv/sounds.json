@@ -181,6 +181,7 @@
   "corrupt_fire": {"category": "misc", "sounds": [{"name": "frv:corrupt_fire"}], "subtitle": "frv.corrupt_fire"},
   "silent": {"category": "misc", "sounds": [{"name": "frv:silent"}], "subtitle": "frv.silent"},
   "matrix_ambience": {"category": "misc", "sounds": [{"name": "frv:matrix_ambience"}], "subtitle": "frv.matrix_ambience"},
+  "void_ambience": {"category": "misc", "sounds": [{"name": "frv:void_ambience"}], "subtitle": "frv.void_ambience"},
   "glitch": {"category": "misc", "sounds": [{"name": "frv:glitch"}], "subtitle": "frv.glitch"},
   "corrupt_ore_place": {"category": "misc", "sounds": [{"name": "frv:corrupt_ore_place"}], "subtitle": "frv.corrupt_ore_place"},
   "corrupt_step": {"category": "misc", "sounds": [{"name": "frv:corrupt_step"}], "subtitle": "frv.corrupt_step"},

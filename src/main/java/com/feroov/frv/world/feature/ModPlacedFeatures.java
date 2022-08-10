@@ -48,6 +48,21 @@ public class ModPlacedFeatures
                     commonOrePlacement(5,
                             HeightRangePlacement.triangle(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(40)))));
 
+    public static final RegistryObject<PlacedFeature> HELLSTONE = PLACED_FEATURES.register("hellstone_ore_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.HELLSTONE_ORE.getHolder().get(),
+                    commonOrePlacement(9,
+                            HeightRangePlacement.triangle(VerticalAnchor.absolute(8), VerticalAnchor.absolute(25)))));
+
+    public static final RegistryObject<PlacedFeature> ENDRIUM = PLACED_FEATURES.register("endrium_ore_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.ENDRIUM_ORE.getHolder().get(),
+                    commonOrePlacement(9,
+                            HeightRangePlacement.triangle(VerticalAnchor.absolute(-10), VerticalAnchor.absolute(55)))));
+
+    public static final RegistryObject<PlacedFeature> VOID_ORE = PLACED_FEATURES.register("void_ore_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.VOID_OREE.getHolder().get(),
+                    commonOrePlacement(9,
+                            HeightRangePlacement.triangle(VerticalAnchor.absolute(-40), VerticalAnchor.absolute(5)))));
+
     public static final RegistryObject<PlacedFeature> CORRUPT_ORE = PLACED_FEATURES.register("corrupt_ore_placed",
             () -> new PlacedFeature(ModConfiguredFeatures.MATRIX_ORE.getHolder().get(),
                     commonOrePlacement(7,

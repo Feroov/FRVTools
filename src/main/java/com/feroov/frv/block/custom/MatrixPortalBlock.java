@@ -5,6 +5,7 @@ import com.feroov.frv.init.ModParticles;
 import com.feroov.frv.sound.ModSoundEvents;
 import com.feroov.frv.world.CorruptionTeleporter;
 import com.feroov.frv.world.ModDimensions;
+import com.feroov.frv.world.VoidTeleporter;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
@@ -12,6 +13,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.*;
@@ -32,13 +34,13 @@ public class MatrixPortalBlock extends Block {
                 MinecraftServer server = pLevel.getServer();
 
                 if (server != null) {
-                    if (pLevel.dimension() == ModDimensions.KJDIM_KEY) {
+                    if (pLevel.dimension() == ModDimensions.CORRUPT_KEY) {
                         ServerLevel overWorld = server.getLevel(Level.OVERWORLD);
                         if (overWorld != null) {
                             pPlayer.changeDimension(overWorld, new CorruptionTeleporter(pPos, false));
                         }
                     } else {
-                        ServerLevel kjDim = server.getLevel(ModDimensions.KJDIM_KEY);
+                        ServerLevel kjDim = server.getLevel(ModDimensions.CORRUPT_KEY);
                         if (kjDim != null) {
                             pPlayer.changeDimension(kjDim, new CorruptionTeleporter(pPos, true));
                         }
@@ -48,6 +50,31 @@ public class MatrixPortalBlock extends Block {
             }
         }
         return super.use(pState, pLevel, pPos, pPlayer, pHand, pHit);
+    }
+
+    @Override
+    public void stepOn(Level pLevel, BlockPos pPos, BlockState pState, Entity pEntity) {
+
+        if (!pLevel.isClientSide()) {
+            if (!pEntity.isCrouching()) {
+                MinecraftServer server = pLevel.getServer();
+
+                if (server != null) {
+                    if (pLevel.dimension() == ModDimensions.CORRUPT_KEY) {
+                        ServerLevel overWorld = server.getLevel(Level.OVERWORLD);
+                        if (overWorld != null) {
+                            pEntity.changeDimension(overWorld, new VoidTeleporter(pPos, false));
+                        }
+                    } else {
+                        ServerLevel kjDim = server.getLevel(ModDimensions.CORRUPT_KEY);
+                        if (kjDim != null) {
+                            pEntity.changeDimension(kjDim, new VoidTeleporter(pPos, true));
+                        }
+                    }
+                }
+            }
+        }
+        super.stepOn(pLevel, pPos, pState, pEntity);
     }
 
 

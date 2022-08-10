@@ -14,6 +14,11 @@
     "frv:matrix_portal",
     "frv:corrupt_ore",
     "frv:matrix_portal",
-    "frv:funghonite_ore"
+    "frv:void_gateway",
+    "frv:funghonite_ore",
+    "frv:hellstone",
+    "frv:endrium",
+    "frv:void_ore",
+    "frv:void_fabric"
   ]
 }

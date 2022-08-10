@@ -32,17 +32,20 @@ public enum ModArmorMaterial implements ArmorMaterial
     PLATINUM("platinum", 30, new int[]{3, 6, 8, 3}, 15, SoundEvents.ARMOR_EQUIP_IRON,
             1.35F, 0.0F, () -> {return Ingredient.of(ModItems.PLATINUM_INGOT.get());}),
 
-    AMETHYST("amethyst", 36, new int[]{3, 6, 8, 3}, 18, SoundEvents.AMETHYST_CLUSTER_HIT,
+    AMETHYST("amethyst", 36, new int[]{5, 11, 9, 5}, 18, SoundEvents.AMETHYST_CLUSTER_HIT,
             1.8F, 0.1F, () -> {return Ingredient.of(Items.AMETHYST_SHARD);}),
 
-    METEORITE("meteorite", 42, new int[]{3, 6, 8, 3}, 18, SoundEvents.ANCIENT_DEBRIS_BREAK,
+    METEORITE("meteorite", 42, new int[]{18, 36, 18, 9}, 18, SoundEvents.ANCIENT_DEBRIS_BREAK,
             5.5F, 1.0F, () -> {return Ingredient.of(ModItems.METEORITE_INGOT.get());}),
 
-    FUNGHONITE("funghonite", 49, new int[]{3, 6, 8, 3}, 21, SoundEvents.SCULK_BLOCK_BREAK,
+    FUNGHONITE("funghonite", 69, new int[]{26, 46, 28, 15}, 21, SoundEvents.SCULK_BLOCK_BREAK,
         6.5F, 1.2F, () -> {return Ingredient.of(ModItems.METEORITE_INGOT.get());}),
 
-    HELLSTONE("hellstone", 57, new int[]{3, 6, 8, 3}, 31, SoundEvents.ANCIENT_DEBRIS_BREAK,
-        9.5F, 2.2F, () -> {return Ingredient.of(ModItems.METEORITE_INGOT.get());});
+    HELLSTONE("hellstone", 94, new int[]{37, 54, 48, 21}, 31, SoundEvents.ANCIENT_DEBRIS_BREAK,
+        12.5F, 2.2F, () -> {return Ingredient.of(ModItems.HELLSTONE_INGOT.get());}),
+
+    ENDRIUM("endrium", 130, new int[]{49, 68, 48, 35}, 61, SoundEvents.ENDERMAN_TELEPORT,
+        34.5F, 3.2F, () -> {return Ingredient.of(ModItems.ENDRIUM_GEM.get());});
 
     /**
      *    LEATHER("leather", 5, new int[]{1, 2, 3, 1}, 15, SoundEvents.ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, () -> {
@@ -68,7 +71,7 @@ public enum ModArmorMaterial implements ArmorMaterial
      *    });
      */
 
-    private static final int[] HEALTH_PER_SLOT = new int[]{13, 15, 16, 11};
+    private static final int[] HEALTH_PER_SLOT = new int[]{83, 85, 86, 81};
     private final String name;
     private final int durabilityMultiplier;
     private final int[] slotProtections;
@@ -78,17 +81,17 @@ public enum ModArmorMaterial implements ArmorMaterial
     private final float knockbackResistance;
     private final LazyLoadedValue<Ingredient> repairIngredient;
 
-    private ModArmorMaterial(String p_40474_, int p_40475_, int[] p_40476_, int p_40477_,
-                             SoundEvent p_40478_, float p_40479_, float p_40480_, Supplier<Ingredient> p_40481_)
+    private ModArmorMaterial(String name, int durabilityMultiplier, int[] slotProtections, int enchantmentValue,
+                             SoundEvent sound, float toughness, float knockbackResistance, Supplier<Ingredient> repairIngredient)
     {
-        this.name = p_40474_;
-        this.durabilityMultiplier = p_40475_;
-        this.slotProtections = p_40476_;
-        this.enchantmentValue = p_40477_;
-        this.sound = p_40478_;
-        this.toughness = p_40479_;
-        this.knockbackResistance = p_40480_;
-        this.repairIngredient = new LazyLoadedValue<>(p_40481_);
+        this.name = name;
+        this.durabilityMultiplier = durabilityMultiplier;
+        this.slotProtections = slotProtections;
+        this.enchantmentValue = enchantmentValue;
+        this.sound = sound;
+        this.toughness = toughness;
+        this.knockbackResistance = knockbackResistance;
+        this.repairIngredient = new LazyLoadedValue<>(repairIngredient);
     }
 
     public int getDurabilityForSlot(EquipmentSlot pSlot)

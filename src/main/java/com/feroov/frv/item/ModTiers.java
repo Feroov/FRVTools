@@ -1,8 +1,5 @@
 package com.feroov.frv.item;
 
-
-
-
 import com.feroov.frv.block.ModBlocks;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
@@ -47,16 +44,22 @@ public class ModTiers
             List.of(Tiers.NETHERITE), List.of());
 
     public static final Tier FUNGHONITE = TierSortingRegistry.registerTier(
-            new ForgeTier(6, 3863, 16.5f, 9.5f, 15, ModBlocks.Tags.NEEDS_FUNGHONITE_TOOL,
+            new ForgeTier(6, 3863, 14.5f, 9.5f, 15, ModBlocks.Tags.NEEDS_FUNGHONITE_TOOL,
                     () -> Ingredient.of(ModItems.METEORITE_INGOT.get())),
             new ResourceLocation("frv:needs_funghonite_tool"),
             List.of(ModTiers.METEORITE), List.of());
 
     public static final Tier HELLSTONE = TierSortingRegistry.registerTier(
-            new ForgeTier(7, 5163, 22.5f, 12.5f, 25, ModBlocks.Tags.NEEDS_HELLSTONE_TOOL,
+            new ForgeTier(7, 5163, 16.5f, 14.5f, 25, ModBlocks.Tags.NEEDS_HELLSTONE_TOOL,
                     () -> Ingredient.of(ModItems.METEORITE_INGOT.get())),
             new ResourceLocation("frv:needs_hellstone_tool"),
             List.of(ModTiers.FUNGHONITE), List.of());
+
+    public static final Tier ENDRIUM = TierSortingRegistry.registerTier(
+            new ForgeTier(8, 7163, 21.5f, 21.5f, 25, ModBlocks.Tags.NEEDS_ENDRIUM_TOOL,
+                    () -> Ingredient.of(ModItems.METEORITE_INGOT.get())),
+            new ResourceLocation("frv:needs_endrium_tool"),
+            List.of(ModTiers.HELLSTONE), List.of());
 
     public static final ForgeTier ADMIN = new ForgeTier(999,999999,999f,9999f,10,
             Tags.Blocks.NEEDS_GOLD_TOOL, () -> Ingredient.of(Items.AMETHYST_SHARD));

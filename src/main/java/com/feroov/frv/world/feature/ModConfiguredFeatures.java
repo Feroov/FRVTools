@@ -5,9 +5,11 @@ import com.feroov.frv.block.ModBlocks;
 import com.google.common.base.Suppliers;
 import net.minecraft.core.Registry;
 import net.minecraft.data.worldgen.features.OreFeatures;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
+import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
@@ -41,6 +43,15 @@ public class ModConfiguredFeatures
 
     public static final Supplier<List<OreConfiguration.TargetBlockState>> FUNGHONITE_ORE = Suppliers.memoize(() -> List.of(
             OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ModBlocks.FUNGHONITE_ORE.get().defaultBlockState())));
+
+    public static final Supplier<List<OreConfiguration.TargetBlockState>> HELLSTONE = Suppliers.memoize(() -> List.of(
+            OreConfiguration.target(OreFeatures.NETHERRACK, ModBlocks.HELLSTONE.get().defaultBlockState())));
+
+    public static final Supplier<List<OreConfiguration.TargetBlockState>> ENDRIUM = Suppliers.memoize(() -> List.of(
+            OreConfiguration.target(new BlockMatchTest(Blocks.END_STONE), ModBlocks.ENDRIUM.get().defaultBlockState())));
+
+    public static final Supplier<List<OreConfiguration.TargetBlockState>> VOID_ORE = Suppliers.memoize(() -> List.of(
+            OreConfiguration.target(new BlockMatchTest(ModBlocks.VOID_FABRIC.get()), ModBlocks.VOID_ORE.get().defaultBlockState())));
 
     public static final Supplier<List<OreConfiguration.TargetBlockState>> CORRUPT_ORE = Suppliers.memoize(() -> List.of(
             OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ModBlocks.CORRUPT_ORE.get().defaultBlockState())));
@@ -85,6 +96,21 @@ public class ModConfiguredFeatures
     /************************************************ FUNGHONITE ORE *****************************************************************/
     public static final RegistryObject<ConfiguredFeature<?, ?>> FUNGAL_ORE = CONFIGURED_FEATURES.register("funghonite_ore",
             () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(Objects.requireNonNull(FUNGHONITE_ORE.get()), 7)));
+    /************************************************************************************************************************/
+
+    /************************************************ HELLSTONE *****************************************************************/
+    public static final RegistryObject<ConfiguredFeature<?, ?>> HELLSTONE_ORE = CONFIGURED_FEATURES.register("hellstone",
+            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(Objects.requireNonNull(HELLSTONE.get()), 7)));
+    /************************************************************************************************************************/
+
+    /************************************************ ENDRIUM *****************************************************************/
+    public static final RegistryObject<ConfiguredFeature<?, ?>> ENDRIUM_ORE = CONFIGURED_FEATURES.register("endrium",
+            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(Objects.requireNonNull(ENDRIUM.get()), 7)));
+    /************************************************************************************************************************/
+
+    /************************************************ VOID ORE *****************************************************************/
+    public static final RegistryObject<ConfiguredFeature<?, ?>> VOID_OREE = CONFIGURED_FEATURES.register("void_ore",
+            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(Objects.requireNonNull(VOID_ORE.get()), 7)));
     /************************************************************************************************************************/
 
     /************************************************ CORRUPT ORE *****************************************************************/

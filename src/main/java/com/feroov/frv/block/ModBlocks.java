@@ -2,6 +2,7 @@ package com.feroov.frv.block;
 
 import com.feroov.frv.Frv;
 import com.feroov.frv.block.custom.MatrixPortalBlock;
+import com.feroov.frv.block.custom.VoidPortalBlock;
 import com.feroov.frv.item.ModItemGroup;
 import com.feroov.frv.item.ModItems;
 import com.feroov.frv.sound.ModSoundEvents;
@@ -108,6 +109,89 @@ public class ModBlocks
                 }
             });
 
+    public static final RegistryObject<Block> HELLSTONE = registerBlock("hellstone",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(75.0F, 70.0F)
+                    .requiresCorrectToolForDrops().lightLevel((light) -> {return 15;}))
+            {
+                @Override
+                public void stepOn(Level pLevel, BlockPos pPos, BlockState pState, Entity pEntity) {
+                    if(!pLevel.isClientSide())
+                    {
+                        if(pEntity instanceof LivingEntity)
+                        {
+                            LivingEntity entity = ((LivingEntity) pEntity);
+                            entity.addEffect(new MobEffectInstance(MobEffects.POISON, 140));
+                            entity.setSecondsOnFire(15);
+                        }
+                    }
+
+                    super.stepOn(pLevel, pPos, pState, pEntity);
+                }
+            });
+
+    public static final RegistryObject<Block> ENDRIUM = registerBlock("endrium",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(95.0F, 75.0F)
+                    .requiresCorrectToolForDrops()
+                    .sound(new
+                            ForgeSoundType(1f,1f, () -> SoundEvents.ENDERMAN_TELEPORT,
+                            () -> SoundEvents.ENDERMITE_AMBIENT, //step
+                            () -> SoundEvents.ENDERMAN_TELEPORT, //place
+                            () -> SoundEvents.DEEPSLATE_HIT, //hit
+                            () -> SoundEvents.ENDERMAN_TELEPORT)))
+            {
+                @Override
+                public void stepOn(Level pLevel, BlockPos pPos, BlockState pState, Entity pEntity) {
+                    if(!pLevel.isClientSide())
+                    {
+                        if(pEntity instanceof LivingEntity)
+                        {
+                            LivingEntity entity = ((LivingEntity) pEntity);
+                            entity.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 140));
+                        }
+                    }
+
+                    super.stepOn(pLevel, pPos, pState, pEntity);
+                }
+            });
+
+    public static final RegistryObject<Block> VOID_FABRIC = registerBlock("void_fabric",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(0.2F)
+                    .sound(new
+                            ForgeSoundType(1f,1f, () -> SoundEvents.WOOL_BREAK,
+                            () -> SoundEvents.WOOL_STEP, //step
+                            () -> SoundEvents.WOOL_PLACE, //place
+                            () -> SoundEvents.WOOL_HIT, //hit
+                            () -> SoundEvents.WOOL_FALL))));
+
+    public static final RegistryObject<Block> VOID_ORE = registerBlock("void_ore",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(125.0F, 90.0F)
+                    .requiresCorrectToolForDrops()
+                    .sound(new
+                            ForgeSoundType(1f,1f, () -> SoundEvents.ENDERMAN_TELEPORT,
+                            () -> SoundEvents.ENDERMITE_AMBIENT, //step
+                            () -> SoundEvents.ENDERMAN_TELEPORT, //place
+                            () -> SoundEvents.DEEPSLATE_HIT, //hit
+                            () -> SoundEvents.ENDERMAN_TELEPORT)))
+            {
+                @Override
+                public void stepOn(Level pLevel, BlockPos pPos, BlockState pState, Entity pEntity) {
+                    if(!pLevel.isClientSide())
+                    {
+                        if(pEntity instanceof LivingEntity)
+                        {
+                            LivingEntity entity = ((LivingEntity) pEntity);
+                            entity.addEffect(new MobEffectInstance(MobEffects.DARKNESS, 500));
+                        }
+                    }
+
+                    super.stepOn(pLevel, pPos, pState, pEntity);
+                }
+            });
+
+    public static final RegistryObject<Block> VOID_GATEWAY = registerBlock("void_gateway",
+            () -> new VoidPortalBlock(BlockBehaviour.Properties.of(Material.STONE).strength(15.0F, 15.0F)
+                    .sound(SoundType.STONE)));
+
     public static final RegistryObject<Block> CORRUPT_ORE = registerBlock("corrupt_ore",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength
                     (60.0f, 70.0F).requiresCorrectToolForDrops().sound(new
@@ -169,6 +253,7 @@ public class ModBlocks
         public static final TagKey<Block> NEEDS_METEORITE_TOOL = create("needs_meteorite_tool");
         public static final TagKey<Block> NEEDS_FUNGHONITE_TOOL = create("needs_funghonite_tool");
         public static final TagKey<Block> NEEDS_HELLSTONE_TOOL = create("needs_hellstone_tool");
+        public static final TagKey<Block> NEEDS_ENDRIUM_TOOL = create("needs_endrium_tool");
 
         private static TagKey<Block> create(String location)
         {

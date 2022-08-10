@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#/#",
+    " / "
+  ],
+  "key": {
+    "#": {
+      "item": "frv:hellstone_ingot"
+    },
+    "/": {
+      "item": "minecraft:obsidian"
+    }
+  },
+  "result": {
+    "item": "frv:hellstone_axe",
+    "count": 1
+  }
+}

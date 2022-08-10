@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "frv:hellstone"
+  },
+  "result": "frv:hellstone_ingot",
+  "experience": 3.0,
+  "cookingtime": 500
+}
