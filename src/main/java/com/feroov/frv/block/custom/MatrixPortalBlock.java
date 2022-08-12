@@ -52,32 +52,6 @@ public class MatrixPortalBlock extends Block {
         return super.use(pState, pLevel, pPos, pPlayer, pHand, pHit);
     }
 
-    @Override
-    public void stepOn(Level pLevel, BlockPos pPos, BlockState pState, Entity pEntity) {
-
-        if (!pLevel.isClientSide()) {
-            if (!pEntity.isCrouching()) {
-                MinecraftServer server = pLevel.getServer();
-
-                if (server != null) {
-                    if (pLevel.dimension() == ModDimensions.CORRUPT_KEY) {
-                        ServerLevel overWorld = server.getLevel(Level.OVERWORLD);
-                        if (overWorld != null) {
-                            pEntity.changeDimension(overWorld, new VoidTeleporter(pPos, false));
-                        }
-                    } else {
-                        ServerLevel kjDim = server.getLevel(ModDimensions.CORRUPT_KEY);
-                        if (kjDim != null) {
-                            pEntity.changeDimension(kjDim, new VoidTeleporter(pPos, true));
-                        }
-                    }
-                }
-            }
-        }
-        super.stepOn(pLevel, pPos, pState, pEntity);
-    }
-
-
     public void animateTick(BlockState blockstate, Level level, BlockPos blockPos, RandomSource randomSource)
     {
         if (randomSource.nextInt(10) == 0) {

@@ -30,6 +30,7 @@ public class ModEvents
         event.put(ModEntityTypes.FLINTLOCKER.get(), Flintlocker.createAttributes().build());
         event.put(ModEntityTypes.PIRATE.get(), Pirate.createAttributes().build());
         event.put(ModEntityTypes.CANNON.get(), Cannon.createAttributes().build());
+        event.put(ModEntityTypes.LOST_SOUL.get(), LostSoul.createAttributes().build());
         event.put(ModEntityTypes.CORRUPT.get(), Corrupt.createAttributes().build());
         event.put(ModEntityTypes.CORRUPT_MINION.get(), CorruptMinion.createAttributes().build());
         event.put(ModEntityTypes.CORRUPT_ANGEL.get(), CorruptAngel.createAttributes().build());

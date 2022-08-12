@@ -10,7 +10,10 @@ import com.feroov.frv.entities.passive.LostPerson;
 import com.feroov.frv.entities.projectiles.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.MobCategory;
+import net.minecraft.world.entity.SpawnPlacements;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -51,6 +54,10 @@ public class ModEntityTypes
     public static final RegistryObject<EntityType<Flintlocker>> FLINTLOCKER = ENTITIES.register("flintlocker",
             () -> EntityType.Builder.of(Flintlocker::new, MobCategory.CREATURE).canSpawnFarFromPlayer()
                     .sized(0.7f,1.8f).build("flintlocker"));
+
+    public static final RegistryObject<EntityType<LostSoul>> LOST_SOUL = ENTITIES.register("lost_soul",
+            () -> EntityType.Builder.of(LostSoul::new, MobCategory.CREATURE).canSpawnFarFromPlayer().fireImmune()
+                    .sized(0.7f,1.8f).build("lost_soul"));
 
     public static final RegistryObject<EntityType<Corrupt>> CORRUPT = ENTITIES.register("corrupt",
             () -> EntityType.Builder.of(Corrupt::new, MobCategory.CREATURE).canSpawnFarFromPlayer().fireImmune()
@@ -113,6 +120,12 @@ public class ModEntityTypes
             () -> EntityType.Builder.of(CorruptBoard::new, MobCategory.CREATURE).fireImmune()
                     .sized(0.9f,0.9f).fireImmune().build("corrupt_board"));
 
+    public static void registerAdditionalEntityInformation() {
+        registerEntitySpawnRestrictions();
+    }
 
+    private static void registerEntitySpawnRestrictions() {
+        SpawnPlacements.register(LOST_SOUL.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Mob::checkMobSpawnRules);
+    }
 }
 

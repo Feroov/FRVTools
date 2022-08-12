@@ -47,6 +47,7 @@ public class ClientModEvents
         event.registerEntityRenderer(ModEntityTypes.PIRATE_CAPTAIN.get(), PirateCaptainRenderer::new);
         event.registerEntityRenderer(ModEntityTypes.FLINTLOCKER.get(), FlintlockerRenderer::new);
         event.registerEntityRenderer(ModEntityTypes.PIRATE.get(), PirateRenderer::new);
+        event.registerEntityRenderer(ModEntityTypes.LOST_SOUL.get(), LostSoulRenderer::new);
         event.registerEntityRenderer(ModEntityTypes.CORRUPT.get(), CorruptRenderer::new);
         event.registerEntityRenderer(ModEntityTypes.CORRUPT_MINION.get(), CorruptMinionRenderer::new);
         event.registerEntityRenderer(ModEntityTypes.CORRUPT_ANGEL.get(), CorruptAngelRenderer::new);

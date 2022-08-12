@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "frv:void_tree",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 1139626839,
+    "spacing": 6,
+    "separation": 2,
+    "type": "minecraft:random_spread"
+  }
+}

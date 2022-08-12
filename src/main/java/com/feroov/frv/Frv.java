@@ -76,5 +76,9 @@ public class Frv
     }
 
 
-    private void setup(final FMLCommonSetupEvent event)  { FrvPacketHandler.register(); }
+    private void setup(final FMLCommonSetupEvent event)
+    {
+        FrvPacketHandler.register();
+        ModEntityTypes.registerAdditionalEntityInformation();
+    }
 }

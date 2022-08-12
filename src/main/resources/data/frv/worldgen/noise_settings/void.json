@@ -5,7 +5,7 @@
   "ore_veins_enabled": false,
   "legacy_random_source": true,
   "default_block": {
-    "Name": "minecraft:netherrack"
+    "Name": "frv:void_fabric"
   },
   "default_fluid": {
     "Name": "minecraft:air",
@@ -14,8 +14,8 @@
     }
   },
   "noise": {
-    "min_y": -64,
-    "height": 384,
+    "min_y": 0,
+    "height": 128,
     "size_horizontal": 1,
     "size_vertical": 2
   },
@@ -73,13 +73,13 @@
                   "argument1": -2.5,
                   "argument2": {
                     "type": "minecraft:add",
-                    "argument1": 0.2375,
+                    "argument1": 0.3375,
                     "argument2": {
                       "type": "minecraft:mul",
                       "argument1": {
                         "type": "minecraft:y_clamped_gradient",
-                        "from_y": 24,
-                        "to_y": 58,
+                        "from_y": 14,
+                        "to_y": 70,
                         "from_value": 1,
                         "to_value": 0
                       },
@@ -111,10 +111,10 @@
           "type": "minecraft:vertical_gradient",
           "random_name": "minecraft:bedrock_floor",
           "true_at_and_below": {
-            "above_bottom": 10
+            "above_bottom": 0
           },
           "false_at_and_above": {
-            "above_bottom": 30
+            "above_bottom": 5
           }
         },
         "then_run": {
@@ -132,10 +132,10 @@
             "type": "minecraft:vertical_gradient",
             "random_name": "minecraft:bedrock_roof",
             "true_at_and_below": {
-              "below_top": 290
+              "below_top": 90
             },
             "false_at_and_above": {
-              "below_top": 280
+              "below_top": 90
             }
           }
         },

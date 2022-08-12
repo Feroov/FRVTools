@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    " / ",
+    " / "
+  ],
+  "key": {
+    "#": {
+      "item": "frv:void_gem"
+    },
+    "/": {
+      "item": "minecraft:obsidian"
+    }
+  },
+  "result": {
+    "item": "frv:void_shovel",
+    "count": 1
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "frv:void_fabric"
+    },
+    "title": {
+      "translate": "advancements.frv.enter_the_void.title"
+    },
+    "description": {
+      "translate": "advancements.frv.enter_the_void.description"
+    },
+    "background": "frv:textures/block/void_fabric.png",
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "entered_end": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "frv:the_void"
+      }
+    }
+  }
+}

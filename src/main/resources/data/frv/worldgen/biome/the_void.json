@@ -33,7 +33,14 @@
   "spawners": {
     "ambient": [],
     "axolotls": [],
-    "creature": [],
+    "creature": [
+      {
+        "type": "frv:lost_soul",
+        "weight": 75,
+        "minCount": 1,
+        "maxCount": 3
+      }
+    ],
     "misc": [],
     "monster": [],
     "underground_water_creature": [],

@@ -62,6 +62,10 @@ public class ModSoundEvents
 
     // Lost Person
     public static final RegistryObject<SoundEvent> LOST_PERSON = SOUND_EVENTS.register("lost_person", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "lost_person")));
+
+    // Lost Soul
+    public static final RegistryObject<SoundEvent> LOST_PERSON_ATTACK = SOUND_EVENTS.register("lost_person_attack", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "lost_soul_attack")));
+
     /****************************/
 
 

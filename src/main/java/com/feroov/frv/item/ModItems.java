@@ -12,6 +12,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -82,7 +83,7 @@ public class ModItems
     public static final RegistryObject<ModSpawnEggItem> FLINTLOCKER = ITEMS.register("flintlocker_spawn_egg", () -> new ModSpawnEggItem(ModEntityTypes.FLINTLOCKER, 0X087D62, 0X087A62, new Item.Properties().tab(ModItemGroup.FRV_TAB_EGGS)));
     public static final RegistryObject<ModSpawnEggItem> CANNON = ITEMS.register("cannon_spawn_egg", () -> new ModSpawnEggItem(ModEntityTypes.CANNON, 0X087D62, 0X087A62, new Item.Properties().tab(ModItemGroup.FRV_TAB_EGGS)));
     public static final RegistryObject<ModSpawnEggItem> MIMIC = ITEMS.register("mimic_spawn_egg", () -> new ModSpawnEggItem(ModEntityTypes.MIMIC, 0X087D62, 0X087A62, new Item.Properties().tab(ModItemGroup.FRV_TAB_EGGS)));
-    public static final RegistryObject<ModSpawnEggItem> CORRUPT_BOARD = ITEMS.register("corrupt_board_spawn_egg", () -> new ModSpawnEggItem(ModEntityTypes.CORRUPT_BOARD, 0X087D62, 0X087A62, new Item.Properties().fireResistant().tab(ModItemGroup.FRV_TAB_EGGS)));
+    public static final RegistryObject<ModSpawnEggItem> LOST_SOUL = ITEMS.register("lost_soul_spawn_egg", () -> new ModSpawnEggItem(ModEntityTypes.LOST_SOUL, 0X087D62, 0X087A62, new Item.Properties().tab(ModItemGroup.FRV_TAB_EGGS)));
     public static final RegistryObject<ModSpawnEggItem> CORRUPT_ZOMBIE = ITEMS.register("corrupt_zombie_spawn_egg", () -> new ModSpawnEggItem(ModEntityTypes.CORRUPT_ZOMBIE, 0X087D62, 0X087A62, new Item.Properties().tab(ModItemGroup.FRV_TAB_EGGS)));
     public static final RegistryObject<ModSpawnEggItem> CORRUPT_ANGEL = ITEMS.register("corrupt_angel_spawn_egg", () -> new ModSpawnEggItem(ModEntityTypes.CORRUPT_ANGEL, 0X087D62, 0X087A62, new Item.Properties().tab(ModItemGroup.FRV_TAB_EGGS)));
     public static final RegistryObject<ModSpawnEggItem> CORRUPT = ITEMS.register("corrupt_spawn_egg", () -> new ModSpawnEggItem(ModEntityTypes.CORRUPT, 0X087D62, 0X087A62, new Item.Properties().tab(ModItemGroup.FRV_TAB_EGGS)));
@@ -90,7 +91,7 @@ public class ModItems
     /***********************************************************************************************/
 
 
-    /********************************** (DETECTORS) **********************************************/
+    /********************************** (MISC ITEMS) **********************************************/
     public static final RegistryObject<Item> COAL_DETECTOR = ITEMS.register("coal_detector", () -> new CoalDetector(new Item.Properties().tab(ModItemGroup.FRV_TAB_MISC).durability(50)));
     public static final RegistryObject<Item> IRON_DETECTOR = ITEMS.register("iron_detector", () -> new IronDetector(new Item.Properties().tab(ModItemGroup.FRV_TAB_MISC).durability(100)));
     public static final RegistryObject<Item> GOLD_DETECTOR = ITEMS.register("gold_detector", () -> new GoldDetector(new Item.Properties().tab(ModItemGroup.FRV_TAB_MISC).durability(145)));
@@ -121,6 +122,7 @@ public class ModItems
     // Ranged stuff
     public static final RegistryObject<Item> MUSKET = ITEMS.register("musket", () -> new Musket());
     public static final RegistryObject<Item> MUSKET_BULLET = ITEMS.register("musket_bullet", () -> new MusketBullet(new Item.Properties().tab(ModItemGroup.FRV_TAB_MISC), 1));
+    public static final RegistryObject<ModSpawnEggItem> CORRUPT_BOARD = ITEMS.register("corrupt_board_spawn_egg", () -> new ModSpawnEggItem(ModEntityTypes.CORRUPT_BOARD, 0X087D62, 0X087A62, new Item.Properties().fireResistant().tab(ModItemGroup.FRV_TAB_MISC)));
     /***********************************************************************************************/
 
     /********************************** (COPPER) **********************************************/
@@ -252,6 +254,18 @@ public class ModItems
     public static final RegistryObject<Item> ENDRIUM_CHESTPLATE = ITEMS.register("endrium_chestplate", () -> new EndriumArmor(ModArmorMaterial.ENDRIUM, EquipmentSlot.CHEST, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
     public static final RegistryObject<Item> ENDRIUM_LEGGINGS = ITEMS.register("endrium_leggings", () -> new EndriumArmor(ModArmorMaterial.ENDRIUM, EquipmentSlot.LEGS, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
     public static final RegistryObject<Item> ENDRIUM_BOOTS = ITEMS.register("endrium_boots", () -> new EndriumArmor(ModArmorMaterial.ENDRIUM, EquipmentSlot.FEET, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
+    /***********************************************************************************************/
+
+    /**********************************  (VOID)  **********************************************/
+    public static final RegistryObject<Item> VOID_SWORD = ITEMS.register("void_sword", () -> new SwordItem(ModTiers.VOID, 3, -2.4f, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()) {@Override public boolean hurtEnemy(ItemStack p_41395_, LivingEntity p_41396_, LivingEntity p_41397_) {if(!p_41397_.level.isClientSide()) {p_41396_.addEffect(new MobEffectInstance(MobEffects.POISON, 200, 1));p_41396_.addEffect(new MobEffectInstance(MobEffects.WITHER, 200, 1));}return super.hurtEnemy(p_41395_, p_41396_, p_41397_);}});
+    public static final RegistryObject<Item> VOID_PICKAXE = ITEMS.register("void_pickaxe", () -> new PickaxeItem(ModTiers.VOID, 1, -2.8f, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
+    public static final RegistryObject<Item> VOID_AXE = ITEMS.register("void_axe", () -> new AxeItem(ModTiers.VOID, 6, -3f, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
+    public static final RegistryObject<Item> VOID_SHOVEL = ITEMS.register("void_shovel", () -> new ShovelItem(ModTiers.VOID, 0, -3.1f, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
+    public static final RegistryObject<Item> VOID_HOE = ITEMS.register("void_hoe", () -> new HoeItem(ModTiers.VOID, 0, 0f, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
+    public static final RegistryObject<Item> VOID_HELMET = ITEMS.register("void_helmet", () -> new VoidArmor(ModArmorMaterial.VOID, EquipmentSlot.HEAD, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
+    public static final RegistryObject<Item> VOID_CHESTPLATE = ITEMS.register("void_chestplate", () -> new VoidArmor(ModArmorMaterial.VOID, EquipmentSlot.CHEST, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
+    public static final RegistryObject<Item> VOID_LEGGINGS = ITEMS.register("void_leggings", () -> new VoidArmor(ModArmorMaterial.VOID, EquipmentSlot.LEGS, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
+    public static final RegistryObject<Item> VOID_BOOTS = ITEMS.register("void_boots", () -> new VoidArmor(ModArmorMaterial.VOID, EquipmentSlot.FEET, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
     /***********************************************************************************************/
 
 

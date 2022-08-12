@@ -1,0 +1,51 @@
+{
+  "display": {
+    "icon": {
+      "item": "frv:endrium_chestplate",
+      "nbt": "{Damage:0}"
+    },
+    "title": {
+      "translate": "advancements.frv.get_endrium_armor.title"
+    },
+    "description": {
+      "translate": "advancements.frv.get_endrium_armor.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "minecraft:end/kill_dragon",
+  "criteria": {
+    "netherite_armor": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frv:endrium_helmet"
+            ]
+          },
+          {
+            "items": [
+              "frv:endrium_chestplate"
+            ]
+          },
+          {
+            "items": [
+              "frv:endrium_leggings"
+            ]
+          },
+          {
+            "items": [
+              "frv:endrium_boots"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 300
+  }
+}

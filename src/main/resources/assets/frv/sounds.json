@@ -169,6 +169,12 @@
   "corrupt_death": {"category": "hostile", "sounds": [{
     "name": "frv:corrupt_death"}], "subtitle": "frv.corrupt_death"
   },
+
+  "lost_soul_attack": {"category": "hostile", "sounds": [{
+    "name": "frv:lost_soul_attack"}, {
+    "name": "frv:lost_soul_attack2"}, {
+    "name": "frv:lost_soul_attack3"}], "subtitle": "frv.lost_soul_attack"
+  },
   
   
 

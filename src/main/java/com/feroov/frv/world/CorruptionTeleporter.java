@@ -51,7 +51,7 @@ public class CorruptionTeleporter implements ITeleporter
                               float yaw, Function<Boolean, Entity> repositionEntity)
     {
         entity = repositionEntity.apply(false);
-        double y = 61;
+        double y = 69;
 
         if (!insideDimension)
         {

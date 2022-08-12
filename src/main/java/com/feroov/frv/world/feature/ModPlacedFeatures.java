@@ -61,7 +61,7 @@ public class ModPlacedFeatures
     public static final RegistryObject<PlacedFeature> VOID_ORE = PLACED_FEATURES.register("void_ore_placed",
             () -> new PlacedFeature(ModConfiguredFeatures.VOID_OREE.getHolder().get(),
                     commonOrePlacement(9,
-                            HeightRangePlacement.triangle(VerticalAnchor.absolute(-40), VerticalAnchor.absolute(5)))));
+                            HeightRangePlacement.triangle(VerticalAnchor.absolute(6), VerticalAnchor.absolute(14)))));
 
     public static final RegistryObject<PlacedFeature> CORRUPT_ORE = PLACED_FEATURES.register("corrupt_ore_placed",
             () -> new PlacedFeature(ModConfiguredFeatures.MATRIX_ORE.getHolder().get(),

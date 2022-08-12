@@ -45,7 +45,10 @@ public enum ModArmorMaterial implements ArmorMaterial
         12.5F, 2.2F, () -> {return Ingredient.of(ModItems.HELLSTONE_INGOT.get());}),
 
     ENDRIUM("endrium", 130, new int[]{49, 68, 48, 35}, 61, SoundEvents.ENDERMAN_TELEPORT,
-        34.5F, 3.2F, () -> {return Ingredient.of(ModItems.ENDRIUM_GEM.get());});
+        34.5F, 3.2F, () -> {return Ingredient.of(ModItems.ENDRIUM_GEM.get());}),
+
+    VOID("void", 190, new int[]{49, 68, 48, 35}, 81, SoundEvents.AMBIENT_CAVE,
+            54.5F, 4.2F, () -> {return Ingredient.of(ModItems.VOID_GEM.get());});
 
     /**
      *    LEATHER("leather", 5, new int[]{1, 2, 3, 1}, 15, SoundEvents.ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, () -> {

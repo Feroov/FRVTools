@@ -7,6 +7,8 @@ import com.feroov.frv.entities.projectiles.CorruptFire;
 import com.feroov.frv.init.ModEntityTypes;
 import com.feroov.frv.init.ModParticles;
 import com.feroov.frv.sound.ModSoundEvents;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.resources.sounds.AbstractTickableSoundInstance;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
@@ -20,6 +22,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.world.BossEvent;
 import net.minecraft.world.damagesource.DamageSource;
@@ -54,6 +57,8 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 
 import javax.annotation.Nullable;
 import java.util.EnumSet;
+
+import static com.feroov.frv.sound.ModSoundEvents.MATRIX_AMBIENCE;
 
 
 public class LordOfCorruption extends Monster implements IAnimatable, IAnimationTickable, RangedAttackMob {

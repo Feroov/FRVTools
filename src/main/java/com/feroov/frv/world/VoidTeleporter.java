@@ -62,7 +62,7 @@ public class VoidTeleporter implements ITeleporter
             }
             if (doSetBlock)
             {
-                destinationWorld.setBlock(destinationPos, ModBlocks.VOID_GATEWAY.get().defaultBlockState(), 3);
+                destinationWorld.setBlock(destinationPos, ModBlocks.VOID_GATEWAY.get().defaultBlockState(), 30);
             }
         }
 

@@ -61,6 +61,12 @@ public class ModTiers
             new ResourceLocation("frv:needs_endrium_tool"),
             List.of(ModTiers.HELLSTONE), List.of());
 
+    public static final Tier VOID = TierSortingRegistry.registerTier(
+            new ForgeTier(9, 12163, 32.5f, 34.5f, 25, ModBlocks.Tags.NEEDS_VOID_TOOL,
+                    () -> Ingredient.of(ModItems.VOID_GEM.get())),
+            new ResourceLocation("frv:needs_void_tool"),
+            List.of(ModTiers.ENDRIUM), List.of());
+
     public static final ForgeTier ADMIN = new ForgeTier(999,999999,999f,9999f,10,
             Tags.Blocks.NEEDS_GOLD_TOOL, () -> Ingredient.of(Items.AMETHYST_SHARD));
 

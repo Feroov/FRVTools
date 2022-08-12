@@ -1,0 +1,51 @@
+{
+  "display": {
+    "icon": {
+      "item": "frv:void_chestplate",
+      "nbt": "{Damage:0}"
+    },
+    "title": {
+      "translate": "advancements.frv.get_void_armor.title"
+    },
+    "description": {
+      "translate": "advancements.frv.get_void_armor.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "frv:enter_the_void",
+  "criteria": {
+    "netherite_armor": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frv:void_helmet"
+            ]
+          },
+          {
+            "items": [
+              "frv:void_chestplate"
+            ]
+          },
+          {
+            "items": [
+              "frv:void_leggings"
+            ]
+          },
+          {
+            "items": [
+              "frv:void_boots"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 300
+  }
+}

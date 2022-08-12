@@ -15,7 +15,7 @@
     "announce_to_chat": true,
     "hidden": false
   },
-  "parent": "minecraft:obtain_ancient_debris",
+  "parent": "minecraft:nether/obtain_ancient_debris",
   "criteria": {
     "netherite_armor": {
       "trigger": "minecraft:inventory_changed",

@@ -168,10 +168,10 @@ public class ModBlocks
                     .requiresCorrectToolForDrops()
                     .sound(new
                             ForgeSoundType(1f,1f, () -> SoundEvents.ENDERMAN_TELEPORT,
-                            () -> SoundEvents.ENDERMITE_AMBIENT, //step
-                            () -> SoundEvents.ENDERMAN_TELEPORT, //place
-                            () -> SoundEvents.DEEPSLATE_HIT, //hit
-                            () -> SoundEvents.ENDERMAN_TELEPORT)))
+                            () -> SoundEvents.WOOL_STEP, //step
+                            () -> SoundEvents.WOOL_PLACE, //place
+                            () -> SoundEvents.WOOL_HIT, //hit
+                            () -> SoundEvents.WOOL_FALL)))
             {
                 @Override
                 public void stepOn(Level pLevel, BlockPos pPos, BlockState pState, Entity pEntity) {
@@ -190,7 +190,7 @@ public class ModBlocks
 
     public static final RegistryObject<Block> VOID_GATEWAY = registerBlock("void_gateway",
             () -> new VoidPortalBlock(BlockBehaviour.Properties.of(Material.STONE).strength(15.0F, 15.0F)
-                    .sound(SoundType.STONE)));
+                    .sound(SoundType.STONE).lightLevel((light) -> {return 15;})));
 
     public static final RegistryObject<Block> CORRUPT_ORE = registerBlock("corrupt_ore",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength
@@ -254,6 +254,7 @@ public class ModBlocks
         public static final TagKey<Block> NEEDS_FUNGHONITE_TOOL = create("needs_funghonite_tool");
         public static final TagKey<Block> NEEDS_HELLSTONE_TOOL = create("needs_hellstone_tool");
         public static final TagKey<Block> NEEDS_ENDRIUM_TOOL = create("needs_endrium_tool");
+        public static final TagKey<Block> NEEDS_VOID_TOOL = create("needs_void_tool");
 
         private static TagKey<Block> create(String location)
         {
