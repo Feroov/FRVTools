@@ -68,6 +68,12 @@
   "item.frv.void_axe": "\u00A78Void Axe",
   "item.frv.void_shovel": "\u00A78Void Shovel",
   "item.frv.void_hoe": "\u00A78Void Hoe",
+  "item.frv.corrupt_sword": "§a§kco§r§aCorrupt Sword§a§kco§r§a",
+  "item.frv.corrupt_pickaxe": "§a§kco§r§aCorrupt Pickaxe§a§kco§r§a",
+  "item.frv.corrupt_axe": "§a§kco§r§aCorrupt Axe§a§kco§r§a",
+  "item.frv.corrupt_shovel": "§a§kco§r§aCorrupt Shovel§a§kco§r§a",
+  "item.frv.corrupt_hoe": "§a§kco§r§aCorrupt Hoe§a§kco§r§a",
+
 
   "item.frv.quartz_helmet": "Quartz Helmet",
   "item.frv.quartz_chestplate": "Quartz Chestplate",
@@ -117,6 +123,10 @@
   "item.frv.void_chestplate": "\u00A78Void Chestplate",
   "item.frv.void_leggings": "\u00A78Void Leggings",
   "item.frv.void_boots": "\u00A78Void Boots",
+  "item.frv.corrupt_helmet": "§a§kco§r§aCorrupt Helmet§a§kco§r§a",
+  "item.frv.corrupt_chestplate": "§a§kco§r§aCorrupt Chestplate§a§kco§r§a",
+  "item.frv.corrupt_leggings": "§a§kco§r§aCorrupt Leggings§a§kco§r§a",
+  "item.frv.corrupt_boots": "§a§kco§r§aCorrupt Boots§a§kco§r§a",
 
 
   "item.frv.croaker_spawn_egg": "Croaker Spawn",

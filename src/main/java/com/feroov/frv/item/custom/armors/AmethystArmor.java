@@ -15,6 +15,7 @@ import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.common.extensions.IForgeItem;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -71,7 +72,6 @@ public class AmethystArmor extends GeoArmorItem implements IAnimatable {
         }
     }
 
-
     private void evaluateArmorEffects(Player player)
     {
         for (Map.Entry<ArmorMaterial, MobEffect> entry : MATERIAL_TO_EFFECT_MAP.entrySet())
@@ -90,7 +90,11 @@ public class AmethystArmor extends GeoArmorItem implements IAnimatable {
     {
         if(hasCorrectArmorOn(mapArmorMaterial, player))
         {
-            player.addEffect(new MobEffectInstance(mapStatusEffect, 150));
+            player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 150,3));
+            player.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 150));
+            player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 250, 3));
+            player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 250,1));
+            player.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 550));
         }
     }
 

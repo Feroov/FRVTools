@@ -155,7 +155,7 @@ public class ModBlocks
             });
 
     public static final RegistryObject<Block> VOID_FABRIC = registerBlock("void_fabric",
-            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(0.2F)
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(2.5F)
                     .sound(new
                             ForgeSoundType(1f,1f, () -> SoundEvents.WOOL_BREAK,
                             () -> SoundEvents.WOOL_STEP, //step
@@ -250,11 +250,19 @@ public class ModBlocks
 
     public static class Tags
     {
+        public static final TagKey<Block> NEEDS_COPPER_TOOL = create("needs_copper_tool");
+        public static final TagKey<Block> NEEDS_TIN_TOOL = create("needs_tin_tool");
+        public static final TagKey<Block> NEEDS_QUARTZ_TOOL = create("needs_quartz_tool");
+        public static final TagKey<Block> NEEDS_LEAD_TOOL = create("needs_lead_tool");
+        public static final TagKey<Block> NEEDS_SILVER_TOOL = create("needs_silver_tool");
+        public static final TagKey<Block> NEEDS_PLATINUM_TOOL = create("needs_platinum_tool");
+        public static final TagKey<Block> NEEDS_AMETHYST_TOOL = create("needs_amethyst_tool");
         public static final TagKey<Block> NEEDS_METEORITE_TOOL = create("needs_meteorite_tool");
         public static final TagKey<Block> NEEDS_FUNGHONITE_TOOL = create("needs_funghonite_tool");
         public static final TagKey<Block> NEEDS_HELLSTONE_TOOL = create("needs_hellstone_tool");
         public static final TagKey<Block> NEEDS_ENDRIUM_TOOL = create("needs_endrium_tool");
         public static final TagKey<Block> NEEDS_VOID_TOOL = create("needs_void_tool");
+        public static final TagKey<Block> NEEDS_CORRUPT_TOOL = create("needs_corrupt_tool");
 
         private static TagKey<Block> create(String location)
         {

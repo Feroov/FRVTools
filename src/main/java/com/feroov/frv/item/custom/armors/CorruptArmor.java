@@ -12,38 +12,60 @@ import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import software.bernie.geckolib3.core.IAnimatable;
+import software.bernie.geckolib3.core.PlayState;
+import software.bernie.geckolib3.core.builder.AnimationBuilder;
+import software.bernie.geckolib3.core.controller.AnimationController;
+import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
+import software.bernie.geckolib3.core.manager.AnimationData;
+import software.bernie.geckolib3.core.manager.AnimationFactory;
+import software.bernie.geckolib3.item.GeoArmorItem;
 
 import java.util.Map;
 
-public class VoidArmor extends ArmorItem  {
+public class CorruptArmor extends GeoArmorItem implements IAnimatable {
+    private AnimationFactory factory = new AnimationFactory(this);
 
+    @Override
+    public void registerControllers(AnimationData data) {
+        data.addAnimationController(new AnimationController<CorruptArmor>(this, "controller", 20, this::predicate));
+    }
+
+    private <P extends IAnimatable> PlayState predicate(AnimationEvent<P> event) {
+        event.getController().setAnimation(new AnimationBuilder().addAnimation("idle", true));
+        return PlayState.CONTINUE;
+    }
+
+    @Override
+    public AnimationFactory getFactory() {
+        return this.factory;
+    }
+
+
+
+
+    public CorruptArmor(ArmorMaterial material, EquipmentSlot slot, Properties settings)
+    {
+        super(material, slot, settings);
+    }
 
     private static final Map<ArmorMaterial, MobEffect> MATERIAL_TO_EFFECT_MAP = new ImmutableMap.Builder<ArmorMaterial,
-            MobEffect>().put(ModArmorMaterial.VOID, MobEffects.DIG_SPEED).build();
-
-    public VoidArmor(ArmorMaterial p_40386_, EquipmentSlot p_40387_, Properties p_40388_)
-    {
-        super(p_40386_, p_40387_, p_40388_);
-    }
+            MobEffect>().put(ModArmorMaterial.CORRUPT, MobEffects.DIG_SPEED).build();
 
 
     @Override
     public void inventoryTick(ItemStack stack, Level world, Entity entity, int slot, boolean selected)
     {
-        if(!world.isClientSide())
-        {
-            if (entity instanceof Player)
-            {
+        if(!world.isClientSide()) {
+            if (entity instanceof Player) {
                 Player player = (Player) entity;
 
-                if (hasFullSuitOfArmorOn(player))
-                {
+                if (hasFullSuitOfArmorOn(player)) {
                     evaluateArmorEffects(player);
                 }
             }
         }
     }
-
 
     private void evaluateArmorEffects(Player player)
     {
@@ -52,14 +74,14 @@ public class VoidArmor extends ArmorItem  {
             ArmorMaterial mapArmorMaterial = entry.getKey();
             MobEffect mapStatusEffect = entry.getValue();
 
-            if(hasCorrectArmorOn(mapArmorMaterial, player))
-            {
+            if(hasCorrectArmorOn(mapArmorMaterial, player)) {
                 addStatusEffectForMaterial(player, mapArmorMaterial, mapStatusEffect);
-                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 150,2));
+                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 150,3));
                 player.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 150));
-                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 250, 1));
+                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 250, 2));
                 player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 250,1));
                 player.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 550));
+                player.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 550));
             }
         }
     }
@@ -102,5 +124,4 @@ public class VoidArmor extends ArmorItem  {
         return helmet.getMaterial() == material && breastplate.getMaterial()
                 == material && leggings.getMaterial() == material && boots.getMaterial() == material;
     }
-
 }

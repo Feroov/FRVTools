@@ -124,7 +124,7 @@ public class CorruptZombie extends Monster implements IAnimatable, IAnimationTic
                 .add(Attributes.MAX_HEALTH, 100.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.72D)
                 .add(Attributes.FOLLOW_RANGE, 35.0D)
-                .add(Attributes.ATTACK_DAMAGE, 80.0D);
+                .add(Attributes.ATTACK_DAMAGE, 33.0D);
     }
 
     @Override

@@ -55,9 +55,9 @@ public class EndriumArmor extends ArmorItem  {
             if(hasCorrectArmorOn(mapArmorMaterial, player))
             {
                 addStatusEffectForMaterial(player, mapArmorMaterial, mapStatusEffect);
-                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 150,2));
+                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 150,1));
                 player.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 150));
-                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 250, 2));
+                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 250, 1));
                 player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 250));
             }
         }

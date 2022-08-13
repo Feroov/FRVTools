@@ -144,7 +144,7 @@ public class CorruptAngelFire extends AbstractArrow implements IAnimatable {
             }
         }
 
-        if (entity.hurt(damagesource, 275.0f))
+        if (entity.hurt(damagesource, 85.0f))
         {
             if (entity instanceof LivingEntity)
             {

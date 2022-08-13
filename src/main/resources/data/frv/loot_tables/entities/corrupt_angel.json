@@ -3,18 +3,6 @@
   "pools": [
     {
       "rolls": {
-        "min": 10,
-        "max": 17
-      },
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "name": "frv:corrupt_piece"
-        }
-      ]
-    },
-    {
-      "rolls": {
         "min": 2,
         "max": 4
       },

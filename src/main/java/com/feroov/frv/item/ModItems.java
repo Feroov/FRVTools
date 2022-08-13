@@ -257,7 +257,7 @@ public class ModItems
     /***********************************************************************************************/
 
     /**********************************  (VOID)  **********************************************/
-    public static final RegistryObject<Item> VOID_SWORD = ITEMS.register("void_sword", () -> new SwordItem(ModTiers.VOID, 3, -2.4f, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()) {@Override public boolean hurtEnemy(ItemStack p_41395_, LivingEntity p_41396_, LivingEntity p_41397_) {if(!p_41397_.level.isClientSide()) {p_41396_.addEffect(new MobEffectInstance(MobEffects.POISON, 200, 1));p_41396_.addEffect(new MobEffectInstance(MobEffects.WITHER, 200, 1));}return super.hurtEnemy(p_41395_, p_41396_, p_41397_);}});
+    public static final RegistryObject<Item> VOID_SWORD = ITEMS.register("void_sword", () -> new SwordItem(ModTiers.VOID, 3, -2.4f, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()) {@Override public boolean hurtEnemy(ItemStack p_41395_, LivingEntity p_41396_, LivingEntity p_41397_) {if(!p_41397_.level.isClientSide()) {p_41396_.addEffect(new MobEffectInstance(MobEffects.POISON, 200, 1));}return super.hurtEnemy(p_41395_, p_41396_, p_41397_);}});
     public static final RegistryObject<Item> VOID_PICKAXE = ITEMS.register("void_pickaxe", () -> new PickaxeItem(ModTiers.VOID, 1, -2.8f, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
     public static final RegistryObject<Item> VOID_AXE = ITEMS.register("void_axe", () -> new AxeItem(ModTiers.VOID, 6, -3f, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
     public static final RegistryObject<Item> VOID_SHOVEL = ITEMS.register("void_shovel", () -> new ShovelItem(ModTiers.VOID, 0, -3.1f, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
@@ -266,6 +266,18 @@ public class ModItems
     public static final RegistryObject<Item> VOID_CHESTPLATE = ITEMS.register("void_chestplate", () -> new VoidArmor(ModArmorMaterial.VOID, EquipmentSlot.CHEST, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
     public static final RegistryObject<Item> VOID_LEGGINGS = ITEMS.register("void_leggings", () -> new VoidArmor(ModArmorMaterial.VOID, EquipmentSlot.LEGS, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
     public static final RegistryObject<Item> VOID_BOOTS = ITEMS.register("void_boots", () -> new VoidArmor(ModArmorMaterial.VOID, EquipmentSlot.FEET, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
+    /***********************************************************************************************/
+
+    /**********************************  (CORRUPT)  **********************************************/
+    public static final RegistryObject<Item> CORRUPT_SWORD = ITEMS.register("corrupt_sword", () -> new SwordItem(ModTiers.CORRUPT, 3, -2.4f, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()) {@Override public boolean hurtEnemy(ItemStack p_41395_, LivingEntity p_41396_, LivingEntity p_41397_) {if(!p_41397_.level.isClientSide()) {p_41396_.addEffect(new MobEffectInstance(MobEffects.POISON, 200, 3));p_41396_.addEffect(new MobEffectInstance(MobEffects.WITHER, 200, 3));}return super.hurtEnemy(p_41395_, p_41396_, p_41397_);}});
+    public static final RegistryObject<Item> CORRUPT_PICKAXE = ITEMS.register("corrupt_pickaxe", () -> new PickaxeItem(ModTiers.CORRUPT, 1, -2.8f, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
+    public static final RegistryObject<Item> CORRUPT_AXE = ITEMS.register("corrupt_axe", () -> new AxeItem(ModTiers.CORRUPT, 6, -3f, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
+    public static final RegistryObject<Item> CORRUPT_SHOVEL = ITEMS.register("corrupt_shovel", () -> new ShovelItem(ModTiers.CORRUPT, 0, -3.1f, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
+    public static final RegistryObject<Item> CORRUPT_HOE = ITEMS.register("corrupt_hoe", () -> new HoeItem(ModTiers.CORRUPT, 0, 0f, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
+    public static final RegistryObject<Item> CORRUPT_HELMET = ITEMS.register("corrupt_helmet", () -> new CorruptArmor(ModArmorMaterial.CORRUPT, EquipmentSlot.HEAD, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
+    public static final RegistryObject<Item> CORRUPT_CHESTPLATE = ITEMS.register("corrupt_chestplate", () -> new CorruptArmor(ModArmorMaterial.CORRUPT, EquipmentSlot.CHEST, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
+    public static final RegistryObject<Item> CORRUPT_LEGGINGS = ITEMS.register("corrupt_leggings", () -> new CorruptArmor(ModArmorMaterial.CORRUPT, EquipmentSlot.LEGS, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
+    public static final RegistryObject<Item> CORRUPT_BOOTS = ITEMS.register("corrupt_boots", () -> new CorruptArmor(ModArmorMaterial.CORRUPT, EquipmentSlot.FEET, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
     /***********************************************************************************************/
 
 

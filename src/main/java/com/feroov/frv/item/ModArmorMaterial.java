@@ -1,6 +1,7 @@
 package com.feroov.frv.item;
 
 import com.feroov.frv.Frv;
+import com.feroov.frv.sound.ModSoundEvents;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.LazyLoadedValue;
@@ -48,7 +49,10 @@ public enum ModArmorMaterial implements ArmorMaterial
         34.5F, 3.2F, () -> {return Ingredient.of(ModItems.ENDRIUM_GEM.get());}),
 
     VOID("void", 190, new int[]{49, 68, 48, 35}, 81, SoundEvents.AMBIENT_CAVE,
-            54.5F, 4.2F, () -> {return Ingredient.of(ModItems.VOID_GEM.get());});
+            404.5F, 4.2F, () -> {return Ingredient.of(ModItems.VOID_GEM.get());}),
+
+    CORRUPT("corrupt", 250, new int[]{49, 68, 48, 35}, 81, ModSoundEvents.GLITCH.get(),
+            455.5F, 7.2F, () -> {return Ingredient.of(ModItems.CORRUPT_PIECE.get());});
 
     /**
      *    LEATHER("leather", 5, new int[]{1, 2, 3, 1}, 15, SoundEvents.ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, () -> {

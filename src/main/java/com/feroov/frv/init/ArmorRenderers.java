@@ -2,9 +2,11 @@ package com.feroov.frv.init;
 
 import com.feroov.frv.Frv;
 import com.feroov.frv.item.custom.armors.AmethystArmor;
+import com.feroov.frv.item.custom.armors.CorruptArmor;
 import com.feroov.frv.item.custom.armors.FunghoniteArmor;
 import com.feroov.frv.item.custom.armors.MeteoriteArmor;
 import com.feroov.frv.item.custom.armors.renders.AmethystArmorRenderer;
+import com.feroov.frv.item.custom.armors.renders.CorruptArmorRenderer;
 import com.feroov.frv.item.custom.armors.renders.FunghoniteArmorRenderer;
 import com.feroov.frv.item.custom.armors.renders.MeteoriteArmorRenderer;
 import net.minecraftforge.api.distmarker.Dist;
@@ -20,6 +22,7 @@ public class ArmorRenderers
     public static void registerRenderers(final EntityRenderersEvent.AddLayers event)
     {
         GeoArmorRenderer.registerArmorRenderer(AmethystArmor.class, new AmethystArmorRenderer());
+        GeoArmorRenderer.registerArmorRenderer(CorruptArmor.class, new CorruptArmorRenderer());
         GeoArmorRenderer.registerArmorRenderer(MeteoriteArmor.class, new MeteoriteArmorRenderer());
         GeoArmorRenderer.registerArmorRenderer(FunghoniteArmor.class, new FunghoniteArmorRenderer());
     }
