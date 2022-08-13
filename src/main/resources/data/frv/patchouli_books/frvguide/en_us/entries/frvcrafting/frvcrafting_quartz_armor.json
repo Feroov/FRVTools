@@ -1,0 +1,36 @@
+{
+  "name": "Quartz Armor",
+  "icon": "frv:quartz_chestplate",
+  "category": "frv:frvcrafting_armor",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Quartz Armor can be crafted using Quartz, you can browse the pages for each item"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Quartz Helmet",
+      "recipe": "frv:quartz_helmet",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Quartz Chestplate",
+      "recipe": "frv:quartz_chestplate",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Quartz Leggings",
+      "recipe": "frv:quartz_leggings",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Quartz Boots",
+      "recipe": "frv:quartz_boots",
+      "text": ""
+    }
+  ]
+}

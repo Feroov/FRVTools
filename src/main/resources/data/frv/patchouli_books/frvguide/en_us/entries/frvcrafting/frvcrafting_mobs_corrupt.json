@@ -1,0 +1,41 @@
+{
+  "name": "Corruption (Hostile)",
+  "icon": "frv:lord_of_corruption_spawn_egg",
+  "category": "frv:frvcrafting_mobs",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "This section covers all of the Corruption related mobs"
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "frv:corrupt_zombie",
+      "rotate": "true",
+      "scale": "0.9",
+      "text": "Fast, will see you from far, they do quite a lot of damage"
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "frv:corrupt_angel",
+      "rotate": "true",
+      "scale": "0.5",
+      "text": "They roam the skies of the corruption, their shots are devastating"
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "frv:corrupt",
+      "rotate": "true",
+      "offset": "1.5f",
+      "text": "The overworld boss that defends the enterance to the corruption"
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "frv:lord_of_corruption",
+      "rotate": "true",
+      "scale": "0.9",
+      "offset": "5.0f",
+      "text": "The final boss, drops the final key to crafting the ultimate gear"
+    }
+  ]
+}

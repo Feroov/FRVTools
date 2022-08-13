@@ -1,0 +1,36 @@
+{
+  "name": "Hellstone Armor",
+  "icon": "frv:hellstone_chestplate",
+  "category": "frv:frvcrafting_armor",
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Hellstone Armor can be crafted using Hellstone Ingots, you can browse the pages for each item"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Hellstone Helmet",
+      "recipe": "frv:hellstone_helmet",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Hellstone Chestplate",
+      "recipe": "frv:hellstone_chestplate",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Hellstone Leggings",
+      "recipe": "frv:hellstone_leggings",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Hellstone Boots",
+      "recipe": "frv:hellstone_boots",
+      "text": ""
+    }
+  ]
+}

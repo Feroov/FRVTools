@@ -1,0 +1,36 @@
+{
+  "name": "Silver Armor",
+  "icon": "frv:silver_chestplate",
+  "category": "frv:frvcrafting_armor",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Silver Armor can be crafted using Silver Ingots, you can browse the pages for each item"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Silver Helmet",
+      "recipe": "frv:silver_helmet",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Silver Chestplate",
+      "recipe": "frv:silver_chestplate",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Silver Leggings",
+      "recipe": "frv:silver_leggings",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Silver Boots",
+      "recipe": "frv:silver_boots",
+      "text": ""
+    }
+  ]
+}

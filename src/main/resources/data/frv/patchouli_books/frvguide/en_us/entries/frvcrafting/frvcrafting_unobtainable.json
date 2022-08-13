@@ -1,0 +1,24 @@
+{
+  "name": "Unobtainable",
+  "icon": "minecraft:barrier",
+  "category": "frv:frvcrafting_special",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Unobtainable items in survival, these are creative exclusive only!"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "title": "Ban Hammer",
+      "item": "frv:admin_sword",
+      "text": "As the name applies, it destroys/removes ANY entity when hit no matter the health, any boss, etc. instant kill"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "title": "Corruption Block",
+      "item": "frv:matrix",
+      "text": "A unique corruption block that generates in the corruption, but cannot be obtained"
+    }
+  ]
+}

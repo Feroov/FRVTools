@@ -1,0 +1,42 @@
+{
+  "name": "Tin Tools",
+  "icon": "frv:tin_pickaxe",
+  "category": "frv:frvcrafting_tools",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Tin Tools can be crafted using Tin Ingots, you can browse the pages for each item"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Tin Sword",
+      "recipe": "frv:tin_sword",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Tin Pickaxe",
+      "recipe": "frv:tin_pickaxe",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Tin Axe",
+      "recipe": "frv:tin_axe",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Tin Shovel",
+      "recipe": "frv:tin_shovel",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Tin Hoe",
+      "recipe": "frv:tin_hoe",
+      "text": ""
+    }
+  ]
+}

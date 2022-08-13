@@ -1,0 +1,42 @@
+{
+  "name": "Endrium Tools",
+  "icon": "frv:endrium_pickaxe",
+  "category": "frv:frvcrafting_tools",
+  "sortnum": 11,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Endrium Tools can be crafted using Endrium Gem and Obsidian, you can browse the pages for each item"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Endrium Sword",
+      "recipe": "frv:endrium_sword",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Endrium Pickaxe",
+      "recipe": "frv:endrium_pickaxe",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Endrium Axe",
+      "recipe": "frv:endrium_axe",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Endrium Shovel",
+      "recipe": "frv:endrium_shovel",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Endrium Hoe",
+      "recipe": "frv:endrium_hoe",
+      "text": ""
+    }
+  ]
+}

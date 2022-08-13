@@ -1,0 +1,42 @@
+{
+  "name": "Corrupt Tools",
+  "icon": "frv:corrupt_pickaxe",
+  "category": "frv:frvcrafting_tools",
+  "sortnum": 13,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Corrupt Tools can be crafted using Corrupt Piece and Void Fabric, you can browse the pages for each item"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Corrupt Sword",
+      "recipe": "frv:corrupt_sword",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Corrupt Pickaxe",
+      "recipe": "frv:corrupt_pickaxe",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Corrupt Axe",
+      "recipe": "frv:corrupt_axe",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Corrupt Shovel",
+      "recipe": "frv:corrupt_shovel",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Corrupt Hoe",
+      "recipe": "frv:corrupt_hoe",
+      "text": ""
+    }
+  ]
+}

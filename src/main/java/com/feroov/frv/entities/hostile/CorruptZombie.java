@@ -219,12 +219,12 @@ public class CorruptZombie extends Monster implements IAnimatable, IAnimationTic
     public void aiStep()
     {
         super.aiStep();
-        if (this.level.isClientSide) {
-            for(int i = 0; i < 2; ++i) {
-                this.level.addParticle(ModParticles.CORRUPT_PARTICLES.get(), this.getRandomX(0.5D),
-                        this.getRandomY() - 0.85D, this.getRandomZ(0.5D), (this.random.nextDouble() - 0.5D) * 2.0D, -this.random.nextDouble(), (this.random.nextDouble() - 0.5D) * 2.0D);
-            }
-        }
+//        if (this.level.isClientSide) {
+//            for(int i = 0; i < 2; ++i) {
+//                this.level.addParticle(ModParticles.CORRUPT_PARTICLES.get(), this.getRandomX(0.5D),
+//                        this.getRandomY() - 0.85D, this.getRandomZ(0.5D), (this.random.nextDouble() - 0.5D) * 2.0D, -this.random.nextDouble(), (this.random.nextDouble() - 0.5D) * 2.0D);
+//            }
+//        }
         textureTimer = (textureTimer + 1) % 8;
     }
 

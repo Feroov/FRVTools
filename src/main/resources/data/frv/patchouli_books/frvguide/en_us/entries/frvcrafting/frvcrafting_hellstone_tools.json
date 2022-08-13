@@ -1,0 +1,42 @@
+{
+  "name": "Hellstone Tools",
+  "icon": "frv:hellstone_pickaxe",
+  "category": "frv:frvcrafting_tools",
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Hellstone Tools can be crafted using Hellstone Ingots and Obsidian, you can browse the pages for each item"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Hellstone Sword",
+      "recipe": "frv:hellstone_sword",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Hellstone Pickaxe",
+      "recipe": "frv:hellstone_pickaxe",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Hellstone Axe",
+      "recipe": "frv:hellstone_axe",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Hellstone Shovel",
+      "recipe": "frv:hellstone_shovel",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Hellstone Hoe",
+      "recipe": "frv:hellstone_hoe",
+      "text": ""
+    }
+  ]
+}

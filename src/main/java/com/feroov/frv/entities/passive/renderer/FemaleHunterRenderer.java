@@ -39,7 +39,7 @@ public class FemaleHunterRenderer extends GeoEntityRenderer<FemaleHunter>
     public RenderType getRenderType(FemaleHunter animatable, float partialTicks, PoseStack stack,
                                     @Nullable MultiBufferSource renderTypeBuffer, @Nullable VertexConsumer vertexBuilder, int packedLightIn,
                                     ResourceLocation textureLocation) {
-        return RenderType.entityCutout(textureLocation);
+        return RenderType.entityCutoutNoCull(textureLocation);
     }
 
     @Override

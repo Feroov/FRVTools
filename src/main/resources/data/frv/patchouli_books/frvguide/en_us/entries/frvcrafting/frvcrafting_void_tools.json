@@ -1,0 +1,42 @@
+{
+  "name": "Void Tools",
+  "icon": "frv:void_pickaxe",
+  "category": "frv:frvcrafting_tools",
+  "sortnum": 12,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Void Tools can be crafted using Void Gem and Obsidian, you can browse the pages for each item"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Void Sword",
+      "recipe": "frv:void_sword",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Void Pickaxe",
+      "recipe": "frv:void_pickaxe",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Void Axe",
+      "recipe": "frv:void_axe",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Void Shovel",
+      "recipe": "frv:void_shovel",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Void Hoe",
+      "recipe": "frv:void_hoe",
+      "text": ""
+    }
+  ]
+}

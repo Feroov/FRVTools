@@ -1,0 +1,42 @@
+{
+  "name": "Copper Tools",
+  "icon": "frv:copper_pickaxe",
+  "category": "frv:frvcrafting_tools",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Copper Tools can be crafted using Copper Ingots, you can browse the pages for each item"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Copper Sword",
+      "recipe": "frv:copper_sword",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Copper Pickaxe",
+      "recipe": "frv:copper_pickaxe",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Copper Axe",
+      "recipe": "frv:copper_axe",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Copper Shovel",
+      "recipe": "frv:copper_shovel",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Copper Hoe",
+      "recipe": "frv:copper_hoe",
+      "text": ""
+    }
+  ]
+}

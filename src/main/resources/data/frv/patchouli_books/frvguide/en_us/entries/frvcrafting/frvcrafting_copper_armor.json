@@ -1,0 +1,36 @@
+{
+  "name": "Copper Armor",
+  "icon": "frv:copper_chestplate",
+  "category": "frv:frvcrafting_armor",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Copper Armor can be crafted using Copper Ingots, you can browse the pages for each item"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Copper Helmet",
+      "recipe": "frv:copper_helmet",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Copper Chestplate",
+      "recipe": "frv:copper_chestplate",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Copper Leggings",
+      "recipe": "frv:copper_leggings",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Copper Boots",
+      "recipe": "frv:copper_boots",
+      "text": ""
+    }
+  ]
+}

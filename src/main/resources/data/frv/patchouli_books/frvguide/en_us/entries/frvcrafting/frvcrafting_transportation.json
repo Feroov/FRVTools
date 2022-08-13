@@ -1,0 +1,18 @@
+{
+  "name": "Transportation",
+  "icon": "minecraft:minecart",
+  "category": "frv:frvcrafting_special",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "You can craft transporation vehicles, check out the recipes through the pages"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Corrupt Board",
+      "recipe": "frv:corrupt_board_spawn_egg",
+      "text": "The fastest transportation vehicle in the game, goes about 100 KM/H! It is an end game item."
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "Corrupt Armor",
+  "icon": "frv:corrupt_chestplate",
+  "category": "frv:frvcrafting_armor",
+  "sortnum": 13,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Corrupt Armor can be crafted using Corrupt Piece, you can browse the pages for each item"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Corrupt Helmet",
+      "recipe": "frv:corrupt_helmet",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Corrupt Chestplate",
+      "recipe": "frv:corrupt_chestplate",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Corrupt Leggings",
+      "recipe": "frv:corrupt_leggings",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Corrupt Boots",
+      "recipe": "frv:corrupt_boots",
+      "text": ""
+    }
+  ]
+}

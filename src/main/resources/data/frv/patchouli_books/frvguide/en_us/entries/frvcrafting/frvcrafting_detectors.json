@@ -1,0 +1,66 @@
+{
+  "name": "Detectors",
+  "icon": "frv:diamond_detector",
+  "category": "frv:frvcrafting_special",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Detectors detect ores below you. Right click on the ground to check if there is a ore below you, check out the recipes through the pages"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Coal Detector",
+      "recipe": "frv:coal_detector",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Iron Detector",
+      "recipe": "frv:iron_detector",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Gold Detector",
+      "recipe": "frv:gold_detector",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Redstone Detector",
+      "recipe": "frv:redstone_detector",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Lapis Lazuli Detector",
+      "recipe": "frv:lapis_detector",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Emerald Detector",
+      "recipe": "frv:emerald_detector",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Diamond Detector",
+      "recipe": "frv:diamond_detector",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Ancient Debris Detector",
+      "recipe": "frv:netherite_detector",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "All Ores Detector",
+      "recipe": "frv:all_detector",
+      "text": ""
+    }
+  ]
+}

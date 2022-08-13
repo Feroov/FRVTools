@@ -1,0 +1,42 @@
+{
+  "name": "Lead Tools",
+  "icon": "frv:lead_pickaxe",
+  "category": "frv:frvcrafting_tools",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Lead Tools can be crafted using Lead Ingots, you can browse the pages for each item"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Lead Sword",
+      "recipe": "frv:lead_sword",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Lead Pickaxe",
+      "recipe": "frv:lead_pickaxe",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Lead Axe",
+      "recipe": "frv:lead_axe",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Lead Shovel",
+      "recipe": "frv:lead_shovel",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Lead Hoe",
+      "recipe": "frv:lead_hoe",
+      "text": ""
+    }
+  ]
+}

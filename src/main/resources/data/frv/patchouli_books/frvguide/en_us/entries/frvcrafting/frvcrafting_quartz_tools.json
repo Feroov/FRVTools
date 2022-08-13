@@ -1,0 +1,42 @@
+{
+  "name": "Quartz Tools",
+  "icon": "frv:quartz_pickaxe",
+  "category": "frv:frvcrafting_tools",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Quartz Tools can be crafted using Quartz, you can browse the pages for each item"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Quartz Sword",
+      "recipe": "frv:quartz_sword",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Quartz Pickaxe",
+      "recipe": "frv:quartz_pickaxe",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Quartz Axe",
+      "recipe": "frv:quartz_axe",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Quartz Shovel",
+      "recipe": "frv:quartz_shovel",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Quartz Hoe",
+      "recipe": "frv:quartz_hoe",
+      "text": ""
+    }
+  ]
+}

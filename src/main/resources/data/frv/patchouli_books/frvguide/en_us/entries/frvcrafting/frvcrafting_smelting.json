@@ -1,0 +1,53 @@
+{
+  "name": "Smelting Recipes",
+  "icon": "frv:lead_ingot",
+  "category": "frv:frvcrafting_blocks",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Here you can find all of the smelting recipes."
+    },
+    {
+      "type": "patchouli:smelting",
+      "title": "Tin Ore",
+      "recipe": "frv:tin_ore",
+      "recipe2": "frv:deepslate_tin_ore",
+      "text": "Tin Ore can be found between Y:-10 and Y:70"
+    },
+    {
+      "type": "patchouli:smelting",
+      "title": "Lead Ore",
+      "recipe": "frv:lead_ore",
+      "recipe2": "frv:deepslate_lead_ore",
+      "text": "Lead Ore can be found between Y:-20 and Y:60"
+    },
+    {
+      "type": "patchouli:smelting",
+      "title": "Silver Ore",
+      "recipe": "frv:silver_ore",
+      "recipe2": "frv:deepslate_silver_ore",
+      "text": "Silver Ore can be found between Y:-54 and Y:40"
+    },
+    {
+      "type": "patchouli:smelting",
+      "title": "Platinum Ore",
+      "recipe": "frv:platinum_ore",
+      "recipe2": "frv:deepslate_platinum_ore",
+      "text": "Lead Ore can be found between Y:-64 and Y:40"
+    },
+    {
+      "type": "patchouli:smelting",
+      "title": "Lead Ore",
+      "recipe": "frv:lead_ore",
+      "recipe2": "frv:deepslate_lead_ore",
+      "text": "Lead Ore can be found between Y:-20 and Y:60"
+    },
+    {
+      "type": "patchouli:smelting",
+      "title": "Hellstone",
+      "recipe": "frv:hellstone",
+      "text": "Hellstone is more common than Ancient Debris in the nether but can be only mined with Funghonite pickaxe"
+    }
+  ]
+}

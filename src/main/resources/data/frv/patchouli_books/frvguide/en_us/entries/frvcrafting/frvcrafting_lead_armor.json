@@ -1,0 +1,36 @@
+{
+  "name": "Lead Armor",
+  "icon": "frv:lead_chestplate",
+  "category": "frv:frvcrafting_armor",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Lead Armor can be crafted using Lead Ingots, you can browse the pages for each item"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Lead Helmet",
+      "recipe": "frv:lead_helmet",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Lead Chestplate",
+      "recipe": "frv:lead_chestplate",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Lead Leggings",
+      "recipe": "frv:lead_leggings",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Copper Boots",
+      "recipe": "frv:copper_boots",
+      "text": ""
+    }
+  ]
+}

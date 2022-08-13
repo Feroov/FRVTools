@@ -834,7 +834,7 @@ public class LordOfCorruption extends Monster implements IAnimatable, IAnimation
             for(int i = 0; i < 1; ++i) {
                 BlockPos blockpos2 = LordOfCorruption.this.blockPosition().offset(-2 +
                         LordOfCorruption.this.random.nextInt(1), 1, -2 + LordOfCorruption.this.random.nextInt(1));
-                CorruptMinion corruptMinion = ModEntityTypes.CORRUPT_MINION.get().create(LordOfCorruption.this.level);
+                CorruptZombie corruptMinion = ModEntityTypes.CORRUPT_ZOMBIE.get().create(LordOfCorruption.this.level);
                 corruptMinion.moveTo(blockpos2, 0.0F, 0.0F);
                 corruptMinion.finalizeSpawn(serverworld, LordOfCorruption.this.level.getCurrentDifficultyAt(blockpos),
                         MobSpawnType.MOB_SUMMONED, (SpawnGroupData)null, (CompoundTag)null);

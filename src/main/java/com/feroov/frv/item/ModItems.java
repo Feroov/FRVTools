@@ -30,7 +30,7 @@ import java.util.List;
 public class ModItems
 {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Frv.MOD_ID);
-    /********************************** (Misc/Unobtainable) *******************************************/
+    /********************************** (Misc/ Unobtainable) *******************************************/
     public static final RegistryObject<Item> ADMIN_SWORD = ITEMS.register("admin_sword", () -> new SwordItem(ModTiers.ADMIN, 0, 9996f, new Item.Properties().tab(ModItemGroup.FRV_TAB_MISC))
             {
                 @Override
@@ -40,7 +40,7 @@ public class ModItems
                     tooltip.add(Component.translatable("Banish every being off the screen").withStyle(ChatFormatting.RED));
                 }});
 
-    /* ***** (Tab pics) *****/
+    public static final RegistryObject<Item> FRV_GUIDE = ITEMS.register("frv_guide", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> MOB_PIC = ITEMS.register("mob_pic", () -> new Item(new Item.Properties()));
     /***********************************************************************************************/
 

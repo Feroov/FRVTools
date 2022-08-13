@@ -1,0 +1,42 @@
+{
+  "name": "Amethyst Tools",
+  "icon": "frv:amethyst_pickaxe",
+  "category": "frv:frvcrafting_tools",
+  "sortnum": 7,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Amethyst Tools can be crafted using Amethyst Shards, you can browse the pages for each item"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Amethyst Sword",
+      "recipe": "frv:amethyst_sword",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Amethyst Pickaxe",
+      "recipe": "frv:amethyst_pickaxe",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Amethyst Axe",
+      "recipe": "frv:amethyst_axe",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Amethyst Shovel",
+      "recipe": "frv:amethyst_shovel",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Amethyst Hoe",
+      "recipe": "frv:amethyst_hoe",
+      "text": ""
+    }
+  ]
+}

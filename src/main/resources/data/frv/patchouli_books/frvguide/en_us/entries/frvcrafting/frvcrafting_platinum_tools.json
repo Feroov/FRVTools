@@ -1,0 +1,42 @@
+{
+  "name": "Platinum Tools",
+  "icon": "frv:platinum_pickaxe",
+  "category": "frv:frvcrafting_tools",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Platinum Tools can be crafted using Platinum Ingots, you can browse the pages for each item"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Platinum Sword",
+      "recipe": "frv:platinum_sword",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Platinum Pickaxe",
+      "recipe": "frv:platinum_pickaxe",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Platinum Axe",
+      "recipe": "frv:platinum_axe",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Platinum Shovel",
+      "recipe": "frv:platinum_shovel",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Platinum Hoe",
+      "recipe": "frv:platinum_hoe",
+      "text": ""
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Mobs",
+  "description": "List of all of the mobs that are in the game",
+  "icon": "frv:mob_pic",
+  "sortnum": 5
+}

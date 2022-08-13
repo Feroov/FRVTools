@@ -1,0 +1,37 @@
+{
+  "name": "Passive Mobs",
+  "icon": "frv:croaker_spawn_egg",
+  "category": "frv:frvcrafting_mobs",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Here you can find detailed information on each and every passive mob in the game"
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "frv:croaker",
+      "rotate": "true",
+      "scale": "0.7",
+      "text": "Croakers are found in the swamp, they are obsessed with trading, they also live in their own villages."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "frv:hunter",
+      "rotate": "true",
+      "text": "As the name implies, they hunt passive mobs, and can trade with the player. You can also find them in camp sites"
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "frv:female_hunter",
+      "rotate": "true",
+      "text": "Female version of the hunter"
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "frv:lost_person",
+      "rotate": "true",
+      "text": "They are the lost people in the corruption, they live underground in a bunker and hide from the evil of corruption!"
+    }
+  ]
+}

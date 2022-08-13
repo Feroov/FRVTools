@@ -1,0 +1,36 @@
+{
+  "name": "Endrium Armor",
+  "icon": "frv:endrium_chestplate",
+  "category": "frv:frvcrafting_armor",
+  "sortnum": 11,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Endrium Armor can be crafted using Endrium Gem, you can browse the pages for each item"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Endrium Helmet",
+      "recipe": "frv:endrium_helmet",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Endrium Chestplate",
+      "recipe": "frv:endrium_chestplate",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Endrium Leggings",
+      "recipe": "frv:endrium_leggings",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Endrium Boots",
+      "recipe": "frv:endrium_boots",
+      "text": ""
+    }
+  ]
+}

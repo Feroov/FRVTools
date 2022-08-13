@@ -25,7 +25,7 @@ public class CannonRenderer extends GeoEntityRenderer<Cannon>
     public RenderType getRenderType(Cannon animatable, float partialTicks, PoseStack stack,
                                     @Nullable MultiBufferSource renderTypeBuffer, @Nullable VertexConsumer vertexBuilder, int packedLightIn,
                                     ResourceLocation textureLocation) {
-        return RenderType.entityCutout(textureLocation);
+        return RenderType.entityCutoutNoCull(textureLocation);
     }
 
 

@@ -1,0 +1,36 @@
+{
+  "name": "Amethyst Armor",
+  "icon": "frv:amethyst_chestplate",
+  "category": "frv:frvcrafting_armor",
+  "sortnum": 7,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Amethyst Armor can be crafted using Amethyst Shards, you can browse the pages for each item"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Amethyst Helmet",
+      "recipe": "frv:amethyst_helmet",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Amethyst Chestplate",
+      "recipe": "frv:amethyst_chestplate",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Amethyst Leggings",
+      "recipe": "frv:amethyst_leggings",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Amethyst Boots",
+      "recipe": "frv:amethyst_boots",
+      "text": ""
+    }
+  ]
+}

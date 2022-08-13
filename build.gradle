@@ -27,6 +27,8 @@ minecraft {
             workingDirectory project.file('run')
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
             mods {
                 frv {
                     source sourceSets.main
@@ -61,12 +63,16 @@ dependencies {
             name = "ModMaven"
             url = "https://modmaven.dev"
         }
+
+        maven { url 'https://maven.blamejared.com' }
     }
     dependencies{
         implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.19:3.1.14')
         runtimeOnly fg.deobf("com.telepathicgrunt:CommandStructures-Forge:3.0.0+1.19")
         compileOnly fg.deobf("mezz.jei:jei-1.19-common-api:11.1.0.233")
         compileOnly fg.deobf("mezz.jei:jei-1.19-forge-api:11.1.0.233")
+        compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.19-75:api")
+        runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:1.19-75")
         // at runtime, use the full JEI jar for Forge
         runtimeOnly fg.deobf("mezz.jei:jei-1.19-forge:11.1.0.233")
     }

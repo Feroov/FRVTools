@@ -1,0 +1,38 @@
+{
+  "name": "Pirates (Hostile)",
+  "icon": "frv:pirate_captain_spawn_egg",
+  "category": "frv:frvcrafting_mobs",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Avast ye! This here section be all about the gentlemen o' fortune, read carefully ye might learn somethin' new"
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "frv:pirate_captain",
+      "rotate": "true",
+      "scale": "0.9",
+      "text": "Captain of the seven seas! they are found randomly in a ship around the oceans"
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "frv:pirate",
+      "rotate": "true",
+      "text": "Angry drunk men of the Pirate Captain, they will come after you no matter what"
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "frv:flintlocker",
+      "rotate": "true",
+      "text": "They shoot you from a distance, and sometimes drop their Flintlock"
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "frv:cannon",
+      "rotate": "true",
+      "scale": "0.8",
+      "text": "Nothing much besides they are the cannon of the ship and attack you from a distance"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "Tin Armor",
+  "icon": "frv:tin_chestplate",
+  "category": "frv:frvcrafting_armor",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Tin Armor can be crafted using Tin Ingots, you can browse the pages for each item"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Tin Helmet",
+      "recipe": "frv:tin_helmet",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Tin Chestplate",
+      "recipe": "frv:tin_chestplate",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Tin Leggings",
+      "recipe": "frv:tin_leggings",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Tin Boots",
+      "recipe": "frv:tin_boots",
+      "text": ""
+    }
+  ]
+}

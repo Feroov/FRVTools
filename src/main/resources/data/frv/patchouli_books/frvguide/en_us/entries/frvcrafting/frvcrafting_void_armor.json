@@ -1,0 +1,36 @@
+{
+  "name": "Void Armor",
+  "icon": "frv:void_chestplate",
+  "category": "frv:frvcrafting_armor",
+  "sortnum": 12,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Void Armor can be crafted using Void Gem, you can browse the pages for each item"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Void Helmet",
+      "recipe": "frv:void_helmet",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Void Chestplate",
+      "recipe": "frv:void_chestplate",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Void Leggings",
+      "recipe": "frv:void_leggings",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Void Boots",
+      "recipe": "frv:void_boots",
+      "text": ""
+    }
+  ]
+}

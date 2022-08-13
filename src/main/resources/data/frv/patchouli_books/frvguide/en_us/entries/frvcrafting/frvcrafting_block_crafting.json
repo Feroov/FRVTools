@@ -1,0 +1,24 @@
+{
+  "name": "Crafting Recipes",
+  "icon": "frv:meteorite",
+  "category": "frv:frvcrafting_blocks",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Here you can find all of the crafting recipes for blocks in general"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "title": "Meteorite",
+      "item": "frv:meteorite",
+      "text": "Found from the craters that are found randomly around the overworld"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Meteorite Shards",
+      "recipe": "frv:hardened_meteorite",
+      "text": "Meteorite Shards are obtained by mining Meteorite, by combining 8 of them with a Netherite Ingot create a Hardened Meteorite, then smelt Hardened Meteorite for Meteorite Ingots"
+    }
+  ]
+}

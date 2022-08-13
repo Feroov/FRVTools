@@ -1,0 +1,36 @@
+{
+  "name": "Funghonite Armor",
+  "icon": "frv:funghonite_chestplate",
+  "category": "frv:frvcrafting_armor",
+  "sortnum": 9,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Funghonite Armor can be crafted using Hard Fungus and Meteorite Ingots, you can browse the pages for each item"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Funghonite Helmet",
+      "recipe": "frv:funghonite_helmet",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Funghonite Chestplate",
+      "recipe": "frv:funghonite_chestplate",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Funghonite Leggings",
+      "recipe": "frv:funghonite_leggings",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Funghonite Boots",
+      "recipe": "frv:funghonite_boots",
+      "text": ""
+    }
+  ]
+}

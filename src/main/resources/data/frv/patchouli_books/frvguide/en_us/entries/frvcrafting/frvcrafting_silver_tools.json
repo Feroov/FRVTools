@@ -1,0 +1,42 @@
+{
+  "name": "Silver Tools",
+  "icon": "frv:silver_pickaxe",
+  "category": "frv:frvcrafting_tools",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Silver Tools can be crafted using Silver Ingots, you can browse the pages for each item"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Silver Sword",
+      "recipe": "frv:silver_sword",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Silver Pickaxe",
+      "recipe": "frv:silver_pickaxe",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Silver Axe",
+      "recipe": "frv:silver_axe",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Silver Shovel",
+      "recipe": "frv:silver_shovel",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Silver Hoe",
+      "recipe": "frv:silver_hoe",
+      "text": ""
+    }
+  ]
+}

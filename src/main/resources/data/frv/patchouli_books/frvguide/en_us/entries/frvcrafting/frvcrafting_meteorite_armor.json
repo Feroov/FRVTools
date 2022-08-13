@@ -1,0 +1,36 @@
+{
+  "name": "Meteorite Armor",
+  "icon": "frv:meteorite_chestplate",
+  "category": "frv:frvcrafting_armor",
+  "sortnum": 8,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Meteorite Armor can be crafted using Meteorite Ingots, you can browse the pages for each item"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Meteorite Helmet",
+      "recipe": "frv:meteorite_helmet",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Meteorite Chestplate",
+      "recipe": "frv:meteorite_chestplate",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Meteorite Leggings",
+      "recipe": "frv:meteorite_leggings",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Meteorite Boots",
+      "recipe": "frv:meteorite_boots",
+      "text": ""
+    }
+  ]
+}

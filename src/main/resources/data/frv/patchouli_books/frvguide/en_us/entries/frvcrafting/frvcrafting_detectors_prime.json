@@ -1,0 +1,66 @@
+{
+  "name": "Detectors Prime",
+  "icon": "frv:diamond_detector_prime",
+  "category": "frv:frvcrafting_special",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Prime Detectors are stronger and has more durability than normal detectors. Right click on the ground to check if there is a ore below you, check out the recipes through the pages"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Coal Detector Prime",
+      "recipe": "frv:coal_detector_prime",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Iron Detector Prime",
+      "recipe": "frv:iron_detector_prime",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Gold Detector Prime",
+      "recipe": "frv:gold_detector_prime",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Redstone Detector Prime",
+      "recipe": "frv:redstone_detector_prime",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Lapis Lazuli Detector Prime",
+      "recipe": "frv:lapis_detector_prime",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Emerald Detector Prime",
+      "recipe": "frv:emerald_detector_prime",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Diamond Detector Prime",
+      "recipe": "frv:diamond_detector_prime",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Ancient Debris Detector Prime",
+      "recipe": "frv:netherite_detector_prime",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "All Ores Detector Prime",
+      "recipe": "frv:all_detector_prime",
+      "text": ""
+    }
+  ]
+}

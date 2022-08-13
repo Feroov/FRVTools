@@ -1,0 +1,36 @@
+{
+  "name": "Platinum Armor",
+  "icon": "frv:platinum_chestplate",
+  "category": "frv:frvcrafting_armor",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Platinum Armor can be crafted using Platinum Ingots, you can browse the pages for each item"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Platinum Helmet",
+      "recipe": "frv:platinum_helmet",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Platinum Chestplate",
+      "recipe": "frv:platinum_chestplate",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Platinum Leggings",
+      "recipe": "frv:platinum_leggings",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Platinum Boots",
+      "recipe": "frv:platinum_boots",
+      "text": ""
+    }
+  ]
+}

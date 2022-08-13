@@ -1,0 +1,42 @@
+{
+  "name": "Funghonite Tools",
+  "icon": "frv:funghonite_pickaxe",
+  "category": "frv:frvcrafting_tools",
+  "sortnum": 9,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Funghonite Tools can be crafted using Hard Fungus and Red Mushrooms, you can browse the pages for each item"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Funghonite Sword",
+      "recipe": "frv:funghonite_sword",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Funghonite Pickaxe",
+      "recipe": "frv:funghonite_pickaxe",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Funghonite Axe",
+      "recipe": "frv:funghonite_axe",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Funghonite Shovel",
+      "recipe": "frv:funghonite_shovel",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Funghonite Hoe",
+      "recipe": "frv:funghonite_hoe",
+      "text": ""
+    }
+  ]
+}

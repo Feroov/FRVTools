@@ -1,0 +1,26 @@
+{
+  "name": "Hostile Mobs",
+  "icon": "frv:mimic_spawn_egg",
+  "category": "frv:frvcrafting_mobs",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "This section contains the general hostile mobs in the game"
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "frv:mimic",
+      "rotate": "true",
+      "scale": "0.8",
+      "text": "They spawn randomly around the world, beware they are fast but drop useful stuff"
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "frv:lost_soul",
+      "rotate": "true",
+      "offset": "0.4f",
+      "text": "Found in the void, they can jumpscare you so beware!"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "Meteorite Tools",
+  "icon": "frv:meteorite_pickaxe",
+  "category": "frv:frvcrafting_tools",
+  "sortnum": 8,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Meteorite Tools can be crafted using Meteorite Ingots and Block of Coal, you can browse the pages for each item"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Meteorite Sword",
+      "recipe": "frv:meteorite_sword",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Meteorite Pickaxe",
+      "recipe": "frv:meteorite_pickaxe",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Meteorite Axe",
+      "recipe": "frv:meteorite_axe",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Meteorite Shovel",
+      "recipe": "frv:meteorite_shovel",
+      "text": ""
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Meteorite Hoe",
+      "recipe": "frv:meteorite_hoe",
+      "text": ""
+    }
+  ]
+}
