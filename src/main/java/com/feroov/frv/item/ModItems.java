@@ -42,6 +42,8 @@ public class ModItems
 
     public static final RegistryObject<Item> FRV_GUIDE = ITEMS.register("frv_guide", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> MOB_PIC = ITEMS.register("mob_pic", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> STRUCTURE_PIC = ITEMS.register("structure_pic", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> STRUCTURE_PIC2 = ITEMS.register("structure_pic2", () -> new Item(new Item.Properties()));
     /***********************************************************************************************/
 
 

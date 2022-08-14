@@ -1,0 +1,38 @@
+{
+  "name": "Important Blocks!",
+  "icon": "frv:matrix_portal",
+  "category": "frv:frvcrafting_blocks",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "title": "Void Gateway",
+      "item": "frv:void_gateway",
+      "text": "Void Gateway is the portal block that takes you to the Void, in order to use it, right click on the block"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "title": "Corruption Gateway",
+      "item": "frv:matrix_portal",
+      "text": "Corruption Gateway is the portal block that takes you to the Corruption, in order to use it, right click on the block, unlike the Void Gateway, this block can be mined with at least a Diamond Pickaxe"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "title": "Funghonite Ore",
+      "item": "frv:funghonite_ore",
+      "text": "Funghonite can be found in the Mushroom Fields, and can be only mined with Meteorite pickaxe, once mined it drops Hard Fungus"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "title": "Endrium",
+      "item": "frv:endrium",
+      "text": "Endrium can be found in the End, and can be only mined with Hellstone pickaxe, once mined it drops Endrium Gem"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "title": "Corrupt Ore",
+      "item": "frv:corrupt_ore",
+      "text": "Corrupt Ores are found all over the Corruption, and can be mined only with Void Pickaxe, once mined it drops Corrupt Piece"
+    }
+  ]
+}

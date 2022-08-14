@@ -9,7 +9,7 @@
   "biomes": "#frv:has_structure/void_tree",
   "step": "surface_structures",
   "start_height": {
-    "absolute": -110
+    "absolute": -75
   },
   "project_start_to_heightmap": "WORLD_SURFACE_WG",
   "spawn_overrides": {}

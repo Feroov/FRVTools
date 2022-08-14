@@ -1,0 +1,30 @@
+{
+  "name": "Corruption Structures",
+  "icon": "frv:structure_pic2",
+  "category": "frv:frvcrafting_structures",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Here are the structures that spawn in the Corruption, more info on the structures page"
+    },
+    {
+      "type": "patchouli:image",
+      "title": "Bunker",
+      "border": "true",
+      "text": "They spawn underground of the Corruption, there are people who have a story to tell you.",
+      "images": [
+        "frv:textures/gui/entries/bunker.png"
+      ]
+    },
+    {
+      "type": "patchouli:image",
+      "title": "Corrupt Pyramid",
+      "border": "true",
+      "text": "Corrupt Pyramid spawns uncommonly throughout the Corruption, they are a treasure and a gateway back to the overworld!",
+      "images": [
+        "frv:textures/gui/entries/corrupt_pyramid.png"
+      ]
+    }
+  ]
+}

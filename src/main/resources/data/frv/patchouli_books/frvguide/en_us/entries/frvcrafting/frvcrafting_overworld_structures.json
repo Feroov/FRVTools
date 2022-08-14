@@ -1,0 +1,66 @@
+{
+  "name": "Overworld Structures",
+  "icon": "frv:structure_pic",
+  "category": "frv:frvcrafting_structures",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Here are the structures that spawn in the overworld, more info on the structures page"
+    },
+    {
+      "type": "patchouli:image",
+      "title": "Camp Site",
+      "border": "true",
+      "text": "Camp Sites generate all over forests, jungles, savannas, taigas, and plains. They contain at least two hunters, you can find some supplies in there.",
+      "images": [
+        "frv:textures/gui/entries/camp_site.png"
+      ]
+    },
+    {
+      "type": "patchouli:image",
+      "title": "Croaker Village",
+      "border": "true",
+      "text": "These villages spawn rarely in the swamp biome, there are some goodies to look out for!",
+      "images": [
+        "frv:textures/gui/entries/croaker_village.png"
+      ]
+    },
+    {
+      "type": "patchouli:image",
+      "title": "Pirate Ship",
+      "border": "true",
+      "text": "These filthy rich pirates spawn all over your oceans now, beware though they are strong! and obviously has some treasure.",
+      "images": [
+        "frv:textures/gui/entries/pirate_ship.png"
+      ]
+    },
+    {
+      "type": "patchouli:image",
+      "title": "Suspecious Chest",
+      "border": "true",
+      "text": "They generate all over the overworld, best to experience it for yourself.",
+      "images": [
+        "frv:textures/gui/entries/suspecious_chest.png"
+      ]
+    },
+    {
+      "type": "patchouli:image",
+      "title": "Void Gateway",
+      "border": "true",
+      "text": "They generate everywhere but at the bottom of your world, it contains the portal block to void",
+      "images": [
+        "frv:textures/gui/entries/void_gateway.png"
+      ]
+    },
+    {
+      "type": "patchouli:image",
+      "title": "Corruption",
+      "border": "true",
+      "text": "The world is getting corrupted! Corruptions are found rarely, it is the gateway to the Corruption and is being guarded by an unknown entity.",
+      "images": [
+        "frv:textures/gui/entries/corruption.png"
+      ]
+    }
+  ]
+}

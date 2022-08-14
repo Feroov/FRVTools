@@ -5,10 +5,6 @@
   "sortnum": 2,
   "pages": [
     {
-      "type": "patchouli:text",
-      "text": "Here you can find all of the crafting recipes for blocks in general"
-    },
-    {
       "type": "patchouli:spotlight",
       "title": "Meteorite",
       "item": "frv:meteorite",
