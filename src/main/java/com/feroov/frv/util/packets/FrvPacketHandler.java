@@ -14,9 +14,15 @@ public class FrvPacketHandler
             new ResourceLocation(Frv.MOD_ID, "musket"), () -> PROTOCOL_VERSION, PROTOCOL_VERSION::equals,
             PROTOCOL_VERSION::equals);
 
+    public static final SimpleChannel CRAFTING = NetworkRegistry.newSimpleChannel(
+            new ResourceLocation(Frv.MOD_ID, "crafting"), () -> PROTOCOL_VERSION, PROTOCOL_VERSION::equals,
+            PROTOCOL_VERSION::equals);
+
 
     public static void register()
     {
+        CRAFTING.registerMessage(++channel_id, FrvCraftingPacket.class, FrvCraftingPacket::encode,
+                FrvCraftingPacket::new, FrvCraftingPacket::handle);
         MUSKET.registerMessage(channel_id++, MusketLoadingPacket.class, MusketLoadingPacket::encode,
                 MusketLoadingPacket::new, MusketLoadingPacket::handle);
     }

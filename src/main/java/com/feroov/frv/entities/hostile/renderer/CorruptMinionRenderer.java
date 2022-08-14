@@ -1,10 +1,9 @@
 package com.feroov.frv.entities.hostile.renderer;
 
 
-import com.feroov.frv.entities.hostile.Corrupt;
+
 import com.feroov.frv.entities.hostile.CorruptMinion;
 import com.feroov.frv.entities.hostile.model.CorruptMinionModel;
-import com.feroov.frv.entities.hostile.model.CorruptModel;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.renderer.MultiBufferSource;

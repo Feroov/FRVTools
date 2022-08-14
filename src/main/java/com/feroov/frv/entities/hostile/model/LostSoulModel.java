@@ -2,8 +2,6 @@ package com.feroov.frv.entities.hostile.model;
 
 import com.feroov.frv.Frv;
 import com.feroov.frv.entities.hostile.LostSoul;
-import com.feroov.frv.entities.hostile.Pirate;
-import com.feroov.frv.entities.hostile.renderer.PirateRenderer;
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.processor.IBone;

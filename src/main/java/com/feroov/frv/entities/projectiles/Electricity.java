@@ -46,6 +46,7 @@ public class Electricity extends Zombie implements IAnimatable
         event.getController().setAnimation(new AnimationBuilder().addAnimation("lightning", true));
         return PlayState.CONTINUE;
     }
+
     @Override
     public void registerControllers(AnimationData data)
     {
@@ -54,19 +55,13 @@ public class Electricity extends Zombie implements IAnimatable
     }
 
     @Override
-    public AnimationFactory getFactory()
-    {
-        return this.factory;
-    }
+    public AnimationFactory getFactory()  { return this.factory; }
 
     public Electricity(EntityType<? extends Zombie> p_i48549_1_, Level p_i48549_2_)
     {
         super(p_i48549_1_, p_i48549_2_);
         this.setInvulnerable(true);
     }
-
-
-
 
     public static AttributeSupplier.Builder createAttributes()
     {
@@ -78,17 +73,22 @@ public class Electricity extends Zombie implements IAnimatable
                 .add(Attributes.SPAWN_REINFORCEMENTS_CHANCE);
     }
 
-    public void entityInside(BlockState p_58238_, Level p_58239_, BlockPos p_58240_, Entity p_58241_) {
-        if (!p_58239_.isClientSide && p_58239_.getDifficulty() != Difficulty.PEACEFUL) {
-            if (p_58241_ instanceof LivingEntity) {
+    public void entityInside(BlockState p_58238_, Level p_58239_, BlockPos p_58240_, Entity p_58241_)
+    {
+        if (!p_58239_.isClientSide && p_58239_.getDifficulty() != Difficulty.PEACEFUL)
+        {
+            if (p_58241_ instanceof LivingEntity)
+            {
                 LivingEntity livingentity = (LivingEntity)p_58241_;
-                if (!livingentity.isInvulnerableTo(DamageSource.WITHER)) {
+                if (!livingentity.isInvulnerableTo(DamageSource.WITHER))
+                {
                     livingentity.addEffect(new MobEffectInstance(MobEffects.WITHER, 40));
                 }
             }
 
         }
     }
+
     @Override
     public boolean doHurtTarget(Entity entityIn)
     {
@@ -157,19 +157,11 @@ public class Electricity extends Zombie implements IAnimatable
     }
 
     @Override
-    public boolean isBaby()
-    {
-        return false;
-    }
+    public boolean isBaby()  { return false; }
 
     @Override
-    public boolean isPushable()
-    {
-        return false;
-    }
+    public boolean isPushable()  { return false; }
 
     @Override
-    protected void pushEntities()
-    {
-    }
+    protected void pushEntities() {}
 }

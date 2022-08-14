@@ -23,8 +23,6 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 @Mod.EventBusSubscriber(modid = Frv.MOD_ID, bus = Bus.MOD, value = Dist.CLIENT)
 public class ClientModEvents
 {
-
-
     public ClientModEvents(){}
     /**
      * @SubscribeEvent

@@ -9,7 +9,6 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.ForgeTier;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.TierSortingRegistry;
-import net.minecraftforge.fml.common.Mod;
 
 import java.util.List;
 
@@ -96,8 +95,6 @@ public class ModTiers
 
     public static final ForgeTier ADMIN = new ForgeTier(999,999999,999f,9999f,10,
             Tags.Blocks.NEEDS_GOLD_TOOL, () -> Ingredient.of(Items.AMETHYST_SHARD));
-
-
 
     /**
      *    WOOD(0, 59, 2.0F, 0.0F, 15, () -> {

@@ -3,7 +3,6 @@ package com.feroov.frv.item.custom.items;
 import com.feroov.frv.init.ModParticles;
 import com.feroov.frv.sound.ModSoundEvents;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;

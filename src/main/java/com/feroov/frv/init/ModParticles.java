@@ -10,8 +10,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class ModParticles
 {
-    public static final DeferredRegister<ParticleType<?>> PARTICLE_TYPES =
-            DeferredRegister.create(ForgeRegistries.PARTICLE_TYPES, Frv.MOD_ID);
+    public static final DeferredRegister<ParticleType<?>> PARTICLE_TYPES = DeferredRegister.create(ForgeRegistries.PARTICLE_TYPES, Frv.MOD_ID);
 
     public static final RegistryObject<SimpleParticleType> COAL_PARTICLES = PARTICLE_TYPES.register("coal_particles", () -> new SimpleParticleType(true));
     public static final RegistryObject<SimpleParticleType> IRON_PARTICLES = PARTICLE_TYPES.register("iron_particles", () -> new SimpleParticleType(true));

@@ -1,6 +1,6 @@
 package com.feroov.frv.entities.projectiles;
 
-import com.feroov.frv.entities.hostile.Corrupt;
+
 import com.feroov.frv.init.ModEntityTypes;
 import com.google.common.collect.Sets;
 import net.minecraft.core.BlockPos;
@@ -19,7 +19,6 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
-import net.minecraft.world.entity.projectile.Arrow;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.item.alchemy.Potions;
@@ -40,7 +39,8 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 import java.util.Set;
 
 
-public class CorruptFire extends AbstractArrow implements IAnimatable {
+public class CorruptFire extends AbstractArrow implements IAnimatable
+{
 
     private int lifeTicks = 500;
     private final Set<MobEffectInstance> effects = Sets.newHashSet();
@@ -48,77 +48,62 @@ public class CorruptFire extends AbstractArrow implements IAnimatable {
 
     private AnimationFactory factory = new AnimationFactory(this);
 
-    public CorruptFire(EntityType<? extends AbstractArrow> type, Level world) {
-        super(type, world);
-    }
+    public CorruptFire(EntityType<? extends AbstractArrow> type, Level world) { super(type, world); }
 
     @Override
-    protected ItemStack getPickupItem() {
-        return null;
-    }
+    protected ItemStack getPickupItem() { return null; }
 
-    private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
+    private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event)
+    {
         event.getController().setAnimation(new AnimationBuilder().addAnimation("idle", false));
         return PlayState.CONTINUE;
     }
 
     @Override
-    public void registerControllers(AnimationData data) {
+    public void registerControllers(AnimationData data)
+    {
         data.addAnimationController(new AnimationController<CorruptFire>(this, "controller", 0, this::predicate));
     }
 
-    public void addEffect(MobEffectInstance p_36871_) {
-        this.effects.add(p_36871_);
-    }
+    public void addEffect(MobEffectInstance p_36871_) { this.effects.add(p_36871_); }
 
     @Override
-    public AnimationFactory getFactory() {
-        return this.factory;
-    }
+    public AnimationFactory getFactory() { return this.factory; }
 
-    public CorruptFire(Level world, LivingEntity owner) {
-        super(ModEntityTypes.CORRUPT_FIRE.get(), owner, world);
-    }
+    public CorruptFire(Level world, LivingEntity owner) { super(ModEntityTypes.CORRUPT_FIRE.get(), owner, world); }
 
     @Override
-    public Packet<?> getAddEntityPacket() {
-        return NetworkHooks.getEntitySpawningPacket(this);
-    }
+    public Packet<?> getAddEntityPacket() { return NetworkHooks.getEntitySpawningPacket(this); }
 
     public SoundEvent hitSound = this.getDefaultHitGroundSoundEvent();
 
-    public void setSoundEvent(SoundEvent soundIn) {
-        this.hitSound = soundIn;
-    }
-    @Override
-    protected SoundEvent getDefaultHitGroundSoundEvent() {
-        return SoundEvents.ARMOR_EQUIP_IRON;
-    }
+    public void setSoundEvent(SoundEvent soundIn) { this.hitSound = soundIn; }
 
     @Override
-    protected void onHitBlock(BlockHitResult p_36755_) {
+    protected SoundEvent getDefaultHitGroundSoundEvent()  { return SoundEvents.ARMOR_EQUIP_IRON; }
 
-        this.setSoundEvent(SoundEvents.GENERIC_EXPLODE);
-
-    }
+    @Override
+    protected void onHitBlock(BlockHitResult p_36755_) { this.setSoundEvent(SoundEvents.GENERIC_EXPLODE); }
 
     /********* Effects etc ********/
-    protected void doPostHurtEffects(LivingEntity livingEntity) {
+    protected void doPostHurtEffects(LivingEntity livingEntity)
+    {
         super.doPostHurtEffects(livingEntity);
         Entity entity = this.getEffectSource();
 
-        for(MobEffectInstance mobeffectinstance : this.potion.getEffects()) {
+        for(MobEffectInstance mobeffectinstance : this.potion.getEffects())
+        {
             livingEntity.addEffect(new MobEffectInstance(mobeffectinstance.getEffect(),
                     Math.max(mobeffectinstance.getDuration() / 8, 1), mobeffectinstance.getAmplifier(),
                     mobeffectinstance.isAmbient(), mobeffectinstance.isVisible()), entity);
         }
 
-
             livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 200));
             livingEntity.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 60));
 
 
-        if(!livingEntity.level.isClientSide()) {
+        if(!livingEntity.level.isClientSide())
+        {
             ServerLevel world = (ServerLevel) livingEntity.level;
             BlockPos position = livingEntity.blockPosition();
 
@@ -136,10 +121,10 @@ public class CorruptFire extends AbstractArrow implements IAnimatable {
 
         }
 
-
-
-        if (!this.effects.isEmpty()) {
-            for(MobEffectInstance mobeffectinstance1 : this.effects) {
+        if (!this.effects.isEmpty())
+        {
+            for(MobEffectInstance mobeffectinstance1 : this.effects)
+            {
                 livingEntity.addEffect(mobeffectinstance1, entity);
             }
         }
@@ -147,24 +132,22 @@ public class CorruptFire extends AbstractArrow implements IAnimatable {
     }
 
     @Override
-    protected void onHitEntity(EntityHitResult entityHitResult) {
+    protected void onHitEntity(EntityHitResult entityHitResult)
+    {
         Entity entity = entityHitResult.getEntity();
         if (entityHitResult.getType() != HitResult.Type.ENTITY
-                || !((EntityHitResult) entityHitResult).getEntity().is(entity)) {
-            if (!this.level.isClientSide) {
-                this.remove(RemovalReason.KILLED);
-            }
+                || !((EntityHitResult) entityHitResult).getEntity().is(entity))
+        {
+            if (!this.level.isClientSide) { this.remove(RemovalReason.KILLED); }
 
         }
         Entity entity1 = this.getOwner();
         DamageSource damagesource;
-        if (entity1 == null) {
-            damagesource = DamageSource.arrow(this, this);
-        } else {
+        if (entity1 == null) { damagesource = DamageSource.arrow(this, this); }
+        else
+        {
             damagesource = DamageSource.arrow(this, entity1);
-            if (entity1 instanceof LivingEntity) {
-                ((LivingEntity) entity1).setLastHurtMob(entity);
-            }
+            if (entity1 instanceof LivingEntity) { ((LivingEntity) entity1).setLastHurtMob(entity); }
         }
 
         if (entity.hurt(damagesource, 27.0f))
@@ -185,21 +168,14 @@ public class CorruptFire extends AbstractArrow implements IAnimatable {
                             .send(new ClientboundGameEventPacket(ClientboundGameEventPacket.ARROW_HIT_PLAYER, 0.0F));
                 }
             }
-        } else {
-            if (!this.level.isClientSide)
-            {
-                this.remove(RemovalReason.KILLED);
-            }
-        }
+        } else { if (!this.level.isClientSide) { this.remove(RemovalReason.KILLED); } }
     }
 
     @Override
-    public boolean isNoGravity() {
-        if (this.isInWater()) {
-            return false;
-        } else {
-            return true;
-        }
+    public boolean isNoGravity()
+    {
+        if (this.isInWater()) { return false; }
+        else { return true; }
     }
 
     @Override
@@ -207,10 +183,9 @@ public class CorruptFire extends AbstractArrow implements IAnimatable {
     {
         super.onHit(result);
         Entity entity = this.getOwner();
-        if (result.getType() != HitResult.Type.ENTITY || !((EntityHitResult) result).getEntity().is(entity)) {
-            if (!this.level.isClientSide) {
-                this.remove(RemovalReason.KILLED);
-            }
+        if (result.getType() != HitResult.Type.ENTITY || !((EntityHitResult) result).getEntity().is(entity))
+        {
+            if (!this.level.isClientSide) { this.remove(RemovalReason.KILLED); }
         }
     }
 

@@ -6,6 +6,12 @@
   "pages": [
     {
       "type": "patchouli:spotlight",
+      "title": "Vigorous Crafting Table",
+      "item": "frv:vigorous_crafting_table",
+      "text": "Special crafting table that crafts unique and powerful items"
+    },
+    {
+      "type": "patchouli:spotlight",
       "title": "Void Gateway",
       "item": "frv:void_gateway",
       "text": "Void Gateway is the portal block that takes you to the Void, in order to use it, right click on the block"

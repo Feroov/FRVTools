@@ -1,6 +1,5 @@
 package com.feroov.frv.entities.passive.renderer;
 
-
 import com.feroov.frv.entities.passive.model.CroakerModel;
 import com.feroov.frv.entities.passive.Croaker;
 import com.feroov.frv.entities.variants.CroakerVariant;

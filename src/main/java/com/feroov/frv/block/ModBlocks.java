@@ -2,6 +2,7 @@ package com.feroov.frv.block;
 
 import com.feroov.frv.Frv;
 import com.feroov.frv.block.custom.MatrixPortalBlock;
+import com.feroov.frv.block.custom.VigorousCraftingTable;
 import com.feroov.frv.block.custom.VoidPortalBlock;
 import com.feroov.frv.item.ModItemGroup;
 import com.feroov.frv.item.ModItems;
@@ -241,9 +242,11 @@ public class ModBlocks
                             () -> ModSoundEvents.CORRUPT_FIRE.get(), //place
                             () -> ModSoundEvents.SILENT.get(), //hit
                             () -> ModSoundEvents.CORRUPT_HURT.get())).lightLevel((light) -> {return 9;})));
-
-
     /******************************************************************************************/
+
+    public static final RegistryObject<Block> VIGOROUS_CRAFTING_TABLE = registerBlock("vigorous_crafting_table",
+            () -> new VigorousCraftingTable((BlockBehaviour.Properties.of(Material.STONE).explosionResistance(30).strength(4.0F)
+                    .sound(SoundType.STONE).noOcclusion())));
 
 
 

@@ -1,0 +1,18 @@
+{
+  "name": "Ammo",
+  "icon": "frv:musket_bullet",
+  "category": "frv:frvcrafting_special",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Guns and special ranged items are crafted from the Vigorous Crafting Table (You can find crafting recipes for those using the Vigorous Crafting Table), this section covers for all of the ammo types etc."
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Flintlock Bullet",
+      "recipe": "frv:musket_bullet",
+      "text": "Flintlock Bullets can either be crafted or be dropped by the Pirates"
+    }
+  ]
+}

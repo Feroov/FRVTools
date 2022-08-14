@@ -15,7 +15,8 @@ import net.minecraft.world.level.Level;
 
 import java.util.Map;
 
-public class EndriumArmor extends ArmorItem  {
+public class EndriumArmor extends ArmorItem
+{
 
 
     private static final Map<ArmorMaterial, MobEffect> MATERIAL_TO_EFFECT_MAP = new ImmutableMap.Builder<ArmorMaterial,
@@ -63,8 +64,7 @@ public class EndriumArmor extends ArmorItem  {
         }
     }
 
-    private void addStatusEffectForMaterial(Player player, ArmorMaterial mapArmorMaterial,
-                                            MobEffect mapStatusEffect)
+    private void addStatusEffectForMaterial(Player player, ArmorMaterial mapArmorMaterial, MobEffect mapStatusEffect)
     {
         if(hasCorrectArmorOn(mapArmorMaterial, player))
         {
@@ -101,5 +101,4 @@ public class EndriumArmor extends ArmorItem  {
         return helmet.getMaterial() == material && breastplate.getMaterial()
                 == material && leggings.getMaterial() == material && boots.getMaterial() == material;
     }
-
 }

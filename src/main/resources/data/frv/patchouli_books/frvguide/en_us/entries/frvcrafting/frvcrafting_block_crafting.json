@@ -5,6 +5,12 @@
   "sortnum": 2,
   "pages": [
     {
+      "type": "patchouli:crafting",
+      "title": "Vigorous Crafting Table",
+      "recipe": "frv:vigorous_crafting_table",
+      "text": "The stronger version of the crafting table, you will be able to craft unique things."
+    },
+    {
       "type": "patchouli:spotlight",
       "title": "Meteorite",
       "item": "frv:meteorite",

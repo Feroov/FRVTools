@@ -1,7 +1,5 @@
 package com.feroov.frv.entities.hostile;
 
-
-
 import com.feroov.frv.entities.passive.FemaleHunter;
 import com.feroov.frv.entities.passive.Hunter;
 import com.feroov.frv.sound.ModSoundEvents;

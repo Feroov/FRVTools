@@ -2,6 +2,7 @@ package com.feroov.frv;
 
 
 import com.feroov.frv.block.ModBlocks;
+import com.feroov.frv.entities.tile.gui.VCTableScreen;
 import com.feroov.frv.init.Keybindings;
 import com.feroov.frv.init.ModEntityTypes;
 import com.feroov.frv.init.ModParticles;
@@ -9,11 +10,14 @@ import com.feroov.frv.item.ModItems;
 import com.feroov.frv.item.custom.RangedItems;
 import com.feroov.frv.sound.ModSoundEvents;
 import com.feroov.frv.util.ClientRegistry;
+import com.feroov.frv.util.FRVRecipes;
+import com.feroov.frv.util.FRVScreens;
 import com.feroov.frv.util.packets.FrvPacketHandler;
 import com.feroov.frv.world.ModDimensions;
 import com.feroov.frv.world.feature.ModConfiguredFeatures;
 import com.feroov.frv.world.feature.ModPlacedFeatures;
 import net.minecraft.client.KeyMapping;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.world.entity.FlyingMob;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.monster.Monster;
@@ -46,9 +50,12 @@ public class Frv
         ModBlocks.register(eventBus);
         ModParticles.register(eventBus);
         ModEntityTypes.ENTITIES.register(eventBus);
+        ModEntityTypes.TILE_TYPES.register(eventBus);
         ModConfiguredFeatures.register(eventBus);
         ModPlacedFeatures.register(eventBus);
         ModDimensions.register();
+        FRVScreens.CONTAIN.register(eventBus);
+        FRVRecipes.SERIAL.register(eventBus);
 
         eventBus.addListener(this::setup);
         eventBus.addListener(this::doClientStuff);
@@ -80,5 +87,6 @@ public class Frv
     {
         FrvPacketHandler.register();
         ModEntityTypes.registerAdditionalEntityInformation();
+        MenuScreens.register(FRVScreens.SCREEN_HANDLER_TYPE.get(), VCTableScreen::new);
     }
 }

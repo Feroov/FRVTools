@@ -1,9 +1,6 @@
 package com.feroov.frv.entities.passive.renderer;
 
-
-
 import com.feroov.frv.entities.passive.LostPerson;
-import com.feroov.frv.entities.passive.model.HunterModel;
 import com.feroov.frv.entities.passive.model.LostPersonModel;
 import com.feroov.frv.entities.variants.LostPersonVariant;
 import com.google.common.collect.Maps;

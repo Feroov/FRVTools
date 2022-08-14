@@ -2,36 +2,13 @@ package com.feroov.frv.world;
 
 import com.feroov.frv.block.ModBlocks;
 import com.feroov.frv.block.custom.MatrixPortalBlock;
-import com.feroov.frv.sound.ModSoundEvents;
-import com.mojang.brigadier.exceptions.CommandSyntaxException;
-import net.minecraft.client.gui.screens.worldselection.WorldCreationContext;
-import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Holder;
-import net.minecraft.core.Registry;
-import net.minecraft.core.SectionPos;
-import net.minecraft.data.worldgen.features.TreeFeatures;
-import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.level.ChunkPos;
-import net.minecraft.world.level.chunk.ChunkGenerator;
-import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
-import net.minecraft.world.level.levelgen.structure.BoundingBox;
-import net.minecraft.world.level.levelgen.structure.Structure;
-import net.minecraft.world.level.levelgen.structure.StructureStart;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.material.Material;
-import net.minecraft.world.level.portal.PortalInfo;
-import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.util.ITeleporter;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Function;
 

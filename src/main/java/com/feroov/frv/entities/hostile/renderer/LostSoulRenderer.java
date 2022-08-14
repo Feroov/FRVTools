@@ -2,10 +2,7 @@ package com.feroov.frv.entities.hostile.renderer;
 
 
 import com.feroov.frv.entities.hostile.LostSoul;
-import com.feroov.frv.entities.hostile.Pirate;
-import com.feroov.frv.entities.hostile.PirateCaptain;
 import com.feroov.frv.entities.hostile.model.LostSoulModel;
-import com.feroov.frv.entities.hostile.model.PirateCaptainModel;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.renderer.MultiBufferSource;

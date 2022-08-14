@@ -2,7 +2,6 @@ package com.feroov.frv.item.custom.armors.models;
 
 import com.feroov.frv.Frv;
 import com.feroov.frv.item.custom.armors.FunghoniteArmor;
-import com.feroov.frv.item.custom.armors.MeteoriteArmor;
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
 

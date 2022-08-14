@@ -2,7 +2,7 @@
   "name": "Unobtainable",
   "icon": "minecraft:barrier",
   "category": "frv:frvcrafting_special",
-  "sortnum": 4,
+  "sortnum": 5,
   "pages": [
     {
       "type": "patchouli:text",

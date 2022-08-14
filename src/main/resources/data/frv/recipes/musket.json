@@ -1,0 +1,25 @@
+{
+  "type": "frv:vigorous_crafting_table",
+  "pattern": "abcd",
+  "key": {
+    "a": {
+      "item": "minecraft:oak_planks",
+      "count": 3
+    },
+    "b": {
+      "item": "minecraft:gunpowder",
+      "count": 10
+    },
+    "c": {
+      "item": "minecraft:iron_ingot",
+      "count": 5
+    },
+    "d": {
+      "item": "minecraft:iron_nugget",
+      "count": 5
+    }
+  },
+  "result": {
+    "item": "frv:musket"
+  }
+}

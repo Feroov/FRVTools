@@ -1,9 +1,7 @@
 package com.feroov.frv.entities.passive.model;
 
 import com.feroov.frv.Frv;
-import com.feroov.frv.entities.passive.Hunter;
 import com.feroov.frv.entities.passive.LostPerson;
-import com.feroov.frv.entities.passive.renderer.HunterRenderer;
 import com.feroov.frv.entities.passive.renderer.LostPersonRenderer;
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;

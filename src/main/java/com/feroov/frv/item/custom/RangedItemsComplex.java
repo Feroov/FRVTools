@@ -1,6 +1,5 @@
 package com.feroov.frv.item.custom;
 
-
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
@@ -20,15 +19,14 @@ import software.bernie.geckolib3.network.GeckoLibNetwork;
 import software.bernie.geckolib3.network.ISyncable;
 import software.bernie.geckolib3.util.GeckoLibUtil;
 
-
-
 public class RangedItemsComplex extends Item implements IAnimatable, ISyncable
 {
     public AnimationFactory factory = new AnimationFactory(this);
     public String controllerName = "controller";
     public static final int STATE = 0;
 
-    public RangedItemsComplex(Properties p_41383_) {
+    public RangedItemsComplex(Properties p_41383_)
+    {
         super(p_41383_);
         GeckoLibNetwork.registerSyncable(this);
     }
@@ -55,7 +53,8 @@ public class RangedItemsComplex extends Item implements IAnimatable, ISyncable
     @Override
     public void onAnimationSync(int id, int state)
     {
-        if (state == STATE) {
+        if (state == STATE)
+        {
             final AnimationController<?> controller = GeckoLibUtil.getControllerForID(this.factory, id, controllerName);
             if (controller.getAnimationState() == AnimationState.Stopped)
             {

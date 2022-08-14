@@ -1,8 +1,6 @@
 package com.feroov.frv.item.custom.armors;
 
 import com.feroov.frv.item.ModArmorMaterial;
-import com.feroov.frv.item.ModItemGroup;
-import com.feroov.frv.item.ModItems;
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -12,10 +10,8 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.common.extensions.IForgeItem;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -28,26 +24,24 @@ import software.bernie.geckolib3.item.GeoArmorItem;
 
 import java.util.Map;
 
-public class AmethystArmor extends GeoArmorItem implements IAnimatable {
+public class AmethystArmor extends GeoArmorItem implements IAnimatable
+{
     private AnimationFactory factory = new AnimationFactory(this);
 
     @Override
-    public void registerControllers(AnimationData data) {
+    public void registerControllers(AnimationData data)
+    {
         data.addAnimationController(new AnimationController<AmethystArmor>(this, "controller", 20, this::predicate));
     }
 
-    private <P extends IAnimatable> PlayState predicate(AnimationEvent<P> event) {
+    private <P extends IAnimatable> PlayState predicate(AnimationEvent<P> event)
+    {
         event.getController().setAnimation(new AnimationBuilder().addAnimation("idle", true));
         return PlayState.CONTINUE;
     }
 
     @Override
-    public AnimationFactory getFactory() {
-        return this.factory;
-    }
-
-
-
+    public AnimationFactory getFactory() { return this.factory; }
 
     public AmethystArmor(ArmorMaterial material, EquipmentSlot slot, Properties settings)
     {
@@ -57,15 +51,17 @@ public class AmethystArmor extends GeoArmorItem implements IAnimatable {
     private static final Map<ArmorMaterial, MobEffect> MATERIAL_TO_EFFECT_MAP = new ImmutableMap.Builder<ArmorMaterial,
             MobEffect>().put(ModArmorMaterial.AMETHYST, MobEffects.MOVEMENT_SPEED).build();
 
-
     @Override
     public void inventoryTick(ItemStack stack, Level world, Entity entity, int slot, boolean selected)
     {
-        if(!world.isClientSide()) {
-            if (entity instanceof Player) {
+        if(!world.isClientSide())
+        {
+            if (entity instanceof Player)
+            {
                 Player player = (Player) entity;
 
-                if (hasFullSuitOfArmorOn(player)) {
+                if (hasFullSuitOfArmorOn(player))
+                {
                     evaluateArmorEffects(player);
                 }
             }
@@ -79,14 +75,14 @@ public class AmethystArmor extends GeoArmorItem implements IAnimatable {
             ArmorMaterial mapArmorMaterial = entry.getKey();
             MobEffect mapStatusEffect = entry.getValue();
 
-            if(hasCorrectArmorOn(mapArmorMaterial, player)) {
+            if(hasCorrectArmorOn(mapArmorMaterial, player))
+            {
                 addStatusEffectForMaterial(player, mapArmorMaterial, mapStatusEffect);
             }
         }
     }
 
-    private void addStatusEffectForMaterial(Player player, ArmorMaterial mapArmorMaterial,
-                                            MobEffect mapStatusEffect)
+    private void addStatusEffectForMaterial(Player player, ArmorMaterial mapArmorMaterial, MobEffect mapStatusEffect)
     {
         if(hasCorrectArmorOn(mapArmorMaterial, player))
         {

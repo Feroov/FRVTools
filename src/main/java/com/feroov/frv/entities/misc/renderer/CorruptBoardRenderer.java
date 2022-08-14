@@ -1,6 +1,5 @@
 package com.feroov.frv.entities.misc.renderer;
 
-import com.feroov.frv.entities.hostile.CorruptAngel;
 import com.feroov.frv.entities.misc.CorruptBoard;
 import com.feroov.frv.entities.misc.model.CorruptBoardModel;
 import com.mojang.blaze3d.vertex.PoseStack;

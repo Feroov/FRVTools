@@ -1,6 +1,7 @@
 package com.feroov.frv.init;
 
 import com.feroov.frv.Frv;
+import com.feroov.frv.block.ModBlocks;
 import com.feroov.frv.entities.hostile.*;
 import com.feroov.frv.entities.misc.CorruptBoard;
 import com.feroov.frv.entities.passive.Croaker;
@@ -8,11 +9,13 @@ import com.feroov.frv.entities.passive.FemaleHunter;
 import com.feroov.frv.entities.passive.Hunter;
 import com.feroov.frv.entities.passive.LostPerson;
 import com.feroov.frv.entities.projectiles.*;
+import com.feroov.frv.entities.tile.VCTEntity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.SpawnPlacements;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -22,8 +25,10 @@ public class ModEntityTypes
 {
     private ModEntityTypes(){}
 
-    public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES,
-            Frv.MOD_ID);
+    public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, Frv.MOD_ID);
+
+    public static final DeferredRegister<BlockEntityType<?>> TILE_TYPES = DeferredRegister
+            .create(ForgeRegistries.BLOCK_ENTITY_TYPES, Frv.MOD_ID);
 
     /** Passive **/
     public static final RegistryObject<EntityType<Croaker>> CROAKER = ENTITIES.register("croaker",
@@ -120,11 +125,15 @@ public class ModEntityTypes
             () -> EntityType.Builder.of(CorruptBoard::new, MobCategory.CREATURE).fireImmune()
                     .sized(0.9f,0.9f).fireImmune().build("corrupt_board"));
 
-    public static void registerAdditionalEntityInformation() {
-        registerEntitySpawnRestrictions();
-    }
+    // Tile Entities
 
-    private static void registerEntitySpawnRestrictions() {
+    public static final RegistryObject<BlockEntityType<VCTEntity>> VCT_ENTITY = TILE_TYPES.register(
+            "vctable", () -> BlockEntityType.Builder.of(VCTEntity::new, ModBlocks.VIGOROUS_CRAFTING_TABLE.get()).build(null));
+
+    public static void registerAdditionalEntityInformation() { registerEntitySpawnRestrictions(); }
+
+    private static void registerEntitySpawnRestrictions()
+    {
         SpawnPlacements.register(LOST_SOUL.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Mob::checkMobSpawnRules);
     }
 }

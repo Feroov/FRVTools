@@ -1,6 +1,5 @@
 package com.feroov.frv.entities.passive.renderer;
 
-
 import com.feroov.frv.entities.passive.model.FemaleHunterModel;
 import com.feroov.frv.entities.passive.FemaleHunter;
 import com.feroov.frv.entities.variants.FemaleHunterVariant;

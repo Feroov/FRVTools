@@ -23,24 +23,24 @@ import software.bernie.geckolib3.item.GeoArmorItem;
 
 import java.util.Map;
 
-public class FunghoniteArmor extends GeoArmorItem implements IAnimatable {
+public class FunghoniteArmor extends GeoArmorItem implements IAnimatable
+{
     private AnimationFactory factory = new AnimationFactory(this);
 
     @Override
-    public void registerControllers(AnimationData data) {
+    public void registerControllers(AnimationData data)
+    {
         data.addAnimationController(new AnimationController<FunghoniteArmor>(this, "controller", 20, this::predicate));
     }
 
-    private <P extends IAnimatable> PlayState predicate(AnimationEvent<P> event) {
+    private <P extends IAnimatable> PlayState predicate(AnimationEvent<P> event)
+    {
         event.getController().setAnimation(new AnimationBuilder().addAnimation("idle", true));
         return PlayState.CONTINUE;
     }
 
     @Override
-    public AnimationFactory getFactory() {
-        return this.factory;
-    }
-
+    public AnimationFactory getFactory()  { return this.factory; }
 
     public FunghoniteArmor(ArmorMaterial material, EquipmentSlot slot, Properties settings)
     {
@@ -86,8 +86,7 @@ public class FunghoniteArmor extends GeoArmorItem implements IAnimatable {
         }
     }
 
-    private void addStatusEffectForMaterial(Player player, ArmorMaterial mapArmorMaterial,
-                                            MobEffect mapStatusEffect)
+    private void addStatusEffectForMaterial(Player player, ArmorMaterial mapArmorMaterial, MobEffect mapStatusEffect)
     {
         if(hasCorrectArmorOn(mapArmorMaterial, player))
         {
@@ -124,5 +123,4 @@ public class FunghoniteArmor extends GeoArmorItem implements IAnimatable {
         return helmet.getMaterial() == material && breastplate.getMaterial()
                 == material && leggings.getMaterial() == material && boots.getMaterial() == material;
     }
-
 }

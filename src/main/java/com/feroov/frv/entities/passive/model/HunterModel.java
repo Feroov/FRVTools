@@ -1,7 +1,6 @@
 package com.feroov.frv.entities.passive.model;
 
 import com.feroov.frv.Frv;
-
 import com.feroov.frv.entities.passive.Hunter;
 import com.feroov.frv.entities.passive.renderer.HunterRenderer;
 import net.minecraft.resources.ResourceLocation;

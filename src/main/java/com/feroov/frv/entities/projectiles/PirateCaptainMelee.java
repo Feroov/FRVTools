@@ -23,38 +23,31 @@ import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
-
-
-public class PirateCaptainMelee extends AbstractArrow implements IAnimatable {
+public class PirateCaptainMelee extends AbstractArrow implements IAnimatable
+{
 
     private double lifeTicks = 1.35;
 
     private AnimationFactory factory = new AnimationFactory(this);
 
-    public PirateCaptainMelee(EntityType<? extends AbstractArrow> type, Level world) {
-        super(type, world);
-    }
+    public PirateCaptainMelee(EntityType<? extends AbstractArrow> type, Level world) { super(type, world); }
 
     @Override
-    protected ItemStack getPickupItem() {
-        return null;
-    }
+    protected ItemStack getPickupItem() { return null; }
 
-    private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
-        return PlayState.CONTINUE;
-    }
+    private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) { return PlayState.CONTINUE; }
 
     @Override
-    public void registerControllers(AnimationData data) {
+    public void registerControllers(AnimationData data)
+    {
         data.addAnimationController(new AnimationController<PirateCaptainMelee>(this, "controller", 0, this::predicate));
     }
 
     @Override
-    public AnimationFactory getFactory() {
-        return this.factory;
-    }
+    public AnimationFactory getFactory() { return this.factory; }
 
-    public PirateCaptainMelee(Level world, LivingEntity owner) {
+    public PirateCaptainMelee(Level world, LivingEntity owner)
+    {
         super(ModEntityTypes.PIRATE_CAPTAIN_MELEE.get(), owner, world);
     }
 
@@ -75,42 +68,41 @@ public class PirateCaptainMelee extends AbstractArrow implements IAnimatable {
     }
 
     @Override
-    protected void onHitEntity(EntityHitResult entityHitResult) {
+    protected void onHitEntity(EntityHitResult entityHitResult)
+    {
         Entity entity = entityHitResult.getEntity();
         if (entityHitResult.getType() != HitResult.Type.ENTITY
-                || !((EntityHitResult) entityHitResult).getEntity().is(entity)) {
-            if (!this.level.isClientSide) {
-                this.remove(RemovalReason.KILLED);
-            }
+                || !((EntityHitResult) entityHitResult).getEntity().is(entity))
+        {
+            if (!this.level.isClientSide) { this.remove(RemovalReason.KILLED); }
         }
         Entity entity1 = this.getOwner();
         DamageSource damagesource;
-        if (entity1 == null) {
-            damagesource = DamageSource.arrow(this, this);
-        } else {
+
+        if (entity1 == null) { damagesource = DamageSource.arrow(this, this); }
+        else
+        {
             damagesource = DamageSource.arrow(this, entity1);
-            if (entity1 instanceof LivingEntity) {
-                ((LivingEntity) entity1).setLastHurtMob(entity);
-            }
+            if (entity1 instanceof LivingEntity) { ((LivingEntity) entity1).setLastHurtMob(entity); }
         }
-        if (entity.hurt(damagesource, 20.0F)) {
-            if (entity instanceof LivingEntity) {
+        if (entity.hurt(damagesource, 20.0F))
+        {
+            if (entity instanceof LivingEntity)
+            {
                 LivingEntity livingentity = (LivingEntity) entity;
-                if (!this.level.isClientSide && entity1 instanceof LivingEntity) {
+                if (!this.level.isClientSide && entity1 instanceof LivingEntity)
+                {
                     EnchantmentHelper.doPostHurtEffects(livingentity, entity1);
                     EnchantmentHelper.doPostDamageEffects((LivingEntity) entity1, livingentity);
                 }
                 this.doPostHurtEffects(livingentity);
                 if (entity1 != null && livingentity != entity1 && livingentity instanceof Player
-                        && entity1 instanceof ServerPlayer && !this.isSilent()) {
+                        && entity1 instanceof ServerPlayer && !this.isSilent())
+                {
                     ((ServerPlayer) entity1).connection
                             .send(new ClientboundGameEventPacket(ClientboundGameEventPacket.ARROW_HIT_PLAYER, 0.0F));
                 }
             }
-        } else {
-            if (!this.level.isClientSide) {
-                this.remove(RemovalReason.KILLED);
-            }
-        }
+        } else { if (!this.level.isClientSide) { this.remove(RemovalReason.KILLED); } }
     }
 }

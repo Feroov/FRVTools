@@ -15,9 +15,8 @@ import net.minecraft.world.level.Level;
 
 import java.util.Map;
 
-public class HellstoneArmor extends ArmorItem  {
-
-
+public class HellstoneArmor extends ArmorItem
+{
     private static final Map<ArmorMaterial, MobEffect> MATERIAL_TO_EFFECT_MAP = new ImmutableMap.Builder<ArmorMaterial,
             MobEffect>().put(ModArmorMaterial.HELLSTONE, MobEffects.DAMAGE_BOOST).build();
 
@@ -25,7 +24,6 @@ public class HellstoneArmor extends ArmorItem  {
     {
         super(p_40386_, p_40387_, p_40388_);
     }
-
 
     @Override
     public void inventoryTick(ItemStack stack, Level world, Entity entity, int slot, boolean selected)
@@ -44,7 +42,6 @@ public class HellstoneArmor extends ArmorItem  {
         }
     }
 
-
     private void evaluateArmorEffects(Player player)
     {
         for (Map.Entry<ArmorMaterial, MobEffect> entry : MATERIAL_TO_EFFECT_MAP.entrySet())
@@ -62,8 +59,7 @@ public class HellstoneArmor extends ArmorItem  {
         }
     }
 
-    private void addStatusEffectForMaterial(Player player, ArmorMaterial mapArmorMaterial,
-                                            MobEffect mapStatusEffect)
+    private void addStatusEffectForMaterial(Player player, ArmorMaterial mapArmorMaterial, MobEffect mapStatusEffect)
     {
         if(hasCorrectArmorOn(mapArmorMaterial, player))
         {

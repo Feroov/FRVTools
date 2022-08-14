@@ -1,7 +1,6 @@
 package com.feroov.frv.entities.hostile.model;
 
 import com.feroov.frv.Frv;
-
 import com.feroov.frv.entities.hostile.Mimic;
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib3.model.AnimatedGeoModel;

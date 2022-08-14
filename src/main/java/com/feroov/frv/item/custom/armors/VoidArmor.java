@@ -15,9 +15,8 @@ import net.minecraft.world.level.Level;
 
 import java.util.Map;
 
-public class VoidArmor extends ArmorItem  {
-
-
+public class VoidArmor extends ArmorItem
+{
     private static final Map<ArmorMaterial, MobEffect> MATERIAL_TO_EFFECT_MAP = new ImmutableMap.Builder<ArmorMaterial,
             MobEffect>().put(ModArmorMaterial.VOID, MobEffects.DIG_SPEED).build();
 
@@ -25,7 +24,6 @@ public class VoidArmor extends ArmorItem  {
     {
         super(p_40386_, p_40387_, p_40388_);
     }
-
 
     @Override
     public void inventoryTick(ItemStack stack, Level world, Entity entity, int slot, boolean selected)
@@ -43,7 +41,6 @@ public class VoidArmor extends ArmorItem  {
             }
         }
     }
-
 
     private void evaluateArmorEffects(Player player)
     {
@@ -64,8 +61,7 @@ public class VoidArmor extends ArmorItem  {
         }
     }
 
-    private void addStatusEffectForMaterial(Player player, ArmorMaterial mapArmorMaterial,
-                                            MobEffect mapStatusEffect)
+    private void addStatusEffectForMaterial(Player player, ArmorMaterial mapArmorMaterial, MobEffect mapStatusEffect)
     {
         if(hasCorrectArmorOn(mapArmorMaterial, player))
         {

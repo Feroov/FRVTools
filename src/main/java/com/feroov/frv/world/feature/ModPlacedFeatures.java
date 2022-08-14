@@ -1,9 +1,7 @@
 package com.feroov.frv.world.feature;
 
 import com.feroov.frv.Frv;
-import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
-import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.placement.*;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -17,11 +15,9 @@ public class ModPlacedFeatures
     public static final DeferredRegister<PlacedFeature> PLACED_FEATURES =
             DeferredRegister.create(Registry.PLACED_FEATURE_REGISTRY, Frv.MOD_ID);
 
-
     /**
         Check for OrePlacements.java for reference
     */
-
 
     public static final RegistryObject<PlacedFeature> TIN_ORE_PLACED = PLACED_FEATURES.register("tin_ore_placed",
             () -> new PlacedFeature(ModConfiguredFeatures.TIN_ORE.getHolder().get(),
