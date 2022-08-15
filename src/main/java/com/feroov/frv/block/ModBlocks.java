@@ -208,7 +208,7 @@ public class ModBlocks
     /********************************** Other blocks *************************************/
     public static final RegistryObject<Block> MATRIX = registerBlock("matrix",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
-                    .strength(-1.0F, 3600000.0F).noLootTable().lightLevel((light) -> {return 15;}))
+                    .strength(20.0F, 70.0F).requiresCorrectToolForDrops().lightLevel((light) -> {return 15;}))
             {
                 @Override
                 public void stepOn(Level pLevel, BlockPos pPos, BlockState pState, Entity pEntity) {
