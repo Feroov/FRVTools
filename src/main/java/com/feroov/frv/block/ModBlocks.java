@@ -266,6 +266,7 @@ public class ModBlocks
         public static final TagKey<Block> NEEDS_ENDRIUM_TOOL = create("needs_endrium_tool");
         public static final TagKey<Block> NEEDS_VOID_TOOL = create("needs_void_tool");
         public static final TagKey<Block> NEEDS_CORRUPT_TOOL = create("needs_corrupt_tool");
+        public static final TagKey<Block> NEEDS_THE_TOOL = create("needs_the_tool");
 
         private static TagKey<Block> create(String location)
         {

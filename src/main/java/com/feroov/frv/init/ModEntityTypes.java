@@ -121,6 +121,10 @@ public class ModEntityTypes
             () -> EntityType.Builder.of(Electricity::new, MobCategory.MISC).fireImmune()
                     .sized(0.1f,20.0f).fireImmune().build("electricity"));
 
+    public static final RegistryObject<EntityType<TheSword>> THE_SWORD = ENTITIES.register("the_sword",
+            () -> EntityType.Builder.of(TheSword::new, MobCategory.MISC).fireImmune()
+                    .sized(0.1f,1.0f).fireImmune().build("the_sword"));
+
     public static final RegistryObject<EntityType<CorruptBoard>> CORRUPT_BOARD = ENTITIES.register("corrupt_board",
             () -> EntityType.Builder.of(CorruptBoard::new, MobCategory.CREATURE).fireImmune()
                     .sized(0.9f,0.9f).fireImmune().build("corrupt_board"));

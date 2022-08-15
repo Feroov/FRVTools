@@ -1,0 +1,25 @@
+{
+  "type": "frv:vigorous_crafting_table",
+  "pattern": "abcd",
+  "key": {
+    "a": {
+      "item": "frv:corrupt_pickaxe",
+      "count": 1
+    },
+    "b": {
+      "item": "frv:void_pickaxe",
+      "count": 1
+    },
+    "c": {
+      "item": "frv:endrium_pickaxe",
+      "count": 1
+    },
+    "d": {
+      "item": "frv:hellstone_pickaxe",
+      "count": 1
+    }
+  },
+  "result": {
+    "item": "frv:the_pickaxe"
+  }
+}

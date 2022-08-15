@@ -61,6 +61,7 @@ public class ClientModEvents
         event.registerEntityRenderer(ModEntityTypes.CORRUPT_ANGEL_FIRE.get(), CorruptAngelFireRender::new);
         event.registerEntityRenderer(ModEntityTypes.CANNON.get(), CannonRenderer::new);
         event.registerEntityRenderer(ModEntityTypes.ELECTRICITY.get(), ElectricityRenderer::new);
+        event.registerEntityRenderer(ModEntityTypes.THE_SWORD.get(), TheSwordRenderer::new);
         event.registerEntityRenderer(ModEntityTypes.CORRUPT_BOARD.get(), CorruptBoardRenderer::new);
     }
 

@@ -33,7 +33,6 @@ import org.lwjgl.glfw.GLFW;
 import software.bernie.geckolib3.GeckoLib;
 
 
-
 @Mod(Frv.MOD_ID)
 public class Frv
 {
@@ -68,6 +67,8 @@ public class Frv
         Keybindings.RELOAD = new KeyMapping("key." + Frv.MOD_ID + ".reload", GLFW.GLFW_KEY_R, "key.categories." + Frv.MOD_ID);
         ClientRegistry.registerKeyBinding(Keybindings.RELOAD);
 
+        MenuScreens.register(FRVScreens.SCREEN_HANDLER_TYPE.get(), VCTableScreen::new);
+
         SpawnPlacements.register(ModEntityTypes.CROAKER.get(), SpawnPlacements.Type.NO_RESTRICTIONS,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, AbstractVillager::checkMobSpawnRules);
         SpawnPlacements.register(ModEntityTypes.HUNTER.get(), SpawnPlacements.Type.NO_RESTRICTIONS,
@@ -87,6 +88,5 @@ public class Frv
     {
         FrvPacketHandler.register();
         ModEntityTypes.registerAdditionalEntityInformation();
-        MenuScreens.register(FRVScreens.SCREEN_HANDLER_TYPE.get(), VCTableScreen::new);
     }
 }

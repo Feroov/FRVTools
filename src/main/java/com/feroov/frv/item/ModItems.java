@@ -282,8 +282,34 @@ public class ModItems
     public static final RegistryObject<Item> CORRUPT_BOOTS = ITEMS.register("corrupt_boots", () -> new CorruptArmor(ModArmorMaterial.CORRUPT, EquipmentSlot.FEET, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()));
     /***********************************************************************************************/
 
+    /**********************************  (CORRUPT)  **********************************************/
+    public static final RegistryObject<Item> THE_SWORD = ITEMS.register("the_sword", () -> new SwordItem(ModTiers.THE, 3, -2.4f, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant())
+    {
+        @Override
+        public boolean hurtEnemy(ItemStack itemStack, LivingEntity livingEntity, LivingEntity livingEntity1)
+        {
+            if(!livingEntity.level.isClientSide())
+            {
+                ServerLevel world = (ServerLevel) livingEntity.level;
+                BlockPos position = livingEntity.blockPosition();
 
+                ModEntityTypes.THE_SWORD.get().spawn(world, null, null, position,
+                        MobSpawnType.TRIGGERED, true, true);
 
+            }
+            return super.hurtEnemy(itemStack, livingEntity, livingEntity1);
+        }
+        @Override public boolean isFoil(ItemStack p_41453_){ return true; }
+    });
+    public static final RegistryObject<Item> THE_PICKAXE = ITEMS.register("the_pickaxe", () -> new PickaxeItem(ModTiers.THE, 1, -2.8f, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()){ @Override public boolean isFoil(ItemStack p_41453_){ return true; }});
+    public static final RegistryObject<Item> THE_AXE = ITEMS.register("the_axe", () -> new AxeItem(ModTiers.THE, 6, -3f, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()){ @Override public boolean isFoil(ItemStack p_41453_){ return true; }});
+    public static final RegistryObject<Item> THE_SHOVEL = ITEMS.register("the_shovel", () -> new ShovelItem(ModTiers.THE, 0, -3.1f, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()){ @Override public boolean isFoil(ItemStack p_41453_){ return true; }});
+    public static final RegistryObject<Item> THE_HOE = ITEMS.register("the_hoe", () -> new HoeItem(ModTiers.THE, 0, 0f, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()){ @Override public boolean isFoil(ItemStack p_41453_){ return true; }});
+    public static final RegistryObject<Item> THE_HELMET = ITEMS.register("the_helmet", () -> new TheArmor(ModArmorMaterial.THE, EquipmentSlot.HEAD, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()){ @Override public boolean isFoil(ItemStack p_41453_){ return true; }});
+    public static final RegistryObject<Item> THE_CHESTPLATE = ITEMS.register("the_chestplate", () -> new TheArmor(ModArmorMaterial.THE, EquipmentSlot.CHEST, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()){ @Override public boolean isFoil(ItemStack p_41453_){ return true; }});
+    public static final RegistryObject<Item> THE_LEGGINGS = ITEMS.register("the_leggings", () -> new TheArmor(ModArmorMaterial.THE, EquipmentSlot.LEGS, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()){ @Override public boolean isFoil(ItemStack p_41453_){ return true; }});
+    public static final RegistryObject<Item> THE_BOOTS = ITEMS.register("the_boots", () -> new TheArmor(ModArmorMaterial.THE, EquipmentSlot.FEET, new Item.Properties().tab(ModItemGroup.FRV_TAB).fireResistant()){ @Override public boolean isFoil(ItemStack p_41453_){ return true; }});
+    /***********************************************************************************************/
 
 //    @Override
 //    public boolean hurtEnemy(ItemStack p_41395_, LivingEntity p_41396_, LivingEntity p_41397_)

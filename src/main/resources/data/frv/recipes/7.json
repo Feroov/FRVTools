@@ -1,0 +1,25 @@
+{
+  "type": "frv:vigorous_crafting_table",
+  "pattern": "abcd",
+  "key": {
+    "a": {
+      "item": "frv:corrupt_chestplate",
+      "count": 1
+    },
+    "b": {
+      "item": "frv:void_chestplate",
+      "count": 1
+    },
+    "c": {
+      "item": "frv:endrium_chestplate",
+      "count": 1
+    },
+    "d": {
+      "item": "frv:hellstone_chestplate",
+      "count": 1
+    }
+  },
+  "result": {
+    "item": "frv:the_chestplate"
+  }
+}

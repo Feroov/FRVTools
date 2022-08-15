@@ -73,6 +73,11 @@
   "item.frv.corrupt_axe": "§a§kco§r§aCorrupt Axe§a§kco§r§a",
   "item.frv.corrupt_shovel": "§a§kco§r§aCorrupt Shovel§a§kco§r§a",
   "item.frv.corrupt_hoe": "§a§kco§r§aCorrupt Hoe§a§kco§r§a",
+  "item.frv.the_sword": "§l§eThe Sword",
+  "item.frv.the_pickaxe": "§l§eThe Pickaxe",
+  "item.frv.the_axe": "§l§eThe Axe",
+  "item.frv.the_shovel": "§l§eThe Shovel",
+  "item.frv.the_hoe": "§l§eThe Hoe",
 
 
   "item.frv.quartz_helmet": "Quartz Helmet",
@@ -127,6 +132,10 @@
   "item.frv.corrupt_chestplate": "§a§kco§r§aCorrupt Chestplate§a§kco§r§a",
   "item.frv.corrupt_leggings": "§a§kco§r§aCorrupt Leggings§a§kco§r§a",
   "item.frv.corrupt_boots": "§a§kco§r§aCorrupt Boots§a§kco§r§a",
+  "item.frv.the_helmet": "§l§eThe Helmet",
+  "item.frv.the_chestplate": "§l§eThe Chestplate",
+  "item.frv.the_leggings": "§l§eThe Leggings",
+  "item.frv.the_boots": "§l§eThe Boots",
 
 
   "item.frv.croaker_spawn_egg": "Croaker Spawn",

@@ -1,0 +1,25 @@
+{
+  "type": "frv:vigorous_crafting_table",
+  "pattern": "abcd",
+  "key": {
+    "a": {
+      "item": "frv:corrupt_hoe",
+      "count": 1
+    },
+    "b": {
+      "item": "frv:void_hoe",
+      "count": 1
+    },
+    "c": {
+      "item": "frv:endrium_hoe",
+      "count": 1
+    },
+    "d": {
+      "item": "frv:hellstone_hoe",
+      "count": 1
+    }
+  },
+  "result": {
+    "item": "frv:the_hoe"
+  }
+}

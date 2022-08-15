@@ -93,6 +93,12 @@ public class ModTiers
             new ResourceLocation("frv:needs_corrupt_tool"),
             List.of(ModTiers.VOID), List.of());
 
+    public static final Tier THE = TierSortingRegistry.registerTier(
+            new ForgeTier(11, 30263, 60.5f, 96.0f, 25, ModBlocks.Tags.NEEDS_THE_TOOL,
+                    () -> Ingredient.of(ModItems.CORRUPT_PIECE.get())),
+            new ResourceLocation("frv:needs_the_tool"),
+            List.of(ModTiers.CORRUPT), List.of());
+
     public static final ForgeTier ADMIN = new ForgeTier(999,999999,999f,9999f,10,
             Tags.Blocks.NEEDS_GOLD_TOOL, () -> Ingredient.of(Items.AMETHYST_SHARD));
 
