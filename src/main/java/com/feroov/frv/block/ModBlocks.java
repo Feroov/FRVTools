@@ -1,9 +1,10 @@
 package com.feroov.frv.block;
 
 import com.feroov.frv.Frv;
-import com.feroov.frv.block.custom.MatrixPortalBlock;
+import com.feroov.frv.block.custom.portals.MatrixPortalBlock;
 import com.feroov.frv.block.custom.VigorousCraftingTable;
-import com.feroov.frv.block.custom.VoidPortalBlock;
+import com.feroov.frv.block.custom.portals.VoidPortalBlock;
+import com.feroov.frv.block.custom.tnt.MeteoriteTNT;
 import com.feroov.frv.item.ModItemGroup;
 import com.feroov.frv.item.ModItems;
 import com.feroov.frv.sound.ModSoundEvents;
@@ -247,6 +248,9 @@ public class ModBlocks
     public static final RegistryObject<Block> VIGOROUS_CRAFTING_TABLE = registerBlock("vigorous_crafting_table",
             () -> new VigorousCraftingTable((BlockBehaviour.Properties.of(Material.STONE).explosionResistance(30).strength(4.0F)
                     .sound(SoundType.STONE).noOcclusion())));
+
+    public static final RegistryObject<Block> METEORITE_TNT = registerBlock("meteorite_tnt",
+            () -> new MeteoriteTNT((BlockBehaviour.Properties.of(Material.EXPLOSIVE).sound(SoundType.STONE))));
 
 
 

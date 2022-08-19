@@ -1,0 +1,21 @@
+{
+  "type": "frv:vigorous_crafting_table",
+  "pattern": "abc",
+  "key": {
+    "a": {
+      "item": "minecraft:tnt",
+      "count": 1
+    },
+    "b": {
+      "item": "minecraft:gunpowder",
+      "count": 12
+    },
+    "c": {
+      "item": "frv:meteorite_shards",
+      "count": 7
+    }
+  },
+  "result": {
+    "item": "frv:meteorite_tnt"
+  }
+}

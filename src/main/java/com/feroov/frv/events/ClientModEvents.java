@@ -1,6 +1,7 @@
 package com.feroov.frv.events;
 
 import com.feroov.frv.Frv;
+import com.feroov.frv.block.custom.tnt.renderer.MeteoriteTNTRenderer;
 import com.feroov.frv.entities.hostile.renderer.*;
 import com.feroov.frv.entities.misc.renderer.CorruptBoardRenderer;
 import com.feroov.frv.entities.passive.renderer.CroakerRenderer;
@@ -63,6 +64,9 @@ public class ClientModEvents
         event.registerEntityRenderer(ModEntityTypes.ELECTRICITY.get(), ElectricityRenderer::new);
         event.registerEntityRenderer(ModEntityTypes.THE_SWORD.get(), TheSwordRenderer::new);
         event.registerEntityRenderer(ModEntityTypes.CORRUPT_BOARD.get(), CorruptBoardRenderer::new);
+
+
+        event.registerEntityRenderer(ModEntityTypes.PRIMED_METEORITE.get(), MeteoriteTNTRenderer::new);
     }
 
     @Deprecated

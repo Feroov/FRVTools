@@ -11,18 +11,27 @@ import com.feroov.frv.util.packets.FrvPacketHandler;
 import com.feroov.frv.util.packets.MusketLoadingPacket;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.stats.Stats;
+import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.MoverType;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.AbstractArrow;
+import net.minecraft.world.entity.projectile.ThrownTrident;
 import net.minecraft.world.item.*;
 
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 import net.minecraftforge.network.PacketDistributor;
 import software.bernie.geckolib3.network.GeckoLibNetwork;
 import software.bernie.geckolib3.util.GeckoLibUtil;
+import software.bernie.shadowed.eliotlash.mclib.utils.MathHelper;
 
 import java.util.function.Consumer;
 
@@ -50,16 +59,12 @@ public class Musket extends RangedItemsComplex
     }
 
     @Override
-    public void releaseUsing(ItemStack stack, Level worldIn, LivingEntity entityLiving, int timeLeft)
-    {
-        if (entityLiving instanceof Player)
-        {
+    public void releaseUsing(ItemStack stack, Level worldIn, LivingEntity entityLiving, int timeLeft) {
+        if (entityLiving instanceof Player) {
             Player playerentity = (Player) entityLiving;
-            if (stack.getDamageValue() < (stack.getMaxDamage() - 1))
-            {
+            if (stack.getDamageValue() < (stack.getMaxDamage() - 1)) {
                 playerentity.getCooldowns().addCooldown(this, 30);
-                if (!worldIn.isClientSide)
-                {
+                if (!worldIn.isClientSide) {
                     MusketAmmo abstractarrowentity = createArrow(worldIn, stack, playerentity);
                     abstractarrowentity.shootFromRotation(playerentity, playerentity.getXRot(), playerentity.getYRot(),
                             0.0F, 1.0F * 3.0F, 1.0F);
@@ -71,8 +76,7 @@ public class Musket extends RangedItemsComplex
                             ModSoundEvents.MUSKET.get(), SoundSource.PLAYERS, 1.0F,
                             2.0F / (worldIn.random.nextFloat() * 0.4F + 10.2F) + 0.25F * 0.5F);
 
-                    if (!worldIn.isClientSide)
-                    {
+                    if (!worldIn.isClientSide) {
                         final int id = GeckoLibUtil.guaranteeIDForStack(stack, (ServerLevel) worldIn);
                         final PacketDistributor.PacketTarget target = PacketDistributor.TRACKING_ENTITY_AND_SELF
                                 .with(() -> playerentity);
@@ -82,6 +86,7 @@ public class Musket extends RangedItemsComplex
             }
         }
     }
+
 
     public MusketAmmo createArrow(Level worldIn, ItemStack stack, LivingEntity shooter)
     {

@@ -1,7 +1,7 @@
 package com.feroov.frv.world;
 
 import com.feroov.frv.block.ModBlocks;
-import com.feroov.frv.block.custom.MatrixPortalBlock;
+import com.feroov.frv.block.custom.portals.MatrixPortalBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;

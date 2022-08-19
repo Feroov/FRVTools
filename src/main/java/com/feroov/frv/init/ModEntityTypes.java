@@ -4,6 +4,7 @@ import com.feroov.frv.Frv;
 import com.feroov.frv.block.ModBlocks;
 import com.feroov.frv.entities.hostile.*;
 import com.feroov.frv.entities.misc.CorruptBoard;
+import com.feroov.frv.entities.misc.PrimedMeteorite;
 import com.feroov.frv.entities.passive.Croaker;
 import com.feroov.frv.entities.passive.FemaleHunter;
 import com.feroov.frv.entities.passive.Hunter;
@@ -11,10 +12,8 @@ import com.feroov.frv.entities.passive.LostPerson;
 import com.feroov.frv.entities.projectiles.*;
 import com.feroov.frv.entities.tile.VCTEntity;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.Mob;
-import net.minecraft.world.entity.MobCategory;
-import net.minecraft.world.entity.SpawnPlacements;
+import net.minecraft.world.entity.*;
+import net.minecraft.world.entity.item.PrimedTnt;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.registries.DeferredRegister;
@@ -116,7 +115,6 @@ public class ModEntityTypes
             () -> EntityType.Builder.<Cannon>of(Cannon::new, MobCategory.CREATURE).sized(0.8F, 0.8F).fireImmune()
                     .build(new ResourceLocation(Frv.MOD_ID, "cannon").toString()));
 
-
     public static final RegistryObject<EntityType<Electricity>> ELECTRICITY = ENTITIES.register("electricity",
             () -> EntityType.Builder.of(Electricity::new, MobCategory.MISC).fireImmune()
                     .sized(0.1f,20.0f).fireImmune().build("electricity"));
@@ -129,10 +127,20 @@ public class ModEntityTypes
             () -> EntityType.Builder.of(CorruptBoard::new, MobCategory.CREATURE).fireImmune()
                     .sized(0.9f,0.9f).fireImmune().build("corrupt_board"));
 
-    // Tile Entities
+    public static final RegistryObject<EntityType<PrimedMeteorite>> PRIMED_METEORITE = ENTITIES.register("primed_meteorite",
+            () -> EntityType.Builder.<PrimedMeteorite>of(PrimedMeteorite::new, MobCategory.MISC).fireImmune()
+                    .sized(0.98f,0.98f).fireImmune().clientTrackingRange(10).updateInterval(10).build("primed_meteorite"));
 
+
+
+
+    // Tile Entities
     public static final RegistryObject<BlockEntityType<VCTEntity>> VCT_ENTITY = TILE_TYPES.register(
             "vctable", () -> BlockEntityType.Builder.of(VCTEntity::new, ModBlocks.VIGOROUS_CRAFTING_TABLE.get()).build(null));
+
+
+
+
 
     public static void registerAdditionalEntityInformation() { registerEntitySpawnRestrictions(); }
 

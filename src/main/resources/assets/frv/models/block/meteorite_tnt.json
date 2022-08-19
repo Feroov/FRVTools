@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "frv:block/meteorite_tnt_bottom",
+    "side": "frv:block/meteorite_tnt_side",
+    "top": "frv:block/meteorite_tnt_top"
+  }
+}
