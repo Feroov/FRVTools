@@ -4,7 +4,7 @@ import com.feroov.frv.Frv;
 import com.feroov.frv.block.custom.portals.MatrixPortalBlock;
 import com.feroov.frv.block.custom.VigorousCraftingTable;
 import com.feroov.frv.block.custom.portals.VoidPortalBlock;
-import com.feroov.frv.block.custom.tnt.MeteoriteTNT;
+import com.feroov.frv.block.custom.tnt.*;
 import com.feroov.frv.item.ModItemGroup;
 import com.feroov.frv.item.ModItems;
 import com.feroov.frv.sound.ModSoundEvents;
@@ -251,6 +251,25 @@ public class ModBlocks
 
     public static final RegistryObject<Block> METEORITE_TNT = registerBlock("meteorite_tnt",
             () -> new MeteoriteTNT((BlockBehaviour.Properties.of(Material.EXPLOSIVE).sound(SoundType.STONE))));
+
+    public static final RegistryObject<Block> FUNGHONITE_TNT = registerBlock("funghonite_tnt",
+            () -> new FunghoniteTNT((BlockBehaviour.Properties.of(Material.EXPLOSIVE).sound(SoundType.SCULK))));
+
+    public static final RegistryObject<Block> HELLSTONE_TNT = registerBlock("hellstone_tnt",
+            () -> new HellstoneTNT((BlockBehaviour.Properties.of(Material.EXPLOSIVE).sound(SoundType.ANCIENT_DEBRIS))));
+
+    public static final RegistryObject<Block> ENDRIUM_TNT = registerBlock("endrium_tnt",
+            () -> new EndriumTNT((BlockBehaviour.Properties.of(Material.EXPLOSIVE).sound(new
+                    ForgeSoundType(1f,1f,
+                    () -> SoundEvents.ENDERMAN_DEATH,
+                    () -> SoundEvents.ENDERMAN_TELEPORT, //step
+                    () -> SoundEvents.ENDERMAN_TELEPORT, //place
+                    () -> SoundEvents.ENDERMAN_TELEPORT, //hit
+                    () -> SoundEvents.ENDERMAN_DEATH)).strength(1.0f))));
+
+    public static final RegistryObject<Block> VOID_TNT = registerBlock("void_tnt",
+            () -> new VoidTNT((BlockBehaviour.Properties.of(Material.EXPLOSIVE).sound(SoundType.WOOL).strength(1.5f))));
+
 
 
 

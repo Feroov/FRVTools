@@ -1,7 +1,7 @@
 package com.feroov.frv.events;
 
 import com.feroov.frv.Frv;
-import com.feroov.frv.block.custom.tnt.renderer.MeteoriteTNTRenderer;
+import com.feroov.frv.block.custom.tnt.renderer.*;
 import com.feroov.frv.entities.hostile.renderer.*;
 import com.feroov.frv.entities.misc.renderer.CorruptBoardRenderer;
 import com.feroov.frv.entities.passive.renderer.CroakerRenderer;
@@ -65,8 +65,12 @@ public class ClientModEvents
         event.registerEntityRenderer(ModEntityTypes.THE_SWORD.get(), TheSwordRenderer::new);
         event.registerEntityRenderer(ModEntityTypes.CORRUPT_BOARD.get(), CorruptBoardRenderer::new);
 
-
+        /** TNT **/
         event.registerEntityRenderer(ModEntityTypes.PRIMED_METEORITE.get(), MeteoriteTNTRenderer::new);
+        event.registerEntityRenderer(ModEntityTypes.PRIMED_FUNGHONITE.get(), FunghoniteTNTRenderer::new);
+        event.registerEntityRenderer(ModEntityTypes.PRIMED_HELLSTONE.get(), HellstoneTNTRenderer::new);
+        event.registerEntityRenderer(ModEntityTypes.PRIMED_ENDRIUM.get(), EndriumTNTRenderer::new);
+        event.registerEntityRenderer(ModEntityTypes.PRIMED_VOID.get(), VoidTNTRenderer::new);
     }
 
     @Deprecated
@@ -82,5 +86,6 @@ public class ClientModEvents
         Minecraft.getInstance().particleEngine.register(ModParticles.LAPIS_PARTICLES.get(), LapisParticles.Provider::new);
         Minecraft.getInstance().particleEngine.register(ModParticles.REDSTONE_PARTICLES.get(), RedstoneParticles.Provider::new);
         Minecraft.getInstance().particleEngine.register(ModParticles.CORRUPT_PARTICLES.get(), CorruptParticles.Provider::new);
+        Minecraft.getInstance().particleEngine.register(ModParticles.MUSHROOM_PARTICLES.get(), MushroomParticles.Provider::new);
     }
 }

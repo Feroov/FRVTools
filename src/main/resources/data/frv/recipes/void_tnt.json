@@ -1,0 +1,25 @@
+{
+  "type": "frv:vigorous_crafting_table",
+  "pattern": "abcd",
+  "key": {
+    "a": {
+      "item": "minecraft:tnt",
+      "count": 12
+    },
+    "b": {
+      "item": "minecraft:gunpowder",
+      "count": 50
+    },
+    "c": {
+      "item": "frv:void_gem",
+      "count": 4
+    },
+    "d": {
+      "item": "frv:void_fabric",
+      "count": 25
+    }
+  },
+  "result": {
+    "item": "frv:void_tnt"
+  }
+}

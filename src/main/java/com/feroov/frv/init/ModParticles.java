@@ -21,6 +21,7 @@ public class ModParticles
     public static final RegistryObject<SimpleParticleType> DIAMOND_PARTICLES = PARTICLE_TYPES.register("diamond_particles", () -> new SimpleParticleType(true));
     public static final RegistryObject<SimpleParticleType> NETHERITE_PARTICLES = PARTICLE_TYPES.register("netherite_particles", () -> new SimpleParticleType(true));
     public static final RegistryObject<SimpleParticleType> CORRUPT_PARTICLES = PARTICLE_TYPES.register("corrupt_particles", () -> new SimpleParticleType(true));
+    public static final RegistryObject<SimpleParticleType> MUSHROOM_PARTICLES = PARTICLE_TYPES.register("mushroom_particles", () -> new SimpleParticleType(true));
 
     public static void register(IEventBus eventBus) {
         PARTICLE_TYPES.register(eventBus);

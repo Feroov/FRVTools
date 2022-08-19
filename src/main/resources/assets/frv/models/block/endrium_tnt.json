@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "frv:block/endrium_tnt_bottom",
+    "side": "frv:block/endrium_tnt_side",
+    "top": "frv:block/endrium_tnt_top"
+  }
+}

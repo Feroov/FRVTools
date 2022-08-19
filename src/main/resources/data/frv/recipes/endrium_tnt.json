@@ -1,0 +1,21 @@
+{
+  "type": "frv:vigorous_crafting_table",
+  "pattern": "abc",
+  "key": {
+    "a": {
+      "item": "minecraft:tnt",
+      "count": 9
+    },
+    "b": {
+      "item": "minecraft:gunpowder",
+      "count": 40
+    },
+    "c": {
+      "item": "frv:endrium_gem",
+      "count": 3
+    }
+  },
+  "result": {
+    "item": "frv:endrium_tnt"
+  }
+}

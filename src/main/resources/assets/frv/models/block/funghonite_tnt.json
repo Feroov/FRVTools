@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "frv:block/funghonite_tnt_bottom",
+    "side": "frv:block/funghonite_tnt_side",
+    "top": "frv:block/funghonite_tnt_top"
+  }
+}

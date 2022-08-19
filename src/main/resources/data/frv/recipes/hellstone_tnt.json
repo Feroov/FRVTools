@@ -1,0 +1,25 @@
+{
+  "type": "frv:vigorous_crafting_table",
+  "pattern": "abcd",
+  "key": {
+    "a": {
+      "item": "minecraft:tnt",
+      "count": 6
+    },
+    "b": {
+      "item": "minecraft:gunpowder",
+      "count": 30
+    },
+    "c": {
+      "item": "frv:hellstone_ingot",
+      "count": 2
+    },
+    "d": {
+      "item": "minecraft:netherrack",
+      "count": 4
+    }
+  },
+  "result": {
+    "item": "frv:hellstone_tnt"
+  }
+}

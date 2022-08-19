@@ -3,8 +3,7 @@ package com.feroov.frv.init;
 import com.feroov.frv.Frv;
 import com.feroov.frv.block.ModBlocks;
 import com.feroov.frv.entities.hostile.*;
-import com.feroov.frv.entities.misc.CorruptBoard;
-import com.feroov.frv.entities.misc.PrimedMeteorite;
+import com.feroov.frv.entities.misc.*;
 import com.feroov.frv.entities.passive.Croaker;
 import com.feroov.frv.entities.passive.FemaleHunter;
 import com.feroov.frv.entities.passive.Hunter;
@@ -127,9 +126,26 @@ public class ModEntityTypes
             () -> EntityType.Builder.of(CorruptBoard::new, MobCategory.CREATURE).fireImmune()
                     .sized(0.9f,0.9f).fireImmune().build("corrupt_board"));
 
+    // TNTS
     public static final RegistryObject<EntityType<PrimedMeteorite>> PRIMED_METEORITE = ENTITIES.register("primed_meteorite",
             () -> EntityType.Builder.<PrimedMeteorite>of(PrimedMeteorite::new, MobCategory.MISC).fireImmune()
                     .sized(0.98f,0.98f).fireImmune().clientTrackingRange(10).updateInterval(10).build("primed_meteorite"));
+
+    public static final RegistryObject<EntityType<PrimedFunghonite>> PRIMED_FUNGHONITE = ENTITIES.register("primed_funghonite",
+            () -> EntityType.Builder.<PrimedFunghonite>of(PrimedFunghonite::new, MobCategory.MISC).fireImmune()
+                    .sized(0.98f,0.98f).fireImmune().clientTrackingRange(10).updateInterval(10).build("primed_funghonite"));
+
+    public static final RegistryObject<EntityType<PrimedHellstone>> PRIMED_HELLSTONE = ENTITIES.register("primed_hellstone",
+            () -> EntityType.Builder.<PrimedHellstone>of(PrimedHellstone::new, MobCategory.MISC).fireImmune()
+                    .sized(0.98f,0.98f).fireImmune().clientTrackingRange(10).updateInterval(10).build("primed_hellstone"));
+
+    public static final RegistryObject<EntityType<PrimedEndrium>> PRIMED_ENDRIUM = ENTITIES.register("primed_endrium",
+            () -> EntityType.Builder.<PrimedEndrium>of(PrimedEndrium::new, MobCategory.MISC).fireImmune()
+                    .sized(0.98f,0.98f).fireImmune().clientTrackingRange(10).updateInterval(10).build("primed_endrium"));
+
+    public static final RegistryObject<EntityType<PrimedVoid>> PRIMED_VOID = ENTITIES.register("primed_void",
+            () -> EntityType.Builder.<PrimedVoid>of(PrimedVoid::new, MobCategory.MISC).fireImmune()
+                    .sized(0.98f,0.98f).fireImmune().clientTrackingRange(10).updateInterval(10).build("primed_void"));
 
 
 
