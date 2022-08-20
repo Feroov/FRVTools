@@ -12,7 +12,6 @@ import com.feroov.frv.entities.projectiles.*;
 import com.feroov.frv.entities.tile.VCTEntity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.*;
-import net.minecraft.world.entity.item.PrimedTnt;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.registries.DeferredRegister;
@@ -118,6 +117,14 @@ public class ModEntityTypes
             () -> EntityType.Builder.of(Electricity::new, MobCategory.MISC).fireImmune()
                     .sized(0.1f,20.0f).fireImmune().build("electricity"));
 
+    public static final RegistryObject<EntityType<Explosion>> EXPLOSION = ENTITIES.register("explosion",
+            () -> EntityType.Builder.of(Explosion::new, MobCategory.MISC).fireImmune()
+                    .sized(15.1f,3.0f).fireImmune().build("explosion"));
+
+    public static final RegistryObject<EntityType<CorruptExplosion>> CORRUPT_EXPLOSION = ENTITIES.register("corrupt_explosion",
+            () -> EntityType.Builder.of(CorruptExplosion::new, MobCategory.MISC).fireImmune()
+                    .sized(15.1f,3.0f).fireImmune().build("corrupt_explosion"));
+
     public static final RegistryObject<EntityType<TheSword>> THE_SWORD = ENTITIES.register("the_sword",
             () -> EntityType.Builder.of(TheSword::new, MobCategory.MISC).fireImmune()
                     .sized(0.1f,1.0f).fireImmune().build("the_sword"));
@@ -146,6 +153,14 @@ public class ModEntityTypes
     public static final RegistryObject<EntityType<PrimedVoid>> PRIMED_VOID = ENTITIES.register("primed_void",
             () -> EntityType.Builder.<PrimedVoid>of(PrimedVoid::new, MobCategory.MISC).fireImmune()
                     .sized(0.98f,0.98f).fireImmune().clientTrackingRange(10).updateInterval(10).build("primed_void"));
+
+    public static final RegistryObject<EntityType<PrimedCorrupt>> PRIMED_CORRUPT = ENTITIES.register("primed_corrupt",
+            () -> EntityType.Builder.<PrimedCorrupt>of(PrimedCorrupt::new, MobCategory.MISC).fireImmune()
+                    .sized(0.98f,0.98f).fireImmune().clientTrackingRange(10).updateInterval(10).build("primed_corrupt"));
+
+    public static final RegistryObject<EntityType<PrimedLoc>> PRIMED_LOC = ENTITIES.register("primed_loc",
+            () -> EntityType.Builder.<PrimedLoc>of(PrimedLoc::new, MobCategory.MISC).fireImmune()
+                    .sized(0.98f,0.98f).fireImmune().clientTrackingRange(10).updateInterval(10).build("primed_loc"));
 
 
 

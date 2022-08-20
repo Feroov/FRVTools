@@ -215,6 +215,7 @@
   "block.frv.hellstone_tnt": "\u00A74Hellstone TNT",
   "block.frv.endrium_tnt": "\u00A75Endrium TNT",
   "block.frv.void_tnt": "\u00A78Void TNT",
+  "block.frv.corrupt_tnt": "§a§kco§r§aCorrupt TNT§a§kco",
 
   "block.frv.matrix": "\u00A7a\u00A7kMatrix\u00A7a",
   "block.frv.matrix_portal": "§a§kco§r§a404§a§kco",

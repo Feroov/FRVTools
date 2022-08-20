@@ -1,16 +1,14 @@
-package com.feroov.frv.entities.hostile.model;
+package com.feroov.frv.entities.projectiles.model;
 
 import com.feroov.frv.Frv;
-import com.feroov.frv.entities.hostile.CorruptZombie;
+import com.feroov.frv.entities.projectiles.CorruptExplosion;
+import com.feroov.frv.entities.projectiles.Explosion;
 import net.minecraft.resources.ResourceLocation;
-import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
-import software.bernie.geckolib3.core.processor.IBone;
-import software.bernie.geckolib3.model.AnimatedTickingGeoModel;
-import software.bernie.geckolib3.model.provider.data.EntityModelData;
+import software.bernie.geckolib3.model.AnimatedGeoModel;
 
-public class CorruptZombieModel extends AnimatedTickingGeoModel<CorruptZombie>
+public class CorruptExplosionModel extends AnimatedGeoModel<CorruptExplosion>
 {
-    public CorruptZombieModel() {}
+    public CorruptExplosionModel() {}
 
     private static final ResourceLocation[] TEX = {
             new ResourceLocation(Frv.MOD_ID, "textures/entity/corrupt_explosion/1.png"),
@@ -42,30 +40,20 @@ public class CorruptZombieModel extends AnimatedTickingGeoModel<CorruptZombie>
             new ResourceLocation(Frv.MOD_ID, "textures/entity/corrupt_explosion/27.png")};
 
     @Override
-    public ResourceLocation getModelResource(CorruptZombie object)
+    public ResourceLocation getModelResource(CorruptExplosion object)
     {
-        return new ResourceLocation(Frv.MOD_ID, "geo/corrupt_zombie.geo.json");
+        return new ResourceLocation(Frv.MOD_ID, "geo/corrupt_explosion.geo.json");
     }
 
     @Override
-    public ResourceLocation getTextureResource(CorruptZombie entity)
+    public ResourceLocation getTextureResource(CorruptExplosion object)
     {
-        return TEX[(entity.getTextureTimer())];
+        return TEX[(object.getTextureTimer())];
     }
 
     @Override
-    public ResourceLocation getAnimationResource(CorruptZombie object)
+    public ResourceLocation getAnimationResource(CorruptExplosion object)
     {
-        return new ResourceLocation(Frv.MOD_ID, "animations/corrupt_zombie.animation.json");
-    }
-
-    @Override
-    public void setLivingAnimations(CorruptZombie entity, Integer uniqueID, AnimationEvent customPredicate) {
-        super.setLivingAnimations(entity, uniqueID, customPredicate);
-        IBone head = this.getAnimationProcessor().getBone("head");
-
-        EntityModelData extraData = (EntityModelData) customPredicate.getExtraDataOfType(EntityModelData.class).get(0);
-        head.setRotationX(extraData.headPitch * ((float) Math.PI / 180F));
-        head.setRotationY(extraData.netHeadYaw * ((float) Math.PI / 180F));
+        return new ResourceLocation(Frv.MOD_ID, "animations/corrupt_explosion.animation.json");
     }
 }

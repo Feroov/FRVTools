@@ -9,6 +9,7 @@ import com.feroov.frv.item.ModItemGroup;
 import com.feroov.frv.item.ModItems;
 import com.feroov.frv.sound.ModSoundEvents;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.BlockTags;
@@ -19,6 +20,9 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
@@ -31,6 +35,8 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import javax.annotation.Nullable;
+import java.util.List;
 import java.util.function.Supplier;
 
 public class ModBlocks
@@ -228,7 +234,8 @@ public class ModBlocks
 
     public static final RegistryObject<Block> MATRIX_PORTAL = registerBlock("matrix_portal",
             () -> new MatrixPortalBlock(BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().sound(new
-                    ForgeSoundType(1f,1f, () -> ModSoundEvents.CORRUPT_DEATH.get(),
+                    ForgeSoundType(1f,1f,
+                    () -> ModSoundEvents.CORRUPT_DEATH.get(),
                     () -> ModSoundEvents.SILENT.get(), //step
                     () -> ModSoundEvents.CORRUPT_FIRE.get(), //place
                     () -> ModSoundEvents.SILENT.get(), //hit
@@ -238,7 +245,8 @@ public class ModBlocks
     public static final RegistryObject<Block> CORRUPTED_BLOCK = registerBlock("corrupted_block",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(0.2F)
                     .sound(new
-                            ForgeSoundType(1f,1f, () -> ModSoundEvents.GLITCH.get(),
+                            ForgeSoundType(1f,1f,
+                            () -> ModSoundEvents.GLITCH.get(),
                             () -> ModSoundEvents.CORRUPT_STEP.get(), //step
                             () -> ModSoundEvents.CORRUPT_FIRE.get(), //place
                             () -> ModSoundEvents.SILENT.get(), //hit
@@ -268,7 +276,32 @@ public class ModBlocks
                     () -> SoundEvents.ENDERMAN_DEATH)).strength(1.0f))));
 
     public static final RegistryObject<Block> VOID_TNT = registerBlock("void_tnt",
-            () -> new VoidTNT((BlockBehaviour.Properties.of(Material.EXPLOSIVE).sound(SoundType.WOOL).strength(1.5f))));
+            () -> new VoidTNT((BlockBehaviour.Properties.of(Material.EXPLOSIVE).sound(SoundType.WOOL).strength(1.5f)))
+            {
+                @Override
+                public void appendHoverText(ItemStack stack, @Nullable BlockGetter blockGetter, List<Component> components, TooltipFlag tooltipFlag)
+                {
+                    super.appendHoverText(stack, blockGetter, components, tooltipFlag);
+                    components.add(Component.translatable("Pulsating with power, flash warning!"));
+                }
+            });
+
+    public static final RegistryObject<Block> CORRUPT_TNT = registerBlock("corrupt_tnt",
+            () -> new CorruptTNT((BlockBehaviour.Properties.of(Material.EXPLOSIVE).sound(new
+                    ForgeSoundType(1f,1f,
+                    () -> ModSoundEvents.GLITCH.get(),
+                    () -> ModSoundEvents.CORRUPT_STEP.get(), //step
+                    () -> ModSoundEvents.CORRUPT_FIRE.get(), //place
+                    () -> ModSoundEvents.SILENT.get(), //hit
+                    () -> ModSoundEvents.CORRUPT_HURT.get())).strength(1.0f)))
+            {
+                @Override
+                public void appendHoverText(ItemStack stack, @Nullable BlockGetter blockGetter, List<Component> components, TooltipFlag tooltipFlag)
+                {
+                    super.appendHoverText(stack, blockGetter, components, tooltipFlag);
+                    components.add(Component.translatable("Pulsating with power, flash warning!"));
+                }
+            });
 
 
 

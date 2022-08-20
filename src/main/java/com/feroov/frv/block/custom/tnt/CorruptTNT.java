@@ -1,10 +1,9 @@
 package com.feroov.frv.block.custom.tnt;
 
 
-import com.feroov.frv.entities.misc.PrimedVoid;
+import com.feroov.frv.entities.misc.PrimedCorrupt;
 import com.feroov.frv.sound.ModSoundEvents;
 import net.minecraft.core.BlockPos;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
@@ -29,11 +28,11 @@ import net.minecraft.world.phys.BlockHitResult;
 
 import javax.annotation.Nullable;
 
-public class VoidTNT extends Block
+public class CorruptTNT extends Block
 {
     public static final BooleanProperty UNSTABLE = BlockStateProperties.UNSTABLE;
 
-    public VoidTNT(Properties properties)
+    public CorruptTNT(Properties properties)
     {
         super(properties);
         this.registerDefaultState(this.defaultBlockState().setValue(UNSTABLE, Boolean.valueOf(false)));
@@ -78,12 +77,12 @@ public class VoidTNT extends Block
     {
         if (!level.isClientSide)
         {
-            PrimedVoid primedVoid = new PrimedVoid(level, (double)blockPos.getX() + 0.5D,
+            PrimedCorrupt primedCorrupt = new PrimedCorrupt(level, (double)blockPos.getX() + 0.5D,
                     (double)blockPos.getY(), (double)blockPos.getZ()
                     + 0.5D, explosion.getSourceMob());
-            int i = primedVoid.getFuse();
-            primedVoid.setFuse((short)(level.random.nextInt(i / 4) + i / 8));
-            level.addFreshEntity(primedVoid);
+            int i = primedCorrupt.getFuse();
+            primedCorrupt.setFuse((short)(level.random.nextInt(i / 4) + i / 8));
+            level.addFreshEntity(primedCorrupt);
         }
     }
 
@@ -98,11 +97,13 @@ public class VoidTNT extends Block
     {
         if (!level.isClientSide)
         {
-            PrimedVoid primedVoid = new PrimedVoid(level, (double)blockPos.getX() + 0.5D,
+            PrimedCorrupt primedCorrupt = new PrimedCorrupt(level, (double)blockPos.getX() + 0.5D,
                     (double)blockPos.getY(), (double)blockPos.getZ() + 0.5D, livingEntity);
-            level.addFreshEntity(primedVoid);
-            level.playSound((Player)null, primedVoid.getX(), primedVoid.getY(), primedVoid.getZ(),
-                    ModSoundEvents.ENERGY_CHARGING.get(), SoundSource.BLOCKS, 6.0F, 1.0F);
+            level.addFreshEntity(primedCorrupt);
+            level.playSound((Player)null, primedCorrupt.getX(), primedCorrupt.getY(), primedCorrupt.getZ(),
+                    ModSoundEvents.ENERGY_CHARGING2.get(), SoundSource.BLOCKS, 9.0F, 1.0F);
+            level.playSound((Player)null, primedCorrupt.getX(), primedCorrupt.getY(), primedCorrupt.getZ(),
+                    ModSoundEvents.CORRUPT_FIRE.get(), SoundSource.BLOCKS, 9.0F, 0.1F);
             level.gameEvent(livingEntity, GameEvent.PRIME_FUSE, blockPos);
         }
     }

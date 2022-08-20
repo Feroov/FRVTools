@@ -7,7 +7,9 @@ import com.feroov.frv.entities.passive.Croaker;
 import com.feroov.frv.entities.passive.FemaleHunter;
 import com.feroov.frv.entities.passive.Hunter;
 import com.feroov.frv.entities.passive.LostPerson;
+import com.feroov.frv.entities.projectiles.CorruptExplosion;
 import com.feroov.frv.entities.projectiles.Electricity;
+import com.feroov.frv.entities.projectiles.Explosion;
 import com.feroov.frv.entities.projectiles.TheSword;
 import com.feroov.frv.init.ModEntityTypes;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
@@ -38,6 +40,8 @@ public class ModEvents
         event.put(ModEntityTypes.CORRUPT_ZOMBIE.get(), CorruptZombie.createAttributes().build());
         event.put(ModEntityTypes.LORD_OF_CORRUPTION.get(), LordOfCorruption.createAttributes().build());
         event.put(ModEntityTypes.ELECTRICITY.get(), Electricity.createAttributes().build());
+        event.put(ModEntityTypes.EXPLOSION.get(), Explosion.createAttributes().build());
+        event.put(ModEntityTypes.CORRUPT_EXPLOSION.get(), CorruptExplosion.createAttributes().build());
         event.put(ModEntityTypes.THE_SWORD.get(), TheSword.createAttributes().build());
         event.put(ModEntityTypes.MIMIC.get(), Mimic.createAttributes().build());
         event.put(ModEntityTypes.CORRUPT_BOARD.get(), CorruptBoard.createAttributes().build());

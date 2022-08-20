@@ -62,6 +62,8 @@ public class ClientModEvents
         event.registerEntityRenderer(ModEntityTypes.CORRUPT_ANGEL_FIRE.get(), CorruptAngelFireRender::new);
         event.registerEntityRenderer(ModEntityTypes.CANNON.get(), CannonRenderer::new);
         event.registerEntityRenderer(ModEntityTypes.ELECTRICITY.get(), ElectricityRenderer::new);
+        event.registerEntityRenderer(ModEntityTypes.EXPLOSION.get(), ExplosionRenderer::new);
+        event.registerEntityRenderer(ModEntityTypes.CORRUPT_EXPLOSION.get(), CorruptExplosionRenderer::new);
         event.registerEntityRenderer(ModEntityTypes.THE_SWORD.get(), TheSwordRenderer::new);
         event.registerEntityRenderer(ModEntityTypes.CORRUPT_BOARD.get(), CorruptBoardRenderer::new);
 
@@ -71,6 +73,8 @@ public class ClientModEvents
         event.registerEntityRenderer(ModEntityTypes.PRIMED_HELLSTONE.get(), HellstoneTNTRenderer::new);
         event.registerEntityRenderer(ModEntityTypes.PRIMED_ENDRIUM.get(), EndriumTNTRenderer::new);
         event.registerEntityRenderer(ModEntityTypes.PRIMED_VOID.get(), VoidTNTRenderer::new);
+        event.registerEntityRenderer(ModEntityTypes.PRIMED_CORRUPT.get(), CorruptTNTRenderer::new);
+        event.registerEntityRenderer(ModEntityTypes.PRIMED_LOC.get(), LocTNTRenderer::new);
     }
 
     @Deprecated

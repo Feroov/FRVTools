@@ -84,6 +84,7 @@ public class ModSoundEvents
     public static final RegistryObject<SoundEvent> CORRUPT_STEP = SOUND_EVENTS.register("corrupt_step", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "corrupt_step")));
     public static final RegistryObject<SoundEvent> CORRUPT_BOARD_AMBIENT = SOUND_EVENTS.register("corrupt_board_ambient", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "corrupt_board_ambient")));
     public static final RegistryObject<SoundEvent> ENERGY_CHARGING = SOUND_EVENTS.register("energy_charging", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "energy_charging")));
+    public static final RegistryObject<SoundEvent> ENERGY_CHARGING2 = SOUND_EVENTS.register("energy_charging2", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "energy_charging2")));
     /****************************/
 
     /*********** Musics ***********/

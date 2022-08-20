@@ -22,22 +22,22 @@ import net.minecraft.world.level.block.Blocks;
 
 import javax.annotation.Nullable;
 
-public class PrimedVoid extends Entity
+public class PrimedCorrupt extends Entity
 {
-    private static final EntityDataAccessor<Integer> DATA_FUSE_ID = SynchedEntityData.defineId(PrimedVoid.class, EntityDataSerializers.INT);
+    private static final EntityDataAccessor<Integer> DATA_FUSE_ID = SynchedEntityData.defineId(PrimedCorrupt.class, EntityDataSerializers.INT);
 
-    private static final int DEFAULT_FUSE_TIME = 155;
+    private static final int DEFAULT_FUSE_TIME = 220;
 
     @Nullable
     private LivingEntity owner;
 
-    public PrimedVoid(Level level, double v, double v1, double v2, @Nullable LivingEntity livingEntity)
+    public PrimedCorrupt(Level level, double v, double v1, double v2, @Nullable LivingEntity livingEntity)
     {
-        this(ModEntityTypes.PRIMED_VOID.get(), level);
+        this(ModEntityTypes.PRIMED_CORRUPT.get(), level);
         this.setPos(v, v1, v2);
         double d0 = level.random.nextDouble() * (double)((float)Math.PI * 2F);
         this.setDeltaMovement(-Math.sin(d0) * 0.02D, (double)0.2F, -Math.cos(d0) * 0.02D);
-        this.setFuse(155);
+        this.setFuse(220);
         this.xo = v;
         this.yo = v1;
         this.zo = v2;
@@ -45,9 +45,9 @@ public class PrimedVoid extends Entity
     }
 
 
-    public PrimedVoid(EntityType<PrimedVoid> primedVoidEntityType, Level level)
+    public PrimedCorrupt(EntityType<PrimedCorrupt> primedCorruptEntityType, Level level)
     {
-        super(primedVoidEntityType, level);
+        super(primedCorruptEntityType, level);
         this.blocksBuilding = true;
     }
 
@@ -107,21 +107,21 @@ public class PrimedVoid extends Entity
     protected void explode()
     {
         ServerLevel level = (ServerLevel) this.level; BlockPos position = this.blockPosition();
-        ModEntityTypes.EXPLOSION.get().spawn(level, null, null, position, MobSpawnType.TRIGGERED, true, true);
+        ModEntityTypes.CORRUPT_EXPLOSION.get().spawn(level, null, null, position, MobSpawnType.TRIGGERED, true, true);
 
         this.level.setBlock(position, Blocks.GRAVEL.defaultBlockState(), 51, 50);
-        level.playSound((Player)null, this.getX(), this.getY(), this.getZ(), SoundEvents.LIGHTNING_BOLT_THUNDER, SoundSource.BLOCKS, 3.0F, 1.0F);
+        level.playSound((Player)null, this.getX(), this.getY(), this.getZ(), ModSoundEvents.CORRUPT_DEATH.get(), SoundSource.BLOCKS, 10.0F, 1.0F);
 
         float f = 4.0F;
-        this.level.explode(this, this.getX(), this.getY(-8.0625D), this.getZ(), 45.0F, Explosion.BlockInteraction.DESTROY);
-        this.level.explode(this, this.getX(5), this.getY(-0.0625D), this.getZ(5), 33.0F, Explosion.BlockInteraction.BREAK);
-        this.level.explode(this, this.getX(-5), this.getY(-0.0625D), this.getZ(-5), 33.0F, Explosion.BlockInteraction.BREAK);
-        this.level.explode(this, this.getX(-5), this.getY(-0.0625D), this.getZ(5), 33.0F, Explosion.BlockInteraction.BREAK);
-        this.level.explode(this, this.getX(5), this.getY(-0.0625D), this.getZ(-5), 33.0F, Explosion.BlockInteraction.BREAK);
-        this.level.explode(this, this.getX(5), this.getY(2.0625D), this.getZ(5), 33.0F, Explosion.BlockInteraction.BREAK);
-        this.level.explode(this, this.getX(-5), this.getY(2.0625D), this.getZ(-5), 33.0F, Explosion.BlockInteraction.BREAK);
-        this.level.explode(this, this.getX(-5), this.getY(2.0625D), this.getZ(5), 33.0F, Explosion.BlockInteraction.BREAK);
-        this.level.explode(this, this.getX(5), this.getY(2.0625D), this.getZ(-5), 33.0F, Explosion.BlockInteraction.BREAK);
+        this.level.explode(this, this.getX(), this.getY(-8.0625D), this.getZ(), 75.0F, Explosion.BlockInteraction.DESTROY);
+        this.level.explode(this, this.getX(12), this.getY(3.0625D), this.getZ(12), 63.0F, Explosion.BlockInteraction.BREAK);
+        this.level.explode(this, this.getX(-12), this.getY(3.0625D), this.getZ(-12), 63.0F, Explosion.BlockInteraction.BREAK);
+        this.level.explode(this, this.getX(-12), this.getY(3.0625D), this.getZ(12), 63.0F, Explosion.BlockInteraction.BREAK);
+        this.level.explode(this, this.getX(12), this.getY(3.0625D), this.getZ(-12), 63.0F, Explosion.BlockInteraction.BREAK);
+        this.level.explode(this, this.getX(12), this.getY(5.0625D), this.getZ(12), 83.0F, Explosion.BlockInteraction.BREAK);
+        this.level.explode(this, this.getX(-12), this.getY(5.0625D), this.getZ(-12), 83.0F, Explosion.BlockInteraction.BREAK);
+        this.level.explode(this, this.getX(-12), this.getY(5.0625D), this.getZ(12), 83.0F, Explosion.BlockInteraction.BREAK);
+        this.level.explode(this, this.getX(12), this.getY(5.0625D), this.getZ(-12), 83.0F, Explosion.BlockInteraction.BREAK);
 
     }
 

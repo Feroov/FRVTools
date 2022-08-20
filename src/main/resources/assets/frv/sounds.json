@@ -193,5 +193,6 @@
   "corrupt_step": {"category": "misc", "sounds": [{"name": "frv:corrupt_step"}], "subtitle": "frv.corrupt_step"},
   "corrupt_board_ambient": {"category": "misc", "sounds": [{"name": "frv:corrupt_board_ambient"}], "subtitle": "frv.corrupt_board_ambient"},
   "lord_of_corruption_ambient": {"category": "misc", "sounds": [{"name": "frv:lord_of_corruption_ambient"}], "subtitle": "frv.lord_of_corruption_ambient"},
-  "energy_charging": {"category": "misc", "sounds": [{"name": "frv:energy_charging"}], "subtitle": "frv.energy_charging"}
+  "energy_charging": {"category": "misc", "sounds": [{"name": "frv:energy_charging"}], "subtitle": "frv.energy_charging"},
+  "energy_charging2": {"category": "misc", "sounds": [{"name": "frv:energy_charging2"}], "subtitle": "frv.energy_charging2"}
 }

@@ -1,5 +1,7 @@
 package com.feroov.frv.entities.hostile;
 
+import com.feroov.frv.entities.misc.PrimedCorrupt;
+import com.feroov.frv.entities.misc.PrimedLoc;
 import com.feroov.frv.entities.projectiles.CorruptAngelFire;
 import com.feroov.frv.init.ModEntityTypes;
 import com.feroov.frv.sound.ModSoundEvents;
@@ -193,6 +195,19 @@ public class LordOfCorruption extends Monster implements IAnimatable, IAnimation
     }
     /*********************************************************************************************/
 
+    public void remove(Entity.RemovalReason removalReason)
+    {
+        int k = 1 + this.random.nextInt(1);
+
+        for(int l = 0; l < k; ++l)
+        {
+            PrimedLoc primedCorrupt = ModEntityTypes.PRIMED_LOC.get().create(this.level);
+            primedCorrupt.setInvulnerable(this.isInvulnerable());
+            primedCorrupt.moveTo(this.getX(), this.getY(), this.getZ());
+            this.level.addFreshEntity(primedCorrupt);
+        }
+        super.remove(removalReason);
+    }
 
 
     /*************************** Attack Goal *********************************/
