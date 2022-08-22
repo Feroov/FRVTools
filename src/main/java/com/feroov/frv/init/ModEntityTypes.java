@@ -99,6 +99,10 @@ public class ModEntityTypes
             () -> EntityType.Builder.<MusketAmmo>of(MusketAmmo::new, MobCategory.MISC).sized(0.5F, 0.5F)
                     .clientTrackingRange(9).build(new ResourceLocation(Frv.MOD_ID, "musket_bullet").toString()));
 
+    public static final RegistryObject<EntityType<NineMMBullet>> NINE_MM_BULLET = ENTITIES.register("nine_mm_bullet",
+            () -> EntityType.Builder.<NineMMBullet>of(NineMMBullet::new, MobCategory.MISC).sized(0.4F, 0.4F)
+                    .clientTrackingRange(9).build(new ResourceLocation(Frv.MOD_ID, "nine_mm_bullet").toString()));
+
     public static final RegistryObject<EntityType<CorruptFire>> CORRUPT_FIRE = ENTITIES.register("corrupt_fire",
             () -> EntityType.Builder.<CorruptFire>of(CorruptFire::new, MobCategory.MISC).sized(1.7F, 1.7F)
                     .clientTrackingRange(9).build(new ResourceLocation(Frv.MOD_ID, "corrupt_fire").toString()));
@@ -157,10 +161,6 @@ public class ModEntityTypes
     public static final RegistryObject<EntityType<PrimedCorrupt>> PRIMED_CORRUPT = ENTITIES.register("primed_corrupt",
             () -> EntityType.Builder.<PrimedCorrupt>of(PrimedCorrupt::new, MobCategory.MISC).fireImmune()
                     .sized(0.98f,0.98f).fireImmune().clientTrackingRange(10).updateInterval(10).build("primed_corrupt"));
-
-    public static final RegistryObject<EntityType<PrimedLoc>> PRIMED_LOC = ENTITIES.register("primed_loc",
-            () -> EntityType.Builder.<PrimedLoc>of(PrimedLoc::new, MobCategory.MISC).fireImmune()
-                    .sized(0.98f,0.98f).fireImmune().clientTrackingRange(10).updateInterval(10).build("primed_loc"));
 
 
 

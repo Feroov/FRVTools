@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "frv:item/the_leggings"
+    "layer0": "frv:item/the_gchestplate"
   }
 }

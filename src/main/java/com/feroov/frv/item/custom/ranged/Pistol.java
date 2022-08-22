@@ -1,6 +1,7 @@
 package com.feroov.frv.item.custom.ranged;
 
-import com.feroov.frv.entities.projectiles.MusketAmmo;
+
+import com.feroov.frv.entities.projectiles.NineMMBullet;
 import com.feroov.frv.init.Keybindings;
 import com.feroov.frv.init.ModParticles;
 import com.feroov.frv.item.ModItemGroup;
@@ -19,8 +20,8 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.*;
-
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
@@ -30,11 +31,11 @@ import software.bernie.geckolib3.util.GeckoLibUtil;
 
 import java.util.function.Consumer;
 
-public class Musket extends RangedItemsComplex
+public class Pistol extends RangedItemsComplex
 {
-    public Musket()
+    public Pistol()
     {
-        super(new Item.Properties().tab(ModItemGroup.FRV_TAB_MISC).stacksTo(1).durability(2));
+        super(new Properties().tab(ModItemGroup.FRV_TAB_MISC).stacksTo(1).durability(16));
     }
 
     @Override
@@ -53,23 +54,24 @@ public class Musket extends RangedItemsComplex
         });
     }
 
+    public void execute(){}
     @Override
-    public void releaseUsing(ItemStack stack, Level level, LivingEntity livingEntity, int timeLeft) {
-        if (livingEntity instanceof Player) {
+    public void releaseUsing(ItemStack stack, Level level, LivingEntity livingEntity, int timeLeft)
+    {
+        if (livingEntity instanceof Player)
+        {
             Player playerentity = (Player) livingEntity;
-            if (stack.getDamageValue() < (stack.getMaxDamage() - 1)) {
-                playerentity.getCooldowns().addCooldown(this, 30);
-                if (!level.isClientSide) {
-                    MusketAmmo abstractarrowentity = createArrow(level, stack, playerentity);
-                    abstractarrowentity.shootFromRotation(playerentity, playerentity.getXRot(), playerentity.getYRot(),
-                            0.0F, 3.0F, 1.0F);
-                    abstractarrowentity.isNoGravity();
+            if (stack.getDamageValue() < (stack.getMaxDamage() - 1))
+            {
+                playerentity.getCooldowns().addCooldown(this, 7);
 
-                    stack.hurtAndBreak(1, livingEntity, p -> p.broadcastBreakEvent(livingEntity.getUsedItemHand()));
-                    level.addFreshEntity(abstractarrowentity);
-                    level.playSound((Player) null, playerentity.getX(), playerentity.getY(), playerentity.getZ(),
-                            ModSoundEvents.MUSKET.get(), SoundSource.PLAYERS, 1.0F,
-                            2.0F / (level.random.nextFloat() * 0.4F + 10.2F) + 0.25F * 1.0F);
+                if (!level.isClientSide)
+                {
+                    NineMMBullet nineMMBullet = createArrow(level, stack, playerentity);
+                    nineMMBullet.shootFromRotation(playerentity, playerentity.getXRot(), playerentity.getYRot(),
+                            0.0F, 4.0F, 1.0F);
+
+                    nineMMBullet.isNoGravity();
 
                     double x = playerentity.getX();
                     double y = playerentity.getY();
@@ -78,22 +80,27 @@ public class Musket extends RangedItemsComplex
 
                     if (level instanceof ServerLevel _level)
                     {
-                        Vec3 vec32 = playerentity.getViewVector(12f);
+                        Vec3 vec32 = playerentity.getDeltaMovement();
 
-
-                        _level.sendParticles(ParticleTypes.SMOKE, x - (double)(playerentity.getBbWidth() + 1.0F) * 0.5D *
-                                (double) Mth.sin(playerentity.yBodyRot * ((float)Math.PI / 180F)), playerentity.getEyeY() -
-                                (double)0.1F, z + (double)(playerentity.getBbWidth() + 1.8F) * 0.5D * (double)Mth.cos(playerentity.yBodyRot *
+                        _level.sendParticles(ParticleTypes.FLAME, x - (double)(playerentity.getBbWidth() + 2.0F) * 0.5D *
+                                (double) Mth.sin(playerentity.yHeadRot * ((float)Math.PI / 180F)), playerentity.getEyeY() -
+                                (double)0.1F, z + (double)(playerentity.getBbWidth() + 1.0F) * 0.5D * (double)Mth.cos(playerentity.yHeadRot *
                                 ((float)Math.PI / 180F)), 0, 0.0D, vec32.z, 0, 0);
 
-                        _level.sendParticles(ParticleTypes.CAMPFIRE_COSY_SMOKE, x - (double)(playerentity.getBbWidth() + 1.0F) * 0.5D *
-                                (double) Mth.sin(playerentity.yBodyRot * ((float)Math.PI / 180F)), playerentity.getEyeY() -
-                                (double)0.1F, z + (double)(playerentity.getBbWidth() + 1.8F) * 0.5D * (double)Mth.cos(playerentity.yBodyRot *
+                        _level.sendParticles(ParticleTypes.SMOKE, x - (double)(playerentity.getBbWidth() + 2.0F) * 0.5D *
+                                (double) Mth.sin(playerentity.yHeadRot * ((float)Math.PI / 180F)), playerentity.getEyeY() -
+                                (double)0.1F, z + (double)(playerentity.getBbWidth() + 1.0F) * 0.5D * (double)Mth.cos(playerentity.yHeadRot *
                                 ((float)Math.PI / 180F)), 0, 0.0D, vec32.z, 0, 0);
 
 //                        _level.sendParticles(ParticleTypes.FLAME, x, y + 1.5, z, 0, 0, 0, 0, 20);
 //                        _level.sendParticles(ParticleTypes.SMOKE, x, y + 1.5, z, 0, 0, 0, 0, 20);
                     }
+
+                    stack.hurtAndBreak(1, livingEntity, p -> p.broadcastBreakEvent(livingEntity.getUsedItemHand()));
+                    level.addFreshEntity(nineMMBullet);
+
+                    level.playSound((Player) null, playerentity.getX(), playerentity.getY(), playerentity.getZ(),
+                            ModSoundEvents.PISTOL.get(), SoundSource.PLAYERS, 1.0F, 1.0F);
 
                     if (!level.isClientSide)
                     {
@@ -102,18 +109,16 @@ public class Musket extends RangedItemsComplex
                                 .with(() -> playerentity);
                         GeckoLibNetwork.syncAnimation(target, this, id, STATE);
                     }
-
-
                 }
             }
         }
-    }
+}
 
 
-    public MusketAmmo createArrow(Level worldIn, ItemStack stack, LivingEntity shooter)
+    public NineMMBullet createArrow(Level worldIn, ItemStack stack, LivingEntity shooter)
     {
-        MusketAmmo arrowentity = new MusketAmmo(worldIn, shooter);
-        return arrowentity;
+        NineMMBullet nineMMBullet = new NineMMBullet(worldIn, shooter);
+        return nineMMBullet;
     }
 
     @Override
@@ -121,7 +126,7 @@ public class Musket extends RangedItemsComplex
     {
         if (worldIn.isClientSide)
         {
-            if (((Player) entityIn).getMainHandItem().getItem() instanceof Musket)
+            if (((Player) entityIn).getMainHandItem().getItem() instanceof Pistol)
             {
                 while (Keybindings.RELOAD.consumeClick() && isSelected)
                 {
@@ -131,19 +136,28 @@ public class Musket extends RangedItemsComplex
         }
     }
 
+    public static float getArrowVelocity(int charge) {
+        float f = (float) charge / 20.0F;
+        f = (f * f + f * 2.0F) / 3.0F;
+        if (f > 1.0F) {
+            f = 1.0F;
+        }
+
+        return f;
+    }
 
     public static void reload(Player user, InteractionHand hand)
     {
-        if (user.getMainHandItem().getItem() instanceof Musket)
+        if (user.getMainHandItem().getItem() instanceof Pistol)
         {
             while (!user.isCreative() && user.getItemInHand(hand).getDamageValue() != 0
-                    && user.getInventory().countItem(ModItems.MUSKET_BULLET.get()) > 0)
+                    && user.getInventory().countItem(ModItems.NINE_MM_MAG.get()) > 0)
             {
-                removeAmmo(ModItems.MUSKET_BULLET.get(), user);
-                user.getMainHandItem().hurtAndBreak(-10, user, s -> user.broadcastBreakEvent(hand));
+                removeAmmo(ModItems.NINE_MM_MAG.get(), user);
+                user.getMainHandItem().hurtAndBreak(-15, user, s -> user.broadcastBreakEvent(hand));
                 user.getMainHandItem().setPopTime(3);
                 user.getCommandSenderWorld().playSound((Player) null, user.getX(), user.getY(), user.getZ(),
-                        ModSoundEvents.MUSKET_RELOAD.get(), SoundSource.PLAYERS, 1.00F, 1.0F);
+                        ModSoundEvents.PISTOL_RELOAD.get(), SoundSource.PLAYERS, 1.00F, 1.0F);
             }
         }
     }
@@ -153,7 +167,6 @@ public class Musket extends RangedItemsComplex
     {
         return canRepair && isDamageable(stack);
     }
-
 
     public UseAnim getUseAnimation(ItemStack itemStack)
     {

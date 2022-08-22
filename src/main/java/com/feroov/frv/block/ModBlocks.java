@@ -275,7 +275,7 @@ public class ModBlocks
                     () -> SoundEvents.ENDERMAN_TELEPORT, //hit
                     () -> SoundEvents.ENDERMAN_DEATH)).strength(1.0f))));
 
-    public static final RegistryObject<Block> VOID_TNT = registerBlock("void_tnt",
+    public static final RegistryObject<Block> VOID_TNT = registerBlock("dvoid_tnt",
             () -> new VoidTNT((BlockBehaviour.Properties.of(Material.EXPLOSIVE).sound(SoundType.WOOL).strength(1.5f)))
             {
                 @Override

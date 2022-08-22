@@ -4,6 +4,7 @@ package com.feroov.frv.entities.hostile;
 
 import com.feroov.frv.entities.passive.FemaleHunter;
 import com.feroov.frv.entities.passive.Hunter;
+import com.feroov.frv.init.ModParticles;
 import com.feroov.frv.sound.ModSoundEvents;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -217,12 +218,13 @@ public class CorruptZombie extends Monster implements IAnimatable, IAnimationTic
     public void aiStep()
     {
         super.aiStep();
-//        if (this.level.isClientSide) {
-//            for(int i = 0; i < 2; ++i) {
-//                this.level.addParticle(ModParticles.CORRUPT_PARTICLES.get(), this.getRandomX(0.5D),
-//                        this.getRandomY() - 0.85D, this.getRandomZ(0.5D), (this.random.nextDouble() - 0.5D) * 2.0D, -this.random.nextDouble(), (this.random.nextDouble() - 0.5D) * 2.0D);
-//            }
-//        }
+        if (this.level.isClientSide) {
+            for(int i = 0; i < 2; ++i) {
+                this.level.addParticle(ModParticles.CORRUPT_PARTICLES.get(), this.getRandomX(0.5D),
+                        this.getRandomY() - 0.85D, this.getRandomZ(0.5D), (this.random.nextDouble()
+                                - 0.5D) * 2.0D, -this.random.nextDouble(), (this.random.nextDouble() - 0.5D) * 2.0D);
+            }
+        }
         textureTimer = (textureTimer + 1) % 27;
     }
 

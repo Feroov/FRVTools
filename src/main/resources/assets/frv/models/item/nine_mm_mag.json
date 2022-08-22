@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "frv:item/the_pickaxe"
+    "layer0": "frv:item/nine_mm_mag"
   }
 }

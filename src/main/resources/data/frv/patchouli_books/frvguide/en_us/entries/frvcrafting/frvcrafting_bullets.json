@@ -10,9 +10,9 @@
     },
     {
       "type": "patchouli:crafting",
-      "title": "Flintlock Bullet",
+      "title": "Flintlock Round",
       "recipe": "frv:musket_bullet",
-      "text": "Flintlock Bullets can either be crafted or be dropped by the Pirates"
+      "text": "Flintlock Rounds can either be crafted or be dropped by the Pirates"
     }
   ]
 }

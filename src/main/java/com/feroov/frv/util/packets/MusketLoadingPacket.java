@@ -1,6 +1,7 @@
 package com.feroov.frv.util.packets;
 
 import com.feroov.frv.item.custom.ranged.Musket;
+import com.feroov.frv.item.custom.ranged.Pistol;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.PacketListener;
 import net.minecraft.server.level.ServerPlayer;
@@ -26,6 +27,7 @@ public class MusketLoadingPacket
             {
                 ServerPlayer playerEntity = ((ServerGamePacketListenerImpl) handler).player;
                 Musket.reload(playerEntity, InteractionHand.MAIN_HAND);
+                Pistol.reload(playerEntity, InteractionHand.MAIN_HAND);
             }
         });
         ctx.get().setPacketHandled(true);

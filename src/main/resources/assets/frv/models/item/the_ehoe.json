@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "frv:item/the_hoe"
+    "layer0": "frv:item/the_ehoe"
   }
 }

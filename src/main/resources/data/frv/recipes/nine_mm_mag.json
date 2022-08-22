@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "RIR",
+    "III",
+    "III"
+  ],
+  "key": {
+    "I": {
+    "item": "frv:nine_mm_bullet"
+    },
+    "R": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "result": {
+    "item": "frv:nine_mm_mag",
+    "count": 1
+  }
+}

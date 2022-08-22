@@ -4,9 +4,6 @@ import com.feroov.frv.init.ModEntityTypes;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientboundGameEventPacket;
-import net.minecraft.network.syncher.EntityDataAccessor;
-import net.minecraft.network.syncher.EntityDataSerializers;
-import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -31,12 +28,12 @@ import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
 
-public class MusketAmmo extends AbstractArrow implements IAnimatable
+public class NineMMBullet extends AbstractArrow implements IAnimatable
 {
 
     private AnimationFactory factory = new AnimationFactory(this);
-
-    public MusketAmmo(EntityType<? extends AbstractArrow> type, Level world) { super(type, world); }
+    private int ticksInAir;
+    public NineMMBullet(EntityType<? extends AbstractArrow> type, Level world) { super(type, world); }
 
     @Override
     protected ItemStack getPickupItem() { return null; }
@@ -46,13 +43,13 @@ public class MusketAmmo extends AbstractArrow implements IAnimatable
     @Override
     public void registerControllers(AnimationData data)
     {
-        data.addAnimationController(new AnimationController<MusketAmmo>(this, "controller", 0, this::predicate));
+        data.addAnimationController(new AnimationController<NineMMBullet>(this, "controller", 0, this::predicate));
     }
 
     @Override
     public AnimationFactory getFactory() { return this.factory; }
 
-    public MusketAmmo(Level world, LivingEntity owner) { super(ModEntityTypes.MUSKET_AMMO.get(), owner, world); }
+    public NineMMBullet(Level world, LivingEntity owner) { super(ModEntityTypes.NINE_MM_BULLET.get(), owner, world); }
 
     @Override
     public Packet<?> getAddEntityPacket() { return NetworkHooks.getEntitySpawningPacket(this); }
@@ -68,21 +65,13 @@ public class MusketAmmo extends AbstractArrow implements IAnimatable
 
     private int lifeTicks = 155;
 
-
     @Override
     public void tick()
     {
-//        super.tick();
-//        if (--this.lifeTicks < 0)
-//        {
-//            this.remove(RemovalReason.DISCARDED);
-//        }
-
         super.tick();
-        if (this.level.isClientSide()) {
-            double x = this.getX() + (this.random.nextDouble()) * (double) this.getBbWidth() * 1.5D;
-            double z = this.getZ() + (this.random.nextDouble()) * (double) this.getBbWidth() * 0.5D;
-            this.level.addParticle(ParticleTypes.SMOKE, true, x, this.getY(), z, 0, 0, 0);
+        if (--this.lifeTicks < 0)
+        {
+            this.remove(RemovalReason.DISCARDED);
         }
     }
 
@@ -105,7 +94,7 @@ public class MusketAmmo extends AbstractArrow implements IAnimatable
             if (entity1 instanceof LivingEntity) { ((LivingEntity) entity1).setLastHurtMob(entity); }
         }
 
-        if (entity.hurt(damagesource, 8.0f))
+        if (entity.hurt(damagesource, 9.0f))
         {
             if (entity instanceof LivingEntity)
             {
@@ -125,6 +114,16 @@ public class MusketAmmo extends AbstractArrow implements IAnimatable
             }
         } else { if (!this.level.isClientSide) { this.remove(RemovalReason.KILLED); } }
     }
+
+    @Override
+    public boolean isNoGravity() {
+        if (this.isInWater()) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
 
     @Override
     protected void onHit(HitResult result)

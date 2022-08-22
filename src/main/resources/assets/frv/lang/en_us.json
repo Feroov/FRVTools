@@ -73,11 +73,11 @@
   "item.frv.corrupt_axe": "§a§kco§r§aCorrupt Axe§a§kco§r§a",
   "item.frv.corrupt_shovel": "§a§kco§r§aCorrupt Shovel§a§kco§r§a",
   "item.frv.corrupt_hoe": "§a§kco§r§aCorrupt Hoe§a§kco§r§a",
-  "item.frv.the_sword": "§l§eThe Sword",
-  "item.frv.the_pickaxe": "§l§eThe Pickaxe",
-  "item.frv.the_axe": "§l§eThe Axe",
-  "item.frv.the_shovel": "§l§eThe Shovel",
-  "item.frv.the_hoe": "§l§eThe Hoe",
+  "item.frv.the_asword": "§l§eThe Sword",
+  "item.frv.the_bpickaxe": "§l§eThe Pickaxe",
+  "item.frv.the_caxe": "§l§eThe Axe",
+  "item.frv.the_dshovel": "§l§eThe Shovel",
+  "item.frv.the_ehoe": "§l§eThe Hoe",
 
 
   "item.frv.quartz_helmet": "Quartz Helmet",
@@ -132,10 +132,10 @@
   "item.frv.corrupt_chestplate": "§a§kco§r§aCorrupt Chestplate§a§kco§r§a",
   "item.frv.corrupt_leggings": "§a§kco§r§aCorrupt Leggings§a§kco§r§a",
   "item.frv.corrupt_boots": "§a§kco§r§aCorrupt Boots§a§kco§r§a",
-  "item.frv.the_helmet": "§l§eThe Helmet",
-  "item.frv.the_chestplate": "§l§eThe Chestplate",
-  "item.frv.the_leggings": "§l§eThe Leggings",
-  "item.frv.the_boots": "§l§eThe Boots",
+  "item.frv.the_fhelmet": "§l§eThe Helmet",
+  "item.frv.the_gchestplate": "§l§eThe Chestplate",
+  "item.frv.the_hleggings": "§l§eThe Leggings",
+  "item.frv.the_iboots": "§l§eThe Boots",
 
 
   "item.frv.croaker_spawn_egg": "Croaker Spawn",
@@ -190,8 +190,11 @@
   "item.frv.all_detector": "\u00A7bAll \u00A7eOres \u00A7aDetector",
   "item.frv.all_detector_prime": "\u00A7bAll \u00A7eOres \u00A7aDetector \u00A74Prime",
   "item.frv.musket": "Flintlock",
-  "item.frv.musket_bullet": "Flintlock Bullet",
+  "item.frv.musket_bullet": "Flintlock Round",
   "item.frv.ale": "Ale",
+  "item.frv.pistol": "Pistol",
+  "item.frv.nine_mm_mag": "Pistol Mag",
+  "item.frv.nine_mm_bullet": "9mm Bullets",
 
 
   "item.frv.tin_ingot": "Tin Ingot",
@@ -214,7 +217,7 @@
   "block.frv.funghonite_tnt": "\u00A7cFunghonite TNT",
   "block.frv.hellstone_tnt": "\u00A74Hellstone TNT",
   "block.frv.endrium_tnt": "\u00A75Endrium TNT",
-  "block.frv.void_tnt": "\u00A78Void TNT",
+  "block.frv.dvoid_tnt": "\u00A78Void TNT",
   "block.frv.corrupt_tnt": "§a§kco§r§aCorrupt TNT§a§kco",
 
   "block.frv.matrix": "\u00A7a\u00A7kMatrix\u00A7a",

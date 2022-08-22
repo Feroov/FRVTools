@@ -83,7 +83,7 @@ public class CorruptBoard extends Animal implements IAnimatable, IAnimationTicka
                         (this.random.nextDouble() - 0.5D) * 2.0D, -this.random.nextDouble(), (this.random.nextDouble() - 0.5D) * 2.0D);
             }
         }
-        textureTimer = (textureTimer + 1) % 8;
+        textureTimer = (textureTimer + 1) % 27;
     }
 
 

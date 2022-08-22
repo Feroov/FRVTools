@@ -58,6 +58,7 @@ public class ClientModEvents
         event.registerEntityRenderer(ModEntityTypes.PIRATE_CAPTAIN_MELEE.get(), PirateCaptainMeleeRender::new);
         event.registerEntityRenderer(ModEntityTypes.CANNON_BALL.get(), CannonBallRender::new);
         event.registerEntityRenderer(ModEntityTypes.MUSKET_AMMO.get(), MusketAmmoRender::new);
+        event.registerEntityRenderer(ModEntityTypes.NINE_MM_BULLET.get(), NineMMRender::new);
         event.registerEntityRenderer(ModEntityTypes.CORRUPT_FIRE.get(), CorruptFireRender::new);
         event.registerEntityRenderer(ModEntityTypes.CORRUPT_ANGEL_FIRE.get(), CorruptAngelFireRender::new);
         event.registerEntityRenderer(ModEntityTypes.CANNON.get(), CannonRenderer::new);
@@ -74,7 +75,6 @@ public class ClientModEvents
         event.registerEntityRenderer(ModEntityTypes.PRIMED_ENDRIUM.get(), EndriumTNTRenderer::new);
         event.registerEntityRenderer(ModEntityTypes.PRIMED_VOID.get(), VoidTNTRenderer::new);
         event.registerEntityRenderer(ModEntityTypes.PRIMED_CORRUPT.get(), CorruptTNTRenderer::new);
-        event.registerEntityRenderer(ModEntityTypes.PRIMED_LOC.get(), LocTNTRenderer::new);
     }
 
     @Deprecated

@@ -76,7 +76,9 @@ public class ModSoundEvents
     public static final RegistryObject<SoundEvent> DETECTOR_SOUND = SOUND_EVENTS.register("detector_sound", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "detector_sound")));
     public static final RegistryObject<SoundEvent> SWORD_SWING = SOUND_EVENTS.register("sword_swing", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "sword_swing")));
     public static final RegistryObject<SoundEvent> MUSKET = SOUND_EVENTS.register("musket", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "musket")));
+    public static final RegistryObject<SoundEvent> PISTOL = SOUND_EVENTS.register("pistol", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "pistol")));
     public static final RegistryObject<SoundEvent> MUSKET_RELOAD = SOUND_EVENTS.register("musket_reload", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "musket_reload")));
+    public static final RegistryObject<SoundEvent> PISTOL_RELOAD = SOUND_EVENTS.register("pistol_reload", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "pistol_reload")));
     public static final RegistryObject<SoundEvent> CANNON_SHOOT = SOUND_EVENTS.register("cannon_shoot", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "cannon_shoot")));
     public static final RegistryObject<SoundEvent> CORRUPT_FIRE = SOUND_EVENTS.register("corrupt_fire", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "corrupt_fire")));
     public static final RegistryObject<SoundEvent> GLITCH = SOUND_EVENTS.register("glitch", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "glitch")));
