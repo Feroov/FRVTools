@@ -2,6 +2,7 @@ package com.feroov.frv.entities.hostile;
 
 
 import com.feroov.frv.entities.passive.FemaleHunter;
+import com.feroov.frv.entities.passive.Guard;
 import com.feroov.frv.entities.passive.Hunter;
 import com.feroov.frv.entities.projectiles.PirateCaptainMelee;
 import com.feroov.frv.sound.ModSoundEvents;
@@ -158,6 +159,7 @@ public class PirateCaptain extends PathfinderMob implements IAnimatable, RangedA
         this.goalSelector.addGoal(1, new OpenDoorGoal(this,true));
         this.targetSelector.addGoal(2, new PirateCaptainAttackGoal(this, 0.35D, true, 3));//These are combined
         this.goalSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, Player.class, true));
+        this.goalSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, Guard.class, true));
         this.goalSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, Hunter.class, true));
         this.goalSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, FemaleHunter.class, true));
         this.goalSelector.addGoal(4, new PirateCaptainRangedAttackGoal(this, 0.35D, 18, 1.0F, 0)); // These are combined

@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "frv:guard_tower",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 1294735040,
+    "spacing": 40,
+    "separation": 8,
+    "type": "minecraft:random_spread"
+  }
+}

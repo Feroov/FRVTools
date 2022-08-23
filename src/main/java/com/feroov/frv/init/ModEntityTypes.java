@@ -4,10 +4,7 @@ import com.feroov.frv.Frv;
 import com.feroov.frv.block.ModBlocks;
 import com.feroov.frv.entities.hostile.*;
 import com.feroov.frv.entities.misc.*;
-import com.feroov.frv.entities.passive.Croaker;
-import com.feroov.frv.entities.passive.FemaleHunter;
-import com.feroov.frv.entities.passive.Hunter;
-import com.feroov.frv.entities.passive.LostPerson;
+import com.feroov.frv.entities.passive.*;
 import com.feroov.frv.entities.projectiles.*;
 import com.feroov.frv.entities.tile.VCTEntity;
 import net.minecraft.resources.ResourceLocation;
@@ -43,6 +40,10 @@ public class ModEntityTypes
     public static final RegistryObject<EntityType<LostPerson>> LOST_PERSON = ENTITIES.register("lost_person",
             () -> EntityType.Builder.of(LostPerson::new, MobCategory.CREATURE)
                     .sized(0.7f,1.8f).build("lost_person"));
+
+    public static final RegistryObject<EntityType<Guard>> GUARD = ENTITIES.register("guard",
+            () -> EntityType.Builder.of(Guard::new, MobCategory.CREATURE)
+                    .sized(0.7f,1.8f).build("guard"));
 
     /** Hostile **/
     public static final RegistryObject<EntityType<PirateCaptain>> PIRATE_CAPTAIN = ENTITIES.register("pirate_captain",

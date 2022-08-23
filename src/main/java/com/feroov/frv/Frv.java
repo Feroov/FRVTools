@@ -18,6 +18,8 @@ import com.feroov.frv.world.feature.ModConfiguredFeatures;
 import com.feroov.frv.world.feature.ModPlacedFeatures;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.entity.FlyingMob;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.monster.Monster;
@@ -79,6 +81,8 @@ public class Frv
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, FlyingMob::checkMobSpawnRules);
         SpawnPlacements.register(ModEntityTypes.CORRUPT_ZOMBIE.get(), SpawnPlacements.Type.ON_GROUND,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkMobSpawnRules);
+
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.CLOUD.get(), RenderType.translucent());
 
         RangedItems.addRanged();
     }

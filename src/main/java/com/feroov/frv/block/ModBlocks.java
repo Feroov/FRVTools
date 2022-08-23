@@ -1,6 +1,7 @@
 package com.feroov.frv.block;
 
 import com.feroov.frv.Frv;
+import com.feroov.frv.block.custom.Cloud;
 import com.feroov.frv.block.custom.portals.MatrixPortalBlock;
 import com.feroov.frv.block.custom.VigorousCraftingTable;
 import com.feroov.frv.block.custom.portals.VoidPortalBlock;
@@ -25,7 +26,9 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.GlassBlock;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.WebBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
@@ -303,6 +306,15 @@ public class ModBlocks
                 }
             });
 
+
+    public static final RegistryObject<Block> CLOUD = registerBlock("cloud",
+            () -> new Cloud(BlockBehaviour.Properties.of(Material.POWDER_SNOW).strength(0.12f).sound(new
+                    ForgeSoundType(1f,1f,
+                    () -> ModSoundEvents.SILENT.get(),
+                    () -> ModSoundEvents.SILENT.get(), //step
+                    () -> ModSoundEvents.SILENT.get(), //place
+                    () -> ModSoundEvents.SILENT.get(), //hit
+                    () -> ModSoundEvents.SILENT.get())).noCollission()));
 
 
 

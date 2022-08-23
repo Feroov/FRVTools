@@ -66,6 +66,12 @@ public class ModSoundEvents
     // Lost Soul
     public static final RegistryObject<SoundEvent> LOST_PERSON_ATTACK = SOUND_EVENTS.register("lost_person_attack", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "lost_soul_attack")));
 
+
+    // Guard
+     public static final RegistryObject<SoundEvent> GUARD_HURT = SOUND_EVENTS.register("guard_hurt", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "guard_hurt")));
+    public static final RegistryObject<SoundEvent> GUARD_AMBIENT = SOUND_EVENTS.register("guard_ambient", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "guard_ambient")));
+    public static final RegistryObject<SoundEvent> GUARD_YES = SOUND_EVENTS.register("guard_yes", () -> new SoundEvent(new ResourceLocation(Frv.MOD_ID, "guard_yes")));
+
     /****************************/
 
 

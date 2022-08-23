@@ -71,26 +71,26 @@ public class Pistol extends RangedItemsComplex
                     nineMMBullet.shootFromRotation(playerentity, playerentity.getXRot(), playerentity.getYRot(),
                             0.0F, 4.0F, 1.0F);
 
+
                     nineMMBullet.isNoGravity();
 
                     double x = playerentity.getX();
-                    double y = playerentity.getY();
                     double z = playerentity.getZ();
 
 
                     if (level instanceof ServerLevel _level)
                     {
-                        Vec3 vec32 = playerentity.getDeltaMovement();
+                        Vec3 vec3 = playerentity.getViewVector(1f);
 
                         _level.sendParticles(ParticleTypes.FLAME, x - (double)(playerentity.getBbWidth() + 2.0F) * 0.5D *
                                 (double) Mth.sin(playerentity.yHeadRot * ((float)Math.PI / 180F)), playerentity.getEyeY() -
-                                (double)0.1F, z + (double)(playerentity.getBbWidth() + 1.0F) * 0.5D * (double)Mth.cos(playerentity.yHeadRot *
-                                ((float)Math.PI / 180F)), 0, 0.0D, vec32.z, 0, 0);
+                                (double)0.1F, z + (double)(playerentity.getBbWidth() + 2.0F) * 0.5D * (double)Mth.cos(playerentity.yHeadRot *
+                                ((float)Math.PI / 180F)), 0, 0.0D, vec3.z, 0, 0);
 
                         _level.sendParticles(ParticleTypes.SMOKE, x - (double)(playerentity.getBbWidth() + 2.0F) * 0.5D *
                                 (double) Mth.sin(playerentity.yHeadRot * ((float)Math.PI / 180F)), playerentity.getEyeY() -
-                                (double)0.1F, z + (double)(playerentity.getBbWidth() + 1.0F) * 0.5D * (double)Mth.cos(playerentity.yHeadRot *
-                                ((float)Math.PI / 180F)), 0, 0.0D, vec32.z, 0, 0);
+                                (double)0.1F, z + (double)(playerentity.getBbWidth() + 2.0F) * 0.5D * (double)Mth.cos(playerentity.yHeadRot *
+                                ((float)Math.PI / 180F)), 0, 0.0D, vec3.z, 0, 0);
 
 //                        _level.sendParticles(ParticleTypes.FLAME, x, y + 1.5, z, 0, 0, 0, 0, 20);
 //                        _level.sendParticles(ParticleTypes.SMOKE, x, y + 1.5, z, 0, 0, 0, 0, 20);

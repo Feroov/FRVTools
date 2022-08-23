@@ -1,14 +1,19 @@
 package com.feroov.frv.entities.hostile;
 
 
+import com.feroov.frv.entities.passive.FemaleHunter;
+import com.feroov.frv.entities.passive.Guard;
+import com.feroov.frv.entities.passive.Hunter;
 import com.feroov.frv.entities.projectiles.MusketAmmo;
 import com.feroov.frv.entities.variants.FlintlockerVariant;
 import com.feroov.frv.sound.ModSoundEvents;
 import net.minecraft.Util;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.util.Mth;
 import net.minecraft.world.DifficultyInstance;
@@ -25,6 +30,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ProjectileWeaponItem;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraft.world.phys.Vec3;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -195,6 +201,9 @@ public class Flintlocker extends Monster implements IAnimatable, Npc, RangedAtta
         this.goalSelector.addGoal(1, new OpenDoorGoal(this,true));
         this.targetSelector.addGoal(2, new FlintlockerAttackGoal(this, 0.0D, true, 3));//These are combined
         this.goalSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, Player.class, true));
+        this.goalSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, Hunter.class, true));
+        this.goalSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, Guard.class, true));
+        this.goalSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, FemaleHunter.class, true));
         this.goalSelector.addGoal(4, new FlintlockerRangedAttackGoal(this, 0.10D, 29.3D, 17.0F, 0)); // These are combined
         this.goalSelector.addGoal(5, new WaterAvoidingRandomStrollGoal(this, 0.4D));
         this.goalSelector.addGoal(6, new MoveTowardsRestrictionGoal(this, 0.4D));
@@ -464,6 +473,24 @@ public class Flintlocker extends Monster implements IAnimatable, Npc, RangedAtta
         arrow.shoot(d1, d2 + d4, d3, 1.6F, 2.0F);
         this.playSound(ModSoundEvents.MUSKET.get(), 1.0F, 1.0F / (this.getRandom().nextFloat() * 0.4F + 0.8F));
         this.level.addFreshEntity(arrow);
+
+        double x = this.getX();
+        double z = this.getZ();
+
+        if (level instanceof ServerLevel _level)
+        {
+            Vec3 vec32 = this.getViewVector(1f);
+
+            _level.sendParticles(ParticleTypes.CAMPFIRE_COSY_SMOKE, x - (double)(this.getBbWidth() + 2.0F) * 0.5D *
+                    (double) Mth.sin(this.yHeadRot * ((float)Math.PI / 180F)), this.getEyeY() -
+                    (double)0.1F, z + (double)(this.getBbWidth() + 2.0F) * 0.5D * (double)Mth.cos(this.yHeadRot *
+                    ((float)Math.PI / 180F)), 0, 0.0D, vec32.z, 0, 0);
+
+            _level.sendParticles(ParticleTypes.SMOKE, x - (double)(this.getBbWidth() + 2.0F) * 0.5D *
+                    (double) Mth.sin(this.yHeadRot * ((float)Math.PI / 180F)), this.getEyeY() -
+                    (double)0.1F, z + (double)(this.getBbWidth() + 2.0F) * 0.5D * (double)Mth.cos(this.yHeadRot *
+                    ((float)Math.PI / 180F)), 0, 0.0D, vec32.z, 0, 0);
+        }
 
     }
 

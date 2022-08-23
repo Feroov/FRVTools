@@ -2,6 +2,7 @@ package com.feroov.frv.entities.hostile;
 
 
 import com.feroov.frv.entities.passive.FemaleHunter;
+import com.feroov.frv.entities.passive.Guard;
 import com.feroov.frv.entities.passive.Hunter;
 import com.feroov.frv.entities.projectiles.CorruptFire;
 import com.feroov.frv.init.ModParticles;
@@ -157,6 +158,7 @@ public class Corrupt extends Monster implements IAnimatable, IAnimationTickable,
         this.targetSelector.addGoal(1, new CorruptAttackGoal(this, 0.0D, true, 3));//These are combined
         this.goalSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
         this.goalSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Hunter.class, true));
+        this.goalSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Guard.class, true));
         this.goalSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, FemaleHunter.class, true));
         this.goalSelector.addGoal(3, new Corrupt.CorruptRangedAttackGoal(this, 0.10D, 35.3D, 37.0F, 0)); // These are combined
         this.goalSelector.addGoal(4, new WaterAvoidingRandomStrollGoal(this, 0.4D));

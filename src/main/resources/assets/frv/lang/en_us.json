@@ -169,6 +169,8 @@
   "entity.frv.lord_of_corruption": "§a§kco§r§aLord of Corruption§a§kco",
   "item.frv.mimic_spawn_egg": "Mimic Spawn",
   "entity.frv.mimic": "\u00A7l\u00A76Mimic\u00A76",
+  "item.frv.guard_spawn_egg": "§eGuard Spawn",
+  "entity.frv.guard": "§eGuard",
 
 
   "item.frv.coal_detector": "\u00A78Coal Detector\u00A78",
@@ -219,6 +221,7 @@
   "block.frv.endrium_tnt": "\u00A75Endrium TNT",
   "block.frv.dvoid_tnt": "\u00A78Void TNT",
   "block.frv.corrupt_tnt": "§a§kco§r§aCorrupt TNT§a§kco",
+  "block.frv.cloud": "Cloud Block",
 
   "block.frv.matrix": "\u00A7a\u00A7kMatrix\u00A7a",
   "block.frv.matrix_portal": "§a§kco§r§a404§a§kco",

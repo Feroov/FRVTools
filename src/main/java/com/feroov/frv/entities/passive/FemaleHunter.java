@@ -3,6 +3,8 @@ package com.feroov.frv.entities.passive;
 
 import com.feroov.frv.entities.ai.goal.FemaleHunterFindWaterPanicGoal;
 import com.feroov.frv.entities.ai.goal.FemaleHunterRevengeGoal;
+import com.feroov.frv.entities.ai.goal.FollowPlayerGoalFemaleHunter;
+import com.feroov.frv.entities.ai.goal.FollowPlayerGoalHunter;
 import com.feroov.frv.entities.passive.abstractentity.FemaleHunterAbstractVillagerEntity;
 import com.feroov.frv.entities.passive.abstractentity.ModVillagerTrades;
 import com.feroov.frv.entities.variants.FemaleHunterVariant;
@@ -31,6 +33,7 @@ import net.minecraft.world.entity.monster.Creeper;
 import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.entity.monster.RangedAttackMob;
 import net.minecraft.world.entity.monster.Ravager;
+import net.minecraft.world.entity.monster.warden.Warden;
 import net.minecraft.world.entity.npc.Npc;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Arrow;
@@ -234,8 +237,11 @@ public class FemaleHunter extends FemaleHunterAbstractVillagerEntity implements 
         this.goalSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, Cod.class, true));
         this.goalSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, Salmon.class, true));
         this.goalSelector.addGoal(4, new FemaleHunterRevengeGoal(this));
-        this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, Mob.class, 5, false, false, (p_28879_) -> {return p_28879_ instanceof Enemy && !(p_28879_ instanceof Creeper);}));
+        this.goalSelector.addGoal(4, new AvoidEntityGoal<>(this, Creeper.class, 12.0F, 0.5D, 0.5D));
+        this.goalSelector.addGoal(4, new AvoidEntityGoal<>(this, Warden.class, 25.0F, 0.6D, 0.5D));
+        this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, Mob.class, 5, false, false, (p_28879_) -> {return p_28879_ instanceof Enemy && !(p_28879_ instanceof Creeper) && !(p_28879_ instanceof Warden);}));
         this.goalSelector.addGoal(5, new TemptGoal(this, 0.43F, TEMP, false));
+        this.goalSelector.addGoal(5, new FollowPlayerGoalFemaleHunter(this));
         this.goalSelector.addGoal(6, new FemaleHunter.LookAtTradingPlayerGoal(this));
         this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Mob.class, 8.0F));
         this.targetSelector.addGoal(9, new FemaleHunter.FemaleHunterAttackGoal(this, 0.0D, true, 3));//These are combined
@@ -243,9 +249,8 @@ public class FemaleHunter extends FemaleHunterAbstractVillagerEntity implements 
         this.goalSelector.addGoal(10, new WaterAvoidingRandomStrollGoal(this, 0.4D));
         this.goalSelector.addGoal(11, new MoveTowardsRestrictionGoal(this, 0.4D));
         this.goalSelector.addGoal(11, new RandomLookAroundGoal(this));
-        this.goalSelector.addGoal(12, new AvoidEntityGoal<>(this, Creeper.class, 12.0F, 0.5D, 0.5D));
-        this.goalSelector.addGoal(12, new AvoidEntityGoal<>(this, Ravager.class, 12.0F, 0.5D, 0.5D));
         this.goalSelector.addGoal(13, new InteractGoal(this, Player.class, 1.0F, 1.0F));
+
     }
 
 

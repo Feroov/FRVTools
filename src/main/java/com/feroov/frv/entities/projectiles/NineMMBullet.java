@@ -1,12 +1,14 @@
 package com.feroov.frv.entities.projectiles;
 
 import com.feroov.frv.init.ModEntityTypes;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientboundGameEventPacket;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -16,6 +18,9 @@ import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
@@ -72,6 +77,20 @@ public class NineMMBullet extends AbstractArrow implements IAnimatable
         if (--this.lifeTicks < 0)
         {
             this.remove(RemovalReason.DISCARDED);
+        }
+
+        boolean flag = false;
+        AABB aabb = this.getBoundingBox().inflate(0.2D);
+        for(BlockPos blockpos : BlockPos.betweenClosed(Mth.floor(aabb.minX),
+                Mth.floor(aabb.minY), Mth.floor(aabb.minZ), Mth.floor(aabb.maxX), Mth.floor(aabb.maxY), Mth.floor(aabb.maxZ))) {
+            BlockState blockstate = this.level.getBlockState(blockpos);
+            Block block = blockstate.getBlock();
+            if (block instanceof AbstractGlassBlock) {
+                flag = this.level.destroyBlock(blockpos, true, this) || flag;
+            }
+            if (block instanceof IronBarsBlock) {
+                flag = this.level.destroyBlock(blockpos, true, this) || flag;
+            }
         }
     }
 

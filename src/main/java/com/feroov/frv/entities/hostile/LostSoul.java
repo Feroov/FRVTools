@@ -1,6 +1,7 @@
 package com.feroov.frv.entities.hostile;
 
 import com.feroov.frv.entities.passive.FemaleHunter;
+import com.feroov.frv.entities.passive.Guard;
 import com.feroov.frv.entities.passive.Hunter;
 import com.feroov.frv.sound.ModSoundEvents;
 import net.minecraft.core.BlockPos;
@@ -157,6 +158,7 @@ public class LostSoul extends Monster implements IAnimatable
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(1, new LostSoulAttack(this, 0.43, true));
         this.goalSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
+        this.goalSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Guard.class, true));
         this.goalSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Hunter.class, true));
         this.goalSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, FemaleHunter.class, true));
         this.goalSelector.addGoal(3, new WaterAvoidingRandomStrollGoal(this, 0.4D));

@@ -78,17 +78,16 @@ public class Musket extends RangedItemsComplex
 
                     if (level instanceof ServerLevel _level)
                     {
-                        Vec3 vec32 = playerentity.getViewVector(12f);
+                        Vec3 vec32 = playerentity.getViewVector(1f);
 
-
-                        _level.sendParticles(ParticleTypes.SMOKE, x - (double)(playerentity.getBbWidth() + 1.0F) * 0.5D *
-                                (double) Mth.sin(playerentity.yBodyRot * ((float)Math.PI / 180F)), playerentity.getEyeY() -
-                                (double)0.1F, z + (double)(playerentity.getBbWidth() + 1.8F) * 0.5D * (double)Mth.cos(playerentity.yBodyRot *
+                        _level.sendParticles(ParticleTypes.CAMPFIRE_COSY_SMOKE, x - (double)(playerentity.getBbWidth() + 2.0F) * 0.5D *
+                                (double) Mth.sin(playerentity.yHeadRot * ((float)Math.PI / 180F)), playerentity.getEyeY() -
+                                (double)0.1F, z + (double)(playerentity.getBbWidth() + 2.0F) * 0.5D * (double)Mth.cos(playerentity.yHeadRot *
                                 ((float)Math.PI / 180F)), 0, 0.0D, vec32.z, 0, 0);
 
-                        _level.sendParticles(ParticleTypes.CAMPFIRE_COSY_SMOKE, x - (double)(playerentity.getBbWidth() + 1.0F) * 0.5D *
-                                (double) Mth.sin(playerentity.yBodyRot * ((float)Math.PI / 180F)), playerentity.getEyeY() -
-                                (double)0.1F, z + (double)(playerentity.getBbWidth() + 1.8F) * 0.5D * (double)Mth.cos(playerentity.yBodyRot *
+                        _level.sendParticles(ParticleTypes.SMOKE, x - (double)(playerentity.getBbWidth() + 2.0F) * 0.5D *
+                                (double) Mth.sin(playerentity.yHeadRot * ((float)Math.PI / 180F)), playerentity.getEyeY() -
+                                (double)0.1F, z + (double)(playerentity.getBbWidth() + 2.0F) * 0.5D * (double)Mth.cos(playerentity.yHeadRot *
                                 ((float)Math.PI / 180F)), 0, 0.0D, vec32.z, 0, 0);
 
 //                        _level.sendParticles(ParticleTypes.FLAME, x, y + 1.5, z, 0, 0, 0, 0, 20);

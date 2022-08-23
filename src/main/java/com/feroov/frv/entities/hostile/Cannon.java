@@ -1,6 +1,7 @@
 package com.feroov.frv.entities.hostile;
 
 
+import com.feroov.frv.entities.passive.Guard;
 import com.feroov.frv.entities.projectiles.CannonBall;
 import com.feroov.frv.sound.ModSoundEvents;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -133,6 +134,7 @@ public class Cannon extends Monster implements IAnimatable, RangedAttackMob
         super.registerGoals();
         this.targetSelector.addGoal(2, new CannonAttackGoal(this, 0.0D, true, 3));//These are combined
         this.goalSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, Player.class, true));
+        this.goalSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Guard.class, true));
         this.goalSelector.addGoal(4, new CannonRangedAttackGoal(this, 0.0D, 80, 24.0F, 0)); // These are combined
     }
 

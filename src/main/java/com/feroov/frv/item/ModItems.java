@@ -92,6 +92,8 @@ public class ModItems
     public static final RegistryObject<ModSpawnEggItem> CORRUPT_ANGEL = ITEMS.register("corrupt_angel_spawn_egg", () -> new ModSpawnEggItem(ModEntityTypes.CORRUPT_ANGEL, 0X087D62, 0X087A62, new Item.Properties().tab(ModItemGroup.FRV_TAB_EGGS)));
     public static final RegistryObject<ModSpawnEggItem> CORRUPT = ITEMS.register("corrupt_spawn_egg", () -> new ModSpawnEggItem(ModEntityTypes.CORRUPT, 0X087D62, 0X087A62, new Item.Properties().tab(ModItemGroup.FRV_TAB_EGGS)));
     public static final RegistryObject<ModSpawnEggItem> LORD_OF_CORRUPTION = ITEMS.register("lord_of_corruption_spawn_egg", () -> new ModSpawnEggItem(ModEntityTypes.LORD_OF_CORRUPTION, 0X087D62, 0X087A62, new Item.Properties().fireResistant().tab(ModItemGroup.FRV_TAB_EGGS)));
+    public static final RegistryObject<ModSpawnEggItem> CORRUPT_BOARD = ITEMS.register("corrupt_board_spawn_egg", () -> new ModSpawnEggItem(ModEntityTypes.CORRUPT_BOARD, 0X087D62, 0X087A62, new Item.Properties().fireResistant().tab(ModItemGroup.FRV_TAB_EGGS)));
+    public static final RegistryObject<ModSpawnEggItem> GUARD = ITEMS.register("guard_spawn_egg", () -> new ModSpawnEggItem(ModEntityTypes.GUARD, 0X087D62, 0X087A62, new Item.Properties().fireResistant().tab(ModItemGroup.FRV_TAB_EGGS)));
     /***********************************************************************************************/
 
 
@@ -130,8 +132,7 @@ public class ModItems
     public static final RegistryObject<Item> NINE_MM_MAG = ITEMS.register("nine_mm_mag", () -> new NineMMMag(new Item.Properties().tab(ModItemGroup.FRV_TAB_MISC).stacksTo(1), 1));
     public static final RegistryObject<Item> NINE_MM_BULLETS = ITEMS.register("nine_mm_bullet", () -> new Item(new Item.Properties().tab(ModItemGroup.FRV_TAB_MISC)));
 
-    public static final RegistryObject<ModSpawnEggItem> CORRUPT_BOARD = ITEMS.register("corrupt_board_spawn_egg", () -> new ModSpawnEggItem(ModEntityTypes.CORRUPT_BOARD, 0X087D62, 0X087A62, new Item.Properties().fireResistant().tab(ModItemGroup.FRV_TAB_MISC)));
-    /***********************************************************************************************/
+   /***********************************************************************************************/
 
     /********************************** (COPPER) **********************************************/
     public static final RegistryObject<Item> COPPER_SWORD = ITEMS.register("copper_sword", () -> new SwordItem(ModTiers.COPPER, 3, -2.4f, new Item.Properties().tab(ModItemGroup.FRV_TAB)));

@@ -175,8 +175,25 @@
     "name": "frv:lost_soul_attack2"}, {
     "name": "frv:lost_soul_attack3"}], "subtitle": "frv.lost_soul_attack"
   },
-  
-  
+
+  "guard_hurt": {"category": "hostile", "sounds": [{
+    "name": "frv:guard_hurt"}, {
+    "name": "frv:guard_hurt2"}, {
+    "name": "frv:guard_hurt3"}, {
+    "name": "frv:guard_hurt4"}, {
+    "name": "frv:guard_hurt5"}], "subtitle": "frv.guard_hurt"
+  },
+
+  "guard_ambient": {"category": "hostile", "sounds": [{
+    "name": "frv:guard_ambient"}, {
+    "name": "frv:guard_ambient2"}, {
+    "name": "frv:guard_ambient3"}, {
+    "name": "frv:guard_ambient4"}, {
+    "name": "frv:guard_ambient5"}, {
+    "name": "frv:guard_ambient6"}, {
+    "name": "frv:guard_offering"}], "subtitle": "frv.guard_ambient"
+  },
+
 
 
   "detector_sound": {"category": "misc", "sounds": [{"name": "frv:detector_sound"}], "subtitle": "frv.detector_sound"},
@@ -196,5 +213,6 @@
   "energy_charging": {"category": "misc", "sounds": [{"name": "frv:energy_charging"}], "subtitle": "frv.energy_charging"},
   "energy_charging2": {"category": "misc", "sounds": [{"name": "frv:energy_charging2"}], "subtitle": "frv.energy_charging2"},
   "pistol": {"category": "misc", "sounds": [{"name": "frv:pistol"}], "subtitle": "frv.pistol"},
-  "pistol_reload": {"category": "misc", "sounds": [{"name": "frv:pistol_reload"}], "subtitle": "frv.pistol_reload"}
+  "pistol_reload": {"category": "misc", "sounds": [{"name": "frv:pistol_reload"}], "subtitle": "frv.pistol_reload"},
+  "guard_yes": {"category": "passive", "sounds": [{"name": "frv:guard_yes"}], "subtitle": "frv.guard_yes"}
 }

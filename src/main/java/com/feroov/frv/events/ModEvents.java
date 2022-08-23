@@ -3,10 +3,7 @@ package com.feroov.frv.events;
 import com.feroov.frv.Frv;
 import com.feroov.frv.entities.hostile.*;
 import com.feroov.frv.entities.misc.CorruptBoard;
-import com.feroov.frv.entities.passive.Croaker;
-import com.feroov.frv.entities.passive.FemaleHunter;
-import com.feroov.frv.entities.passive.Hunter;
-import com.feroov.frv.entities.passive.LostPerson;
+import com.feroov.frv.entities.passive.*;
 import com.feroov.frv.entities.projectiles.CorruptExplosion;
 import com.feroov.frv.entities.projectiles.Electricity;
 import com.feroov.frv.entities.projectiles.Explosion;
@@ -28,6 +25,7 @@ public class ModEvents
         event.put(ModEntityTypes.HUNTER.get(), Hunter.createAttributes().build());
         event.put(ModEntityTypes.FEMALE_HUNTER.get(), FemaleHunter.createAttributes().build());
         event.put(ModEntityTypes.LOST_PERSON.get(), LostPerson.createAttributes().build());
+        event.put(ModEntityTypes.GUARD.get(), Guard.createAttributes().build());
         /** Hostile **/
         event.put(ModEntityTypes.PIRATE_CAPTAIN.get(), PirateCaptain.createAttributes().build());
         event.put(ModEntityTypes.FLINTLOCKER.get(), Flintlocker.createAttributes().build());

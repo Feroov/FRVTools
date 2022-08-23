@@ -1,5 +1,7 @@
 package com.feroov.frv.entities.passive;
 
+import com.feroov.frv.entities.ai.goal.FollowPlayerGoal;
+import com.feroov.frv.entities.ai.goal.FollowPlayerGoalHunter;
 import com.feroov.frv.entities.ai.goal.HunterFindWaterPanicGoal;
 import com.feroov.frv.entities.ai.goal.HunterRevengeGoal;
 import com.feroov.frv.entities.hostile.PirateCaptain;
@@ -8,11 +10,16 @@ import com.feroov.frv.entities.passive.abstractentity.ModVillagerTrades;
 import com.feroov.frv.entities.variants.HunterVariant;
 import com.feroov.frv.sound.ModSoundEvents;
 import net.minecraft.Util;
+import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.server.players.OldUsersConverter;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.DifficultyInstance;
@@ -27,10 +34,10 @@ import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.animal.*;
 import net.minecraft.world.entity.monster.Creeper;
 import net.minecraft.world.entity.monster.Enemy;
+import net.minecraft.world.entity.monster.warden.Warden;
 import net.minecraft.world.entity.npc.Npc;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraft.world.item.trading.MerchantOffers;
@@ -233,8 +240,11 @@ public class Hunter extends HunterAbstractVillagerEntity implements IAnimatable,
         this.goalSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, Cod.class, true));
         this.goalSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, Rabbit.class, true));
         this.goalSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, PirateCaptain.class, true));
-        this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, Mob.class, 5, false, false, (p_28879_) -> {return p_28879_ instanceof Enemy && !(p_28879_ instanceof Creeper);}));
-        this.goalSelector.addGoal(4, new HunterRevengeGoal(this));
+        this.goalSelector.addGoal(4, new AvoidEntityGoal<>(this, Creeper.class, 12.0F, 0.5D, 0.5D));
+        this.goalSelector.addGoal(4, new AvoidEntityGoal<>(this, Warden.class, 25.0F, 0.6D, 0.5D));
+        this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, Mob.class, 5, false, false, (p_28879_) -> {return p_28879_ instanceof Enemy && !(p_28879_ instanceof Creeper) && !(p_28879_ instanceof Warden);}));
+        this.goalSelector.addGoal(5, new HunterRevengeGoal(this));
+        this.goalSelector.addGoal(5, new FollowPlayerGoalHunter(this));
         this.goalSelector.addGoal(5, new TemptGoal(this, 0.43F, TEMP, false));
         this.goalSelector.addGoal(6, new Hunter.LookAtTradingPlayerGoal(this));
         this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Mob.class, 8.0F));
@@ -242,10 +252,8 @@ public class Hunter extends HunterAbstractVillagerEntity implements IAnimatable,
         this.goalSelector.addGoal(8, new MoveTowardsRestrictionGoal(this, 0.4D));
         this.goalSelector.addGoal(9, new InteractGoal(this, Player.class, 4.0F, 1.0F));
         this.goalSelector.addGoal(10, new RandomLookAroundGoal(this));
-        this.goalSelector.addGoal(11, new AvoidEntityGoal<>(this, Creeper.class, 12.0F, 0.5D, 0.5D));
+
     }
-
-
 
     /*************************** Trade with player goal ****************************/
     public class TradeWithPlayerGoal extends Goal
@@ -349,14 +357,15 @@ public class Hunter extends HunterAbstractVillagerEntity implements IAnimatable,
         return false;
     }
 
-    public InteractionResult mobInteract(Player p_35856_, InteractionHand p_35857_)
+
+    public InteractionResult mobInteract(Player player, InteractionHand interactionHand)
     {
-        ItemStack itemstack = p_35856_.getItemInHand(p_35857_);
+        ItemStack itemstack = player.getItemInHand(interactionHand);
         if (!itemstack.is(Items.VILLAGER_SPAWN_EGG) && this.isAlive() && !this.isTrading() && !this.isBaby())
         {
-            if (p_35857_ == InteractionHand.MAIN_HAND)
+            if (interactionHand == InteractionHand.MAIN_HAND)
             {
-                p_35856_.awardStat(Stats.TALKED_TO_VILLAGER);
+                player.awardStat(Stats.TALKED_TO_VILLAGER);
             }
 
             if (this.getOffers().isEmpty())
@@ -367,8 +376,8 @@ public class Hunter extends HunterAbstractVillagerEntity implements IAnimatable,
             {
                 if (!this.level.isClientSide)
                 {
-                    this.setTradingPlayer(p_35856_);
-                    this.openTradingScreen(p_35856_, this.getDisplayName(), 1);
+                    this.setTradingPlayer(player);
+                    this.openTradingScreen(player, this.getDisplayName(), 1);
                 }
 
                 return InteractionResult.sidedSuccess(this.level.isClientSide);
@@ -376,7 +385,7 @@ public class Hunter extends HunterAbstractVillagerEntity implements IAnimatable,
         }
         else
         {
-            return super.mobInteract(p_35856_, p_35857_);
+            return super.mobInteract(player, interactionHand);
         }
     }
     /*************************** Main trading stuff ****************************/

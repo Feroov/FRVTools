@@ -4,10 +4,7 @@ import com.feroov.frv.Frv;
 import com.feroov.frv.block.custom.tnt.renderer.*;
 import com.feroov.frv.entities.hostile.renderer.*;
 import com.feroov.frv.entities.misc.renderer.CorruptBoardRenderer;
-import com.feroov.frv.entities.passive.renderer.CroakerRenderer;
-import com.feroov.frv.entities.passive.renderer.FemaleHunterRenderer;
-import com.feroov.frv.entities.passive.renderer.HunterRenderer;
-import com.feroov.frv.entities.passive.renderer.LostPersonRenderer;
+import com.feroov.frv.entities.passive.renderer.*;
 import com.feroov.frv.entities.projectiles.render.*;
 import com.feroov.frv.init.ModEntityTypes;
 import com.feroov.frv.init.ModParticles;
@@ -41,6 +38,7 @@ public class ClientModEvents
         event.registerEntityRenderer(ModEntityTypes.HUNTER.get(), HunterRenderer::new);
         event.registerEntityRenderer(ModEntityTypes.FEMALE_HUNTER.get(), FemaleHunterRenderer::new);
         event.registerEntityRenderer(ModEntityTypes.LOST_PERSON.get(), LostPersonRenderer::new);
+        event.registerEntityRenderer(ModEntityTypes.GUARD.get(), GuardRenderer::new);
 
         /** Hostile **/
         event.registerEntityRenderer(ModEntityTypes.PIRATE_CAPTAIN.get(), PirateCaptainRenderer::new);
