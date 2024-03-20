@@ -8,4 +8,4 @@ FRV Tools adds bunch of new tools to the game, it also adds brand new mobs as we
 
 -----------------
 
-© 2022 Feroov. All rights reserved.
+© 2024 Feroov. All rights reserved.
